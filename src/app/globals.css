@@ -19,15 +19,59 @@
 body {
   color: rgb(var(--foreground-rgb));
   background: linear-gradient(
+      
       to bottom,
       transparent,
-      rgb(var(--background-end-rgb))
+      #2f70d8
     )
-    rgb(var(--background-start-rgb));
+    black
 }
 
 @layer utilities {
   .text-balance {
     text-wrap: balance;
   }
+}
+
+/* HTML: <div class="loader"></div> */
+.loader {
+  width: 90px;
+  height: 28px;
+  border-radius: 20px;
+  color: #6297e6;
+  border: 2px solid;
+  position: relative;
+}
+.loader::before {
+  content: "";
+  position: absolute;
+  margin: 2px;
+  inset: 0 100% 0 0;
+  border-radius: inherit;
+  background: currentColor;
+  animation: l6 3s infinite;
+}
+@keyframes l6 {
+    100% {inset:0}
+}
+
+.loader2 {
+  width: 90px;
+  height: 28px;
+  border-radius: 20px;
+  color: #6297e6;
+  border: 2px solid;
+  position: relative;
+}
+.loader2::before {
+  content: "";
+  position: absolute;
+  margin: 2px;
+  inset: 0 100% 0 0;
+  border-radius: inherit;
+  background: inherit;
+  animation: l6 3s infinite;
+}
+@keyframes l6 {
+    100% {inset:0}
 }
