@@ -84,7 +84,7 @@ h
                         </div>
                      </div>
                      <div className="w-[40%] py-3 px-3 ">
-                        <div className="p-2 w-[100%]">
+                        <div className="p-4 w-[100%]">
                             <button className="h-9 w-[100%]  mb-1.5 text-white rounded-xl bg-black/30">Claim</button>
                             <p className="text-xl font-light text-white text-center">10000</p>
                         </div>
