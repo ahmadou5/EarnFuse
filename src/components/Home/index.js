@@ -67,7 +67,7 @@ h
                     <div className="w-[25%] flex items-center justify-center">
                         <div className="bg-white/5 h-[74px] flex items-center flex-col justify-center mt-12 w-[74px] rounded-xl">
                             <p className="text-3xl font-bold text-white">1</p>
-                            <p className="text-xl mt-0.5 font-bold text-white">Level</p>
+                            <p className="text-sm mt-0.5 font-bold text-white">Level</p>
                         </div>
                     </div>
                 </div>
