@@ -57,10 +57,10 @@ h
                 </div>
                 <div className="w-[100%] h-[70px] px-2 mt-4 py-3 flex">
                     <div className="w-[75%]">
-                      <p className="text-[18px] mb-2 font-bold  text-white/75">
+                      <p className="text-[17px] mb-2 font-bold  text-white/75">
                        Bring friend, earn more!
                       </p>
-                      <p className="text-[18px] font-bold p-0 textt-center mt-3 text-white/75">
+                      <p className="text-[16px] font-bold p-0 textt-center mt-3 text-white/75">
                         Claim Level 1 Plug Reward, <br/> by inviting 5 plugs.
                       </p>
                     </div>
