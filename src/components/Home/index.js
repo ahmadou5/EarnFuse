@@ -52,13 +52,16 @@ h
             <div className="bg-gothic-950/0 mt-0 flex p-3 bg-slate-600/0 flex-col w-[100%] h-auto">
                  <div className="w-[100%] h-12 px-2 mt-5 mb-4 py-3 flex justify-center items-center">
                     <div className="">
-                      <p className="text-[32px] font-bold  text-white/75">Mates 👩🏽‍🚀</p>
+                      <p className="text-[32px] font-bold  text-white/75">Plugs 👩🏽‍🚀</p>
                     </div>
                 </div>
-                <div className="w-[100%] h-[90px] px-2 mt-4 py-3 flex">
+                <div className="w-[100%] h-[70px] px-2 mt-4 py-3 flex">
                     <div className="w-[75%]">
-                      <p className="text-[18px] font-bold  text-white/75">
-                       Bring Friend, Earn MOre!
+                      <p className="text-[20px] mb-2 font-bold  text-white/75">
+                       Plugs in a friend, earn more!
+                      </p>
+                      <p className="text-[18px] font-light p-3 textt-center mt-3 text-white/75">
+                        Invite 5 new Plugs to be able to Claim the Level 1 Plug Reward
                       </p>
                     </div>
                     <div className="w-[25%]">
