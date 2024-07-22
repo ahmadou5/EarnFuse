@@ -3,7 +3,7 @@ import { Menu } from "../Menu"
 
 export const Home2 = () => {
     const home = false
-    const frens = true
+    const frens = false
     return(
     <div>
         {
