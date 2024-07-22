@@ -76,7 +76,7 @@ h
                      <div className="w-[60%] py-3 px-3 ">
                         <div className='flex'>
                             <div className="flex ml-2 py-2 mr-" >
-                                <div className="w-[80px] h-[80px]  text-3xl flex items-center justify-center mr-4 bg-black/25 rounded-xl">
+                                <div className="w-[80px] h-[80px]  text-3xl flex items-center justify-center mr-4 bg-black/25 rounded-2xl">
                                   <p>🔌</p>
                                 </div>
                                 <p className="text-2xl mt-5 text-white font-extrabold">Level 1</p>
@@ -84,8 +84,8 @@ h
                         </div>
                      </div>
                      <div className="w-[40%] py-3 px-3 ">
-                        <div className="p-4 w-[100%]">
-                            <button className="h-9 w-[98%]  mb-3 text-white rounded-xl bg-black/50">Claim</button>
+                        <div className="p-2 w-[100%]">
+                            <button className="h-9 w-[100%]  mb-1.5 text-white rounded-xl bg-black/30">Claim</button>
                             <p className="text-xl font-light text-white text-center">10000</p>
                         </div>
                      </div>
