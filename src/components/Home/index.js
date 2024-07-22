@@ -71,9 +71,21 @@ h
                         </div>
                     </div>
                 </div>
-                <div className="w-[100%] h-[150px] bg-blue-700/0 px-2 mt-20 py-3 flex">
-                    <div className="w-[100%] h-[100%] bg-white/5 rounded-xl">
-                     
+                <div className="w-[100%] h-[150px] bg-blue-700/0 px-2 mt-20 p-4 flex">
+                    <div className="w-[100%] flex h-[100%] bg-white/5 rounded-xl">
+                     <div className="w-[70%] py-3 px-3 ">
+                        <div className=''>
+                            <div className="flex ml-2 mt-0.5 mb-0.5 mr-" >
+                                <div className="w-[70px] h-[70px] mr-4 bg-black/25 rounded-xl"></div>
+                                <p>Level 2</p>
+                            </div>
+                            <div>45%</div>
+
+                        </div>
+                     </div>
+                     <div className="w-[30%] py-3 px-3 ">
+                        ggg
+                     </div>
                     </div>
                     
                 </div>
