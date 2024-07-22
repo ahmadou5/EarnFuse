@@ -20,15 +20,23 @@ export const Home2 = () => {
                     </div>
                 </div>
                 <div className="mt-10 py-2 flex flex-col items-center justify-center">
-                    <p className="text-[18px] font-light">Your Fuse Point:</p>
+                    <p className="text-[18px] text-white font-light">Your Fuse Point:</p>
                     <div className="flex items-center justify-center">
                         <img className="h-16 w-16 ml-auto mr-1 " src="./assets/show.png" />
-                        <p className="text-4xl ml-1 mr-auto font-bold ">{`123665543`}</p>
+                        <p className="text-4xl ml-1 text-white mr-auto font-bold ">{`12`}</p>
                     </div>
                 </div>
                 <div className="mt-10 flex items-center justify-center">
                     <div>
                         <img src="./assets/sol.png" className="w-[270px] h-[270px]" />
+                    </div>
+                </div>
+                <div className="w-[100%] mt-10 flex flex-col items-center justify-center">
+                    <div className="mb-2">
+                        0/ 100000
+                    </div>
+                    <div className="bg-white rounded-xl h-3 w-[80%]">
+h
                     </div>
                 </div>
             </div>
