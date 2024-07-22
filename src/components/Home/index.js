@@ -72,11 +72,11 @@ h
                     </div>
                 </div>
                 <div className="w-[100%] h-[150px] bg-blue-700/0 px-2 mt-20 p-4 flex">
-                    <div className="w-[100%] flex h-[100%] bg-black/5 rounded-xl">
+                    <div className="w-[100%] flex h-[100%] bg-white/5 rounded-xl">
                      <div className="w-[60%] py-3 px-3 ">
                         <div className='flex'>
                             <div className="flex ml-2 py-2 mr-" >
-                                <div className="w-[80px] h-[80px]  text-3xl flex items-center justify-center mr-4 bg-white/5 rounded-xl">
+                                <div className="w-[80px] h-[80px]  text-3xl flex items-center justify-center mr-4 bg-black/25 rounded-xl">
                                   <p>🔌</p>
                                 </div>
                                 <p className="text-2xl mt-5 font-extrabold">Level 1</p>
@@ -85,7 +85,7 @@ h
                      </div>
                      <div className="w-[40%] py-3 px-3 ">
                         <div className="p-4 w-[100%]">
-                            <button className="h-9 w-[98%]  mb-3 rounded-xl bg-blue-500/10"> claim</button>
+                            <button className="h-9 w-[98%]  mb-3 rounded-xl bg-black/50">Claim</button>
                             <p className="text-xl font-light text-center">10000</p>
                         </div>
                      </div>
