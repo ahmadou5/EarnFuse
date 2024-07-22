@@ -31,8 +31,8 @@ export const Home2 = () => {
                         <img src="./assets/sol.png" className="w-[270px] h-[270px]" />
                     </div>
                 </div>
-                <div className="w-[100%] mt-7 flex flex-col items-center justify-center">
-                    <div className="mb-2">
+                <div className="w-[100%] mt-10 flex flex-col items-center justify-center">
+                    <div className="mb-2 text-white">
                         0/ 100000
                     </div>
                     <div className="bg-white rounded-xl h-3 w-[80%]">
