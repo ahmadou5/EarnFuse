@@ -92,6 +92,18 @@ h
                     </div>
                     
                 </div>
+                <div className="w-[100%] h-[150px] bg-blue-700/0 px-2 mt-20 p-4 flex">
+                    <div className="w-[100%] p-4 flex h-[100%] text-white bg-white/0 rounded-xl">
+                     <div className="w-[45%] flex mr-auto items-center justify-center h-14  border-white/70 border-2 bg-black/0 rounded-3xl" >
+                      <p className="text-xl font-bold">Invite a Plug</p>
+                     </div>
+                     <div className="w-[45%] ml-auto flex items-center justify-center h-14 border-2 border-white/70 bg-black/0 rounded-3xl" >
+                      <p className="text-xl font-bold">Copy Link</p>
+                     </div>
+                     
+                    </div>
+                    
+                </div>
             </div>
             
             </>
