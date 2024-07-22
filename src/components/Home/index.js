@@ -2,7 +2,8 @@ import { IoSettings, IoWallet } from "react-icons/io5"
 import { Menu } from "../Menu"
 
 export const Home2 = () => {
-    const home = true
+    const home = false
+    const frens = true
     return(
     <div>
         {
@@ -42,6 +43,30 @@ h
             </div>
             <Menu />
             </div>
+            </>
+        )
+        }
+        {
+            frens && (
+            <>
+            <div className="bg-gothic-950/0 mt-0 flex p-3 bg-slate-600/0 flex-col w-[100%] h-auto">
+                 <div className="w-[100%] h-12 px-2 mt-5 mb-4 py-3 flex justify-center items-center">
+                    <div className="">
+                      <p className="text-[32px] font-bold  text-white/75">Mates 👩🏽‍🚀</p>
+                    </div>
+                </div>
+                <div className="w-[100%] h-[90px] px-2 mt-4 py-3 flex">
+                    <div className="w-[75%]">
+                      <p className="text-[18px] font-bold  text-white/75">
+                       Bring Friend, Earn MOre!
+                      </p>
+                    </div>
+                    <div className="w-[25%]">
+                        Leevel
+                    </div>
+                </div>
+            </div>
+            
             </>
         )
         }
