@@ -19,19 +19,19 @@ export const Home2 = () => {
                         <IoSettings className="ml-4  text-white/75 mr-2 text-[20px]"/>
                     </div>
                 </div>
-                <div className="mt-10 py-2 flex flex-col items-center justify-center">
+                <div className="mt-7 py-2 flex flex-col items-center justify-center">
                     <p className="text-[18px] text-white font-light">Your Fuse Point:</p>
                     <div className="flex items-center justify-center">
                         <img className="h-16 w-16 ml-auto mr-1 " src="./assets/show.png" />
                         <p className="text-4xl ml-1 text-white mr-auto font-bold ">{`12`}</p>
                     </div>
                 </div>
-                <div className="mt-10 flex items-center justify-center">
+                <div className="mt-4 flex items-center justify-center">
                     <div>
                         <img src="./assets/sol.png" className="w-[270px] h-[270px]" />
                     </div>
                 </div>
-                <div className="w-[100%] mt-10 flex flex-col items-center justify-center">
+                <div className="w-[100%] mt-7 flex flex-col items-center justify-center">
                     <div className="mb-2">
                         0/ 100000
                     </div>
