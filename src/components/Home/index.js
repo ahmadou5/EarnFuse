@@ -60,7 +60,7 @@ h
                       <p className="text-[17px] mb-2 font-bold  text-white/75">
                        Bring friend, earn more!
                       </p>
-                      <p className="text-[16px] font-bold p-0 textt-center mt-3 text-white/75">
+                      <p className="text-sm font-bold p-0 textt-center mt-3 text-white/75">
                         Claim Level 1 Plug Reward, <br/> by inviting 5 plugs.
                       </p>
                     </div>
