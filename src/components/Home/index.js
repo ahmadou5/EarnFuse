@@ -65,11 +65,17 @@ h
                       </p>
                     </div>
                     <div className="w-[25%] flex items-center justify-center">
-                        <div className="bg-white/5 h-[74px] flex items-center flex-col justify-center mt-12 w-[74px] rounded-xl">
+                        <div className="bg-white/10 h-[74px] flex items-center flex-col justify-center mt-12 w-[74px] rounded-xl">
                             <p className="text-3xl font-bold text-white">1</p>
                             <p className="text-sm mt-0.5 font-bold text-white">Level</p>
                         </div>
                     </div>
+                </div>
+                <div className="w-[100%] h-[150px] bg-blue-700/0 px-2 mt-20 py-3 flex">
+                    <div className="w-[100%] h-[100%] bg-white/5 rounded-xl">
+                     
+                    </div>
+                    
                 </div>
             </div>
             
