@@ -66,7 +66,7 @@ export const Menu = () => {
               setIsWallet(true)
             }} className={`h-12 ml-auto mr-auto w-[30%] bg-white/0 flex flex-col items-center justify-center`}>
                  <p size={28} className={`${ isHistory ? 'text-[#448cff]' : 'text-gothic-600/85'} text-2xl`} >📝</p>
-                <p className={`font-light mt-1 text-white text-[12px]`}>Task</p>
+                <p className={`font-light mt-1 text-white text-[12px]`}>Tasks</p>
             </div>
             
             <div onClick={() => {

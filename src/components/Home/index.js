@@ -117,13 +117,12 @@ h
             <div className="bg-gothic-950/0 mt-0 flex p-3 bg-slate-600/0 flex-col w-[100%] h-auto">
                  <div className="w-[100%] h-12 px-2 mt-5 mb-4 py-3 flex justify-center items-center">
                     <div className="">
-                      <p className="text-[39px] font-bold  text-white/75">Task 📝</p>
+                      <p className="text-[39px] font-bold  text-white/75">Tasks 📝</p>
                     </div>
                 </div>
                 <div className="mt-7 py-2 flex flex-col ">
                     <p className="text-[30px] ml-2 text-start text-white font-semibold">Earn More Points</p>
-                    <div className="flex">
-                       
+                    <div className="flex px-1 py-2">
                         <p className="text-[20px] ml-1 text-white mr-auto font-light ">{`Complete daily tasks to earn more Fuse Points and level up quickly!`}</p>
                     </div>
                 </div>
