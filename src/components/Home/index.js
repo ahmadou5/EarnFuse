@@ -5,6 +5,20 @@ export const Home2 = () => {
     const home = false
     const frens = false
     const task = true
+    const todo =  [
+        {
+            name: 'folloe'
+        },
+        {
+            name: 'folloe'
+        },
+        {
+            name: 'folloe'
+        },
+        {
+            name: 'folloe'
+        },
+    ]
     return(
     <div>
         {
@@ -59,7 +73,7 @@ h
                 <div className="w-[100%] h-[70px] px-2 mt-4 py-3 flex">
                     <div className="w-[75%]">
                       <p className="text-[17px] mb-2 font-bold  text-white/75">
-                       Bring friend, earn more!
+                        invite frens, earn points!
                       </p>
                       <p className="text-sm font-bold p-0 textt-center mt-3 text-white/75">
                         Claim Level 1 Plug Reward, <br/> by inviting 5 plugs.
@@ -120,15 +134,22 @@ h
                       <p className="text-[39px] font-bold  text-white/75">Tasks 📝</p>
                     </div>
                 </div>
-                <div className="mt-7 py-2 flex flex-col ">
+                <div className="mt-4 py-2 flex flex-col ">
                     <p className="text-[30px] ml-2 text-start text-white font-semibold">Earn More Points</p>
                     <div className="flex px-1 py-2">
                         <p className="text-[20px] ml-1 text-white mr-auto font-light ">{`Complete daily tasks to earn more Fuse Points and level up quickly!`}</p>
                     </div>
                 </div>
+                
                 <div className="w-[100%] h-12 px-2 mt-5 mb-4 py-3 flex justify-center items-center">
-                    <div className="">
-                      
+                    <div className="w-[100%] h-auto bg-black/15 p-3 mt-16">
+                     {
+                       todo && todo.map((item,i) => (
+                        <>
+                        <div>{item.name}</div>
+                        </>
+                       ))
+                     }
                     </div>
                 </div>
                
