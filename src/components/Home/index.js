@@ -4,6 +4,7 @@ import { Menu } from "../Menu"
 export const Home2 = () => {
     const home = false
     const frens = false
+    const task = true
     return(
     <div>
         {
@@ -104,6 +105,35 @@ h
                     </div>
                     
                 </div>
+            </div>
+            
+            </>
+        )
+        }
+
+{
+            task && (
+            <>
+            <div className="bg-gothic-950/0 mt-0 flex p-3 bg-slate-600/0 flex-col w-[100%] h-auto">
+                 <div className="w-[100%] h-12 px-2 mt-5 mb-4 py-3 flex justify-center items-center">
+                    <div className="">
+                      <p className="text-[39px] font-bold  text-white/75">Task 📝</p>
+                    </div>
+                </div>
+                <div className="mt-7 py-2 flex flex-col items-center justify-center">
+                    <p className="text-[18px] text-white font-light">Your Fuse Point:</p>
+                    <div className="flex items-center justify-center">
+                        <img className="h-16 w-16 ml-auto mr-1 " src="./assets/show.png" />
+                        <p className="text-4xl ml-1 text-white mr-auto font-bold ">{`12`}</p>
+                    </div>
+                </div>
+                <div className="w-[100%] h-12 px-2 mt-5 mb-4 py-3 flex justify-center items-center">
+                    <div className="">
+                      
+                    </div>
+                </div>
+               
+               
             </div>
             
             </>
