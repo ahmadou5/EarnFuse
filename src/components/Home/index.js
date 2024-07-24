@@ -6,8 +6,8 @@ import { useEffect, useState } from "react"
 
 export const Home2 = () => {
     const {isHome, isFrens, isTask, isBoost} = GlobalContext()
-    const [points,setPoints] = useState(50000)
-    const [energy,setEnergy] = useState(100000)
+    const [points,setPoints] = useState(0)
+    const [energy,setEnergy] = useState(15000)
     const [clicks,setClicks] = useState([])
 
     const pointsAdd = 2
@@ -79,7 +79,7 @@ export const Home2 = () => {
                         {clicks.map((click) => (
                             <>
                             <div key={click.id}
-                            className="absolute text-3xl font-bold opacity-0"
+                            className="absolute text-5xl text-white/70 font-light opacity-0"
                             style={{
                                 top:`${click.y + 150}px`,
                                 left: `${click.x + 20}px`,
@@ -95,10 +95,10 @@ export const Home2 = () => {
                 </div>
                 <div className="w-[100%] mt-10 flex flex-col items-center justify-center">
                     <div className="mb-2 text-white">
-                        {`${energy}/100000`}
+                        {`${energy}/15000`}
                     </div>
-                    <div className="bg-white/70 rounded-xl h-3 w-[80%]">
-                        <div className="bg-blue-400/80 rounded-full h-[100%]" style={{width:`${energy/100000 * 100}%`}}>
+                    <div className="bg-white/90 rounded-xl h-3 w-[80%]">
+                        <div className="bg-blue-500/50 rounded-full h-[100%]" style={{width:`${energy/15000 * 100}%`}}>
 
                         </div>
                     </div>
