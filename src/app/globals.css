@@ -75,3 +75,14 @@ body {
 @keyframes l6 {
     100% {inset:0}
 }
+
+@keyframes float {
+  0% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: rotateY(-50px);
+  }
+}

@@ -2,11 +2,40 @@
 import { IoSettings, IoWallet } from "react-icons/io5"
 import { BackMenu, Menu } from "../Menu"
 import { GlobalContext } from "@/context/AppContext"
+import { useEffect, useState } from "react"
 
 export const Home2 = () => {
     const {isHome, isFrens, isTask, isBoost} = GlobalContext()
-    
-    
+    const [points,setPoints] = useState(50000)
+    const [energy,setEnergy] = useState(100000)
+    const [clicks,setClicks] = useState([])
+
+    const pointsAdd = 2
+    const EnergyRemove = 2
+
+    const handleClick = (e) => {
+        if(energy - EnergyRemove < 0) {
+            return;
+        }
+        const rect = e.currentTarget.getBoundingClientRect()
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+
+        setPoints(points + pointsAdd);
+        setEnergy(energy - EnergyRemove < 0 ? 0 : energy - EnergyRemove)
+        setClicks([...clicks, {id: Date.now(),x,y}])
+    }
+
+    const handleAnimationEnd = (id) => {
+        setClicks((prevClick) => prevClick.filter(click => click.id !== id));
+    }
+
+    useEffect(() => {
+        const interval = setInterval(() => {
+            setEnergy((prevEnergy) => Math.min(prevEnergy + 1,100000));
+        },100000)
+        return () => clearInterval(interval)
+    },[])
     const todo =  [
         {
             name: 'folloe'
@@ -41,20 +70,37 @@ export const Home2 = () => {
                     <p className="text-[18px] text-white font-light">Your Fuse Point:</p>
                     <div className="flex items-center justify-center">
                         <img className="h-16 w-16 ml-auto mr-1 " src="./assets/show.png" />
-                        <p className="text-4xl ml-1 text-white mr-auto font-bold ">{`12665543`}</p>
+                        <p className="text-4xl ml-1 text-white mr-auto font-bold ">{points}</p>
                     </div>
                 </div>
-                <div className="mt-4 flex items-center justify-center">
-                    <div>
+                <div className="mt-4 flex flex-grow items-center justify-center">
+                    <div onClick={handleClick} className=" rounded-full">
                         <img src="./assets/sol.png" className="w-[270px] h-[270px]" />
+                        {clicks.map((click) => (
+                            <>
+                            <div key={click.id}
+                            className="absolute text-3xl font-bold opacity-0"
+                            style={{
+                                top:`${click.y + 150}px`,
+                                left: `${click.x + 20}px`,
+                                animation: `float 1s ease-out`
+                            }}
+                            onAnimationEnd={() => handleAnimationEnd(click.id)}
+                            >
+                              {pointsAdd}
+                            </div>
+                            </>
+                        ))}
                     </div>
                 </div>
                 <div className="w-[100%] mt-10 flex flex-col items-center justify-center">
                     <div className="mb-2 text-white">
-                        0/ 100000
+                        {`${energy}/100000`}
                     </div>
-                    <div className="bg-white rounded-xl h-3 w-[80%]">
-h
+                    <div className="bg-white/70 rounded-xl h-3 w-[80%]">
+                        <div className="bg-blue-400/80 rounded-full h-[100%]" style={{width:`${energy/100000 * 100}%`}}>
+
+                        </div>
                     </div>
                 </div>
             </div>
