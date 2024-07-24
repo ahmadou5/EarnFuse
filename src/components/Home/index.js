@@ -62,10 +62,10 @@ export const Home2 = () => {
             botton: 'Follow',
         },
         {
-            taskName:'Dance ',
+            taskName:'Subscribe Youtube',
             taskPoint: 20000,
-            taskUrl: 'https://t.me/InFuseChannel',
-            botton: 'dance'
+            taskUrl: 'https://www.youtube.com/@InFuseWallet',
+            botton: 'Subscribe'
         },
        
      
