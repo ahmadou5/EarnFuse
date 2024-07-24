@@ -65,7 +65,7 @@ export const Home2 = () => {
             taskName:'Subscribe Youtube',
             taskPoint: 20000,
             taskUrl: 'https://www.youtube.com/@InFuseWallet',
-            botton: 'Subscribe'
+            botton: 'Follow'
         },
        
      
