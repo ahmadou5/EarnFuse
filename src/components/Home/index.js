@@ -152,11 +152,12 @@ h
                             <div className="ml-1 mr-6">
                                 <img src="./assets/sol.png" className="w-12 h-12"/>
                             </div>
-                            <div className="mt-2">
+                            <div className="mt-1 text-sm">
                                 <p>{item.name}</p>
+                                <div>{item.name}</div>
                             </div>
-                            <div className="ml-auto mr-3 mt-1">
-                                <div className="bg-red-900 rounded-xl flex items-center justify-center w-[80px] h-9">claim</div>
+                            <div className="ml-auto mr-2 mt-2">
+                                <div className="bg-blue-400/20 rounded-3xl text-sm flex items-center justify-center w-[70px] h-8">claim</div>
                             </div>
                         </div>
                         </>
