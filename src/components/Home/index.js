@@ -216,7 +216,7 @@ export const Home2 = () => {
                        todo && todo.map((item,i) => (
                         <>
                         <div key={i} className="w-[100%] mt-2 mb-2 h-auto flex rounded-xl py-3 px-3 bg-black/15">
-                            <div className="ml-1 mr-6">
+                            <div className="ml-1 mr-3">
                                 <img src="./assets/sol.png" className="w-12 h-12"/>
                             </div>
                             <div className="mt-1 text-sm">
@@ -224,7 +224,7 @@ export const Home2 = () => {
                                 <div>{item.taskPoint.toLocaleString()}</div>
                             </div>
                             <div className="ml-auto mr-2 mt-2">
-                                <div onClick={() => window.open(item.taskUrl)} className="bg-blue-400/20 rounded-3xl text-sm flex items-center justify-center w-[70px] h-8">{item.botton}</div>
+                                <div onClick={() => window.open(item.taskUrl)} className="bg-blue-400/20 rounded-3xl text-sm flex items-center justify-center w-[78px] h-8">{item.botton}</div>
                             </div>
                         </div>
                         </>
