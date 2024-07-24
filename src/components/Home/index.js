@@ -41,7 +41,7 @@ export const Home2 = () => {
                     <p className="text-[18px] text-white font-light">Your Fuse Point:</p>
                     <div className="flex items-center justify-center">
                         <img className="h-16 w-16 ml-auto mr-1 " src="./assets/show.png" />
-                        <p className="text-4xl ml-1 text-white mr-auto font-bold ">{`12`}</p>
+                        <p className="text-4xl ml-1 text-white mr-auto font-bold ">{`12665543`}</p>
                     </div>
                 </div>
                 <div className="mt-4 flex items-center justify-center">
@@ -136,19 +136,29 @@ h
                       <p className="text-[39px] font-bold  text-white/75">Tasks 📝</p>
                     </div>
                 </div>
-                <div className="mt-4 py-2 flex flex-col ">
+                <div className="mt-4 py-2 mb-16 flex flex-col ">
                     <p className="text-[30px] ml-2 text-start text-white font-semibold">Earn More Points</p>
                     <div className="flex px-1 py-2">
                         <p className="text-[20px] ml-1 text-white mr-auto font-light ">{`Complete daily tasks to earn more Fuse Points and level up quickly!`}</p>
                     </div>
                 </div>
                 
-                <div className="w-[100%] h-12 px-2 mt-5 mb-4 py-3 flex justify-center items-center">
-                    <div className="w-[100%] h-auto rounded-xl text-white/70 bg-black/15 p-3 mt-16">
+                <div className="w-[100%] h-12 px-2 mt-20 mb-4 py-5 flex justify-center items-center">
+                    <div className="w-[100%] h-auto rounded-xl text-white/70 bg-black/0 p-0 mt-16">
                      {
                        todo && todo.map((item,i) => (
                         <>
-                        <div>{item.name}</div>
+                        <div key={i} className="w-[100%] mt-2 mb-2 h-auto flex rounded-xl py-3 px-3 bg-black/15">
+                            <div className="ml-1 mr-6">
+                                <img src="./assets/sol.png" className="w-12 h-12"/>
+                            </div>
+                            <div className="mt-2">
+                                <p>{item.name}</p>
+                            </div>
+                            <div className="ml-auto mr-3 mt-1">
+                                <div className="bg-red-900 rounded-xl flex items-center justify-center w-[80px] h-9">claim</div>
+                            </div>
+                        </div>
                         </>
                        ))
                      }
