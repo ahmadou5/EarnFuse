@@ -7,6 +7,7 @@ const TapContext = createContext()
 
 
 export const TapContextProvider = ({children}) => {
+  const [isAuth,setIsAuth] = useState(false)
   const [isHome,setIsHome] = useState(true)
   const [isFrens,setIsFrens] = useState(false)
   const [isTask,setIsTask] = useState(false)
@@ -16,6 +17,8 @@ export const TapContextProvider = ({children}) => {
     isFrens,
     isTask,
     isBoost,
+    isAuth,
+    setIsAuth,
     setIsBoost,
     setIsTask,
     setIsFrens,
