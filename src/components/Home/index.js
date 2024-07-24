@@ -38,35 +38,36 @@ export const Home2 = () => {
     },[])
     const todo =  [
         {
-            taskName:'Follow InFuse Channel on Tg',
+            taskName:'Follow InFuse Channel',
             taskPoint: 20000,
-            taskUrl: 'https://t.me/InFuseChannel'
+            taskUrl: 'https://t.me/InFuseChannel',
+            botton: 'Follow'
         },
         {
-            taskName:'Follow InFuse Channel on Tg',
+            taskName:'Join InFuse Chat',
             taskPoint: 20000,
-            taskUrl: 'https://t.me/InFuseChannel'
+            taskUrl: 'https://t.me/InFuseWallet',
+            botton: 'Join'
         },
         {
-            taskName:'Follow InFuse Channel on Tg',
+            taskName:'Follow InFuse on X',
             taskPoint: 20000,
-            taskUrl: 'https://t.me/InFuseChannel'
+            taskUrl: 'https://x.com/infusewallet',
+            botton: 'Follow'
         },
         {
-            taskName:'Follow InFuse Channel on Tg',
+            taskName:'Follow Ahmad on X',
             taskPoint: 20000,
-            taskUrl: 'https://t.me/InFuseChannel'
+            taskUrl: 'https://x.com/4hmadou_5',
+            botton: 'Follow',
         },
         {
-            taskName:'Follow InFuse Channel on Tg',
+            taskName:'Dance ',
             taskPoint: 20000,
-            taskUrl: 'https://t.me/InFuseChannel'
+            taskUrl: 'https://t.me/InFuseChannel',
+            botton: 'dance'
         },
-        {
-            taskName:'Follow InFuse Channel on Tg',
-            taskPoint: 20000,
-            taskUrl: 'https://t.me/InFuseChannel'
-        },
+       
      
     ]
     return(
@@ -223,7 +224,7 @@ export const Home2 = () => {
                                 <div>{item.taskPoint.toLocaleString()}</div>
                             </div>
                             <div className="ml-auto mr-2 mt-2">
-                                <div onClick={() => window.open(item.taskUrl)} className="bg-blue-400/20 rounded-3xl text-sm flex items-center justify-center w-[70px] h-8">start</div>
+                                <div onClick={() => window.open(item.taskUrl)} className="bg-blue-400/20 rounded-3xl text-sm flex items-center justify-center w-[70px] h-8">{item.botton}</div>
                             </div>
                         </div>
                         </>
