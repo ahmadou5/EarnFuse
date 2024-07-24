@@ -38,17 +38,36 @@ export const Home2 = () => {
     },[])
     const todo =  [
         {
-            name: 'folloe'
+            taskName:'Follow InFuse Channel on Tg',
+            taskPoint: 20000,
+            taskUrl: 'https://t.me/InFuseChannel'
         },
         {
-            name: 'folloe'
+            taskName:'Follow InFuse Channel on Tg',
+            taskPoint: 20000,
+            taskUrl: 'https://t.me/InFuseChannel'
         },
         {
-            name: 'folloe'
+            taskName:'Follow InFuse Channel on Tg',
+            taskPoint: 20000,
+            taskUrl: 'https://t.me/InFuseChannel'
         },
         {
-            name: 'folloe'
+            taskName:'Follow InFuse Channel on Tg',
+            taskPoint: 20000,
+            taskUrl: 'https://t.me/InFuseChannel'
         },
+        {
+            taskName:'Follow InFuse Channel on Tg',
+            taskPoint: 20000,
+            taskUrl: 'https://t.me/InFuseChannel'
+        },
+        {
+            taskName:'Follow InFuse Channel on Tg',
+            taskPoint: 20000,
+            taskUrl: 'https://t.me/InFuseChannel'
+        },
+     
     ]
     return(
     <div>
@@ -200,11 +219,11 @@ export const Home2 = () => {
                                 <img src="./assets/sol.png" className="w-12 h-12"/>
                             </div>
                             <div className="mt-1 text-sm">
-                                <p>{item.name}</p>
-                                <div>{item.name}</div>
+                                <p>{item.taskName}</p>
+                                <div>{toLocaleString(item.taskPoint)}</div>
                             </div>
                             <div className="ml-auto mr-2 mt-2">
-                                <div className="bg-blue-400/20 rounded-3xl text-sm flex items-center justify-center w-[70px] h-8">start</div>
+                                <div onClick={() => window.open(item.taskUrl)} className="bg-blue-400/20 rounded-3xl text-sm flex items-center justify-center w-[70px] h-8">start</div>
                             </div>
                         </div>
                         </>
