@@ -9,7 +9,35 @@ import { RiCoinsLine } from "react-icons/ri";
 import { BsCoin } from "react-icons/bs";
 import { GlobalContext } from "@/context/AppContext";
 
-
+export const BackMenu = () => {
+  const { isHome,
+    isFrens,
+    isTask,
+    isBoost,
+    setIsBoost,
+    setIsTask,
+    setIsFrens,
+    setIsHome
+  } = GlobalContext()
+  return(
+  <div
+    style={{ "backdrop-filter": "blur(12px)" }}
+    className=" w-[40%] ml-auto mr-auto rounded-3xl py-1 px-1.5 z-100 bg-black/45 mb-2  fixed inset-x-0 bottom-1 flex justify-center items-center"
+  >
+    <div className="lg:py-2.5 py-1.5 lg:px-2.5 px-1.5  mt-auto mb-auto ml-auto mr-auto w-[98%] flex flex-row  h-[90%]">
+    <div onClick={() => {
+              setIsFrens(false)
+              setIsBoost(false)
+              setIsHome(true)
+              setIsTask(false)
+            }} className={`h-12 ml-auto mr-auto w-[90%] bg-white/0 flex flex-col items-center justify-center`}>
+                 <IoHome size={28} className={`text-xl`} />
+                 <p size={28} className={`text-xl`} >Back Home</p>
+            </div>
+    </div>
+  </div>
+)
+}
 
 
 export const Menu = () => {

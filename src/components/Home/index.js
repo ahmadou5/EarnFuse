@@ -1,6 +1,6 @@
 'use client'
 import { IoSettings, IoWallet } from "react-icons/io5"
-import { Menu } from "../Menu"
+import { BackMenu, Menu } from "../Menu"
 import { GlobalContext } from "@/context/AppContext"
 
 export const Home2 = () => {
@@ -106,6 +106,7 @@ h
                             <p className="text-xl font-light text-white text-center">10000</p>
                         </div>
                      </div>
+                     <BackMenu />
                     </div>
                     
                 </div>
@@ -165,7 +166,7 @@ h
                      }
                     </div>
                 </div>
-               
+               <BackMenu/>
                
             </div>
             
