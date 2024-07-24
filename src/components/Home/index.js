@@ -6,7 +6,7 @@ import { useEffect, useState } from "react"
 
 export const Home2 = () => {
     const {isHome, isFrens, isTask, isBoost} = GlobalContext()
-    const [points,setPoints] = useState(0)
+    const [points,setPoints] = useState(1111000)
     const [energy,setEnergy] = useState(15000)
     const [clicks,setClicks] = useState([])
 
@@ -70,7 +70,7 @@ export const Home2 = () => {
                     <p className="text-[18px] text-white font-light">Your Fuse Point:</p>
                     <div className="flex items-center justify-center">
                         <img className="h-16 w-16 ml-auto mr-1 " src="./assets/show.png" />
-                        <p className="text-4xl ml-1 text-white mr-auto font-bold ">{points}</p>
+                        <p className="text-4xl ml-1 text-white mr-auto font-bold ">{points.toLocaleString()}</p>
                     </div>
                 </div>
                 <div className="mt-4 flex flex-grow items-center justify-center">
