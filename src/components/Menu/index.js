@@ -30,8 +30,8 @@ export const BackMenu = () => {
               setIsBoost(false)
               setIsHome(true)
               setIsTask(false)
-            }} className={`h-12 ml-auto mr-auto w-[90%] bg-white/0 flex flex-col items-center justify-center`}>
-                 <IoHome size={24} className={`text-xl text-white/70`} />
+            }} className={`h-11 ml-auto mr-auto w-[90%] bg-white/0 flex flex-col items-center justify-center`}>
+                 <IoHome size={20} className={`text-sm text-white/70`} />
                  <p className={`text-sm text-white/70`} >Home</p>
             </div>
     </div>
