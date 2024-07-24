@@ -157,7 +157,7 @@ h
                                 <div>{item.name}</div>
                             </div>
                             <div className="ml-auto mr-2 mt-2">
-                                <div className="bg-blue-400/20 rounded-3xl text-sm flex items-center justify-center w-[70px] h-8">claim</div>
+                                <div className="bg-blue-400/20 rounded-3xl text-sm flex items-center justify-center w-[70px] h-8">start</div>
                             </div>
                         </div>
                         </>
