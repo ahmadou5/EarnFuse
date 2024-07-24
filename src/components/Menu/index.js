@@ -22,7 +22,7 @@ export const BackMenu = () => {
   return(
   <div
     style={{ "backdrop-filter": "blur(12px)" }}
-    className=" w-[70px] h-[70px] ml-5 mr-auto rounded-full px-1.5 z-100 bg-black/20 mb-6 text-white/75  fixed inset-x-0 bottom-1 flex justify-center items-center"
+    className=" w-[60px] h-[60px] ml-5 mr-auto rounded-full px-1.5 z-100 bg-blue-400/50 mb-6 text-white/75  fixed inset-x-0 bottom-1 flex justify-center items-center"
   >
     <div className="lg:py-2.5 py-0 lg:px-2.5 px-1.5  mt-auto mb-auto ml-auto mr-auto w-[98%] flex items-center justify-center  h-[90%]">
     <div onClick={() => {
@@ -31,7 +31,7 @@ export const BackMenu = () => {
               setIsHome(true)
               setIsTask(false)
             }} className={`h-11 ml-auto mr-auto w-[90%] bg-white/0 flex flex-col items-center justify-center`}>
-                 <IoHome size={20} className={`text-sm text-white/70`} />
+                 <IoHome size={18} className={`text-sm text-white/70`} />
                 
             </div>
     </div>
