@@ -209,7 +209,7 @@ export const Home2 = () => {
                     </div>
                 </div>
                 
-                <div className="w-[100%] h-12 px-2 mt-20 mb-4 py-5 flex justify-center items-center">
+                <div className="w-[100%] h-auto px-2 mt-20 mb-4 py-5 flex justify-center items-center">
                     <div className="w-[100%] h-auto rounded-xl text-white/70 bg-black/0 p-0 mt-16">
                      {
                        todo && todo.map((item,i) => (
