@@ -4,10 +4,9 @@ import { Menu } from "../Menu"
 import { GlobalContext } from "@/context/AppContext"
 
 export const Home2 = () => {
-    const {isHome, isFrens, isTask, isBoost} = GlobalContext
+    const {isHome, isFrens, isTask, isBoost} = GlobalContext()
     
-    const frens = false
-    const task = true
+    
     const todo =  [
         {
             name: 'folloe'
