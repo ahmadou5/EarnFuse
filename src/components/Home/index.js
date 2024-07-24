@@ -142,7 +142,7 @@ h
                 </div>
                 
                 <div className="w-[100%] h-12 px-2 mt-5 mb-4 py-3 flex justify-center items-center">
-                    <div className="w-[100%] h-auto bg-black/15 p-3 mt-16">
+                    <div className="w-[100%] h-auto rounded-xl text-white/70 bg-black/15 p-3 mt-16">
                      {
                        todo && todo.map((item,i) => (
                         <>
