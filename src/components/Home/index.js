@@ -220,7 +220,7 @@ export const Home2 = () => {
                             </div>
                             <div className="mt-1 text-sm">
                                 <p>{item.taskName}</p>
-                                <div>{toLocaleString(item.taskPoint)}</div>
+                                <div>{item.taskPoint.toLocaleString()}</div>
                             </div>
                             <div className="ml-auto mr-2 mt-2">
                                 <div onClick={() => window.open(item.taskUrl)} className="bg-blue-400/20 rounded-3xl text-sm flex items-center justify-center w-[70px] h-8">start</div>
