@@ -6,8 +6,8 @@ import { useEffect, useState } from "react"
 
 export const Home2 = () => {
     const {isHome, isFrens, isTask, isBoost} = GlobalContext()
-    const [points,setPoints] = useState(1111000)
-    const [energy,setEnergy] = useState(15000)
+    const [points,setPoints] = useState(0)
+    const [energy,setEnergy] = useState(20000)
     const [clicks,setClicks] = useState([])
 
     const pointsAdd = 2
@@ -124,7 +124,7 @@ export const Home2 = () => {
                             }}
                             onAnimationEnd={() => handleAnimationEnd(click.id)}
                             >
-                              {pointsAdd}
+                              {`+${pointsAdd}`}
                             </div>
                             </>
                         ))}
@@ -132,10 +132,10 @@ export const Home2 = () => {
                 </div>
                 <div className="w-[100%] mt-10 flex flex-col items-center justify-center">
                     <div className="mb-2 text-white">
-                        {`${energy}/15000`}
+                        {`${energy}/20000`}
                     </div>
                     <div className="bg-white/90 rounded-xl h-3 w-[80%]">
-                        <div className="bg-blue-500/50 rounded-full h-[100%]" style={{width:`${energy/15000 * 100}%`}}>
+                        <div className="bg-blue-500/50 rounded-full h-[100%]" style={{width:`${energy/20000 * 100}%`}}>
 
                         </div>
                     </div>
@@ -152,7 +152,7 @@ export const Home2 = () => {
             <div className="bg-gothic-950/0 mt-0 flex p-3 bg-slate-600/0 flex-col w-[100%] h-auto">
                  <div className="w-[100%] h-12 px-2 mt-5 mb-4 py-3 flex justify-center items-center">
                     <div className="">
-                      <p className="text-[32px] font-bold  text-white/75">Plugs 👩🏽‍🚀</p>
+                      <p className="text-[32px] font-bold  text-white/75">frens 👩🏽‍🚀</p>
                     </div>
                 </div>
                 <div className="w-[100%] h-[70px] px-2 mt-4 py-3 flex">
@@ -161,7 +161,7 @@ export const Home2 = () => {
                         invite frens, earn points!
                       </p>
                       <p className="text-sm font-bold p-0 textt-center mt-3 text-white/75">
-                        Claim Level 1 Plug Reward, <br/> by inviting 5 plugs.
+                        Claim Level 1 Plug Reward, <br/> by inviting 5 frens.
                       </p>
                     </div>
                     <div className="w-[25%] flex items-center justify-center">
@@ -194,7 +194,7 @@ export const Home2 = () => {
                 </div>
                 <div className="w-[100%] mt-8 flex items-center  justify-center">
                         <div className="h-20 w-[98%] rounded-2xl flex items-center justify-center bg-black/25">
-                            <p className="text-[19px] font-light">{`https://t.me/InFuseTapbot?start=${123456}`}</p>
+                            <p className="text-[20px] font-light">{`https://t.me/InFuseTapbot?start=${123456}`}</p>
                         </div>
                     </div>
                 <div className="w-[100%] h-[150px] bg-blue-700/0 px-2 mt-8 p-4 flex">
