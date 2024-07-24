@@ -1,8 +1,11 @@
+'use client'
 import { IoSettings, IoWallet } from "react-icons/io5"
 import { Menu } from "../Menu"
+import { GlobalContext } from "@/context/AppContext"
 
 export const Home2 = () => {
-    const home = false
+    const {isHome, isFrens, isTask, isBoost} = GlobalContext
+    
     const frens = false
     const task = true
     const todo =  [
@@ -22,7 +25,7 @@ export const Home2 = () => {
     return(
     <div>
         {
-            home && (
+            isHome && (
             <>
             <div className="bg-gothic-950/0 mt-0 flex bg-slate-600/0 flex-col w-[100%] h-auto">
             <div className="w-[100%] bg-black/0">
@@ -62,7 +65,7 @@ h
         )
         }
         {
-            frens && (
+            isFrens && (
             <>
             <div className="bg-gothic-950/0 mt-0 flex p-3 bg-slate-600/0 flex-col w-[100%] h-auto">
                  <div className="w-[100%] h-12 px-2 mt-5 mb-4 py-3 flex justify-center items-center">
@@ -126,7 +129,7 @@ h
         }
 
 {
-            task && (
+            isTask && (
             <>
             <div className="bg-gothic-950/0 mt-0 flex p-3 bg-slate-600/0 flex-col w-[100%] h-auto">
                  <div className="w-[100%] h-12 px-2 mt-5 mb-4 py-3 flex justify-center items-center">

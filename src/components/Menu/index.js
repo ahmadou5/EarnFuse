@@ -13,11 +13,20 @@ import { GlobalContext } from "@/context/AppContext";
 
 
 export const Menu = () => {
+   const { isHome,
+    isFrens,
+    isTask,
+    isBoost,
+    setIsBoost,
+    setIsTask,
+    setIsFrens,
+    setIsHome
+  } = GlobalContext()
    const [isWallet,setIsWallet] = useState(true)
    const [isSwap,setIsSwap] = useState(true)
    const [isTokens,setIsTokens] = useState(true)
    const [isHistory,setIsHistory] = useState(true)
- 
+   
     const router = useRouter()
     const handleCopy = (value) => {
       navigator.clipboard.writeText(value).then(
@@ -60,29 +69,29 @@ export const Menu = () => {
         >
           <div className="lg:py-2.5 py-1.5 lg:px-2.5 px-1.5  mt-auto mb-auto ml-auto mr-auto w-[98%] flex flex-row  h-[90%]">
             <div onClick={() => {
-              setIsHistory(false)
-              setIsSwap(false)
-              setIsTokens(false)
-              setIsWallet(true)
+              setIsFrens(false)
+              setIsBoost(false)
+              setIsHome(false)
+              setIsTask(true)
             }} className={`h-12 ml-auto mr-auto w-[30%] bg-white/0 flex flex-col items-center justify-center`}>
-                 <p size={28} className={`${ isHistory ? 'text-[#448cff]' : 'text-gothic-600/85'} text-2xl`} >📝</p>
+                 <p size={28} className={`${ isTask ? 'text-[#448cff]' : 'text-gothic-600/85'} text-2xl`} >📝</p>
                 <p className={`font-light mt-1 text-white text-[12px]`}>Tasks</p>
             </div>
             
             <div onClick={() => {
-              setIsHistory(false)
-              setIsSwap(true)
-              setIsWallet(false)
-              setIsTokens(false)
+             setIsFrens(false)
+             setIsBoost(true)
+             setIsHome(false)
+             setIsTask(false)
             }} className={`h-12 ml-auto mr-auto w-[30%] bg-white/0 flex flex-col items-center justify-center`}>
                 <p size={28} className={`${ isHistory ? 'text-[#448cff]' : 'text-gothic-600/85'} text-2xl`} >🚀</p>
                 <p className={`font-light mt-1 text-white text-[12px]`}>Boosts</p>
             </div>
             <div onClick={() => {
-              setIsHistory(true)
-              setIsSwap(false)
-              setIsWallet(false)
-              setIsTokens(false)
+              setIsFrens(true)
+              setIsBoost(false)
+              setIsHome(false)
+              setIsTask(false)
             }}
              className={`h-12 ml-auto mr-auto w-[30%] bg-white/0 flex flex-col items-center justify-center`}>
                 <p size={28} className={`${ isHistory ? 'text-[#448cff]' : 'text-gothic-600/85'} text-2xl`} >👩🏽‍🚀</p>
