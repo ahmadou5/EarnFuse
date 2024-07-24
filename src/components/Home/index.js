@@ -203,15 +203,15 @@ export const Home2 = () => {
                       <p className="text-[39px] font-bold  text-white/75">Tasks 📝</p>
                     </div>
                 </div>
-                <div className="mt-4 py-2 mb-16 flex flex-col ">
+                <div className="mt-4 py-2 mb-2 flex flex-col ">
                     <p className="text-[30px] ml-2 text-start text-white font-semibold">Earn More Points</p>
                     <div className="flex px-1 py-2">
                         <p className="text-[20px] ml-1 text-white mr-auto font-light ">{`Complete daily tasks to earn more Fuse Points and level up quickly!`}</p>
                     </div>
                 </div>
                 
-                <div className="w-[100%] h-auto px-2 mt-8 mb-4 py-5 flex justify-center items-center">
-                    <div className="w-[100%] h-auto rounded-xl text-white/70 bg-black/0 p-0 mt-16">
+                <div className="w-[100%] h-auto px-2 mt-4 mb-4 py-5 flex justify-center items-center">
+                    <div className="w-[100%] h-auto rounded-xl text-white/70 bg-black/0 p-0 mt-2">
                      {
                        todo && todo.map((item,i) => (
                         <>
