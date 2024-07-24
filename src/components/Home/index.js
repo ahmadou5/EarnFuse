@@ -74,8 +74,8 @@ export const Home2 = () => {
                     </div>
                 </div>
                 <div className="mt-4 flex flex-grow items-center justify-center">
-                    <div onClick={handleClick} className=" rounded-full">
-                        <img src="./assets/sol.png" className="w-[270px] h-[270px]" />
+                    <div  className=" rounded-full">
+                        <img src="./assets/sol.png" onClick={handleClick} className="w-[270px] bg-black/0 rounded-full h-[270px]" />
                         {clicks.map((click) => (
                             <>
                             <div key={click.id}
