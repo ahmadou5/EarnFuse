@@ -36,6 +36,23 @@ export const Home2 = () => {
         },100000)
         return () => clearInterval(interval)
     },[])
+    const boost = [
+        {
+            boostName: 'Multi Tap',
+            amount: 100000,
+            boostType: 'booster'
+        },
+        {
+            boostName: 'Robot',
+            amount: 100000,
+            boostType: 'booster'
+        },
+        {
+            boostName: 'Tap',
+            amount: 100000,
+            boostType: 'daily'
+        },
+    ]
     const todo =  [
         {
             taskName:'Follow InFuse Channel',
@@ -172,11 +189,15 @@ export const Home2 = () => {
                             <p className="text-xl font-light text-white text-center">10000</p>
                         </div>
                      </div>
-                     <BackMenu />
                     </div>
                     
                 </div>
-                <div className="w-[100%] h-[150px] bg-blue-700/0 px-2 mt-20 p-4 flex">
+                <div className="w-[100%] mt-8 flex items-center  justify-center">
+                        <div className="h-20 w-[98%] rounded-2xl flex items-center justify-center bg-black/25">
+                            <p className="text-[19px] font-light">{`https://t.me/InFuseTapbot?start=${123456}`}</p>
+                        </div>
+                    </div>
+                <div className="w-[100%] h-[150px] bg-blue-700/0 px-2 mt-8 p-4 flex">
                     <div className="w-[100%] p-4 flex h-[100%] text-white bg-white/0 rounded-xl">
                      <div className="w-[45%] flex mr-auto items-center justify-center h-14  border-white/70 border-2 bg-black/0 rounded-3xl" >
                       <p className="text-[18px] font-bold">Invite Plug</p>
@@ -188,13 +209,14 @@ export const Home2 = () => {
                     </div>
                     
                 </div>
+                <BackMenu />
             </div>
             
             </>
         )
         }
 
-{
+        {
             isTask && (
             <>
             <div className="bg-gothic-950/0 mt-0 flex p-3 bg-slate-600/0 flex-col w-[100%] h-auto">
@@ -226,6 +248,71 @@ export const Home2 = () => {
                             <div className="ml-auto mr-2 mt-2">
                                 <div onClick={() => window.open(item.taskUrl)} className="bg-blue-400/20 rounded-3xl text-sm flex items-center justify-center w-[78px] h-8">{item.botton}</div>
                             </div>
+                        </div>
+                        </>
+                       ))
+                     }
+                    </div>
+                </div>
+               <BackMenu/>
+               
+            </div>
+            
+            </>
+        )
+        }
+        {
+            isBoost && (
+            <>
+            <div className="bg-gothic-950/0 mt-0 flex p-3 bg-slate-600/0 flex-col w-[100%] h-auto">
+                 <div className="w-[100%] h-12 px-2 mt-5 mb-4 py-3 flex justify-center items-center">
+                    <div className="">
+                      <p className="text-[39px] font-bold  text-white/75">Boost 🚀</p>
+                    </div>
+                </div>
+                <div className="mt-7 py-2 flex flex-col items-center justify-center">
+                    <p className="text-[18px] text-white font-light">Your Fuse Point:</p>
+                    <div className="flex items-center justify-center">
+                        <img className="h-16 w-16 ml-auto mr-1 " src="./assets/show.png" />
+                        <p className="text-4xl ml-1 text-white mr-auto font-bold ">{points.toLocaleString()}</p>
+                    </div>
+                </div>
+                <div className="w-[100%] h-auto px-2 mt-2 mb-1 py-5 flex flex-col justify-center items-center">
+                    <p>Daily Boosters</p>
+                    <div className="w-[100%] h-auto rounded-xl text-white/70 bg-black/0 p-0 mt-2">
+                     {
+                       boost && boost.filter((boos) => boos.boostType == 'daily').map((item,i) => (
+                        <>
+                        <div key={i} className="w-[100%] mt-2 mb-2 h-auto flex rounded-xl py-3 px-3 bg-black/15">
+                            <div className="ml-1 mr-3">
+                                <img src="./assets/sol.png" className="w-12 h-12"/>
+                            </div>
+                            <div className="mt-1 text-sm">
+                                <p>{item.boostName}</p>
+                                <div>{item.amount.toLocaleString()}</div>
+                            </div>
+                            
+                        </div>
+                        </>
+                       ))
+                     }
+                    </div>
+                </div>
+                <div className="w-[100%] h-auto px-2 mt-2 mb-2 py-5 flex flex-col justify-center items-center">
+                    <p>Booster</p>
+                    <div className="w-[100%] h-auto rounded-xl text-white/70 bg-black/0 p-0 mt-2">
+                     {
+                       boost && boost.filter((boos) => boos.boostType == 'booster').map((item,i) => (
+                        <>
+                        <div key={i} className="w-[100%] mt-2 mb-2 h-auto flex rounded-xl py-3 px-3 bg-black/15">
+                            <div className="ml-1 mr-3">
+                                <img src="./assets/sol.png" className="w-12 h-12"/>
+                            </div>
+                            <div className="mt-1 text-sm">
+                                <p>{item.boostName}</p>
+                                <div>{item.amount.toLocaleString()}</div>
+                            </div>
+                            
                         </div>
                         </>
                        ))
