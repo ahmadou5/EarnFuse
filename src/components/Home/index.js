@@ -5,8 +5,9 @@ import { GlobalContext } from "@/context/AppContext"
 import { useEffect, useState } from "react"
 import { UseGetTgData } from "@/hooks/useGetUserData"
 
+
 export const Home2 = () => {
-    const {isHome, isFrens, isTask, isBoost} = GlobalContext()
+    const {isHome, isFrens, isTask, isBoost, tgUser, setTgUser} = GlobalContext()
     const [points,setPoints] = useState(0)
     const [energy,setEnergy] = useState(20000)
     const [clicks,setClicks] = useState([])
@@ -196,7 +197,7 @@ export const Home2 = () => {
                 </div>
                 <div className="w-[100%] mt-8 flex items-center  justify-center">
                         <div className="h-20 w-[98%] rounded-2xl flex items-center justify-center bg-black/25">
-                            <p className="text-[18px] font-light">{`https://t.me/InFuseTapbot?start=${123456}`}</p>
+                            <p className="text-[16px] font-light">{`https://t.me/InFuseTapbot?start=${tgUser?.initDataUnsafe?.user?.id}`}</p>
                         </div>
                     </div>
                 <div className="w-[100%] h-[150px] bg-blue-700/0 px-2 mt-8 p-4 flex">

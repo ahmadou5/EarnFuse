@@ -9,6 +9,7 @@ const TapContext = createContext()
 export const TapContextProvider = ({children}) => {
   const [isAuth,setIsAuth] = useState(false)
   const [isHome,setIsHome] = useState(true)
+  const [tgUser, setTgUser] = useState(null);
   const [isFrens,setIsFrens] = useState(false)
   const [isTask,setIsTask] = useState(false)
   const [isBoost,setIsBoost] = useState(false)
@@ -18,6 +19,8 @@ export const TapContextProvider = ({children}) => {
     isTask,
     isBoost,
     isAuth,
+    tgUser,
+    setTgUser,
     setIsAuth,
     setIsBoost,
     setIsTask,
