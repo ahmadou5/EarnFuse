@@ -234,7 +234,7 @@ export const Home2 = () => {
             isTask && (
             <>
             {
-               isConfe && <Confetti  width={width} height={height} recycle={false} /> 
+               isConfe && <Confetti  width={width} height={height} recycle={true} /> 
             }
             <div className="bg-gothic-950/0 mt-0 flex p-3 bg-slate-600/0 flex-col w-[100%] h-auto">
                  <div className="w-[100%] h-12 px-2 mt-5 mb-4 py-3 flex justify-center items-center">
