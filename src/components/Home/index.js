@@ -4,10 +4,11 @@ import { BackMenu, Menu } from "../Menu"
 import { GlobalContext } from "@/context/AppContext"
 import { useEffect, useState } from "react"
 import { UseGetTgData } from "@/hooks/useGetUserData"
+import { ClaimModal } from "../Modals/ClaimModal"
 
 
 export const Home2 = () => {
-    const {isHome, isFrens, isTask, isBoost, tgUser, setTgUser} = GlobalContext()
+    const {isHome, isFrens, isTask, isBoost, tgUser, setTgUser, isClaimModal,setIsClaimModal} = GlobalContext()
     const [taskDone,setTaskDone] = useState(false)
     const [points,setPoints] = useState(0)
     const [energy,setEnergy] = useState(20000)
@@ -250,9 +251,13 @@ export const Home2 = () => {
                                 <div>{item.taskPoint.toLocaleString()}</div>
                             </div>
                             <div className="ml-auto mr-2 mt-2">
-                                {taskDone ? <div onClick={() => window.open(item.taskUrl)} className="bg-blue-400/20 rounded-3xl text-sm flex items-center justify-center w-[78px] h-8">{'Claim'}</div> : <div onClick={() => setTaskDone(true)} className="bg-blue-400/20 rounded-3xl text-sm flex items-center justify-center w-[78px] h-8">{item.botton}</div> }
+                             <div onClick={() => {
+                                window.open(item.taskUrl)
+                                setIsClaimModal(true)
+                                }} className="bg-blue-400/20 rounded-3xl text-sm flex items-center justify-center w-[78px] h-8">{item.botton}</div>
                                 
                             </div>
+                            {isClaimModal && <ClaimModal />}
                         </div>
                         </>
                        ))
