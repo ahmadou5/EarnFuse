@@ -250,7 +250,7 @@ export const Home2 = () => {
                                 <div>{item.taskPoint.toLocaleString()}</div>
                             </div>
                             <div className="ml-auto mr-2 mt-2">
-                                {taskDone ? <div onClick={() => window.open(item.taskUrl)} className="bg-blue-400/20 rounded-3xl text-sm flex items-center justify-center w-[78px] h-8">{'Claim'}</div> : <div onClick={() => window.open(item.taskUrl)} className="bg-blue-400/20 rounded-3xl text-sm flex items-center justify-center w-[78px] h-8">{item.botton}</div> }
+                                {taskDone ? <div onClick={() => window.open(item.taskUrl)} className="bg-blue-400/20 rounded-3xl text-sm flex items-center justify-center w-[78px] h-8">{'Claim'}</div> : <div onClick={() => setTaskDone(true)} className="bg-blue-400/20 rounded-3xl text-sm flex items-center justify-center w-[78px] h-8">{item.botton}</div> }
                                 
                             </div>
                         </div>
