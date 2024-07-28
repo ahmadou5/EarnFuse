@@ -11,7 +11,7 @@ export const UseGetTgData = () => {
               console.log("Telegram WebApp is set");
               const tgData = window.Telegram.WebApp;
               console.log(tgData)
-              return tgDatas
+              return tgData
               //setUser(tgData);
             } else {
               console.log("Telegram WebApp is undefined, retrying…");
