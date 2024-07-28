@@ -197,7 +197,7 @@ export const Home2 = () => {
                 </div>
                 <div className="w-[100%] mt-8 ">
                         <div className="h-20 w-[98%] rounded-2xl flex items-center justify-center bg-black/25">
-                            <p className="text-[16px] ml-auto mr-auto text-white font-light">{`https://t.me/InFuseTapbot?start=${tgUser?.initDataUnsafe?.user?.id}`}</p>
+                            <p className="text-[16px] flex items-center justify-center ml-auto mr-auto text-center text-white font-light">{`https://t.me/InFuseTapbot?start=${tgUser?.initDataUnsafe?.user?.id}`}</p>
                         </div>
                     </div>
                 <div className="w-[100%] h-[150px] bg-blue-700/0 px-2 mt-8 p-4 flex">
