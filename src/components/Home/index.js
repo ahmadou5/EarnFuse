@@ -8,7 +8,13 @@ import { ClaimModal } from "../Modals/ClaimModal"
 
 
 export const Home2 = () => {
-    const {isHome, isFrens, isTask, isBoost, tgUser, setTgUser, isClaimModal,setIsClaimModal} = GlobalContext()
+    const {isHome, isFrens, isTask, taskName,
+        taskAmount,
+        setTaskAmount,
+        taskButton,
+        setTaskButton,
+        taskURL,setTaskURL,
+        setTaskName, isBoost, tgUser, setTgUser, isClaimModal,setIsClaimModal} = GlobalContext()
     const [taskDone,setTaskDone] = useState(false)
     const [points,setPoints] = useState(0)
     const [energy,setEnergy] = useState(20000)
@@ -252,9 +258,10 @@ export const Home2 = () => {
                             </div>
                             <div className="ml-auto mr-2 mt-2">
                              <div onClick={() => {
-                                
-                                window.open(item.taskUrl)
-                                console.log('waita')
+                                setTaskName(item.taskName)
+                                setTaskAmount(item.taskPoint)
+                                setTaskURL(item.taskUrl)
+                                setTaskButton(item.botton)
                                 setIsClaimModal(true)
                                 }} className="bg-blue-400/20 rounded-3xl text-sm flex items-center justify-center w-[78px] h-8">{item.botton}</div>
                                 
