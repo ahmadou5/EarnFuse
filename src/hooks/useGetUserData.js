@@ -10,7 +10,7 @@ export const UseGetTgData = () => {
             ) {
               console.log("Telegram WebApp is set");
               const tgData = window.Telegram.WebApp;
-              console.log(tgData)
+              console.log('data id',tgData?.initDataUnsafe?.user?.id)
               return tgData
               //setUser(tgData);
             } else {
