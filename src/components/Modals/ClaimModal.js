@@ -16,9 +16,7 @@ export const ClaimModal = () => {
                   <p className="text-black/85 text-[18px] font-light ml-auto mr-auto ">{'You Just Created a Solana Wallet'}</p>
                 </div>
                 <div onClick={() => {
-                    //setIsClaimModal(false)
                     window.open(taskURL)
-                    
                     }} className="w-[175px] mt-6  ml-auto mr-auto py-1 px-3 text-white border  border-[#448cff]/60 flex  items-center justify-center bg-[#448cff]/90 rounded-full h-9">
                   <p>Claim</p>
                 </div>
@@ -28,8 +26,10 @@ export const ClaimModal = () => {
                   <p className="text-black/85 text-[18px] font-light ml-auto mr-auto ">{'You Just Created a Solana Wallet'}</p>
                 </div>
                 <div onClick={() => {
-                    setClaim(true)
                     window.open(taskURL)
+                    setTimeout(() => {
+                        setClaim(true)
+                      }, 1000);
                     
                     }} className="w-[175px] mt-6  ml-auto mr-auto py-1 px-3 text-white border  border-[#448cff]/60 flex  items-center justify-center bg-[#448cff]/90 rounded-full h-9">
                   <p>{taskButton}</p>
