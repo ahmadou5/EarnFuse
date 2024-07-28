@@ -252,7 +252,9 @@ export const Home2 = () => {
                             </div>
                             <div className="ml-auto mr-2 mt-2">
                              <div onClick={() => {
+                                
                                 window.open(item.taskUrl)
+                                console.log('waita')
                                 setIsClaimModal(true)
                                 }} className="bg-blue-400/20 rounded-3xl text-sm flex items-center justify-center w-[78px] h-8">{item.botton}</div>
                                 
