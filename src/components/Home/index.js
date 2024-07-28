@@ -3,6 +3,7 @@ import { IoSettings, IoWallet } from "react-icons/io5"
 import { BackMenu, Menu } from "../Menu"
 import { GlobalContext } from "@/context/AppContext"
 import { useEffect, useState } from "react"
+import { UseGetTgData } from "@/hooks/useGetUserData"
 
 export const Home2 = () => {
     const {isHome, isFrens, isTask, isBoost} = GlobalContext()
@@ -12,7 +13,8 @@ export const Home2 = () => {
 
     const pointsAdd = 2
     const EnergyRemove = 2
-
+    const user = UseGetTgData()
+    console.log(user)
     const handleClick = (e) => {
         if(energy - EnergyRemove < 0) {
             return;
@@ -194,7 +196,7 @@ export const Home2 = () => {
                 </div>
                 <div className="w-[100%] mt-8 flex items-center  justify-center">
                         <div className="h-20 w-[98%] rounded-2xl flex items-center justify-center bg-black/25">
-                            <p className="text-[20px] font-light">{`https://t.me/InFuseTapbot?start=${123456}`}</p>
+                            <p className="text-[18px] font-light">{`https://t.me/InFuseTapbot?start=${123456}`}</p>
                         </div>
                     </div>
                 <div className="w-[100%] h-[150px] bg-blue-700/0 px-2 mt-8 p-4 flex">
