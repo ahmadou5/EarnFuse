@@ -31,6 +31,8 @@ export const TapContextProvider = ({children}) => {
     taskAmount,
     taskURL,
     taskButton,
+    isConfe, 
+    setIsConfe,
     setTaskButton,
     setTaskURL,
     setTaskAmount,

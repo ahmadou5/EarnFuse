@@ -23,7 +23,7 @@ export const ClaimModal = () => {
                     setTimeout(() => {
                         setIsConfe(false)
                       }, 1000);
-                    window.open(taskURL)
+                   // window.open(taskURL)
                     }} className="w-[175px] mt-6  ml-auto mr-auto py-1 px-3 text-white border  border-[#448cff]/60 flex  items-center justify-center bg-[#448cff]/90 rounded-full h-9">
                   <p>Claim</p>
                 </div>
