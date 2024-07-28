@@ -7,6 +7,7 @@ const TapContext = createContext()
 
 
 export const TapContextProvider = ({children}) => {
+  const [isConfe, setIsConfe] = useState(false)
   const [isAuth,setIsAuth] = useState(false)
   const [taskURL,setTaskURL] = useState('')
   const [taskButton,setTaskButton] = useState('')

@@ -4,12 +4,15 @@ import { BackMenu, Menu } from "../Menu"
 import { GlobalContext } from "@/context/AppContext"
 import { useEffect, useState } from "react"
 import { UseGetTgData } from "@/hooks/useGetUserData"
+import Confetti from "react-confetti"
 import { ClaimModal } from "../Modals/ClaimModal"
-
+import useWindowSize from "react-use/lib/useWindowSize";
 
 export const Home2 = () => {
+    const { width, height } = useWindowSize();
     const {isHome, isFrens, isTask, taskName,
         taskAmount,
+        isConfe, setIsConfe,
         setTaskAmount,
         taskButton,
         setTaskButton,
@@ -230,6 +233,9 @@ export const Home2 = () => {
         {
             isTask && (
             <>
+            {
+               isConfe && <Confetti  width={width} height={height} recycle={false} /> 
+            }
             <div className="bg-gothic-950/0 mt-0 flex p-3 bg-slate-600/0 flex-col w-[100%] h-auto">
                  <div className="w-[100%] h-12 px-2 mt-5 mb-4 py-3 flex justify-center items-center">
                     <div className="">
