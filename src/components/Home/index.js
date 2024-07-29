@@ -19,7 +19,7 @@ export const Home2 = () => {
             const { data,error } = await Supabase
             .from('Users')
             .insert([
-                {id:'88888', username:'9099', pointsAdd: 1}
+                {id:id, username:username, pointsAdd: 1}
             ])
             .select()
 
