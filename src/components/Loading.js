@@ -1,4 +1,4 @@
-'use client'
+
 import { GlobalContext } from "@/context/AppContext"
 import { UseGetTgData } from "@/hooks/useGetUserData"
 import { supabase } from "@/utils/supabasedb"
