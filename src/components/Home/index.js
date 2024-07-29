@@ -7,6 +7,7 @@ import { UseGetTgData } from "@/hooks/useGetUserData"
 import Confetti from "react-confetti"
 import { ClaimModal } from "../Modals/ClaimModal"
 import useWindowSize from "react-use/lib/useWindowSize";
+import { Supabase } from "@/utils/supabasedb"
 import { BoostModal } from "../Modals/BoostModal"
 
 export const Home2 = () => {
@@ -15,7 +16,7 @@ export const Home2 = () => {
             const username = tgUser?.initDataUnsafe?.user?.username
             const userId = tgUser?.initDataUnsafe?.user?.id
     
-            const { data,error } = await supabase
+            const { data,error } = await Supabase
             .from('Users')
             .insert([
                 {id:'88888', username:'9099', pointsAdd: 1}
