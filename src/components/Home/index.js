@@ -7,12 +7,16 @@ import { UseGetTgData } from "@/hooks/useGetUserData"
 import Confetti from "react-confetti"
 import { ClaimModal } from "../Modals/ClaimModal"
 import useWindowSize from "react-use/lib/useWindowSize";
+import { BoostModal } from "../Modals/BoostModal"
 
 export const Home2 = () => {
     const { width, height } = useWindowSize();
     const {isHome, isFrens, isTask, taskName,
         taskAmount,
-        isConfe, setIsConfe,
+        isConfe,
+        setIsConfe,
+        isBoostModal,
+        setIsBoostModal,
         setTaskAmount,
         taskButton,
         setTaskButton,
@@ -45,6 +49,7 @@ export const Home2 = () => {
     }
 
     useEffect(() => {
+        
         const interval = setInterval(() => {
             setEnergy((prevEnergy) => Math.min(prevEnergy + 1,100000));
         },100000)
@@ -302,7 +307,7 @@ export const Home2 = () => {
                         <p className="text-4xl ml-1 text-white mr-auto font-bold ">{points.toLocaleString()}</p>
                     </div>
                 </div>
-                <div className="w-[100%] h-auto px-2 mt-2 mb-1 py-5 flex flex-col justify-center items-center">
+                {/**<div className="w-[100%] h-auto px-2 mt-2 mb-1 py-5 flex flex-col justify-center items-center">
                     <p>Daily Boosters</p>
                     <div className="w-[100%] h-auto rounded-xl text-white/70 bg-black/0 p-0 mt-2">
                      {
@@ -322,14 +327,16 @@ export const Home2 = () => {
                        ))
                      }
                     </div>
-                </div>
-                <div className="w-[100%] h-auto px-2 mt-2 mb-2 py-5 flex flex-col justify-center items-center">
+                </div>**/}
+                <div className="w-[100%] h-auto px-2 mt-5 mb-2 py-5 flex flex-col justify-center items-center">
                     <p>Booster</p>
                     <div className="w-[100%] h-auto rounded-xl text-white/70 bg-black/0 p-0 mt-2">
                      {
                        boost && boost.filter((boos) => boos.boostType == 'booster').map((item,i) => (
                         <>
-                        <div key={i} className="w-[100%] mt-2 mb-2 h-auto flex rounded-xl py-3 px-3 bg-black/15">
+                        <div onClick={() => {
+                            setIsBoostModal(true)
+                        }} key={i} className="w-[100%] mt-2 mb-2 h-auto flex rounded-xl py-3 px-3 bg-black/15">
                             <div className="ml-1 mr-3">
                                 <img src="./assets/sol.png" className="w-12 h-12"/>
                             </div>
@@ -343,6 +350,7 @@ export const Home2 = () => {
                        ))
                      }
                     </div>
+                    {isBoostModal && <BoostModal />}
                 </div>
                <BackMenu/>
                

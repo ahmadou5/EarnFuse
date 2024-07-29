@@ -1,5 +1,39 @@
 'use client'
-export const Loading = () => {
+import { GlobalContext } from "@/context/AppContext"
+import { UseGetTgData } from "@/hooks/useGetUserData"
+import { supabase } from "@/utils/supabasedb"
+import { useEffect } from "react"
+
+export const Loading = async () => {
+    const user = UseGetTgData()
+    console.log(user)
+    const {tgUser} = GlobalContext()
+    const createUser = async() => {
+        try {
+            const username = tgUser?.initDataUnsafe?.user?.username
+            const userId = tgUser?.initDataUnsafe?.user?.id
+    
+            const { data,error } = supabase
+            .from('Users')
+            .insert([
+                {id:userId, username:username, pointsAdd: 1}
+            ])
+            .select()
+
+            if(data) {
+                console.log(data)
+                alert(data, 'done')
+            } 
+            if (error) {
+                throw error
+            }
+           } catch (error) {
+            console.log(error)
+           }
+    }
+    useEffect(() => {
+       createUser()
+    },[])
     return(
     <div className="inset-0 fixed bg-black/60 bg-opacity-100 w-[100%] z-[99999999] min-h-screen h-auto backdrop-blur-sm flex ">
         <div className="w-[100%] h-[auto] flex flex-col items-center justify-center">

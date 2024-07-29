@@ -3,9 +3,9 @@ import { useState } from "react"
 import Confetti from "react-confetti"
 //import { useGetUserId } from "@/hooks/useGetUserId"
 
-export const ClaimModal = () => {
+export const BoostModal = () => {
     const [claim,setClaim] = useState(false)
-    const { isClaimModal,setIsClaimModal,taskURL,setTaskURL,taskName, isConfe, setIsConfe, taskButton,setTaskButton, taskAmount } = GlobalContext()
+    const { isClaimModal,setIsClaimModal,taskURL,setTaskURL,taskName, isBoostModal,setIsBoostModal,isConfe, setIsConfe, taskButton,setTaskButton, taskAmount } = GlobalContext()
     return(
     <div className="inset-0 fixed bg-white/0 bg-opacity-100 w-[100%] z-[99999999] min-h-screen h-auto backdrop-blur-sm flex ">
         <div className="w-[100%] flex items-center px-3 justify-center">
@@ -19,7 +19,7 @@ export const ClaimModal = () => {
                 </div>
                 <div onClick={() => {
                     setIsConfe(true)
-                    setIsClaimModal(false)
+                    setIsBoostModal(false)
                     setTimeout(() => {
                         setIsConfe(false)
                       }, 7000);
