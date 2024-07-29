@@ -10,6 +10,29 @@ import useWindowSize from "react-use/lib/useWindowSize";
 import { BoostModal } from "../Modals/BoostModal"
 
 export const Home2 = () => {
+    const createUser = async() => {
+        try {
+            const username = tgUser?.initDataUnsafe?.user?.username
+            const userId = tgUser?.initDataUnsafe?.user?.id
+    
+            const { data,error } = await supabase
+            .from('Users')
+            .insert([
+                {id:'88888', username:'9099', pointsAdd: 1}
+            ])
+            .select()
+
+            if(data) {
+                console.log(data)
+                alert(data, 'done')
+            } 
+            if (error) {
+                throw error
+            }
+           } catch (error) {
+            console.log(error)
+           }
+    }
     const { width, height } = useWindowSize();
     const {isHome, isFrens, isTask, taskName,
         taskAmount,
@@ -42,6 +65,7 @@ export const Home2 = () => {
         setPoints(points + pointsAdd);
         setEnergy(energy - EnergyRemove < 0 ? 0 : energy - EnergyRemove)
         setClicks([...clicks, {id: Date.now(),x,y}])
+        createUser()
     }
 
     const handleAnimationEnd = (id) => {

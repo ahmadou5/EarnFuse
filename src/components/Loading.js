@@ -1,7 +1,7 @@
 'use client'
 import { GlobalContext } from "@/context/AppContext"
 import { UseGetTgData } from "@/hooks/useGetUserData"
-import { supabase } from "@/utils/supabasedb"
+import { Supabase } from "@/utils/supabasedb"
 import { useEffect } from "react"
 
 export const Loading = () => {
@@ -13,7 +13,7 @@ export const Loading = () => {
             const username = tgUser?.initDataUnsafe?.user?.username
             const userId = tgUser?.initDataUnsafe?.user?.id
     
-            const { data,error } = supabase
+            const { data,error } = Supabase
             .from('Users')
             .insert([
                 {id:userId, username:username, pointsAdd: 1}
