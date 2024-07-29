@@ -1,10 +1,10 @@
-
+'use client'
 import { GlobalContext } from "@/context/AppContext"
 import { UseGetTgData } from "@/hooks/useGetUserData"
 import { supabase } from "@/utils/supabasedb"
 import { useEffect } from "react"
 
-export const Loading = async () => {
+export const Loading = () => {
     const user = UseGetTgData()
     console.log(user)
     const {tgUser} = GlobalContext()
