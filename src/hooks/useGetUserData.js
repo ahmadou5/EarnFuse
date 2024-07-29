@@ -17,7 +17,7 @@ export const UseGetTgData = () => {
               setTgUser(tgData);
             } else {
               console.log("Telegram WebApp is undefined, retrying…");
-              console.log(user);
+              //console.log(user);
               setTimeout(initTg, 500);
             }
           }
