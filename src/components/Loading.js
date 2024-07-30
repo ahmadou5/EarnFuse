@@ -52,7 +52,7 @@ export const Loading = () => {
               const tgData = window.Telegram.WebApp;
               console.log('data id',tgData?.initDataUnsafe?.user?.id)
               setTgUser(tgData);
-              return tgData
+              //return tgData
              // setTgUser(tgData);
             } else {
               console.log("Telegram WebApp is undefined, retrying…");
@@ -61,6 +61,31 @@ export const Loading = () => {
             }
           }
           initTg();
+          const createUser = async() => {
+            try {
+                //const username = tgUser?.initDataUnsafe?.user?.username
+                //const userId = tgUser?.initDataUnsafe?.user?.id
+                console.log('creatingggg.................user')
+                console.log(tgUser?.initDataUnsafe?.user?.id,'id')
+                console.log(tgUser?.initDataUnsafe?.user?.id,'username')
+                const { data, error } = await Supabase
+                .from('Users')
+                .insert([
+                    {id:tgUser?.initDataUnsafe?.user?.id, username:tgUser?.initDataUnsafe?.user?.username, pointsAdd: 1}
+                ])
+                .select()
+    
+                if(data) {
+                    console.log(data,'doneeeeee')
+                    alert(data, 'done')
+                } 
+                if (error) {
+                    throw error
+                }
+               } catch (error) {
+                console.log(error)
+               }
+        }
           createUser();
         // Your function here
         alert('Component mounted');
