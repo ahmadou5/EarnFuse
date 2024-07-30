@@ -23,15 +23,15 @@ export const Loading = () => {
             const username = tgUser?.initDataUnsafe?.user?.username
             const userId = tgUser?.initDataUnsafe?.user?.id
             console.log('creatingggg.................user')
-            const { data,error } = await Supabase
+            const { data, error } = await Supabase
             .from('Users')
             .insert([
-                {id:userId, username:username, pointsAdd: 1}
+                {id:'0000000', username:'676767', pointsAdd: 1}
             ])
             .select()
 
             if(data) {
-                console.log(data)
+                console.log(data,'doneeeeee')
                 alert(data, 'done')
             } 
             if (error) {
