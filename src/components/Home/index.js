@@ -77,7 +77,7 @@ export const Home2 = () => {
           try {
             const { data, error } = await Supabase
             .from('Users')
-            .update({ balance: points })
+            .update({ balance: {...points} })
             .eq('id', tgUser?.initDataUnsafe?.user?.id)
 
             if(data) {
@@ -106,7 +106,7 @@ export const Home2 = () => {
     
       
       
-      const debouncedFunctioncall = useCallback(debounce(updateBalance, 400),[]) ; // Debounce with 500ms delay
+      const debouncedFunctioncall = useCallback(debounce(updateBalance, 800),[]) ; // Debounce with 500ms delay
       
       
       useEffect(() => {
