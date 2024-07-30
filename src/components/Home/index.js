@@ -48,11 +48,11 @@ export const Home2 = () => {
         setTaskName, isBoost, tgUser, setTgUser, isClaimModal,setIsClaimModal} = GlobalContext()
     const [taskDone,setTaskDone] = useState(false)
     const [points,setPoints] = useState(0)
-    const [energy,setEnergy] = useState(20000)
+    const [energy,setEnergy] = useState(2000)
     const [clicks,setClicks] = useState([])
 
-    const pointsAdd = 2
-    const EnergyRemove = 2
+    const pointsAdd = 1
+    const EnergyRemove = 1
     const user = UseGetTgData()
     console.log(user?.initDataUnsafe?.user?.username)
     const handleClick = (e) => {
@@ -176,10 +176,10 @@ export const Home2 = () => {
                 </div>
                 <div className="w-[100%] mt-10 flex flex-col items-center justify-center">
                     <div className="mb-2 text-white">
-                        {`${energy}/20000`}
+                        {`${energy}/2000`}
                     </div>
                     <div className="bg-white/90 rounded-xl h-3 w-[80%]">
-                        <div className="bg-blue-500/50 rounded-full h-[100%]" style={{width:`${energy/20000 * 100}%`}}>
+                        <div className="bg-blue-500/50 rounded-full h-[100%]" style={{width:`${energy/2000 * 100}%`}}>
 
                         </div>
                     </div>
