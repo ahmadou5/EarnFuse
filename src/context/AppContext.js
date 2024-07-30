@@ -18,6 +18,7 @@ export const TapContextProvider = ({children}) => {
   const [isFrens,setIsFrens] = useState(false)
   const [isTask,setIsTask] = useState(false)
   const [isBoost,setIsBoost] = useState(false)
+  const [user,setUser] = useState(null)
   const [isClaimModal,setIsClaimModal] = useState(false)
   const [isBoostModal,setIsBoostModal] = useState(false)
   const value = {
@@ -34,6 +35,8 @@ export const TapContextProvider = ({children}) => {
     taskButton,
     isConfe, 
     isBoostModal,
+    user,
+    setUser,
     setIsBoostModal,
     setIsConfe,
     setTaskButton,

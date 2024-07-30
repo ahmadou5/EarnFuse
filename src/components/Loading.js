@@ -6,9 +6,9 @@ import { Supabase } from "@/utils/supabasedb"
 import { useEffect, useState } from "react"
 
 export const Loading = () => {
-    const [user, setUser] = useState(null)
+   
     const [userId, setUserId] = useState('')
-    const { tgUser, setTgUser } = GlobalContext()
+    const { tgUser, setTgUser, user,setUser } = GlobalContext()
     const create = UseCreateUSer()
     console.log(create)
     const checkUser =  async() => {
@@ -21,25 +21,7 @@ export const Loading = () => {
     }
     
     useEffect(() => {
-        async function initTg() {
-            if (
-              typeof window !== "undefined" &&
-              window.Telegram &&
-              window.Telegram.WebApp
-            ) {
-              console.log("Telegram WebApp is set");
-              const tgData = window.Telegram.WebApp;
-              setUsername(tgData?.initDataUnsafe?.user?.username)
-              setUser(tgData)
-              console.log('data id',tgData?.initDataUnsafe?.user?.id)
-              setTgUser(tgData);
-            } else {
-              console.log("Telegram WebApp is undefined, retrying…");
-              //console.log(user);
-              setTimeout(initTg, 100);
-            }
-          }
-          initTg();
+       
           const createUser = async() => {
             try {
                 

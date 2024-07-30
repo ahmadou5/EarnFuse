@@ -6,33 +6,23 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 
 export default function Home() {
-  const {isAuth,setIsAuth} = GlobalContext()
-  const createUser = async() => {
-    try {
-        const username = tgUser?.initDataUnsafe?.user?.username
-        const userId = tgUser?.initDataUnsafe?.user?.id
-
-        const { data,error } = supabase
-        .from('Users')
-        .insert([
-            {id:userId, username:username, pointsAdd: 1}
-        ])
-        .select()
-
-        if(data) {
-            console.log(data)
-            alert(data, 'done')
-        } 
-        if (error) {
-            throw error
-        }
-       } catch (error) {
-        console.log(error)
-       }
-}
-
-  useEffect(() => {
-    createUser()
+  const {isAuth,setIsAuth ,setUser} = GlobalContext()
+  useEffect(() => { 
+      console.log('useTelegram')
+      function initTg() {
+      if (typeof window !== 'undefined' && window.Telegram && window.Telegram.WebApp) {
+      console.log('Telegram WebApp is set');
+      const tgData = window.Telegram.WebApp
+      setUser(tgData);
+      } else {
+      console.log('Telegram WebApp is undefined, retrying…');
+      console.log(user)
+      setTimeout(initTg, 500);
+      }
+      }
+      initTg();
+    
+ 
     const interval = setInterval(() => {
        setIsAuth(true)
     },2000)
