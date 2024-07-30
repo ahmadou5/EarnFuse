@@ -111,7 +111,7 @@ export const Home2 = () => {
       
       useEffect(() => {
         debouncedFunctioncall();
-      }, [points, debouncedFunctioncall]);
+      }, [handleClick, debouncedFunctioncall]);
 
     useEffect(() => {
         
