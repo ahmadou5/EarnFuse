@@ -53,8 +53,8 @@ export const Home2 = () => {
 
     const pointsAdd = 1
     const EnergyRemove = 1
-    const user = UseGetTgData()
-    console.log(user?.initDataUnsafe?.user?.username)
+    //const user = UseGetTgData()
+   // console.log(user?.initDataUnsafe?.user?.username)
     const handleClick = (e) => {
         if(energy - EnergyRemove < 0) {
             return;
