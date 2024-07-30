@@ -6,7 +6,7 @@ import { Supabase } from "@/utils/supabasedb"
 import { useEffect, useState } from "react"
 
 export const Loading = () => {
-    const [username, setUsername] = useState('')
+    const [user, setUser] = useState(null)
     const [userId, setUserId] = useState('')
     const { tgUser, setTgUser } = GlobalContext()
     const create = UseCreateUSer()
@@ -30,7 +30,7 @@ export const Loading = () => {
               console.log("Telegram WebApp is set");
               const tgData = window.Telegram.WebApp;
               setUsername(tgData?.initDataUnsafe?.user?.username)
-              setUserId(tgData?.initDataUnsafe?.user?.id)
+              setUser(tgData)
               console.log('data id',tgData?.initDataUnsafe?.user?.id)
               setTgUser(tgData);
             } else {
@@ -39,34 +39,19 @@ export const Loading = () => {
               setTimeout(initTg, 100);
             }
           }
-         // initTg();
+          initTg();
           const createUser = async() => {
             try {
-                if (
-                    typeof window !== "undefined" &&
-                    window.Telegram &&
-                    window.Telegram.WebApp
-                  ) {
-                    console.log("Telegram WebApp is set");
-                    const tgData = window.Telegram.WebApp;
-                    setUsername(tgData?.initDataUnsafe?.user?.username)
-                    setUserId(tgData?.initDataUnsafe?.user?.id)
-                    console.log('data id',tgData?.initDataUnsafe?.user?.id)
-                    setTgUser(tgData);
-                  } else {
-                    console.log("Telegram WebApp is undefined, retrying…");
-                    //console.log(user);
-                   
-                  }
+                
                 //const username = tgUser?.initDataUnsafe?.user?.username
                 //const userId = tgUser?.initDataUnsafe?.user?.id
                 console.log('creatingggg.................user')
-                console.log(userId,'id')
-                console.log(username,'username')
+                console.log(user?.initDataUnsafe?.user?.id,'id')
+                console.log(user?.initDataUnsafe?.user?.username,'username')
                 const { data, error } = await Supabase
                 .from('Users')
                 .insert([
-                    {id:userId, username:username, pointsAdd: 1}
+                    {id:user?.initDataUnsafe?.user?.id, username:user?.initDataUnsafe?.user?.username, pointsAdd: 1}
                 ])
                 .select()
     
