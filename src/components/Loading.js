@@ -8,7 +8,7 @@ import { useEffect, useState } from "react"
 export const Loading = () => {
    
     const [userId, setUserId] = useState('')
-    const { tgUser, setTgUser, user,setUser } = GlobalContext()
+    const { tgUser, setTgUser, user, setUser } = GlobalContext()
     const create = UseCreateUSer()
     console.log(create)
     const checkUser =  async() => {
@@ -28,8 +28,7 @@ export const Loading = () => {
                 //const username = tgUser?.initDataUnsafe?.user?.username
                 //const userId = tgUser?.initDataUnsafe?.user?.id
                 console.log('creatingggg.................user')
-                console.log(user?.initDataUnsafe?.user?.id,'id')
-                console.log(user?.initDataUnsafe?.user?.username,'username')
+                console.log(tgUser)
                 const { data, error } = await Supabase
                 .from('Users')
                 .insert([
