@@ -12,7 +12,9 @@ export const Loading = () => {
         try {
             const username = tgUser?.initDataUnsafe?.user?.username
             const userId = tgUser?.initDataUnsafe?.user?.id
-    
+            console.log('starting...........................')
+            console.log('id',userId)
+            console.log('name',username)
             const { data,error } = await Supabase
             .from('Users')
             .insert([
