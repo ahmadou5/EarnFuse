@@ -106,12 +106,12 @@ export const Home2 = () => {
     
       
       
-      const debouncedFunctioncall = useCallback(debounce(updateBalance, 500),[]) ; // Debounce with 500ms delay
+      const debouncedFunctioncall = useCallback(debounce(updateBalance, 3000),[]) ; // Debounce with 500ms delay
       
       
       useEffect(() => {
         debouncedFunctioncall(points);
-      }, [points, debouncedFunctioncall,handleClick]);
+      }, [clicks, debouncedFunctioncall,handleClick]);
 
     useEffect(() => {
         
