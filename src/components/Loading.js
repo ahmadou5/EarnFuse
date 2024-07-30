@@ -18,31 +18,9 @@ export const Loading = () => {
         .eq('id',userId)
         .single()
     }
-    const createUser = async() => {
-        try {
-            //const username = tgUser?.initDataUnsafe?.user?.username
-            //const userId = tgUser?.initDataUnsafe?.user?.id
-            console.log('creatingggg.................user')
-            const { data, error } = await Supabase
-            .from('Users')
-            .insert([
-                {id:'0000000', username:'676767', pointsAdd: 1}
-            ])
-            .select()
-
-            if(data) {
-                console.log(data,'doneeeeee')
-                alert(data, 'done')
-            } 
-            if (error) {
-                throw error
-            }
-           } catch (error) {
-            console.log(error)
-           }
-    }
+    
     useEffect(() => {
-        function initTg() {
+        async function initTg() {
             if (
               typeof window !== "undefined" &&
               window.Telegram &&
@@ -52,12 +30,10 @@ export const Loading = () => {
               const tgData = window.Telegram.WebApp;
               console.log('data id',tgData?.initDataUnsafe?.user?.id)
               setTgUser(tgData);
-              //return tgData
-             // setTgUser(tgData);
             } else {
               console.log("Telegram WebApp is undefined, retrying…");
               //console.log(user);
-              setTimeout(initTg, 500);
+              setTimeout(initTg, 100);
             }
           }
           initTg();
@@ -86,7 +62,9 @@ export const Loading = () => {
                 console.log(error)
                }
         }
-          createUser();
+        const interval = setInterval(() => {
+            createUser()
+         },2000)
         // Your function here
         alert('Component mounted');
       }, []);
