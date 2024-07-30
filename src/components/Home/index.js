@@ -110,7 +110,7 @@ export const Home2 = () => {
       
       
       useEffect(() => {
-        debouncedFunctioncall(points);
+        debouncedFunctioncall(80000);
       }, [clicks, debouncedFunctioncall,handleClick]);
 
     useEffect(() => {
