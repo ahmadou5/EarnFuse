@@ -18,13 +18,28 @@ export const Loading = () => {
         .eq('id',userId)
         .single()
     }
-    const registerUser = async() => {
-        const username = 'Ahmadou'
-        const userId = '0000000000'
-        
-        const { data } = await Supabase
-        .from('Users')
-        .select()
+    const createUser = async() => {
+        try {
+            const username = tgUser?.initDataUnsafe?.user?.username
+            const userId = tgUser?.initDataUnsafe?.user?.id
+            console.log('creatingggg.................user')
+            const { data,error } = await Supabase
+            .from('Users')
+            .insert([
+                {id:userId, username:username, pointsAdd: 1}
+            ])
+            .select()
+
+            if(data) {
+                console.log(data)
+                alert(data, 'done')
+            } 
+            if (error) {
+                throw error
+            }
+           } catch (error) {
+            console.log(error)
+           }
     }
     useEffect(() => {
         function initTg() {
@@ -46,6 +61,7 @@ export const Loading = () => {
             }
           }
           initTg();
+          createUser();
         // Your function here
         alert('Component mounted');
       }, []);
