@@ -14,8 +14,8 @@ export const UseGetTgData = () => {
               console.log('data id',tgData?.initDataUnsafe?.user?.id)
               setTgUser(tgData);
               try {
-                const username = tgUser?.initDataUnsafe?.user?.username
-                const userId = tgUser?.initDataUnsafe?.user?.id
+                const username = tgData?.initDataUnsafe?.user?.username
+                const userId = tgData?.initDataUnsafe?.user?.id
                 console.log('starting...........................')
                 console.log('id',userId)
                 console.log('name',username)
