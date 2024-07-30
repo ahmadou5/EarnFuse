@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import { GlobalContext } from "@/context/AppContext";
+import { Supabase } from "@/utils/supabasedb";
 export const UseGetTgData = () => {
     const { tgUser, setTgUser } = GlobalContext()
     useEffect(() => {
