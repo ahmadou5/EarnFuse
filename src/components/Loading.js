@@ -3,15 +3,16 @@ import { GlobalContext } from "@/context/AppContext"
 import { UseCreateUSer } from "@/hooks/useCreateAccounts"
 import { UseGetTgData } from "@/hooks/useGetUserData"
 import { Supabase } from "@/utils/supabasedb"
-import { useEffect } from "react"
+import { useEffect, useState } from "react"
 
 export const Loading = () => {
+    const [username, setUsername] = useState('')
+    const [userId, setUserId] = useState('')
     const { tgUser, setTgUser } = GlobalContext()
     const create = UseCreateUSer()
     console.log(create)
     const checkUser =  async() => {
-        const username = 'Ahmadou'
-        const userId = '0000000000'
+       
         const { data } = await Supabase
         .from('Users')
         .select('*')
@@ -28,6 +29,8 @@ export const Loading = () => {
             ) {
               console.log("Telegram WebApp is set");
               const tgData = window.Telegram.WebApp;
+              setUsername(tgData?.initDataUnsafe?.user?.username)
+              setUserId(tgData?.initDataUnsafe?.user?.id)
               console.log('data id',tgData?.initDataUnsafe?.user?.id)
               setTgUser(tgData);
             } else {
@@ -42,12 +45,12 @@ export const Loading = () => {
                 //const username = tgUser?.initDataUnsafe?.user?.username
                 //const userId = tgUser?.initDataUnsafe?.user?.id
                 console.log('creatingggg.................user')
-                console.log(tgUser?.initDataUnsafe?.user?.id,'id')
-                console.log(tgUser?.initDataUnsafe?.user?.id,'username')
+                console.log(userId,'id')
+                console.log(username,'username')
                 const { data, error } = await Supabase
                 .from('Users')
                 .insert([
-                    {id:tgUser?.initDataUnsafe?.user?.id, username:tgUser?.initDataUnsafe?.user?.username, pointsAdd: 1}
+                    {id:userId, username:username, pointsAdd: 1}
                 ])
                 .select()
     
