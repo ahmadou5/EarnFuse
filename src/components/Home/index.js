@@ -75,17 +75,21 @@ export const Home2 = () => {
     }
     const updateBalance =  async ({value}) => {
           try {
-            const { data, error } = await Supabase
-            .from('Users')
-            .update({ balance: value })
-            .eq('id', tgUser?.initDataUnsafe?.user?.id)
-
-            if(data) {
-                console.log('updated',data)
+            if(energy - EnergyRemove < 0) {
+                const { data, error } = await Supabase
+                .from('Users')
+                .update({ balance: points })
+                .eq('id', tgUser?.initDataUnsafe?.user?.id)
+    
+                if(data) {
+                    console.log('updated',data)
+                }
+                if(error) {
+                    throw error
+                }
             }
-            if(error) {
-                throw error
-            }
+            return
+            
           } catch (error) {
             console.log(error)
           }
@@ -106,12 +110,12 @@ export const Home2 = () => {
     
       
       
-      const debouncedFunctioncall = useCallback(debounce(updateBalance, 3000),[]) ; // Debounce with 500ms delay
+      const debouncedFunctioncall = useCallback(debounce(updateBalance, 500),[]) ; // Debounce with 500ms delay
       
       
       useEffect(() => {
-        debouncedFunctioncall(80000);
-      }, [clicks, debouncedFunctioncall,handleClick]);
+        debouncedFunctioncall();
+      }, [points, debouncedFunctioncall]);
 
     useEffect(() => {
         
