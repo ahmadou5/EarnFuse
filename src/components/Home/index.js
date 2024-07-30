@@ -73,7 +73,7 @@ export const Home2 = () => {
     const handleAnimationEnd = (id) => {
         setClicks((prevClick) => prevClick.filter(click => click.id !== id));
     }
-    const updateBalance =  async ({value}) => {
+    const updateBalance =  async () => {
           try {
             if(energy - EnergyRemove < 0) {
                 const { data, error } = await Supabase
