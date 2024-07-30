@@ -1,58 +1,39 @@
 'use client'
 import { GlobalContext } from "@/context/AppContext"
-import { UseCreateUSer } from "@/hooks/useCreateAccounts"
 import { UseGetTgData } from "@/hooks/useGetUserData"
 import { Supabase } from "@/utils/supabasedb"
-import { useEffect, useState } from "react"
+import { useEffect } from "react"
 
 export const Loading = () => {
-   
-    const [userId, setUserId] = useState('')
-    const { tgUser, setTgUser, user, setUser } = GlobalContext()
-    const create = UseCreateUSer()
-    console.log(create)
-    const checkUser =  async() => {
-       
-        const { data } = await Supabase
-        .from('Users')
-        .select('*')
-        .eq('id',userId)
-        .single()
+    const user = UseGetTgData()
+    console.log(user)
+    const {tgUser} = GlobalContext()
+    const createUser = async() => {
+        try {
+            const username = tgUser?.initDataUnsafe?.user?.username
+            const userId = tgUser?.initDataUnsafe?.user?.id
+    
+            const { data,error } = await Supabase
+            .from('Users')
+            .insert([
+                {id:userId, username:username, pointsAdd: 1}
+            ])
+            .select()
+
+            if(data) {
+                console.log(data)
+                alert(data, 'done')
+            } 
+            if (error) {
+                throw error
+            }
+           } catch (error) {
+            console.log(error)
+           }
     }
-    
     useEffect(() => {
-       
-          const createUser = async() => {
-            try {
-                
-                //const username = tgUser?.initDataUnsafe?.user?.username
-                //const userId = tgUser?.initDataUnsafe?.user?.id
-                console.log('creatingggg.................user')
-                console.log(tgUser)
-                const { data, error } = await Supabase
-                .from('Users')
-                .insert([
-                    {id:tgUser?.initDataUnsafe?.user?.id, username:tgUser?.initDataUnsafe?.user?.username, pointsAdd: 1}
-                ])
-                .select()
-    
-                if(data) {
-                    console.log(data,'doneeeeee')
-                    alert(data, 'done')
-                } 
-                if (error) {
-                    throw error
-                }
-               } catch (error) {
-                console.log(error)
-               }
-        }
-        const interval = setInterval(() => {
-            createUser()
-         },2000)
-        // Your function here
-        alert('Component mounted');
-      }, []);
+       createUser()
+    },[])
     return(
     <div className="inset-0 fixed bg-black/60 bg-opacity-100 w-[100%] z-[99999999] min-h-screen h-auto backdrop-blur-sm flex ">
         <div className="w-[100%] h-[auto] flex flex-col items-center justify-center">
