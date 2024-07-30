@@ -20,8 +20,8 @@ export const Loading = () => {
     }
     const createUser = async() => {
         try {
-            const username = tgUser?.initDataUnsafe?.user?.username
-            const userId = tgUser?.initDataUnsafe?.user?.id
+            //const username = tgUser?.initDataUnsafe?.user?.username
+            //const userId = tgUser?.initDataUnsafe?.user?.id
             console.log('creatingggg.................user')
             const { data, error } = await Supabase
             .from('Users')
