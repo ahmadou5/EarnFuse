@@ -32,7 +32,7 @@ export const Loading = () => {
                 const { data, error } = await Supabase
                 .from('Users')
                 .insert([
-                    {id:user?.initDataUnsafe?.user?.id, username:user?.initDataUnsafe?.user?.username, pointsAdd: 1}
+                    {id:tgUser?.initDataUnsafe?.user?.id, username:tgUser?.initDataUnsafe?.user?.username, pointsAdd: 1}
                 ])
                 .select()
     
