@@ -73,11 +73,11 @@ export const Home2 = () => {
     const handleAnimationEnd = (id) => {
         setClicks((prevClick) => prevClick.filter(click => click.id !== id));
     }
-    const updateBalance =  async () => {
+    const updateBalance =  async ({value}) => {
           try {
             const { data, error } = await Supabase
             .from('Users')
-            .update({ balance: points })
+            .update({ balance: value })
             .eq('id', tgUser?.initDataUnsafe?.user?.id)
 
             if(data) {
@@ -110,8 +110,8 @@ export const Home2 = () => {
       
       
       useEffect(() => {
-        debouncedFunctioncall();
-      }, [points, debouncedFunctioncall]);
+        debouncedFunctioncall(points);
+      }, [points, debouncedFunctioncall,handleClick]);
 
     useEffect(() => {
         
