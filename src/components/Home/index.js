@@ -2,7 +2,7 @@
 import { IoSettings, IoWallet } from "react-icons/io5"
 import { BackMenu, Menu } from "../Menu"
 import { GlobalContext } from "@/context/AppContext"
-import { useEffect, useState } from "react"
+import { useEffect, useState, useCallback } from "react"
 import { UseGetTgData } from "@/hooks/useGetUserData"
 import Confetti from "react-confetti"
 import { ClaimModal } from "../Modals/ClaimModal"
@@ -11,6 +11,7 @@ import { Supabase } from "@/utils/supabasedb"
 import { BoostModal } from "../Modals/BoostModal"
 
 export const Home2 = () => {
+    
     const createUser = async() => {
         try {
             const username = tgUser?.initDataUnsafe?.user?.username
@@ -66,12 +67,51 @@ export const Home2 = () => {
         setPoints(points + pointsAdd);
         setEnergy(energy - EnergyRemove < 0 ? 0 : energy - EnergyRemove)
         setClicks([...clicks, {id: Date.now(),x,y}])
-        createUser()
+        
     }
 
     const handleAnimationEnd = (id) => {
         setClicks((prevClick) => prevClick.filter(click => click.id !== id));
     }
+    const updateBalance =  async () => {
+          try {
+            const { data, error } = await Supabase
+            .from('Users')
+            .update({ balance: points })
+            .eq('id', tgUser?.initDataUnsafe?.user?.id)
+
+            if(data) {
+                console.log('updated',data)
+            }
+            if(error) {
+                throw error
+            }
+          } catch (error) {
+            console.log(error)
+          }
+    }
+    function debounce(func, wait) {
+        let timeout;
+      
+        return function executedFunction(...args) {
+          const later = () => {
+            clearTimeout(timeout);
+            func(...args);
+          };
+      
+          clearTimeout(timeout);
+          timeout = setTimeout(later, wait);
+        };
+      }
+    
+      
+      
+      const debouncedFunctioncall = useCallback(debounce(updateBalance, 500),[]) ; // Debounce with 500ms delay
+      
+      
+      useEffect(() => {
+        debouncedFunctioncall();
+      }, [points, debouncedFunctioncall]);
 
     useEffect(() => {
         
