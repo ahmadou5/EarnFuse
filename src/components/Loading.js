@@ -34,6 +34,7 @@ export const Loading = () => {
            }
     }
     useEffect(() => {
+        alert('strenth')
        createUser()
     },[])
     return(
