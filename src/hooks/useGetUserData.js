@@ -1,8 +1,9 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { GlobalContext } from "@/context/AppContext";
 import { Supabase } from "@/utils/supabasedb";
 export const UseGetTgData = () => {
     const { tgUser, setTgUser } = GlobalContext()
+    const [user,setUser] = useState(null)
     useEffect(() => {
        async function initTg() {
             if (
@@ -13,7 +14,7 @@ export const UseGetTgData = () => {
               console.log("Telegram WebApp is set");
               const tgData = window.Telegram.WebApp;
               console.log('data id',tgData?.initDataUnsafe?.user?.id)
-              setTgUser(tgData);
+              setUser(tgData);
               try {
                 const username = tgData?.initDataUnsafe?.user?.username
                 const userId = tgData?.initDataUnsafe?.user?.id
@@ -45,6 +46,7 @@ export const UseGetTgData = () => {
           }
           initTg();
           const getUserBalance = async () => {
+            console.log(user,',,.........')
              try {
               const { data, error } = await Supabase
               .from('Users')
