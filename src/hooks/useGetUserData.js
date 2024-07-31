@@ -46,12 +46,21 @@ export const UseGetTgData = () => {
           }
           initTg();
           const getUserBalance = async () => {
+
             console.log(user,',,.........')
+            if (
+              typeof window !== "undefined" &&
+              window.Telegram &&
+              window.Telegram.WebApp
+            ) {
+              console.log("Telegram WebApp is set");
+              const tgData = window.Telegram.WebApp;
              try {
+              
               const { data, error } = await Supabase
               .from('Users')
               .select('*')
-              .eq('id',tgUser?.initDataUnsafe?.user?.id)
+              .eq('id',tgData?.initDataUnsafe?.user?.id)
 
               if(data) {
                 console.log('hey',data)
@@ -63,6 +72,7 @@ export const UseGetTgData = () => {
              } catch (error) {
               
              }
+            }
           }
           getUserBalance()
     },[])
