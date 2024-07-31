@@ -23,7 +23,7 @@ export const Loading = () => {
             .select()
 
             if(data) {
-                console.log(data)
+                console.log(data,'DATA')
                 alert(data, 'done')
             } 
             if (error) {
@@ -34,7 +34,6 @@ export const Loading = () => {
            }
     }
     useEffect(() => {
-        alert('strenth')
         
     },[])
     return(

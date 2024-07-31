@@ -4,6 +4,7 @@ import { BackMenu, Menu } from "../Menu"
 import { GlobalContext } from "@/context/AppContext"
 import { useEffect, useState, useCallback } from "react"
 import { UseGetTgData } from "@/hooks/useGetUserData"
+import { keyframes } from '@emotion/react';
 import Confetti from "react-confetti"
 import { ClaimModal } from "../Modals/ClaimModal"
 import useWindowSize from "react-use/lib/useWindowSize";
@@ -35,6 +36,16 @@ export const Home2 = () => {
             console.log(error)
            }
     }
+    const floatUpAndFadeOut = keyframes`
+  0% {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-100px);
+    opacity: 0;
+  }
+`;
     const { width, height } = useWindowSize();
     const {isHome, isFrens, isTask, taskName,
         taskAmount,
@@ -47,9 +58,10 @@ export const Home2 = () => {
         setTaskButton,
         taskURL,setTaskURL,
         setTaskName, isBoost, tgUser, setTgUser, isClaimModal,setIsClaimModal} = GlobalContext()
-    const [taskDone,setTaskDone] = useState(false)
+    const [countDown,setCountDown] = useState(false)
+    const [claimMode,setClaimMode] = useState(false);
     const [points,setPoints] = useState(0)
-    const [energy,setEnergy] = useState(2000)
+    const [energy,setEnergy] = useState(20)
     const [clicks,setClicks] = useState([])
 
     const pointsAdd = 1
@@ -57,7 +69,9 @@ export const Home2 = () => {
     //const user = UseGetTgData()
    // console.log(user?.initDataUnsafe?.user?.username)
     const handleClick = (e) => {
-        if(energy - EnergyRemove < 0) {
+        if(energy - EnergyRemove < 0 && points >= 20) {
+            setClaimMode(true)
+            setCountDown(true)
             return;
         }
         const rect = e.currentTarget.getBoundingClientRect()
@@ -90,36 +104,8 @@ export const Home2 = () => {
             console.log(error)
           }
     }
-    function debounce(func, wait) {
-        let timeout;
-      
-        return function executedFunction(...args) {
-          const later = () => {
-            clearTimeout(timeout);
-            func(...args);
-          };
-      
-          clearTimeout(timeout);
-          timeout = setTimeout(later, wait);
-        };
-      }
     
-      
-      
-      const debouncedFunctioncall = useCallback(debounce(updateBalance, 800),[]) ; // Debounce with 500ms delay
-      
-      
-      useEffect(() => {
-        debouncedFunctioncall();
-      }, [handleClick, debouncedFunctioncall]);
-
-    useEffect(() => {
-        
-        const interval = setInterval(() => {
-            setEnergy((prevEnergy) => Math.min(prevEnergy + 1,100000));
-        },100000)
-        return () => clearInterval(interval)
-    },[])
+    
     const boost = [
         {
             boostName: 'Multi Tap',
@@ -195,37 +181,79 @@ export const Home2 = () => {
                     </div>
                 </div>
                 <div className="mt-4 flex flex-grow items-center justify-center">
-                    <div  className=" rounded-full">
-                        <img src="./assets/sol.png" onClick={handleClick} className="w-[270px] bg-black/0 rounded-full h-[270px]" />
-                        {clicks.map((click) => (
-                            <>
-                            <div key={click.id}
-                            className="absolute text-5xl text-white/70 font-light opacity-0"
-                            style={{
-                                top:`${click.y + 150}px`,
-                                left: `${click.x + 20}px`,
-                                animation: `float 1s ease-out`
-                            }}
-                            onAnimationEnd={() => handleAnimationEnd(click.id)}
-                            >
-                              {`+${pointsAdd}`}
-                            </div>
-                            </>
-                        ))}
+                    { countDown ? 
+                <div  className=" rounded-full">
+                <img src="./assets/sol.png" onClick={() => alert('wait for the Countedown')} className="w-[270px] bg-black/0 rounded-full h-[270px]" />
+                {clicks.map((click) => (
+                    <>
+                    <div key={click.id}
+                    className="absolute text-5xl text-white/70 font-light opacity-0 float-start ease-out"
+                    style={{
+                        top:`${click.y + 150}px`,
+                        left: `${click.x + 20}px`,
+                        animation: `float 1s ease-out`
+                    }}
+                    onAnimationEnd={() => handleAnimationEnd(click.id)}
+                    >
+                      {`+${pointsAdd}`}
                     </div>
+                    </>
+                ))}
+            </div> 
+            :
+            <div  className=" rounded-full">
+            <img src="./assets/sol.png" onClick={handleClick} className="w-[270px] bg-black/0 rounded-full h-[270px]" />
+            {clicks.map((click) => (
+                <>
+                <div key={click.id}
+                className="absolute text-5xl text-white/70 font-light opacity-0 float-start ease-out"
+                style={{
+                    top:`${click.y + 150}px`,
+                    left: `${click.x + 20}px`,
+                    animation: `float 1s ease-out`
+                }}
+                onAnimationEnd={() => handleAnimationEnd(click.id)}
+                >
+                  {`+${pointsAdd}`}
+                </div>
+                </>
+            ))}
+        </div>    
+                }
                 </div>
                 <div className="w-[100%] mt-10 flex flex-col items-center justify-center">
                     <div className="mb-2 text-white">
-                        {`${energy}/2000`}
+                        {`${energy}/20`}
                     </div>
                     <div className="bg-white/90 rounded-xl h-3 w-[80%]">
-                        <div className="bg-blue-500/50 rounded-full h-[100%]" style={{width:`${energy/2000 * 100}%`}}>
+                        <div className="bg-blue-500/50 rounded-full h-[100%]" style={{width:`${energy/20 * 100}%`}}>
 
                         </div>
                     </div>
                 </div>
+            
             </div>
             <Menu />
+            {claimMode && <div className="inset-0 fixed bg-white/0 bg-opacity-100 w-[100%] z-[99999999] min-h-screen h-auto backdrop-blur-sm flex ">
+        <div className="w-[100%] flex items-center px-3 justify-center">
+            <div className="h-[220px] ml-auto mr-auto py-2 px-2 w-[89%] bg-white/75  border-[#448cff]/90 border rounded-xl">
+            {
+                <div className="mt-5 ml-auto mr-auto flex flex-col items-center justify-center text-center">
+                <div className="w-[80%] mb-2 ml-auto mr-auto py-1 px-3 flex  items-center justify-center rounded-full mt-8 h-9">
+                  <p className="text-black/85 text-[18px] font-light ml-auto mr-auto ">{`Claim Your ${points} Fuse Points`}</p>
+                </div>
+                <div onClick={() => {
+                    setClaimMode(false)
+                    updateBalance()
+                    }} className="w-[175px] mt-6  ml-auto mr-auto py-1 px-3 text-white border  border-[#448cff]/60 flex  items-center justify-center bg-black/90 rounded-full h-9">
+                  <p>{'Claim'}</p>
+                </div>
+            </div>
+            }
+            
+            </div>
+        </div>
+    </div>}
             </div>
             </>
         )
