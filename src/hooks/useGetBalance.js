@@ -24,9 +24,10 @@ export const UseGetBalance = () => {
               .eq('id',tgData?.initDataUnsafe?.user?.id)
 
               if(data) {
+                const sele = JSON.stringify(data)
                 console.log('hey json balance data',JSON.stringify(data))
-                console.log('hey balance data',data[0].balance)
-                setUserBalance(data[0].balance)
+                console.log('hey balance data',sele.balance)
+                setUserBalance(sele.balance)
               }
               if(error) {
                 console.log('error',error)
