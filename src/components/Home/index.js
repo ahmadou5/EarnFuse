@@ -177,7 +177,7 @@ export const Home2 = () => {
                     <p className="text-[18px] text-white font-light">Your Fuse Point:</p>
                     <div className="flex items-center justify-center">
                         <img className="h-16 w-16 ml-auto mr-1 " src="./assets/show.png" />
-                        <p className="text-4xl ml-1 text-white mr-auto font-bold ">{userBalance.toLocaleString()}</p>
+                        <p className="text-4xl ml-1 text-white mr-auto font-bold ">{userBalance?.toLocaleString()}</p>
                     </div>
                 </div>
                 <div className="mt-4 flex flex-grow items-center justify-center">
