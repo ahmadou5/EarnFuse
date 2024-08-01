@@ -91,7 +91,7 @@ export const Home2 = () => {
           try {
             const { data, error } = await Supabase
             .from('Users')
-            .update({ balance: points })
+            .update({ balance: accumulative(userBalance,points) })
             .eq('id', tgUser?.initDataUnsafe?.user?.id)
 
             if(data) {
