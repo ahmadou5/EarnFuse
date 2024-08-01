@@ -26,8 +26,10 @@ export const UseGetBalance = () => {
               if(data) {
                 const sele = JSON.stringify(data)
                 console.log(sele,'cele ne')
-                console.log('hey json balance data',JSON.stringify(data))
                 console.log('hey balance data',data[0].balance)
+                console.log(data[0].Tasks,'aeki')
+                console.log(data[0].isClick,'counter')
+               
                 setUserBalance(data[0].balance)
               }
               if(error) {
