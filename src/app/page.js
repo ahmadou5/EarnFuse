@@ -7,9 +7,23 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 
 export default function Home() {
-  const {isAuth,setIsAuth} = GlobalContext()
+  const {isAuth,setIsAuth, tgUser, setTgUser} = GlobalContext()
   const user = UseGetTgData()
   useEffect(() => {
+    const initTg = () => {
+      if (
+        typeof window !== "undefined" &&
+        window.Telegram &&
+        window.Telegram.WebApp
+      ) {
+        console.log("Telegram WebApp is set");
+        const tgData = window.Telegram.WebApp;
+        console.log('data id',tgData?.initDataUnsafe?.user?.id)
+        //setUser(tgData);
+        setTgUser(tgData)
+      }
+    }
+    initTg()
     console.log(user)
     const interval = setInterval(() => {
        setIsAuth(true)

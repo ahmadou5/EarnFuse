@@ -15,6 +15,7 @@ export const UseGetTgData = () => {
               const tgData = window.Telegram.WebApp;
               console.log('data id',tgData?.initDataUnsafe?.user?.id)
               setUser(tgData);
+              setTgUser(tgData)
               try {
                 const username = tgData?.initDataUnsafe?.user?.username
                 const userId = tgData?.initDataUnsafe?.user?.id
@@ -61,7 +62,7 @@ export const UseGetTgData = () => {
               const { data, error } = await Supabase
               .from('Users')
               .select('*')
-              .eq('id',tgData?.initDataUnsafe?.user?.id)
+              .eq('id',tgUser?.initDataUnsafe?.user?.id)
 
               if(data) {
                 console.log('hey',data)
