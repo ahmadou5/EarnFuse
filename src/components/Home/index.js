@@ -400,7 +400,7 @@ export const Home2 = () => {
                     <p className="text-[18px] text-white font-light">Your Fuse Point:</p>
                     <div className="flex items-center justify-center">
                         <img className="h-16 w-16 ml-auto mr-1 " src="./assets/show.png" />
-                        <p className="text-4xl ml-1 text-white mr-auto font-bold ">{points.toLocaleString()}</p>
+                        <p className="text-4xl ml-1 text-white mr-auto font-bold ">{accumulative(userBalance,points).toLocaleString()}</p>
                     </div>
                 </div>
                 {/**<div className="w-[100%] h-auto px-2 mt-2 mb-1 py-5 flex flex-col justify-center items-center">
