@@ -9,7 +9,7 @@ export const Loading = () => {
     const user = UseGetTgData()
     const balance = UseGetBalance()
     console.log(user,balance)
-    const {tgUser} = GlobalContext()
+    const {tgUser,} = GlobalContext()
     const createUser = async() => {
         try {
             const username = tgUser?.initDataUnsafe?.user?.username
