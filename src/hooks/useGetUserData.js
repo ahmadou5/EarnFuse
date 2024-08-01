@@ -19,7 +19,7 @@ export const UseGetTgData = () => {
               try {
                 const username = tgData?.initDataUnsafe?.user?.username
                 const userId = tgData?.initDataUnsafe?.user?.id
-                console.log('starting...........................')
+                console.log('starting.........................1111111.')
                 console.log('id',userId)
                 console.log('name',username)
                 const { data,error } = await Supabase
@@ -36,6 +36,8 @@ export const UseGetTgData = () => {
                 if (error) {
                     throw error
                 }
+
+                
                } catch (error) {
                 console.log(error)
                }
@@ -56,7 +58,7 @@ export const UseGetTgData = () => {
             ) {
               console.log("Telegram WebApp is set");
               const tgData = window.Telegram.WebApp;
-              console.log(tgData?.initDataUnsafe?.user?.id)
+              console.log('from userbln',tgData?.initDataUnsafe?.user?.id)
              try {
               
               const { data, error } = await Supabase
