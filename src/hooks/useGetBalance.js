@@ -29,7 +29,7 @@ export const UseGetBalance = () => {
                 console.log('hey balance data',data[0].balance)
                 console.log(data[0].Tasks,'aeki')
                 console.log(data[0].isClick,'counter')
-                console.log(data[0].refferals[0].user,'ref')
+                console.log(data[0].refferals,'ref')
                
                 setUserBalance(data[0].balance)
               }
