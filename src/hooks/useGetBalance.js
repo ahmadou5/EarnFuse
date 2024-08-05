@@ -66,7 +66,7 @@ export const UseGetBalance = () => {
                 console.log('Testingggg.....................')
                 const refID = tgData?.initDataUnsafe?.user?.id
                 const ref = tgData?.initDataUnsafe?.user?.username
-                const {data, error} = await SupabaseClient
+                const {data, error} = await Supabase
                 .from('refferal')
                 .insert([{ refkey : `${refID}-${ref}`, refId:`${refID}`, referId: `${ref}` }])
                 .select('*')
