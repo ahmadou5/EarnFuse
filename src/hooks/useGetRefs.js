@@ -3,7 +3,7 @@ import { GlobalContext } from "@/context/AppContext";
 import { Supabase } from "@/utils/supabasedb";
 export const UseGetRefferals = () => {
   const { tgUser, setTgUser, userBalance, setUserBalance } = GlobalContext();
-
+ const [id2,setId2] = useState('')
   useEffect(() => {
     async function initTg() {
       if (
@@ -14,7 +14,7 @@ export const UseGetRefferals = () => {
         console.log("Telegram WebApp is set");
         const tgData = window.Telegram.WebApp;
         console.log("data id", tgData?.initDataUnsafe?.user?.id);
-
+        setId2(tgData?.initDataUnsafe?.user?.id)
         setTgUser(tgData);
         try {
           console.log( "tg user refferalss");
@@ -22,11 +22,13 @@ export const UseGetRefferals = () => {
           const { data, error } = await Supabase
           .from("Users")
           .select(`
-             *,
+            ,
              referral (
-              *
+               *
              )
-           `);
+           `)
+           .eq('id',id2)
+           
 
           if (data) {
             console.log('referrals',data)
