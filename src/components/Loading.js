@@ -1,14 +1,16 @@
 'use client'
 import { GlobalContext } from "@/context/AppContext"
 import { UseGetBalance } from "@/hooks/useGetBalance"
+import { UseGetRefferals } from "@/hooks/useGetRefs"
 import { UseGetTgData } from "@/hooks/useGetUserData"
 import { Supabase } from "@/utils/supabasedb"
 import { useEffect } from "react"
 
 export const Loading = () => {
+    const refs =UseGetRefferals()
     const user = UseGetTgData()
     const balance = UseGetBalance()
-    console.log(user,balance)
+    console.log(user,balance, refs)
     const {tgUser,} = GlobalContext()
     const createUser = async() => {
         try {
