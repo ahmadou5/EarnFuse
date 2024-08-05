@@ -20,11 +20,11 @@ export const UseGetRefferals = () => {
           console.log( "tg user refferalss");
 
           const { data, error } = await Supabase
-          .from("referral")
+          .from("Users")
           .select(`
              *,
-             Users (
-              id
+             referral (
+              *
              )
            `);
 
