@@ -74,7 +74,7 @@ export const Home2 = () => {
             const ref = 'nnnnnnnnnnnnnn'
             const {data, error} = await Supabase
             .from('refferal')
-            .insert([{ refkey : `${refID}-${ref}`, refId:`${refID}`, referId: `${ref}` }])
+            .insert([{ refkey : 'helo', refId:'hey', referId: 'hi' }])
             .select('*')
 
             if(data) {
