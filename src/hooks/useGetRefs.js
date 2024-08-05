@@ -29,7 +29,7 @@ export const UseGetRefferals = () => {
            `);
 
           if (data) {
-            console.log(data)
+            console.log('referrals',data)
           }
           if (error) {
             console.log("error", error);
