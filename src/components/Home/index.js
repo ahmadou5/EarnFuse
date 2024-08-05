@@ -67,26 +67,6 @@ export const Home2 = () => {
     const pointsAdd = 1
     const EnergyRemove = 1
 
-    const init = async() => {
-        try {
-            console.log('Testingggg.....................')
-            const refID = 'username'
-            const ref = 'nnnnnnnnnnnnnn'
-            const {data, error} = await Supabase
-            .from('refferal')
-            .insert([{ refkey : 'helo', refId:'hey', referId: 'hi' }])
-            .select('*')
-
-            if(data) {
-              console.log(data)
-            }
-            if(error) {
-              throw error
-            }
-          } catch (error) {
-            console.log(error,'testing error')
-          }
-    }
     //const user = UseGetTgData()
    // console.log(user?.initDataUnsafe?.user?.username)
     const handleClick = (e) => {
@@ -102,7 +82,6 @@ export const Home2 = () => {
         setPoints(points + pointsAdd);
         setEnergy(energy - EnergyRemove < 0 ? 0 : energy - EnergyRemove)
         setClicks([...clicks, {id: Date.now(),x,y}])
-        init()
     }
 
     const handleAnimationEnd = (id) => {
