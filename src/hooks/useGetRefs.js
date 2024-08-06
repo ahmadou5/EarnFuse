@@ -22,10 +22,10 @@ export const UseGetRefferals = () => {
           const { data, error } = await Supabase
           .from("Users")
           .select(`
-            'id','6025922653'
+             '*'
             ,
              referral (
-               *
+               '*'
              )
            `)
           
@@ -34,7 +34,8 @@ export const UseGetRefferals = () => {
           if (data) {
             const ref = JSON.stringify(data)
             console.log('referrals',ref)
-            console.log(data[8]?.referral,'aeki')
+            const filteredData = data.filter((user) => user.id === '6025922653' )
+            console.log('filter',filteredData)
             setReff(data)
           }
           if (error) {
