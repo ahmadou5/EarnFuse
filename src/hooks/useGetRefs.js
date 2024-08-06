@@ -34,6 +34,7 @@ export const UseGetRefferals = () => {
           if (data) {
             const ref = JSON.stringify(data)
             console.log('referrals',ref)
+            console.log(data[0].referral[0].length,'aeki')
             setReff(data)
           }
           if (error) {
