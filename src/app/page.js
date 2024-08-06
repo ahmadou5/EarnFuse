@@ -3,6 +3,8 @@ import { Home2 } from "@/components/Home";
 import { Loading } from "@/components/Loading";
 import { GlobalContext } from "@/context/AppContext";
 import { UseGetTgData } from "@/hooks/useGetUserData";
+import { UseGetBalance } from "@/hooks/useGetBalance";
+import { UseGetRefferals } from "@/hooks/useGetRefs";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 
