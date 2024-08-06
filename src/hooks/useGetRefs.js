@@ -21,12 +21,12 @@ export const UseGetRefferals = () => {
 
           const { data, error } = await Supabase
           .from("Users")
-          .select(`
-             *,
-             referral (
-               *
-             )
-           `);
+          .select(`*,
+            referral(
+            *
+            )
+            `);
+           
            
 
           if (data) {
