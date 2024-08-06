@@ -22,7 +22,7 @@ export const UseGetRefferals = () => {
           const { data, error } = await Supabase
           .from("Users")
           .select(`
-            *
+            'id','6025922653'
             ,
              referral (
                *
