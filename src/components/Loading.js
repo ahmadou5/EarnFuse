@@ -7,9 +7,10 @@ import { Supabase } from "@/utils/supabasedb"
 import { useEffect } from "react"
 
 export const Loading = () => {
-    const refs =UseGetRefferals()
+    
     const user = UseGetTgData()
     const balance = UseGetBalance()
+    const refs =UseGetRefferals()
     console.log(user,balance, refs)
     const {tgUser,} = GlobalContext()
     const createUser = async() => {
