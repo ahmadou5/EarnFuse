@@ -15,7 +15,7 @@ export const UseGetRefferals = () => {
         console.log("Telegram WebApp is set");
         const tgData = window.Telegram.WebApp;
         console.log("data the first id", tgData?.initDataUnsafe?.user?.id);
-        const id = tgData?.initDataUnsafe?.user?.id
+        const id = tgData?.initDataUnsafe?.user?.id.toString()
 
         console.log( "tg user refferalss",id);
 
@@ -31,7 +31,7 @@ export const UseGetRefferals = () => {
           if (data) {
             console.log('reffss',data)
             console.log(id,'is it')
-            const filterone = data.filter((item) => item.id === id )
+            const filterone = data.filter((item) => item.id === id.t )
             console.log('fil', filterone)
             setReff(filterone[0].referral)
             console.log('filtered', filterone[0].referral)
