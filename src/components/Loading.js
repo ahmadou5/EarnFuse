@@ -8,10 +8,7 @@ import { useEffect } from "react"
 
 export const Loading = () => {
     
-    const user = UseGetTgData()
-    const balance = UseGetBalance()
-    const refs =UseGetRefferals()
-    console.log(user,balance, refs)
+
     const {tgUser,} = GlobalContext()
     const createUser = async() => {
         try {
