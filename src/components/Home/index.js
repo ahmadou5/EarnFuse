@@ -107,6 +107,16 @@ export const Home2 = () => {
             console.log(error)
           }
     }
+
+    const getLevel = (length) => {
+       if (length < 5) {
+        return 0
+       } else if (length >= 5) {
+        return 1
+       }  else if (length >= 10) {
+        return 2
+       }
+    }
     
     
     const boost = [
@@ -285,7 +295,7 @@ export const Home2 = () => {
                     <div className="w-[25%] flex items-center justify-center">
                         <div className="bg-white/10 h-[74px] flex items-center flex-col justify-center mt-12 w-[74px] rounded-xl">
                             <div className="text-3xl font-bold text-white">{
-                                reffs && reffs.length
+                                reffs && getLevel(reffs.length)
                                 }</div>
                             <p className="text-sm mt-0.5 font-bold text-white">Level</p>
                         </div>
