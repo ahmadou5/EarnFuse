@@ -14,7 +14,7 @@ export const UseGetRefferals = () => {
       ) {
         //console.log("Telegram WebApp is set");
         const tgData = window.Telegram.WebApp;
-        //console.log("data id", tgData?.initDataUnsafe?.user?.id);
+        console.log("data the first id", tgData?.initDataUnsafe?.user?.id);
 
     //console.log( "tg user refferalss");
 
