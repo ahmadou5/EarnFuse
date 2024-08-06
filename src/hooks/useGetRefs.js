@@ -31,7 +31,7 @@ export const UseGetRefferals = () => {
             console.log('reffss',data)
             const filterone = data.filter((item) => item.id === tgData?.initDataUnsafe?.user?.id )
             setReff(filterone[0].referral)
-            //console.log('filtered', filterone[0].referral)
+            console.log('filtered', filterone[0].referral)
             //console.log(reffs,'it is')
           }
           if (error) {
