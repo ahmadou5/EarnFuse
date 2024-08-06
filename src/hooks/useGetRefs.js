@@ -12,13 +12,14 @@ export const UseGetRefferals = () => {
         window.Telegram &&
         window.Telegram.WebApp
       ) {
-        //console.log("Telegram WebApp is set");
+        console.log("Telegram WebApp is set");
         const tgData = window.Telegram.WebApp;
         console.log("data the first id", tgData?.initDataUnsafe?.user?.id);
+        const id = tgData?.initDataUnsafe?.user?.id
 
-    //console.log( "tg user refferalss");
+        console.log( "tg user refferalss",id);
 
-          let { data, error } = await Supabase
+         const { data, error } = await Supabase
           .from("Users")
           .select(`
              *,
@@ -29,7 +30,7 @@ export const UseGetRefferals = () => {
 
           if (data) {
             console.log('reffss',data)
-            const filterone = data.filter((item) => item.id === tgData?.initDataUnsafe?.user?.id )
+            const filterone = data.filter((item) => item.id === id )
             setReff(filterone[0].referral)
             console.log('filtered', filterone[0].referral)
             //console.log(reffs,'it is')
