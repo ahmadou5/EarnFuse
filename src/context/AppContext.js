@@ -7,6 +7,7 @@ const TapContext = createContext()
 
 
 export const TapContextProvider = ({children}) => {
+  const [reffs,setReff] = useState([])
   const [isConfe, setIsConfe] = useState(false)
   const [isAuth,setIsAuth] = useState(false)
   const [taskURL,setTaskURL] = useState('')
@@ -38,6 +39,8 @@ export const TapContextProvider = ({children}) => {
     isBoostModal,
     user,
     userBalance,
+    reffs,
+    setReff,
     setUserBalance,
     setUser,
     setIsBoostModal,

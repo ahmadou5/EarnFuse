@@ -284,7 +284,9 @@ export const Home2 = () => {
                     </div>
                     <div className="w-[25%] flex items-center justify-center">
                         <div className="bg-white/10 h-[74px] flex items-center flex-col justify-center mt-12 w-[74px] rounded-xl">
-                            <p className="text-3xl font-bold text-white">{reffs && reffs.length}</p>
+                            <div className="text-3xl font-bold text-white">{
+                                reffs && reffs.length
+                                }</div>
                             <p className="text-sm mt-0.5 font-bold text-white">Level</p>
                         </div>
                     </div>
