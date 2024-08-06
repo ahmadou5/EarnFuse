@@ -4,7 +4,7 @@ import { BackMenu, Menu } from "../Menu"
 import { GlobalContext } from "@/context/AppContext"
 import { useEffect, useState, useCallback } from "react"
 import { handleCopy } from "@/utils/use"
-import { useUtils } from "@telegram-apps/sdk-react"
+import { useUtils, useViewport } from "@telegram-apps/sdk-react"
 import { UseGetTgData } from "@/hooks/useGetUserData"
 import { keyframes } from '@emotion/react';
 import Confetti from "react-confetti"
@@ -15,6 +15,7 @@ import { BoostModal } from "../Modals/BoostModal"
 
 export const Home2 = () => {
     const utils = useUtils()
+    const viewport = useViewport()
     const createUser = async() => {
         try {
             const username = tgUser?.initDataUnsafe?.user?.username
@@ -91,6 +92,7 @@ export const Home2 = () => {
     const handleAnimationEnd = (id) => {
         setClicks((prevClick) => prevClick.filter(click => click.id !== id));
     }
+    
     function sendLink() {
           utils.shareURL(
             refLink,
