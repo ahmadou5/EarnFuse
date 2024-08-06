@@ -117,6 +117,16 @@ export const Home2 = () => {
         return 2
        }
     }
+
+    const getPoints = (length) => {
+        if (length < 5) {
+         return 100000
+        } else if (length >= 5) {
+         return 100000
+        }  else if (length >= 10) {
+         return 200000
+        }
+     }
     
     
     const boost = [
@@ -309,14 +319,14 @@ export const Home2 = () => {
                                 <div className="w-[80px] h-[80px]  text-3xl flex items-center justify-center mr-4 bg-black/25 rounded-2xl">
                                   <p>🔌</p>
                                 </div>
-                                <p className="text-2xl mt-5 text-white font-extrabold">Level 1</p>
+                                <p className="text-2xl mt-5 text-white font-extrabold">{`Level ${reffs && getLevel(reffs.length)}`}</p>
                             </div>
                         </div>
                      </div>
                      <div className="w-[40%] py-3 px-3 ">
                         <div className="p-4 w-[100%]">
                             <button className="h-9 w-[100%]  mb-1.5 text-white rounded-xl bg-black/30">Claim</button>
-                            <p className="text-xl font-light text-white text-center">10000</p>
+                            <p className="text-xl font-light text-white text-center">{reffs && getPoints(reffs.length)}</p>
                         </div>
                      </div>
                     </div>
