@@ -22,12 +22,13 @@ export const UseGetRefferals = () => {
           const { data, error } = await Supabase
           .from("Users")
           .select(`
+            *
             ,
              referral (
                *
              )
            `)
-           .eq('id','6025922653')
+          
            
 
           if (data) {
