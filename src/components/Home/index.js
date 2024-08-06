@@ -50,6 +50,8 @@ export const Home2 = () => {
     const {isHome, isFrens, isTask, taskName,
         taskAmount,
         isConfe,
+        reffs,
+        setReff,
         setIsConfe,
         isBoostModal,
         setIsBoostModal,
@@ -66,7 +68,7 @@ export const Home2 = () => {
 
     const pointsAdd = 1
     const EnergyRemove = 1
-
+    
     //const user = UseGetTgData()
    // console.log(user?.initDataUnsafe?.user?.username)
     const handleClick = (e) => {
@@ -282,7 +284,7 @@ export const Home2 = () => {
                     </div>
                     <div className="w-[25%] flex items-center justify-center">
                         <div className="bg-white/10 h-[74px] flex items-center flex-col justify-center mt-12 w-[74px] rounded-xl">
-                            <p className="text-3xl font-bold text-white">1</p>
+                            <p className="text-3xl font-bold text-white">{reffs && reffs.length}</p>
                             <p className="text-sm mt-0.5 font-bold text-white">Level</p>
                         </div>
                     </div>

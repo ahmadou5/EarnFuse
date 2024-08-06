@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { GlobalContext } from "@/context/AppContext";
 import { Supabase } from "@/utils/supabasedb";
 export const UseGetRefferals = () => {
-  const { tgUser, setTgUser, userBalance, setUserBalance } = GlobalContext();
+  const { tgUser, setTgUser, userBalance, setUserBalance, reffs,setReff } = GlobalContext();
  const [id2,setId2] = useState('')
   useEffect(() => {
     async function initTg() {
@@ -33,6 +33,7 @@ export const UseGetRefferals = () => {
 
           if (data) {
             console.log('referrals',data)
+            setReff(data)
           }
           if (error) {
             console.log("error", error);
