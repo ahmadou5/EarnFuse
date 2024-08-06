@@ -3,6 +3,7 @@ import { IoSettings, IoWallet } from "react-icons/io5"
 import { BackMenu, Menu } from "../Menu"
 import { GlobalContext } from "@/context/AppContext"
 import { useEffect, useState, useCallback } from "react"
+import { handleCopy } from "@/utils/use"
 import { UseGetTgData } from "@/hooks/useGetUserData"
 import { keyframes } from '@emotion/react';
 import Confetti from "react-confetti"
@@ -89,6 +90,8 @@ export const Home2 = () => {
     const handleAnimationEnd = (id) => {
         setClicks((prevClick) => prevClick.filter(click => click.id !== id));
     }
+
+    const refLink = `https://t.me/InFuseTapbot?start=${tgUser?.initDataUnsafe?.user?.id}`
    
     const updateBalance =  async () => {
           try {
@@ -334,7 +337,7 @@ export const Home2 = () => {
                 </div>
                 <div className="w-[100%] mt-8 ">
                         <div className="h-20 w-[98%] rounded-2xl flex items-center justify-center bg-black/25">
-                            <p className="text-[16px] flex items-center justify-center ml-auto mr-auto text-center text-white font-light">{`https://t.me/InFuseTapbot?start=${tgUser?.initDataUnsafe?.user?.id}`}</p>
+                            <p className="text-[16px] flex items-center justify-center ml-auto mr-auto text-center text-white font-light">{refLink}</p>
                         </div>
                     </div>
                 <div className="w-[100%] h-[150px] bg-blue-700/0 px-2 mt-8 p-4 flex">
@@ -342,7 +345,7 @@ export const Home2 = () => {
                      <div className="w-[45%] flex mr-auto items-center justify-center h-14  border-white/70 border-2 bg-black/0 rounded-3xl" >
                       <p className="text-[18px] font-bold">Invite Plug</p>
                      </div>
-                     <div className="w-[45%] ml-auto flex items-center justify-center h-14 border-2 border-white/70 bg-black/0 rounded-3xl" >
+                     <div onClick={() => handleCopy(refLink)} className="w-[45%] ml-auto flex items-center justify-center h-14 border-2 border-white/70 bg-black/0 rounded-3xl" >
                       <p className="text-[18px] font-bold">Copy Link</p>
                      </div>
                      
