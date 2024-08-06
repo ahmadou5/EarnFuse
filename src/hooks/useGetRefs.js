@@ -31,7 +31,7 @@ export const UseGetRefferals = () => {
           if (data) {
             console.log('reffss',data)
             console.log(id,'is it')
-            const filterone = data.filter((item) => item.id === id.t )
+            const filterone = data.filter((item) => item.id === id )
             console.log('fil', filterone)
             setReff(filterone[0].referral)
             console.log('filtered', filterone[0].referral)
