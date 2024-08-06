@@ -9,6 +9,9 @@ import { useEffect, useState } from "react";
 export default function Home() {
   const {isAuth,setIsAuth, tgUser, setTgUser} = GlobalContext()
   const user = UseGetTgData()
+  const balance = UseGetBalance()
+  const refs =UseGetRefferals()
+  //const user = UseGetTgData()
   useEffect(() => {
     const initTg = () => {
       if (
@@ -24,7 +27,7 @@ export default function Home() {
       }
     }
     initTg()
-    console.log(user)
+    console.log(user,balance,refs)
     const interval = setInterval(() => {
        setIsAuth(true)
     },6000)
