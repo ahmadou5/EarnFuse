@@ -40,14 +40,10 @@ function RootInner({ children }) {
     useTelegramMock();
   }
 
-  const debug = useLaunchParams().startParam === "debug";
+  //const debug = useLaunchParams().startParam === "debug";
 
   // Enable debug mode to see all the methods sent and events received.
-  useEffect(() => {
-    if (debug) {
-      import("eruda").then((lib) => lib.default.init());
-    }
-  }, [debug]);
+  
 
   return (
     <SDKProvider acceptCustomStyles debug={debug}>
@@ -67,16 +63,10 @@ export function TelegramProvider(props) {
     </>
   ) : (
     <div className=" absolute top-0 left-0 flex flex-col items-center  gap-4 justify-center w-full h-full">
-      <Image src={"./assets/show.png"} alt="Rabble" width={38} height={64} />
+      <img src={"./assets/show.png"} alt="Rabble" width={38} height={64} />
       <div className="flex gap-4">
         <p>Loading</p>
-        <Image
-          src={"./assets/show.png"}
-          alt="loader"
-          width={24}
-          height={24}
-          className="animate-pulse"
-        />
+        
       </div>
     </div>
   );
