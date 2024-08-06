@@ -91,9 +91,19 @@ export const Home2 = () => {
         setClicks((prevClick) => prevClick.filter(click => click.id !== id));
     }
     function sendLink() {
-        WebApp.sendCopyRequest({
-          text: refLink // Replace with your desired link
-        });
+        if (
+            typeof window !== "undefined" &&
+            window.Telegram &&
+            window.Telegram.WebApp
+          ) {
+            console.log("Telegram WebApp is set");
+            const WebApp = window.Telegram.WebApp;
+            WebApp.sendCopyRequest({
+                text: refLink // Replace with your desired link
+                
+            });
+          }
+           
       }
     const refLink = `https://t.me/InFuseTapbot?start=${tgUser?.initDataUnsafe?.user?.id}`
    
