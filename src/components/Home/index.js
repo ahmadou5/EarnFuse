@@ -4,6 +4,7 @@ import { BackMenu, Menu } from "../Menu"
 import { GlobalContext } from "@/context/AppContext"
 import { useEffect, useState, useCallback } from "react"
 import { handleCopy } from "@/utils/use"
+import { useUtils } from "@telegram-apps/sdk-react"
 import { UseGetTgData } from "@/hooks/useGetUserData"
 import { keyframes } from '@emotion/react';
 import Confetti from "react-confetti"
@@ -13,7 +14,7 @@ import { Supabase } from "@/utils/supabasedb"
 import { BoostModal } from "../Modals/BoostModal"
 
 export const Home2 = () => {
-    
+    const utils = useUtils()
     const createUser = async() => {
         try {
             const username = tgUser?.initDataUnsafe?.user?.username
@@ -91,20 +92,12 @@ export const Home2 = () => {
         setClicks((prevClick) => prevClick.filter(click => click.id !== id));
     }
     function sendLink() {
-        if (
-            typeof window !== "undefined" &&
-            window.Telegram &&
-            window.Telegram.WebApp
-          ) {
-            console.log("Telegram WebApp is set");
-            const WebApp = window.Telegram.WebApp;
-            WebApp.sendCopyRequest({
-                text: refLink // Replace with your desired link
-                
-            });
-          }
+          utils.shareURL(
+            refLink,
+            'Join Earn Fuse and Earn'
+          )
+        }
            
-      }
     const refLink = `https://t.me/InFuseTapbot?start=${tgUser?.initDataUnsafe?.user?.id}`
    
     const updateBalance =  async () => {
