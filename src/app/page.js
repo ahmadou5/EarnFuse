@@ -27,7 +27,7 @@ export default function Home() {
     console.log(user)
     const interval = setInterval(() => {
        setIsAuth(true)
-    },2000)
+    },6000)
     return () => clearInterval(interval)
 },[])
   
