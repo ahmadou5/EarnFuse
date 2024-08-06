@@ -1,7 +1,6 @@
 import { Inter, Montserrat } from "next/font/google";
 import "./globals.css";
 import Script from "next/script";
-import { SDKProvider } from "@telegram-apps/sdk-react";
 import { TapContextProvider } from "@/context/AppContext";
 const inter = Montserrat({ subsets: ["latin"], weight: '400' });
 
@@ -14,11 +13,9 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <Script  src="https://telegram.org/js/telegram-web-app.js"></Script>
-      <SDKProvider>
       <TapContextProvider>
        <body className={inter.className}>{children}</body>
       </TapContextProvider>
-      </SDKProvider>
     </html>
   );
 }
