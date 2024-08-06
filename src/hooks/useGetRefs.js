@@ -27,7 +27,7 @@ export const UseGetRefferals = () => {
                *
              )
            `)
-           .eq('id',id2)
+           .eq('id','6025922653')
            
 
           if (data) {
