@@ -8,6 +8,7 @@ const TapContext = createContext()
 
 export const TapContextProvider = ({children}) => {
   const [reffs,setReff] = useState([])
+  const [userData,setUserData] = useState([])
   const [isConfe, setIsConfe] = useState(false)
   const [isAuth,setIsAuth] = useState(false)
   const [taskURL,setTaskURL] = useState('')
@@ -40,6 +41,8 @@ export const TapContextProvider = ({children}) => {
     user,
     userBalance,
     reffs,
+    userData,
+    setUserData,
     setReff,
     setUserBalance,
     setUser,

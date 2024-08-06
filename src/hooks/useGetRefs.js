@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { GlobalContext } from "@/context/AppContext";
 import { Supabase } from "@/utils/supabasedb";
 export const UseGetRefferals = () => {
-  const { tgUser, setTgUser, userBalance, setUserBalance ,reffs,
+  const { tgUser, setTgUser, userBalance,userData,setUserData, setUserBalance ,reffs,
     setReff, } = GlobalContext();
 
   useEffect(() => {
@@ -15,7 +15,7 @@ export const UseGetRefferals = () => {
         console.log("Telegram WebApp is set");
         const tgData = window.Telegram.WebApp;
         console.log("data the first id", tgData?.initDataUnsafe?.user?.id);
-        const id = tgData?.initDataUnsafe?.user?.id
+        const id = userData[0]?.id
 
         console.log( "tg user refferalss",id);
 
@@ -30,7 +30,7 @@ export const UseGetRefferals = () => {
 
           if (data) {
             console.log('reffss',data)
-            const filterone = data.filter((item) => item.id === "6025922653" )
+            const filterone = data.filter((item) => item.id === id )
             setReff(filterone[0].referral)
             console.log('filtered', filterone[0].referral)
             //console.log(reffs,'it is')
