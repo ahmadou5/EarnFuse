@@ -93,7 +93,7 @@ export const Menu = () => {
         {/**for desktop view **/}
         <div
           style={{ "backdrop-filter": "blur(12px)" }}
-          className=" w-[93%] ml-auto mr-auto rounded-xl py-1 px-1.5 z-100 bg-black/45 mb-1  fixed inset-x-0 bottom-1 flex justify-center items-center"
+          className=" w-[97%] ml-auto mr-auto rounded-xl py-1 px-1.5 z-100 bg-black/45 mb-1  fixed inset-x-0 bottom-1 flex justify-center items-center"
         >
           <div className="lg:py-2.5 py-1.5 lg:px-2.5 px-1.5  mt-auto mb-auto ml-auto mr-auto w-[98%] flex flex-row  h-[90%]">
             <div onClick={() => {
@@ -103,7 +103,7 @@ export const Menu = () => {
               setIsTask(true)
             }} className={`h-12 ml-auto mr-auto w-[30%] bg-white/0 flex flex-col items-center justify-center`}>
                  <p size={28} className={`${ isTask ? 'text-[#448cff]' : 'text-gothic-600/85'} text-2xl`} >📝</p>
-                <p className={`font-light mt-1 text-white text-[12px]`}>Tasks</p>
+                <p className={`font-light mt-1 text-white text-[10px]`}>Tasks</p>
             </div>
             
             <div onClick={() => {
@@ -113,7 +113,7 @@ export const Menu = () => {
              setIsTask(false)
             }} className={`h-12 ml-auto mr-auto w-[30%] bg-white/0 flex flex-col items-center justify-center`}>
                 <p size={28} className={`${ isHistory ? 'text-[#448cff]' : 'text-gothic-600/85'} text-2xl`} >🚀</p>
-                <p className={`font-light mt-1 text-white text-[12px]`}>Boosts</p>
+                <p className={`font-light mt-1 text-white text-[10px]`}>Boosts</p>
             </div>
             <div onClick={() => {
               setIsFrens(true)
@@ -123,7 +123,7 @@ export const Menu = () => {
             }}
              className={`h-12 ml-auto mr-auto w-[30%] bg-white/0 flex flex-col items-center justify-center`}>
                 <p size={28} className={`${ isHistory ? 'text-[#448cff]' : 'text-gothic-600/85'} text-2xl`} >👩🏽‍🚀</p>
-                 <p className={`ffont-light mt-1 text-white text-[12px]`}>Plugs</p>
+                 <p className={`ffont-light mt-1 text-white text-[10px]`}>Plugs</p>
             </div>
           </div>          
         </div>
