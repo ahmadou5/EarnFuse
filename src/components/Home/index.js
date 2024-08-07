@@ -315,7 +315,7 @@ export const Home2 = () => {
                     </div>
                     <div>
                         <div>
-                            <img src='./assets/show.png' />
+                            <img src={tgUser?.initDataUnsafe?.user?.photo_url} />
                         </div>
                         <div>
                              {`${tgUser?.initDataUnsafe?.user?.username} user`}
