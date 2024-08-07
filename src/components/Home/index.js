@@ -319,7 +319,7 @@ export const Home2 = () => {
                     </div>
                     <div>
                         <div>
-                            <img src={user?.user?.photoUrl} />
+                            <img src={user?.chat?.photoUrl} />
                         </div>
                         <div>
                              {`${tgUser?.initDataUnsafe?.user?.username} user`}
