@@ -313,27 +313,33 @@ export const Home2 = () => {
                         <IoSettings className="ml-4  text-white/75 mr-2 text-[20px]"/>
                     </div>
                 </div>
-                <div className="w-[100%] mt-8 flex  text-white/75 items-center justify-center flex-col h-auto">
-                    <div className="mb-2 mt-0.5 rounded-lg p-2 bg-white/50 w-[95%] h-[80px]">
-                        talla
+                <div className="w-[100%] mt-6 flex  text-white/75 items-center justify-center flex-col h-auto">
+                    <div className="mb-2 mt-0.5 rounded-lg p-2 bg-white/0 w-[95%] h-[80px]">
+                        
                     </div>
                     <div className="w-[100%] flex  text-white/75 items-center flex-col justify-center mt-8">
-                        <div className="mt-2 bg-black rounded-full h-[120px] w-[120px] mb-5">
+                        <div className="mt-2 bg-black rounded-full flex items-center justify-center h-[120px] w-[120px] mb-5">
                             <p className="font-[10px]">{tgUser?.initDataUnsafe?.user?.username}</p>
                         </div>
                         <div>
-                            <p className="font-bold">{`${tgUser?.initDataUnsafe?.user?.username}`}</p>
+                            <p className="font-bold text-[23px]">{`Hi ${tgUser?.initDataUnsafe?.user?.username}`}</p>
                         </div>
                     </div>
                 </div>
-                <div className="mt-7 py-2 flex flex-col items-center justify-center">
+                <div className="mt-3 py-2 flex flex-col items-center justify-center">
                     
                     <div className="flex items-center justify-center">
                         <img className="h-16 w-16 ml-auto mr-1 " src="./assets/show.png" />
                         <p className="text-4xl ml-1 text-white mr-auto font-bold ">{accumulative(userBalance,points)?.toLocaleString()}</p>
                     </div>
                 </div>
-                
+                <div className="w-[100%] mt-[100px] flex items-center justify-center">
+                    <div className="bg-white/40 w-[70%] rounded-2xl text-white flex items-center justify-center h-12">
+                        <div className="text-xl">
+                            Claim
+                        </div>
+                    </div>
+                </div>
             
             </div>
             <Menu />
