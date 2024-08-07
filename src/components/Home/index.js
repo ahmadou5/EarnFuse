@@ -59,6 +59,8 @@ export const Home2 = () => {
         setReff,
         setIsConfe,
         isBoostModal,
+        lastClaim,
+        setLastClaim,
         setIsBoostModal,
         setTaskAmount,
         taskButton,
@@ -338,7 +340,7 @@ export const Home2 = () => {
                 <div className="w-[100%] mt-[80px] flex items-center justify-center">
                     <div className="bg-black/40 w-[90%] rounded-2xl text-white flex items-center justify-center h-12">
                         <div className="text-xl">
-                            Claim
+                            {lastClaim}
                         </div>
                     </div>
                 </div>

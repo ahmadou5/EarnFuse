@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { GlobalContext } from "@/context/AppContext";
 import { Supabase } from "@/utils/supabasedb";
 export const UseGetBalance = () => {
-    const { tgUser, setTgUser,userBalance,setUserBalance, userData,setUserData } = GlobalContext()
+    const { tgUser, setTgUser,userBalance,lastClaim,setLastClaim,setUserBalance, userData,setUserData } = GlobalContext()
    
     useEffect(() => {
       
@@ -33,6 +33,7 @@ export const UseGetBalance = () => {
                 console.log(data[0].isClick,'counter')
                 console.log(data[0].lastClaim,'claim')
                 setUserData(data)
+                setLastClaim(data[0].lastClaim)
                 setUserBalance(data[0].balance)
               }
               if(error) {
