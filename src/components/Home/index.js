@@ -4,7 +4,7 @@ import { BackMenu, Menu } from "../Menu"
 import { GlobalContext } from "@/context/AppContext"
 import { useEffect, useState, useCallback } from "react"
 import { handleCopy } from "@/utils/use"
-import { useUtils, useViewport } from "@telegram-apps/sdk-react"
+import { useUtils, useViewport, useInitData } from "@telegram-apps/sdk-react"
 import { UseGetTgData } from "@/hooks/useGetUserData"
 import { keyframes } from '@emotion/react';
 import Confetti from "react-confetti"
@@ -14,7 +14,7 @@ import { Supabase } from "@/utils/supabasedb"
 import { BoostModal } from "../Modals/BoostModal"
 import { retrieveLaunchParams } from '@telegram-apps/sdk';
 
-const { initDataRaw } = retrieveLaunchParams();
+
 
 export const Home2 = () => {
     //const utils = useUtils()
@@ -74,7 +74,7 @@ export const Home2 = () => {
     const pointsAdd = 1
     const EnergyRemove = 1
     
-    //const user = UseGetTgData()
+    const user = useInitData()
    // console.log(user?.initDataUnsafe?.user?.username)
     const { initData } = retrieveLaunchParams();
     const handleClick = (e) => {
@@ -91,7 +91,7 @@ export const Home2 = () => {
         setEnergy(energy - EnergyRemove < 0 ? 0 : energy - EnergyRemove)
         setClicks([...clicks, {id: Date.now(),x,y}])
     }
-    console.log('datauser',initData)
+    console.log('datauserinit',user)
     const handleAnimationEnd = (id) => {
         setClicks((prevClick) => prevClick.filter(click => click.id !== id));
     }
