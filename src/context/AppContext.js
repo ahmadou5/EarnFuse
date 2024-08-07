@@ -16,6 +16,7 @@ export const TapContextProvider = ({children}) => {
   const [taskName,setTaskName] = useState('')
   const [taskAmount,setTaskAmount] = useState(0)
   const [isHome,setIsHome] = useState(true)
+  const [isGame,setIsGame] = useState(false)
   const [tgUser, setTgUser] = useState(null);
   const [isFrens,setIsFrens] = useState(false)
   const [isTask,setIsTask] = useState(false)
@@ -42,6 +43,8 @@ export const TapContextProvider = ({children}) => {
     userBalance,
     reffs,
     userData,
+    isGame,
+    setIsGame,
     setUserData,
     setReff,
     setUserBalance,
