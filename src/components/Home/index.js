@@ -74,9 +74,9 @@ export const Home2 = () => {
     const pointsAdd = 1
     const EnergyRemove = 1
     
-    const user = useInitData()
+    //const user = useInitData()
    // console.log(user?.initDataUnsafe?.user?.username)
-    const { initData } = retrieveLaunchParams();
+    //const { initData } = retrieveLaunchParams();
     const handleClick = (e) => {
         if(energy - EnergyRemove < 0 && points >= 20) {
             setClaimMode(true)
@@ -91,7 +91,7 @@ export const Home2 = () => {
         setEnergy(energy - EnergyRemove < 0 ? 0 : energy - EnergyRemove)
         setClicks([...clicks, {id: Date.now(),x,y}])
     }
-    console.log('datauserinit',user?.chat?.photoUrl)
+    //console.log('datauserinit',user?.chat?.photoUrl)
     const handleAnimationEnd = (id) => {
         setClicks((prevClick) => prevClick.filter(click => click.id !== id));
     }
@@ -313,21 +313,21 @@ export const Home2 = () => {
                         <IoSettings className="ml-4  text-white/75 mr-2 text-[20px]"/>
                     </div>
                 </div>
-                <div className="w-[100%] mt-3 flex items-center justify-center flex-col h-[250px]">
-                    <div>
+                <div className="w-[100%] mt-8 flex  text-white/75 items-center justify-center flex-col h-auto">
+                    <div className="mb-2 mt-0.5 rounded-lg p-2 bg-white/50 w-[95%] h-[80px]">
                         talla
                     </div>
-                    <div>
-                        <div>
-                            <img src={user?.chat?.photoUrl} />
+                    <div className="w-[100%] flex  text-white/75 items-center flex-col justify-center mt-8">
+                        <div className="mt-2 bg-black rounded-full h-[120px] w-[120px] mb-5">
+                            <p className="font-[10px]">{tgUser?.initDataUnsafe?.user?.username}</p>
                         </div>
                         <div>
-                             {`${tgUser?.initDataUnsafe?.user?.username} user`}
+                            <p className="font-bold">{`${tgUser?.initDataUnsafe?.user?.username}`}</p>
                         </div>
                     </div>
                 </div>
                 <div className="mt-7 py-2 flex flex-col items-center justify-center">
-                    <p className="text-[18px] text-white font-light">Your Fuse Point:</p>
+                    
                     <div className="flex items-center justify-center">
                         <img className="h-16 w-16 ml-auto mr-1 " src="./assets/show.png" />
                         <p className="text-4xl ml-1 text-white mr-auto font-bold ">{accumulative(userBalance,points)?.toLocaleString()}</p>
