@@ -12,6 +12,9 @@ import { ClaimModal } from "../Modals/ClaimModal"
 import useWindowSize from "react-use/lib/useWindowSize";
 import { Supabase } from "@/utils/supabasedb"
 import { BoostModal } from "../Modals/BoostModal"
+import { retrieveLaunchParams } from '@telegram-apps/sdk';
+
+const { initDataRaw } = retrieveLaunchParams();
 
 export const Home2 = () => {
     //const utils = useUtils()
@@ -73,6 +76,7 @@ export const Home2 = () => {
     
     //const user = UseGetTgData()
    // console.log(user?.initDataUnsafe?.user?.username)
+    const { initData } = retrieveLaunchParams();
     const handleClick = (e) => {
         if(energy - EnergyRemove < 0 && points >= 20) {
             setClaimMode(true)
@@ -87,7 +91,7 @@ export const Home2 = () => {
         setEnergy(energy - EnergyRemove < 0 ? 0 : energy - EnergyRemove)
         setClicks([...clicks, {id: Date.now(),x,y}])
     }
-    console.log('datauser',tgUser?.initData)
+    console.log('datauser',initData)
     const handleAnimationEnd = (id) => {
         setClicks((prevClick) => prevClick.filter(click => click.id !== id));
     }
