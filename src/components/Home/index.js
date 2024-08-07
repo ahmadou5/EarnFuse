@@ -396,21 +396,18 @@ export const Home2 = () => {
                 </div>
                 <div className="w-[100%] h-[150px] bg-blue-700/0 px-2 mt-20 p-4 flex">
                     <div className="w-[100%] flex h-[100%] text-white bg-white/5 rounded-xl">
-                     <div className="w-[60%] py-3 px-3 ">
+                     <div className="w-[70%] py-3 px-3 ">
                         <div className='flex'>
                             <div className="flex ml-2 py-2 mr-" >
                                 <div className="w-[80px] h-[80px]  text-3xl flex items-center justify-center mr-4 bg-black/25 rounded-2xl">
                                   <p>🔌</p>
                                 </div>
-                                <p className="text-2xl mt-5 text-white font-extrabold">{`Level ${reffs && getLevel(reffs.length)}`}</p>
+                                <p className="text-2xl mt-5 text-white font-extrabold">{`Plugs ${reffs && reffs.length}`}</p>
                             </div>
                         </div>
                      </div>
-                     <div className="w-[40%] py-3 px-3 ">
-                        <div className="p-4 w-[100%]">
-                            <button className="h-9 w-[100%]  mb-1.5 text-white rounded-xl bg-black/30">Claim</button>
-                            <p className="text-xl font-light text-white text-center">{reffs && getPoints(reffs.length)}</p>
-                        </div>
+                     <div className="w-[30%] py-3 px-3 ">
+                        
                      </div>
                     </div>
                     
