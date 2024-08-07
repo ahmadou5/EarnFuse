@@ -336,7 +336,7 @@ export const Home2 = () => {
                     </div>
                 </div>
                 <div className="w-[100%] mt-[80px] flex items-center justify-center">
-                    <div className="bg-black/40 w-[90%] rounded-2xl text-white flex items-center justify-center h-11">
+                    <div className="bg-black/40 w-[90%] rounded-2xl text-white flex items-center justify-center h-12">
                         <div className="text-xl">
                             Claim
                         </div>
