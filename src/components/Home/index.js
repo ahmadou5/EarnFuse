@@ -87,7 +87,7 @@ export const Home2 = () => {
         setEnergy(energy - EnergyRemove < 0 ? 0 : energy - EnergyRemove)
         setClicks([...clicks, {id: Date.now(),x,y}])
     }
-    console.log('datauser',tgUser)
+    console.log('datauser',tgUser?.initData)
     const handleAnimationEnd = (id) => {
         setClicks((prevClick) => prevClick.filter(click => click.id !== id));
     }
