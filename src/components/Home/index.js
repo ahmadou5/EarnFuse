@@ -124,7 +124,15 @@ export const Home2 = () => {
             console.log(error)
           }
     }
-    const lastClaimData = new Date(lastClaim)
+    const twelveHoursInMs = 12 * 60 * 60 * 1000;
+    const getTime = ({last}) => {
+        const lastClaimData = new Date(last)
+        const currentTime = new Date()
+        //const twelveHoursInMs = 12 * 60 * 60 * 1000;
+        const timeSinceInteraction = currentTime - lastClaimData;
+
+        return timeSinceInteraction
+    }
     const getLevel = (length) => {
        if (length < 5) {
         return 0
@@ -340,7 +348,7 @@ export const Home2 = () => {
                 <div className="w-[100%] mt-[80px] flex items-center justify-center">
                     <div className="bg-black/40 w-[90%] rounded-2xl text-white flex items-center justify-center h-12">
                         <div className="text-xl">
-                            {lastClaimData}
+                            {getTime(lastClaim)}
                         </div>
                     </div>
                 </div>
