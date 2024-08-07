@@ -91,7 +91,7 @@ export const Home2 = () => {
         setEnergy(energy - EnergyRemove < 0 ? 0 : energy - EnergyRemove)
         setClicks([...clicks, {id: Date.now(),x,y}])
     }
-    console.log('datauserinit',user)
+    console.log('datauserinit',user?.user?.photoUrl)
     const handleAnimationEnd = (id) => {
         setClicks((prevClick) => prevClick.filter(click => click.id !== id));
     }
@@ -319,7 +319,7 @@ export const Home2 = () => {
                     </div>
                     <div>
                         <div>
-                            <img src={tgUser?.initDataUnsafe?.user?.avatar_url} />
+                            <img src={user?.user?.photoUrl} />
                         </div>
                         <div>
                              {`${tgUser?.initDataUnsafe?.user?.username} user`}
