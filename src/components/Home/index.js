@@ -318,8 +318,8 @@ export const Home2 = () => {
                         
                     </div>
                     <div className="w-[100%] flex  text-white/75 items-center flex-col justify-center mt-8">
-                        <div className="mt-2 bg-black rounded-full flex items-center justify-center h-[120px] w-[120px] mb-5">
-                            <p className="font-[10px]">{tgUser?.initDataUnsafe?.user?.username}</p>
+                        <div className="mt-2 bg-white/45 rounded-full flex items-center justify-center h-[120px] w-[120px] mb-5">
+                            <p className="font-[10px] text-blue-500/50">{tgUser?.initDataUnsafe?.user?.username}</p>
                         </div>
                         <div>
                             <p className="font-bold text-[23px]">{`Hi ${tgUser?.initDataUnsafe?.user?.username}`}</p>
@@ -333,7 +333,7 @@ export const Home2 = () => {
                         <p className="text-4xl ml-1 text-white mr-auto font-bold ">{accumulative(userBalance,points)?.toLocaleString()}</p>
                     </div>
                 </div>
-                <div className="w-[100%] mt-[100px] flex items-center justify-center">
+                <div className="w-[100%] mt-[80px] flex items-center justify-center">
                     <div className="bg-white/40 w-[70%] rounded-2xl text-white flex items-center justify-center h-12">
                         <div className="text-xl">
                             Claim
