@@ -315,7 +315,9 @@ export const Home2 = () => {
                 </div>
                 <div className="w-[100%] mt-3 flex  text-white/75 items-center justify-center flex-col h-auto">
                     <div className="mb-2 mt-0.5 rounded-lg p-2 bg-white/0 w-[95%] h-[80px]">
-                        
+                        <button>
+                            
+                        </button>
                     </div>
                     <div className="w-[100%] flex  text-white/75 items-center flex-col justify-center mt-8">
                         <div className="mt-2 bg-black/45 rounded-full flex items-center justify-center h-[150px] w-[150px] mb-5">
@@ -334,7 +336,7 @@ export const Home2 = () => {
                     </div>
                 </div>
                 <div className="w-[100%] mt-[80px] flex items-center justify-center">
-                    <div className="bg-black/40 w-[70%] rounded-2xl text-white flex items-center justify-center h-12">
+                    <div className="bg-black/40 w-[90%] rounded-2xl text-white flex items-center justify-center h-10">
                         <div className="text-xl">
                             Claim
                         </div>
