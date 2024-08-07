@@ -313,7 +313,7 @@ export const Home2 = () => {
                         <IoSettings className="ml-4  text-white/75 mr-2 text-[20px]"/>
                     </div>
                 </div>
-                <div className="w-[100%] mt-6 flex  text-white/75 items-center justify-center flex-col h-auto">
+                <div className="w-[100%] mt-3 flex  text-white/75 items-center justify-center flex-col h-auto">
                     <div className="mb-2 mt-0.5 rounded-lg p-2 bg-white/0 w-[95%] h-[80px]">
                         
                     </div>
