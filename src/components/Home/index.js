@@ -127,8 +127,8 @@ export const Home2 = () => {
     const twelveHoursInMs = 12 * 60 * 60 * 1000;
     const getTime = ({last}) => {
         const lastClaimData = new Date()
-        const currentTime = new Date()
-        console.log('hello.',new Date.now())
+        const currentTime = new Date.now()
+        console.log('hello.', Date.now())
         //const twelveHoursInMs = 12 * 60 * 60 * 1000;
         const timeSinceInteraction = currentTime - lastClaimData;
 
