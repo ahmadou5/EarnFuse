@@ -128,7 +128,7 @@ export const Home2 = () => {
     const getTime = ({last}) => {
         const lastClaimData = new Date(164663647)
         const currentTime = new Date()
-        console.log('hello.',currentTime.getUTCDay())
+        console.log('hello.',currentTime.getUTCDate())
         //const twelveHoursInMs = 12 * 60 * 60 * 1000;
         const timeSinceInteraction = currentTime - lastClaimData;
 
