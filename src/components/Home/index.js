@@ -129,9 +129,7 @@ export const Home2 = () => {
     }
     const twelveHoursInMs = 12 * 60 * 60 * 1000;
     function formatTimeRemaining(milliseconds) {
-        if (milliseconds <= 0) {
-          return 'Claim available now';
-        }
+       
       
         const seconds = Math.floor(milliseconds / 1000);
         const minutes = Math.floor(seconds / 60);
