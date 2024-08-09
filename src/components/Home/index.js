@@ -20,6 +20,7 @@ export const Home2 = () => {
     //const utils = useUtils()
     const [canClaim,setCanClaim] = useState(true)
     const [timeRemaining,setTimeRemaining] = useState(0)
+    const [timeString1,setTimeString] = useState('')
     const createUser = async() => {
         try {
             const username = tgUser?.initDataUnsafe?.user?.username
@@ -154,7 +155,7 @@ export const Home2 = () => {
           timeString.push(`${remainingMinutes}m`);
         }
         timeString.push(`${remainingSeconds}s`);
-      
+        setTimeString(timeString.join(' '))
         return timeString.join(' ');
       }
     const getTime = ({last}) => {
@@ -219,6 +220,7 @@ export const Home2 = () => {
     useEffect(() => {
         const intervalId = setInterval(() => {
             getTime(1723188918093)
+            formatTimeRemaining(timeRemaining)
           }, 1000);
           return () => clearInterval(intervalId);
     },[1000])
@@ -406,7 +408,7 @@ export const Home2 = () => {
                     <>
                     <div className="bg-black/30 w-[90%] rounded-2xl text-white flex items-center justify-center h-12">
                         <div className="text-xl">
-                            {formatTimeRemaining(timeRemaining)}
+                            {timeString1}
                         </div>
                     </div>
                     </>}
