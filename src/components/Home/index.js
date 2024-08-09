@@ -18,7 +18,7 @@ import { retrieveLaunchParams } from '@telegram-apps/sdk';
 
 export const Home2 = () => {
     //const utils = useUtils()
-    const [canClaim,setCanClaim] = useState(true)
+    const [canClaim,setCanClaim] = useState(false)
     const [timeRemaining,setTimeRemaining] = useState(0)
     const [timeString1,setTimeString] = useState('')
     const createUser = async() => {
