@@ -219,9 +219,9 @@ export const Home2 = () => {
     }
     useEffect(() => {
         const intervalId = setInterval(() => {
-            const time = formatTimeRemaining(timeRemaining)
             getTime(1723188918093)
-            //formatTimeRemaining(timeRemaining)
+            formatTimeRemaining(timeRemaining)
+            const time = formatTimeRemaining(timeRemaining)
             setTimeString(time)
           }, 1000);
           return () => clearInterval(intervalId);
