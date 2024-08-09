@@ -224,7 +224,7 @@ export const Home2 = () => {
     }
     useEffect(() => {
         const intervalId = setInterval(() => {
-            theFunct()
+            getTime(1723188918093);
           }, 1000);
           return () => clearInterval(intervalId);
     },[])
