@@ -18,6 +18,8 @@ import { retrieveLaunchParams } from '@telegram-apps/sdk';
 
 export const Home2 = () => {
     //const utils = useUtils()
+    const [canClaim,setCanClaim] = useState(false)
+    const [timeRemaining,setTimeRemaining] = useState(0)
     const createUser = async() => {
         try {
             const username = tgUser?.initDataUnsafe?.user?.username
@@ -125,22 +127,54 @@ export const Home2 = () => {
           }
     }
     const twelveHoursInMs = 12 * 60 * 60 * 1000;
+    function formatTimeRemaining(milliseconds) {
+        if (milliseconds <= 0) {
+          return 'Claim available now';
+        }
+      
+        const seconds = Math.floor(milliseconds / 1000);
+        const minutes = Math.floor(seconds / 60);
+        const hours = Math.floor(minutes / 60);
+        const days = Math.floor(hours / 24);
+      
+        const   
+       remainingSeconds = seconds % 60;
+        const remainingMinutes = minutes % 60;
+        const remainingHours = hours % 24;
+      
+        const   
+       timeString = [];
+        if (days > 0) {
+          timeString.push(`${days}d`);
+        }
+        if (remainingHours > 0) {
+          timeString.push(`${remainingHours}h`);
+        }
+        if (remainingMinutes > 0) {
+          timeString.push(`${remainingMinutes}m`);
+        }
+        timeString.push(`${remainingSeconds}s`);
+      
+        return timeString.join(' ');
+      }
     const getTime = ({last}) => {
         const lastClaimTime = date.getTime() - 1723188918093;
         const currentTime = date.getTime();
         const cooldownTime = 12 * 60 * 60 * 1000; //
 
         const timeDiff = currentTime - lastClaimTime;
-        //if (timeDiff >= cooldownTime) {
-        //    setCanClaim(true);
-        //  } else {
-        //    setTimeRemaining(cooldownTime - timeDiff);
-        //  }
+        if (timeDiff >= cooldownTime) {
+          setCanClaim(true);
+        } else {
+          setTimeRemaining(cooldownTime - timeDiff);
+        }
         //const twelveHoursInMs = 12 * 60 * 60 * 1000;
         const converted = date.getUTCHours(timeDiff)
+        
 
         return converted
     }
+
     const getLevel = (length) => {
        if (length < 5) {
         return 0
@@ -182,6 +216,9 @@ export const Home2 = () => {
     const accumulative = (a,b) => {
        return a+b;
     }
+    useEffect(() => {
+        getTime(1723188918093)
+    },[])
     const todo =  [
         {
             taskName:'Follow InFuse Channel',
@@ -356,7 +393,7 @@ export const Home2 = () => {
                 <div className="w-[100%] mt-[80px] flex items-center justify-center">
                     <div className="bg-black/40 w-[90%] rounded-2xl text-white flex items-center justify-center h-12">
                         <div className="text-xl">
-                            {getTime(1723188918093)}
+                            {formatTimeRemaining(timeRemaining)}
                         </div>
                     </div>
                 </div>
