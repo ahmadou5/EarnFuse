@@ -391,11 +391,23 @@ export const Home2 = () => {
                     </div>
                 </div>
                 <div className="w-[100%] mt-[80px] flex items-center justify-center">
-                    <div className="bg-black/40 w-[90%] rounded-2xl text-white flex items-center justify-center h-12">
+                    {canClaim ? 
+                    <>
+                    <div className="bg-black/90 w-[90%] rounded-2xl text-white flex items-center justify-center h-12">
+                        <div className="text-xl">
+                            Claim now
+                        </div>
+                    </div>
+                    </> 
+                    : 
+                    <>
+                    <div className="bg-black/30 w-[90%] rounded-2xl text-white flex items-center justify-center h-12">
                         <div className="text-xl">
                             {formatTimeRemaining(timeRemaining)}
                         </div>
                     </div>
+                    </>}
+                    
                 </div>
             
             </div>
