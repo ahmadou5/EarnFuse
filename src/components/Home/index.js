@@ -158,7 +158,7 @@ export const Home2 = () => {
         return timeString.join(' ');
       }
     const getTime = ({last}) => {
-        const lastClaimTime = date.getTime() - 1723188918093;
+        const lastClaimTime = date.getTime() + 1723188918093;
         const currentTime = date.getTime();
         const cooldownTime = 12 * 60 * 60 * 1000; //
 
