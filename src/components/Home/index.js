@@ -205,7 +205,7 @@ export const Home2 = () => {
             boostType: 'booster'
         },
         {
-            boostName: 'Robot',
+            boostName: 'Robot222',
             amount: 100000,
             boostType: 'booster'
         },
