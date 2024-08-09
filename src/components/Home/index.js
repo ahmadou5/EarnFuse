@@ -72,7 +72,7 @@ export const Home2 = () => {
     const [points,setPoints] = useState(0)
     const [energy,setEnergy] = useState(20)
     const [clicks,setClicks] = useState([])
-
+    const date = new Date()
     const pointsAdd = 1
     const EnergyRemove = 1
     
@@ -126,8 +126,8 @@ export const Home2 = () => {
     }
     const twelveHoursInMs = 12 * 60 * 60 * 1000;
     const getTime = ({last}) => {
-        const lastClaimData = new Date()
-        //const currentTime = new Date.now()
+        const lastClaimData = date.getTime()
+        const currentTime = new Date()
         console.log('hello.',lastClaim)
         //const twelveHoursInMs = 12 * 60 * 60 * 1000;
         const timeSinceInteraction = currentTime - lastClaimData;
