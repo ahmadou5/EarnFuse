@@ -129,7 +129,9 @@ export const Home2 = () => {
     }
     const twelveHoursInMs = 12 * 60 * 60 * 1000;
     function formatTimeRemaining(milliseconds) {
-       
+        if (milliseconds <= 0) {
+          return 'Claim available now';
+        }
       
         const seconds = Math.floor(milliseconds / 1000);
         const minutes = Math.floor(seconds / 60);
@@ -215,14 +217,14 @@ export const Home2 = () => {
     const accumulative = (a,b) => {
        return a+b;
     }
-    const formated = formatTimeRemaining(timeRemaining)
     useEffect(() => {
         const intervalId = setInterval(() => {
             getTime(1723188918093)
-            
+            setTimeString(formatTimeRemaining(timeRemaining))
           }, 1000);
           return () => clearInterval(intervalId);
     },[])
+    
     const todo =  [
         {
             taskName:'Follow InFuse Channel',
@@ -407,7 +409,7 @@ export const Home2 = () => {
                     <>
                     <div className="bg-black/30 w-[90%] rounded-2xl text-white flex items-center justify-center h-12">
                         <div className="text-xl">
-                            {formated}
+                            {timeString1}
                         </div>
                     </div>
                     </>}
