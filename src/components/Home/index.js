@@ -158,7 +158,8 @@ export const Home2 = () => {
         //setTimeString(timeString.join(' '))
         return timeString.join(' ');
       }
-    const getTime = ({last}) => {
+    
+    const getTime = async ({last}) => {
         const lastClaimTime = 1723188918093;
         const currentTime = date.getTime();
         const cooldownTime = 12 * 60 * 60 * 1000; //
@@ -175,7 +176,7 @@ export const Home2 = () => {
 
         return converted
     }
-
+    
     const getLevel = (length) => {
        if (length < 5) {
         return 0
@@ -217,10 +218,13 @@ export const Home2 = () => {
     const accumulative = (a,b) => {
        return a+b;
     }
+    const theFunct = async () => {
+       await getTime(1723188918093);
+       setTime2(formatTimeRemaining(timeRemaining))
+    }
     useEffect(() => {
         const intervalId = setInterval(() => {
-            getTime(1723188918093)
-            setTime2( formatTimeRemaining(timeRemaining))
+            theFunct()
           }, 1000);
           return () => clearInterval(intervalId);
     },[])
