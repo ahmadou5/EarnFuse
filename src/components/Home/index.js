@@ -137,9 +137,9 @@ export const Home2 = () => {
         //    setTimeRemaining(cooldownTime - timeDiff);
         //  }
         //const twelveHoursInMs = 12 * 60 * 60 * 1000;
-        
+        const converted = date.getUTCHours(timeDiff)
 
-        return timeDiff
+        return converted
     }
     const getLevel = (length) => {
        if (length < 5) {
