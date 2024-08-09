@@ -20,7 +20,7 @@ export const Home2 = () => {
     //const utils = useUtils()
     const [canClaim,setCanClaim] = useState(false)
     const [timeRemaining,setTimeRemaining] = useState(0)
-    const [timeString1,setTimeString] = useState('')
+    const [time2,setTime2] = useState('')
     const createUser = async() => {
         try {
             const username = tgUser?.initDataUnsafe?.user?.username
@@ -220,11 +220,11 @@ export const Home2 = () => {
     useEffect(() => {
         const intervalId = setInterval(() => {
             getTime(1723188918093)
-           
+            setTime2( formatTimeRemaining(timeRemaining))
           }, 1000);
           return () => clearInterval(intervalId);
     },[])
-    const time2 = formatTimeRemaining(timeRemaining)
+   
     const todo =  [
         {
             taskName:'Follow InFuse Channel',
