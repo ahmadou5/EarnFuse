@@ -215,7 +215,7 @@ export const Home2 = () => {
     const accumulative = (a,b) => {
        return a+b;
     }
-    const formated = formatTimeRemaining(timeString1)
+    const formated = formatTimeRemaining(timeRemaining)
     useEffect(() => {
         const intervalId = setInterval(() => {
             getTime(1723188918093)
