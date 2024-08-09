@@ -126,8 +126,8 @@ export const Home2 = () => {
     }
     const twelveHoursInMs = 12 * 60 * 60 * 1000;
     const getTime = ({last}) => {
-        const lastClaimTime = new date.getTime() - 1723188918093;
-        const currentTime = new date.getTime();
+        const lastClaimTime = date.getTime() - 1723188918093;
+        const currentTime = date.getTime();
         const cooldownTime = 12 * 60 * 60 * 1000; //
 
         const timeDiff = currentTime - lastClaimTime;
