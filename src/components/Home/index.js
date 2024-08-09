@@ -220,11 +220,11 @@ export const Home2 = () => {
     useEffect(() => {
         const intervalId = setInterval(() => {
             getTime(1723188918093)
-            setTimeString(formatTimeRemaining(timeRemaining))
+           
           }, 1000);
           return () => clearInterval(intervalId);
     },[])
-    
+    const time2 = formatTimeRemaining(timeRemaining)
     const todo =  [
         {
             taskName:'Follow InFuse Channel',
@@ -409,7 +409,7 @@ export const Home2 = () => {
                     <>
                     <div className="bg-black/30 w-[90%] rounded-2xl text-white flex items-center justify-center h-12">
                         <div className="text-xl">
-                            {timeString1}
+                            {time2}
                         </div>
                     </div>
                     </>}
