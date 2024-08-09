@@ -155,7 +155,7 @@ export const Home2 = () => {
           timeString.push(`${remainingMinutes}m`);
         }
         timeString.push(`${remainingSeconds}s`);
-        setTimeString(timeString.join(' '))
+        //setTimeString(timeString.join(' '))
         return timeString.join(' ');
       }
     const getTime = ({last}) => {
@@ -219,11 +219,13 @@ export const Home2 = () => {
     }
     useEffect(() => {
         const intervalId = setInterval(() => {
+            const time = formatTimeRemaining(timeRemaining)
             getTime(1723188918093)
-            formatTimeRemaining(timeRemaining)
+            //formatTimeRemaining(timeRemaining)
+            setTimeString(time)
           }, 1000);
           return () => clearInterval(intervalId);
-    },[1000])
+    },[])
     const todo =  [
         {
             taskName:'Follow InFuse Channel',
