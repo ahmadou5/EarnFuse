@@ -8,7 +8,8 @@ import { MdSwapHoriz } from "react-icons/md";
 import { RiCoinsLine } from "react-icons/ri";
 import { BsCoin } from "react-icons/bs";
 import { GameSvg } from "../Svg/GameSvg";
-
+import { TaskSvg } from "../Svg/Task";
+import { GlobalContext } from "@/context/AppContext";
 export const BackMenu = () => {
   const { isHome,
     isFrens,
@@ -102,7 +103,7 @@ export const Menu = () => {
               setIsHome(false)
               setIsTask(true)
             }} className={`h-12 ml-auto mr-auto w-[30%] bg-white/0 flex flex-col items-center justify-center`}>
-                 <p size={28} className={`${ isTask ? 'text-[#448cff]' : 'text-gothic-600/85'} text-2xl`} >📝</p>
+                <TaskSvg isBool={isTask} />
                 <p className={`font-light mt-1 text-white text-[10px]`}>Tasks</p>
             </div>
             
