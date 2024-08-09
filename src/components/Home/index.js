@@ -126,14 +126,20 @@ export const Home2 = () => {
     }
     const twelveHoursInMs = 12 * 60 * 60 * 1000;
     const getTime = ({last}) => {
-        const lastClaimData = date.getTime()
-        const currentTime = new Date()
-        console.log('hello.',lastClaimData)
-        console.log('Jira',twelveHoursInMs)
-        //const twelveHoursInMs = 12 * 60 * 60 * 1000;
-        const timeSinceInteraction = currentTime - lastClaimData;
+        const lastClaimTime = new Date(data[0].claimed_at);
+        const currentTime = new date.getTime();
+        const cooldownTime = 12 * 60 * 60 * 1000; //
 
-        return timeSinceInteraction
+        const timeDiff = currentTime - lastClaimTime;
+        //if (timeDiff >= cooldownTime) {
+        //    setCanClaim(true);
+        //  } else {
+        //    setTimeRemaining(cooldownTime - timeDiff);
+        //  }
+        //const twelveHoursInMs = 12 * 60 * 60 * 1000;
+        
+
+        return timeDiff
     }
     const getLevel = (length) => {
        if (length < 5) {
@@ -350,7 +356,7 @@ export const Home2 = () => {
                 <div className="w-[100%] mt-[80px] flex items-center justify-center">
                     <div className="bg-black/40 w-[90%] rounded-2xl text-white flex items-center justify-center h-12">
                         <div className="text-xl">
-                            {getTime(lastClaim)}
+                            {getTime(1723188918093)}
                         </div>
                     </div>
                 </div>
