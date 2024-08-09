@@ -18,7 +18,7 @@ import { retrieveLaunchParams } from '@telegram-apps/sdk';
 
 export const Home2 = () => {
     //const utils = useUtils()
-    const [canClaim,setCanClaim] = useState(false)
+    const [canClaim,setCanClaim] = useState(true)
     const [timeRemaining,setTimeRemaining] = useState(0)
     const createUser = async() => {
         try {
@@ -217,7 +217,10 @@ export const Home2 = () => {
        return a+b;
     }
     useEffect(() => {
-        getTime(1723188918093)
+        const intervalId = setInterval(() => {
+            getTime(1723188918093)
+          }, 1000);
+          return () => clearInterval(intervalId);
     },[])
     const todo =  [
         {
