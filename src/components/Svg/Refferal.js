@@ -2,15 +2,11 @@ export const RefferalSvg = () => {
   return (
     <>
       <svg
-        fill="#000000"
+        fill="#DEEAFC"
         width="800px"
         height="800px"
         viewBox="0 0 128 128"
-        id="Layer_1"
-        version="1.1"
-        xml:space="preserve"
         xmlns="http://www.w3.org/2000/svg"
-        xmlns:xlink="http://www.w3.org/1999/xlink"
       >
         <g>
           <path d="M64,42c-13.2,0-24,10.8-24,24s10.8,24,24,24s24-10.8,24-24S77.2,42,64,42z M64,82c-8.8,0-16-7.2-16-16s7.2-16,16-16   s16,7.2,16,16S72.8,82,64,82z" />
