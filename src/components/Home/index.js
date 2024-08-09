@@ -221,7 +221,7 @@ export const Home2 = () => {
             getTime(1723188918093)
           }, 1000);
           return () => clearInterval(intervalId);
-    },[])
+    },[1000])
     const todo =  [
         {
             taskName:'Follow InFuse Channel',
