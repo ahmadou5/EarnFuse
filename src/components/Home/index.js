@@ -217,12 +217,11 @@ export const Home2 = () => {
     const accumulative = (a,b) => {
        return a+b;
     }
+    const formated = formatTimeRemaining(timeString1)
     useEffect(() => {
         const intervalId = setInterval(() => {
             getTime(1723188918093)
-            //formatTimeRemaining(timeRemaining)
-            const time = formatTimeRemaining(timeRemaining)
-            setTimeString(time)
+            
           }, 1000);
           return () => clearInterval(intervalId);
     },[])
@@ -410,7 +409,7 @@ export const Home2 = () => {
                     <>
                     <div className="bg-black/30 w-[90%] rounded-2xl text-white flex items-center justify-center h-12">
                         <div className="text-xl">
-                            {timeString1}
+                            {formated}
                         </div>
                     </div>
                     </>}
