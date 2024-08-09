@@ -7,7 +7,7 @@ import { GiTwoCoins } from "react-icons/gi";
 import { MdSwapHoriz } from "react-icons/md";
 import { RiCoinsLine } from "react-icons/ri";
 import { BsCoin } from "react-icons/bs";
-import { GlobalContext } from "@/context/AppContext";
+import { GameSvg } from "../Svg/GameSvg";
 
 export const BackMenu = () => {
   const { isHome,
