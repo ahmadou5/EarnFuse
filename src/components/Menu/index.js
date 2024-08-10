@@ -11,6 +11,7 @@ import { GameSvg } from "../Svg/GameSvg";
 import { TaskSvg } from "../Svg/Task";
 import { GlobalContext } from "@/context/AppContext";
 import { RefferalSvg } from "../Svg/Refferal";
+import { HomeSvg } from "../Svg/HomeSvg";
 export const BackMenu = () => {
   const { isHome,
     isFrens,
@@ -101,11 +102,11 @@ export const Menu = () => {
             <div onClick={() => {
               setIsFrens(false)
               setIsBoost(false)
-              setIsHome(false)
-              setIsTask(true)
+              setIsHome(true)
+              setIsTask(false)
             }} className={`h-12 ml-auto mr-auto w-[30%] bg-white/0 flex flex-col items-center justify-center`}>
-                <TaskSvg isBool={isTask} />
-                <p className={`font-light mt-1 text-white text-[10px]`}>Tasks</p>
+               <HomeSvg/>
+                <p className={`font-light mt-1 text-white text-[10px]`}>Home</p>
             </div>
             
             <div onClick={() => {
@@ -114,8 +115,8 @@ export const Menu = () => {
              setIsHome(false)
              setIsTask(false)
             }} className={`h-12 ml-auto mr-auto w-[30%] bg-white/0 flex flex-col items-center justify-center`}>
-                <p size={28} className={`${ isHistory ? 'text-[#448cff]' : 'text-gothic-600/85'} text-2xl`} >🚀</p>
-                <p className={`font-light mt-1 text-white text-[10px]`}>Boosts</p>
+                 <TaskSvg />
+                <p className={`font-light mt-1 text-white text-[10px]`}>Tasks</p>
             </div>
             <div onClick={() => {
               setIsFrens(true)
