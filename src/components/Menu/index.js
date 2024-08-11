@@ -60,11 +60,14 @@ export const Menu = () => {
           className=" w-[93%] ml-auto mr-auto rounded-full py-1 px-1.5 z-100  fixed inset-x-0 bottom-1 flex justify-center items-center"
         >
           <div className="lg:py-2.5 py-1.5 lg:px-2.5 px-1.5  mt-auto mb-auto ml-auto mr-auto w-[98%] flex flex-row  h-[90%]">
-            <div className={`h-12 ml-auto mr-auto w-[30%] bg-white/0 flex flex-col items-center justify-center`}>
-               <HomeSvg  onClick={() => {
-               alert('Hauwa')
-            }} />
-                <p className={`font-light text-black text-[12px]`}>Home</p>
+            <div 
+             className={`h-12 ml-auto mr-auto w-[30%] bg-white/0 flex flex-col items-center justify-center`}>
+              <div className="bg-white h-12 w-12" onClick={() => {
+               alert('Hauwa and Ahmad')
+            }}>
+              <HomeSvg  />
+              <p className={`font-light text-black text-[12px]`}>Home</p>
+              </div>
             </div>
             <div className={`h-12 ml-auto mr-auto w-[30%] bg-white/0 flex flex-col items-center justify-center`}>
                <TaskSvg  onClick={() => {
