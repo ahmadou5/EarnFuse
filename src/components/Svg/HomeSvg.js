@@ -1,4 +1,4 @@
-export const HomeSvg = (isBool) => {
+export const HomeSvg = () => {
   return (
     <>
       <svg
