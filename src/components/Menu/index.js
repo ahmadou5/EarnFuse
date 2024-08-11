@@ -118,7 +118,7 @@ export const Menu = () => {
              setIsHome(false)
              setIsTask(false)
             }} className={`h-12 ml-auto mr-auto w-[30%] bg-white/0 flex flex-col items-center justify-center`}>
-                 <img src="./assets/gamer.svg" className="w-8 h-8"/>
+                 <img src="./assets/pad.svg" className="w-8 h-8"/>
                 <p className={`font-light mt-1 text-white text-[10px]`}>Games</p>
             </div>
             <div onClick={() => {
