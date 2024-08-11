@@ -107,18 +107,18 @@ export const Menu = () => {
             </div>
             
             <div onClick={() => {
-                 alert('Tasks')
+              alert('Home22')
             }} className={`h-12 ml-auto mr-auto w-[30%] bg-white/0 flex flex-col items-center justify-center`}>
-                 <TaskSvg />
-                <p className={`font-light mt-1 text-white text-[10px]`}>Tasks</p>
+               <TaskSvg/>
+                <p className={`font-light mt-1 text-white text-[10px]`}>Home</p>
             </div>
             <div onClick={() => {
-                alert('Frens')
-            }}
-             className={`h-12 ml-auto mr-auto w-[30%] bg-white/0 flex flex-col items-center justify-center`}>
-                <RefferalSvg />
-                 <p className={`ffont-light mt-1 text-white text-[10px]`}>Plugs</p>
+              alert('Home33')
+            }} className={`h-12 ml-auto mr-auto w-[30%] bg-white/0 flex flex-col items-center justify-center`}>
+               <RefferalSvg/>
+                <p className={`font-light mt-1 text-white text-[10px]`}>Home</p>
             </div>
+            
           </div>          
         </div>
       </>
