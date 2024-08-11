@@ -100,29 +100,20 @@ export const Menu = () => {
         >
           <div className="lg:py-2.5 py-1.5 lg:px-2.5 px-1.5  mt- mb-auto ml-auto mr-auto w-[98%] flex flex-row  h-[90%]">
             <div onClick={() => {
-              setIsFrens(false)
-              setIsBoost(false)
-              setIsHome(true)
-              setIsTask(false)
+              alert('Home')
             }} className={`h-12 ml-auto mr-auto w-[30%] bg-white/0 flex flex-col items-center justify-center`}>
                <HomeSvg/>
                 <p className={`font-light mt-1 text-white text-[10px]`}>Home</p>
             </div>
             
             <div onClick={() => {
-             setIsFrens(false)
-             setIsBoost(true)
-             setIsHome(false)
-             setIsTask(false)
+                 alert('Tasks')
             }} className={`h-12 ml-auto mr-auto w-[30%] bg-white/0 flex flex-col items-center justify-center`}>
                  <TaskSvg />
                 <p className={`font-light mt-1 text-white text-[10px]`}>Tasks</p>
             </div>
             <div onClick={() => {
-              setIsFrens(true)
-              setIsBoost(false)
-              setIsHome(false)
-              setIsTask(false)
+                alert('Frens')
             }}
              className={`h-12 ml-auto mr-auto w-[30%] bg-white/0 flex flex-col items-center justify-center`}>
                 <RefferalSvg />
