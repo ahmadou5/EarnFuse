@@ -61,19 +61,19 @@ export const Menu = () => {
         >
           <div className="lg:py-2.5 py-1.5 lg:px-2.5 px-1.5  mt-auto mb-auto ml-auto mr-auto w-[98%] flex flex-row  h-[90%]">
             <div onClick={() => {
-             console.log('hey')
+                alert('hauwa')
             }} className={`h-12 ml-auto mr-auto w-[30%] bg-white/0 flex flex-col items-center justify-center`}>
                <HomeSvg />
                 <p className={`font-light text-black text-[12px]`}>Wallet</p>
             </div>
             <div onClick={() => {
-             console.log('hey3')
+             alert('hauwa and ahmad')
             }} className={`h-12 ml-auto mr-auto w-[30%] bg-white/0 flex flex-col items-center justify-center`}>
                <TaskSvg />
                 <p className={`font-light text-black text-[12px]`}>Wallet</p>
             </div>
             <div onClick={() => {
-             console.log('hey2')
+               alert('ahmad')
             }} className={`h-12 ml-auto mr-auto w-[30%] bg-white/0 flex flex-col items-center justify-center`}>
                <RefferalSvg />
                 <p className={`font-light text-black text-[12px]`}>Wallet</p>
