@@ -102,6 +102,7 @@ export const Menu = () => {
           <div className="lg:py-2.5 py-1.5 lg:px-2.5 px-1.5  mt- mb-auto ml-auto mr-auto w-[98%] flex flex-row  h-[90%]">
             <div onClick={() => {
               setIsFrens(false)
+              setIsGame(false)
               setIsBoost(false)
               setIsHome(true)
               setIsTask(false)
@@ -111,7 +112,7 @@ export const Menu = () => {
             </div>
             
             <div onClick={() => {
-            setIsGame(true)
+             setIsGame(true)
              setIsFrens(false)
              setIsBoost(false)
              setIsHome(false)
@@ -126,7 +127,7 @@ export const Menu = () => {
               setIsBoost(false)
               setIsHome(false)
               setIsTask(false)
-              setGame
+              setIsGame(false)
             }}
              className={`h-12 ml-auto mr-auto w-[30%] bg-white/0 flex flex-col items-center justify-center`}>
                  <img src="./assets/community.svg" className="w-8 h-8"/>
