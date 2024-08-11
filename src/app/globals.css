@@ -22,9 +22,10 @@ body {
       
       to bottom,
       transparent,
-      #2f70d8
+      black
     )
-    black
+    
+    #2f70d8
 }
 
 @layer utilities {
