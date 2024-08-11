@@ -387,7 +387,7 @@ export const Home2 = () => {
                             
                         </button>
                     </div>
-                    <div className="w-[100%] flex  text-white/75 items-center flex-col justify-center mt-8">
+                    <div className="w-[100%] flex  text-white/75 items-center  flex-col justify-center mt-20">
                        {/** <div className="mt-2 bg-black/45 rounded-full flex items-center justify-center h-[150px] w-[150px] mb-5">
                             <p className="font-[10px] text-blue-500/50">{tgUser?.initDataUnsafe?.user?.username}</p>
                         </div>  */}
