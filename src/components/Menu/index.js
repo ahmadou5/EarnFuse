@@ -51,6 +51,7 @@ export const Menu = () => {
     setIsBoost,
     setIsTask,
     setIsFrens,
+    isGame,setIsGame,
     setIsHome
   } = GlobalContext()
    const [isWallet,setIsWallet] = useState(true)
@@ -105,29 +106,33 @@ export const Menu = () => {
               setIsHome(true)
               setIsTask(false)
             }} className={`h-12 ml-auto mr-auto w-[30%] bg-white/0 flex flex-col items-center justify-center`}>
-                <img src="./assets/home.svg" className="w-8 h-8" />
-                <p className={`font-light mt-1 text-white text-[10px]`}>Home</p>
+                <img src="./assets/task.svg" className="w-8 h-8" />
+                <p className={`font-light mt-1 text-white text-[10px]`}>Tasks</p>
             </div>
             
             <div onClick={() => {
+            setIsGame(true)
              setIsFrens(false)
-             setIsBoost(true)
+             setIsBoost(false)
              setIsHome(false)
              setIsTask(false)
             }} className={`h-12 ml-auto mr-auto w-[30%] bg-white/0 flex flex-col items-center justify-center`}>
-                 <img src="./assets/task.svg" className="w-8 h-8"/>
-                <p className={`font-light mt-1 text-white text-[10px]`}>Tasks</p>
+                 <img src="./assets/game.svg" className="w-8 h-8"/>
+                <p className={`font-light mt-1 text-white text-[10px]`}>Games</p>
             </div>
             <div onClick={() => {
+
               setIsFrens(true)
               setIsBoost(false)
               setIsHome(false)
               setIsTask(false)
+              setGame
             }}
              className={`h-12 ml-auto mr-auto w-[30%] bg-white/0 flex flex-col items-center justify-center`}>
                  <img src="./assets/community.svg" className="w-8 h-8"/>
                  <p className={`font-light mt-1 text-white text-[10px]`}>Plugs</p>
             </div>
+            
           </div>          
         </div>
       </>
