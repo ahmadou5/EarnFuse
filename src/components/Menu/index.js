@@ -60,28 +60,28 @@ export const Menu = () => {
           className=" w-[93%] ml-auto mr-auto rounded-full py-1 px-1.5 z-100  fixed inset-x-0 bottom-1 flex justify-center items-center"
         >
           <div className="lg:py-2.5 py-1.5 lg:px-2.5 px-1.5  mt-auto mb-auto ml-auto mr-auto w-[98%] flex flex-row  h-[90%]">
-          <button className={`h-12 ml-auto mr-auto w-[30%] bg-white/0 flex items-center justify-center`}  onClick={() => {
+          <button className={`h-12 ml-auto mr-auto w-[30%] bg-white/0 flex items-center justify-center`}  >
+            <div className={`h-12 ml-auto mr-auto w-[30%] bg-white/0 flex flex-col items-center justify-center`}>
+               <HomeSvg  onClick={() => {
                alert('Hauwa')
-            }}>
-            <div className={`h-12 ml-auto mr-auto w-[30%] bg-white/0 flex flex-col items-center justify-center`}>
-               <HomeSvg />
-                <p className={`font-light text-black text-[12px]`}>Wallet</p>
+            }} />
+                <p className={`font-light text-black text-[12px]`}>Home</p>
             </div>
             </button>
-            <button className={`h-12 ml-auto mr-auto w-[30%] bg-white/0 flex items-center justify-center`}  onClick={() => {
+            <button className={`h-12 ml-auto mr-auto w-[30%] bg-white/0 flex items-center justify-center`}  >
+            <div className={`h-12 ml-auto mr-auto w-[30%] bg-white/0 flex flex-col items-center justify-center`}>
+               <TaskSvg  onClick={() => {
                alert('Hauwa and Ahmad')
-            }}>
-            <div className={`h-12 ml-auto mr-auto w-[30%] bg-white/0 flex flex-col items-center justify-center`}>
-               <TaskSvg />
-                <p className={`font-light text-black text-[12px]`}>Wallet</p>
+            }}/>
+                <p className={`font-light text-black text-[12px]`}>Tasks</p>
             </div>
             </button>
-            <button className={`h-12 ml-auto mr-auto w-[30%] bg-white/0 flex items-center justify-center`}  onClick={() => {
-               alert('Ahmad')
-            }}>
+            <button className={`h-12 ml-auto mr-auto w-[30%] bg-white/0 flex items-center justify-center`}  >
             <div className={`h-12 ml-auto mr-auto w-[30%] bg-white/0 flex flex-col items-center justify-center`}>
-               <RefferalSvg />
-                <p className={`font-light text-black text-[12px]`}>Wallet</p>
+               <RefferalSvg  onClick={() => {
+               alert('Ahmad')
+            }} />
+                <p className={`font-light text-black text-[12px]`}>Plugs</p>
             </div>
             </button>
             
