@@ -97,15 +97,15 @@ export const Menu = () => {
         {/**for desktop view **/}
         <div
           style={{ "backdrop-filter": "blur(12px)" }}
-          className=" w-[100%] ml-auto mr-auto rounded-xl py-1 px-1.5 z-100 bg-black/45 mb-  fixed inset-x-0 bottom-1 flex justify-center items-center"
+          className=" w-[100%] ml-auto mr-auto rounded-xl py-1 px-1.5 z-100 bg-black/45  fixed bottom-1 flex justify-center items-center"
         >
           <div className="lg:py-2.5 py-1.5 lg:px-2.5 px-1.5  mt- mb-auto ml-auto mr-auto w-[98%] flex flex-row  h-[90%]">
             <div onClick={() => {
               setIsFrens(false)
               setIsGame(false)
               setIsBoost(false)
-              setIsHome(true)
-              setIsTask(false)
+              setIsHome(false)
+              setIsTask(true)
             }} className={`h-12 ml-auto mr-auto w-[30%] bg-white/0 flex flex-col items-center justify-center`}>
                 <img src="./assets/task.svg" className="w-8 h-8" />
                 <p className={`font-light mt-1 text-white text-[10px]`}>Tasks</p>
