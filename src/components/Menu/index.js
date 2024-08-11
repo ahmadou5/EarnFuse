@@ -105,7 +105,7 @@ export const Menu = () => {
               setIsHome(true)
               setIsTask(false)
             }} className={`h-12 ml-auto mr-auto w-[30%] bg-white/0 flex flex-col items-center justify-center`}>
-                <img src="./assets/home.svg" />
+                <img src="./assets/home.svg" className="w-8 h-8" />
                 <p className={`font-light mt-1 text-white text-[10px]`}>Home</p>
             </div>
             
@@ -115,7 +115,7 @@ export const Menu = () => {
              setIsHome(false)
              setIsTask(false)
             }} className={`h-12 ml-auto mr-auto w-[30%] bg-white/0 flex flex-col items-center justify-center`}>
-                 <img src="./assets/task/.svg" />
+                 <img src="./assets/task.svg" className="w-8 h-8"/>
                 <p className={`font-light mt-1 text-white text-[10px]`}>Tasks</p>
             </div>
             <div onClick={() => {
@@ -125,8 +125,8 @@ export const Menu = () => {
               setIsTask(false)
             }}
              className={`h-12 ml-auto mr-auto w-[30%] bg-white/0 flex flex-col items-center justify-center`}>
-                 <img src="./assets/community.svg" />
-                 <p className={`ffont-light mt-1 text-white text-[10px]`}>Plugs</p>
+                 <img src="./assets/community.svg" className="w-8 h-8"/>
+                 <p className={`font-light mt-1 text-white text-[10px]`}>Plugs</p>
             </div>
           </div>          
         </div>
