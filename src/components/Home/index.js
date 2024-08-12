@@ -432,8 +432,9 @@ export const Home2 = () => {
             <>
             <div className="bg-gothic-950/0 mt-0 flex p-3 bg-slate-600/0 flex-col w-[100%] h-auto">
                  <div className="w-[100%] h-12 px-2 mt-5 mb-4 py-3 flex justify-center items-center">
-                    <div className="">
-                      <p className="text-[32px] font-bold  text-white/75">frens 👩🏽‍🚀</p>
+                    <div className="flex flex-col items-center justify-center">
+                      <img src="./assets/community.svg" className="w-7 h-7" />
+                      <p className="text-white/70 font-extrabold">Plugs</p>
                     </div>
                 </div>
                 <div className="w-[100%] h-[70px] px-2 mt-4 py-3 flex">
@@ -558,9 +559,9 @@ export const Home2 = () => {
             <>
             <div className="bg-gothic-950/0 mt-0 flex p-3 bg-slate-600/0 flex-col w-[100%] h-auto">
                  <div className="w-[100%] h-12 px-2 mt-5 mb-4 py-3 flex justify-center items-center">
-                    <div className="flex items-center justify-center">
-                     
+                    <div className="flex flex-col items-center justify-center">
                       <img src="./assets/board.svg" className="w-16 h-16 mt-0.5" />
+                      <p className="text-white/70 font-extrabold">Leaderboard</p>
                     </div>
                 </div>
                 <div className="mt-7 py-2 flex flex-col items-center justify-center">
