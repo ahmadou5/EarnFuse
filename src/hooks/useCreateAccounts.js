@@ -17,7 +17,7 @@ export const UseCreateUSer = () => {
     
                 if(data) {
                     console.log(data)
-                    alert(data, 'done')
+                    //alert(data, 'done')
                 } 
                 if (error) {
                     throw error
