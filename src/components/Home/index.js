@@ -572,12 +572,12 @@ export const Home2 = () => {
                     <div className="w-[100%] h-auto rounded-xl text-white/70 bg-black/0 p-0 mt-2">
                      
                         <div className="w-[100%] mt-2 mb-2 h-auto flex rounded-xl py-4 px-3 bg-black/15">
-                            <div className="ml-1 mr-3 w-[20%]">
+                            <div className="ml-1 mr-3 w-[15%]">
                                 <div className="bg-black/50 flex items-center justify-center rounded-full w-12 h-12">
                                     {`${userBoard?.username[0]}`}
                                 </div>
                             </div>
-                            <div className="mt-1 w-[80%] text-sm flex ">
+                            <div className="mt-1 w-[85%] text-sm flex ">
                                 <div className="ml-1 mr-auto">
                                     <p className="mt-0.5 mb-0.5 font-bold text-[13px]">{userBoard?.username}</p>
                                     <div className="mt-0.5 font-bold text-white/40 text-[13px] mb-0.5">{`${userBoard?.balance?.toLocaleString()} FUSE`}</div>
@@ -618,12 +618,12 @@ export const Home2 = () => {
                         <>
                         <div 
                           key={i} className="w-[100%] mt-2 mb-2 h-auto flex rounded-xl py-3 px-3 bg-white/10">
-                            <div className="ml-1 mr-3 w-[20%]">
+                            <div className="ml-1 mr-3 w-[15%]">
                                 <div className="bg-black/50 flex items-center justify-center rounded-full w-12 h-12">
                                     {`${item?.username[0]}`}
                                 </div>
                             </div>
-                            <div className="mt-1 w-[80%] text-sm flex ">
+                            <div className="mt-1 w-[85%] text-sm flex ">
                                 <div className="ml-2 mr-auto">
                                     <p className="mt-0.5 mb-0.5 font-bold text-[13px]">{item?.username}</p>
                                     <div className="mt-0.5 font-bold text-white/70 text-[13px] mb-0.5">{`${item?.balance?.toLocaleString()} FUSE`}</div>
