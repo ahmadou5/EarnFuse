@@ -278,9 +278,9 @@ export const Home2 = () => {
             <>
             <div className="bg-gothic-950/0 mt-0 flex bg-slate-600/0 flex-col w-[100%] h-auto">
             <div className="w-[100%] bg-black/0">
-                <div className="flex flex-col items-center justify-center">
+                <div className="flex flex-col items-center mt-2 justify-center">
                       <img src="./assets/pad.svg" className="w-16 h-16 mt-0.5" />
-                      <p className="text-white/70 font-extrabold">Game</p>
+                      <p className="text-white/70 font-extrabold">Games</p>
                     </div>
                 <div className="mt-20 py-2 flex flex-col items-center justify-center">
                     
@@ -435,7 +435,7 @@ export const Home2 = () => {
             <>
             <div className="bg-gothic-950/0 mt-0 flex p-3 bg-slate-600/0 flex-col w-[100%] h-auto">
                  <div className="w-[100%] h-12 px-2 mt-5 mb-4 py-3 flex justify-center items-center">
-                 <div className="flex flex-col items-center justify-center">
+                 <div className="flex flex-col items-center mt-2 justify-center">
                       <img src="./assets/community.svg" className="w-16 h-16 mt-0.5" />
                       <p className="text-white/70 font-extrabold">Plugs</p>
                     </div>
