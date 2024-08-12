@@ -171,7 +171,7 @@ export const Home2 = () => {
         const lastClaimTime = 1723188918093;
         const currentTime = date.getTime();
         const cooldownTime = 12 * 60 * 60 * 1000; //
-
+        console.log('korrent',currentTime)
         const timeDiff = currentTime - lastClaimTime;
         if (timeDiff >= cooldownTime) {
           setCanClaim(true);
@@ -388,7 +388,7 @@ export const Home2 = () => {
                         </button>
                     </div>
                     <div className="w-[100%] flex  text-white/75 items-center  flex-col justify-center mt-12">
-                        <div className="flex items-center justify-center text-white/80 font-extrabold w-[180px] h-[180px] bg-black/70 rounded-full">
+                        <div className="flex items-center justify-center text-white/80 font-extrabold w-[130px] h-[130px] bg-black/70 rounded-full">
                         {`${tgUser?.initDataUnsafe?.user?.username[0]}${tgUser?.initDataUnsafe?.user?.username[Math.floor(tgUser?.initDataUnsafe?.user?.username?.length / 2)]}`}
                         </div>
                         <div>
@@ -403,7 +403,7 @@ export const Home2 = () => {
                         <p className="text-4xl ml-1 text-white mr-auto font-bold ">{accumulative(userBalance,points)?.toLocaleString()}</p>
                     </div>
                 </div>
-                <div className="w-[100%] mt-[80px] flex items-center justify-center">
+                <div className="w-[100%] mt-[60px] mb-[20px] flex items-center justify-center">
                     {canClaim ? 
                     <>
                     <div className="bg-black/90 w-[90%] rounded-2xl text-white flex items-center justify-center h-12">
