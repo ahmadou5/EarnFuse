@@ -278,9 +278,12 @@ export const Home2 = () => {
             <>
             <div className="bg-gothic-950/0 mt-0 flex bg-slate-600/0 flex-col w-[100%] h-auto">
             <div className="w-[100%] bg-black/0">
-                
+                <div className="flex flex-col items-center justify-center">
+                      <img src="./assets/pad.svg" className="w-16 h-16 mt-0.5" />
+                      <p className="text-white/70 font-extrabold">Game</p>
+                    </div>
                 <div className="mt-20 py-2 flex flex-col items-center justify-center">
-                    <p className="text-[18px] text-white font-light">Your Fuse Point:</p>
+                    
                     <div className="flex items-center justify-center">
                         <img className="h-16 w-16 ml-auto mr-1 " src="./assets/show.png" />
                         <p className="text-4xl ml-1 text-white mr-auto font-bold ">{accumulative(userBalance,points)?.toLocaleString()}</p>
@@ -432,8 +435,8 @@ export const Home2 = () => {
             <>
             <div className="bg-gothic-950/0 mt-0 flex p-3 bg-slate-600/0 flex-col w-[100%] h-auto">
                  <div className="w-[100%] h-12 px-2 mt-5 mb-4 py-3 flex justify-center items-center">
-                    <div className="flex flex-col items-center justify-center">
-                      <img src="./assets/community.svg" className="w-7 h-7" />
+                 <div className="flex flex-col items-center justify-center">
+                      <img src="./assets/community.svg" className="w-16 h-16 mt-0.5" />
                       <p className="text-white/70 font-extrabold">Plugs</p>
                     </div>
                 </div>
@@ -506,8 +509,9 @@ export const Home2 = () => {
             }
             <div className="bg-gothic-950/0 mt-0 flex p-3 bg-slate-600/0 flex-col w-[100%] h-auto">
                  <div className="w-[100%] h-12 px-2 mt-5 mb-4 py-3 flex justify-center items-center">
-                    <div className="">
-                      <p className="text-[39px] font-bold  text-white/75">Tasks 📝</p>
+                 <div className="flex flex-col items-center justify-center">
+                      <img src="./assets/Task.svg" className="w-16 h-16 mt-0.5" />
+                      <p className="text-white/70 font-extrabold">Tasks</p>
                     </div>
                 </div>
                 <div className="mt-4 py-2 mb-2 flex flex-col ">
