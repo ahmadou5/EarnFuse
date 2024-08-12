@@ -114,6 +114,7 @@ export const Menu = () => {
                 setIsHome(false);
                 setIsTask(true);
               }}
+              className="flex flex-col ml-auto mr-auto items-center justify-center"
             >
               <img src="./assets/task.svg" className="w-7 h-7" />
               <p className={`font-light mt-1 text-white text-[10px]`}>Tasks</p>
@@ -131,6 +132,7 @@ export const Menu = () => {
                 setIsHome(false);
                 setIsTask(false);
               }}
+              className="flex flex-col ml-auto mr-auto items-center justify-center"
             >
               <img src="./assets/pad.svg" className="w-7 h-7" />
               <p className={`font-light mt-1 text-white text-[10px]`}>Games</p>
@@ -147,6 +149,7 @@ export const Menu = () => {
                 setIsHome(false);
                 setIsTask(false);
               }}
+              className="flex ml-auto mr-auto flex-col items-center justify-center"
             >
               <img src="./assets/board.svg" className="w-7 h-7" />
               <p className={`font-light mt-1 text-white text-[10px]`}>
@@ -165,6 +168,7 @@ export const Menu = () => {
                 setIsTask(false);
                 setIsGame(false);
               }}
+              className="flex ml-auto mr-auto flex-col items-center justify-center"
             >
               <img src="./assets/community.svg" className="w-7 h-7" />
               <p className={`font-light mt-1 text-white text-[10px]`}>Plugs</p>
