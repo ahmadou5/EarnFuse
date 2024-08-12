@@ -614,7 +614,7 @@ export const Home2 = () => {
                        leads && leads.map((item,i) => (
                         <>
                         <div 
-                          key={i} className="w-[100%] mt-2 mb-2 h-auto flex rounded-xl py-3 px-3 bg-white/35">
+                          key={i} className="w-[100%] mt-2 mb-2 h-auto flex rounded-xl py-3 px-3 bg-white/15">
                             <div className="ml-1 mr-3">
                                 <img src="./assets/sol.png" className="w-12 h-12"/>
                             </div>
