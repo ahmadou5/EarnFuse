@@ -51,6 +51,8 @@ export const TapContextProvider = ({children}) => {
     lastClaim,
     leads,
     userRank,
+    userBoard,
+    setUserBoad,
     setUserRank,
     setLeads,
     setLastClaim,
