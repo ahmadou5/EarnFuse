@@ -382,13 +382,13 @@ export const Home2 = () => {
                     </div>
                 </div>
                 <div className="w-[100%] mt-3 flex  text-white/75 items-center justify-center flex-col h-auto">
-                    <div className="mb-2 mt-0.5 rounded-lg p-2 bg-white/0 w-[95%] h-[80px]">
+                    <div className="mb-2 mt-0.5 rounded-lg p-2 bg-white/15 w-[95%] h-[80px]">
                         <button>
                             
                         </button>
                     </div>
-                    <div className="w-[100%] flex  text-white/75 items-center  flex-col justify-center mt-20">
-                        <div>
+                    <div className="w-[100%] flex  text-white/75 items-center  flex-col justify-center mt-12">
+                        <div className="flex items-center justify-center w-20 h-20 bg-black/70 rounded-full">
                         {`${tgUser?.initDataUnsafe?.user?.username[0]}${tgUser?.initDataUnsafe?.user?.username[Math.floor(tgUser?.initDataUnsafe?.user?.length / 2)]}`}
                         </div>
                         <div>
