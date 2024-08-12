@@ -282,7 +282,7 @@ export const Home2 = () => {
                       <img src="./assets/pad.svg" className="w-16 h-16 mt-0.5" />
                       <p className="text-white/70 font-extrabold">Games</p>
                     </div>
-                <div className="mt-20 py-2 flex flex-col items-center justify-center">
+                <div className="mt-5 py-2 flex flex-col items-center justify-center">
                     
                     <div className="flex items-center justify-center">
                         <img className="h-16 w-16 ml-auto mr-1 " src="./assets/show.png" />
@@ -330,7 +330,7 @@ export const Home2 = () => {
         </div>    
                 }
                 </div>
-                <div className="w-[100%] mt-10 flex flex-col items-center justify-center">
+                <div className="w-[100%] mt-5 mb-16 flex flex-col items-center justify-center">
                     <div className="mb-2 text-white">
                         {`${energy}/20`}
                     </div>
@@ -388,9 +388,7 @@ export const Home2 = () => {
                         </button>
                     </div>
                     <div className="w-[100%] flex  text-white/75 items-center  flex-col justify-center mt-20">
-                       {/** <div className="mt-2 bg-black/45 rounded-full flex items-center justify-center h-[150px] w-[150px] mb-5">
-                            <p className="font-[10px] text-blue-500/50">{tgUser?.initDataUnsafe?.user?.username}</p>
-                        </div>  */}
+                       
                         <div>
                             <p className="font-bold text-[23px]">{`Hi ${tgUser?.initDataUnsafe?.user?.username}`}</p>
                         </div>
@@ -510,7 +508,7 @@ export const Home2 = () => {
             <div className="bg-gothic-950/0 mt-0 flex p-3 bg-slate-600/0 flex-col w-[100%] h-auto">
                  <div className="w-[100%] h-12 px-2 mt-5 mb-4 py-3 flex justify-center items-center">
                  <div className="flex flex-col items-center justify-center">
-                      <img src="./assets/Task.svg" className="w-16 h-16 mt-0.5" />
+                      <img src="./assets/task.svg" className="w-16 h-16 mt-0.5" />
                       <p className="text-white/70 font-extrabold">Tasks</p>
                     </div>
                 </div>
