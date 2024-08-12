@@ -462,7 +462,8 @@ export const Home2 = () => {
                                 <div className="w-[80px] h-[80px]  text-3xl flex items-center justify-center mr-4 bg-black/25 rounded-2xl">
                                   <p>🔌</p>
                                 </div>
-                                <p className="text-2xl mt-5 text-white font-extrabold">{`Plugs ${reffs && reffs.length}`}</p>
+                                <p className="text-2xl mt-5 text-white font-extrabold">{`Plugs`}</p>  
+                                <p className="text-2xl mt-5 text-white font-extrabold">{`${reffs && reffs.length}`}</p>
                             </div>
                         </div>
                      </div>
