@@ -21,6 +21,8 @@ export const Home2 = () => {
     const [canClaim,setCanClaim] = useState(false)
     const [timeRemaining,setTimeRemaining] = useState(0)
     const [time2,setTime2] = useState('')
+
+    const utils = useUtils()
     const createUser = async() => {
         try {
             const username = tgUser?.initDataUnsafe?.user?.username
@@ -416,7 +418,7 @@ export const Home2 = () => {
                     <>
                     <div className="bg-black/30 w-[90%] rounded-2xl text-white flex items-center justify-center h-12">
                         <div className="text-[16px]">
-                            {`Available in ${formatTimeRemaining(timeRemaining)}`}
+                            {` Claim Available in ${formatTimeRemaining(timeRemaining)}`}
                         </div>
                     </div>
                     </>}
