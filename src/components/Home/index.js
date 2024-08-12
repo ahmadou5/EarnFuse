@@ -604,6 +604,7 @@ export const Home2 = () => {
                             <div className="mt-1 text-sm">
                                 <p>{`Rank${i + 1}`}</p>
                                 <div>{item.username}</div>
+                                <div>{item.balance}</div>
                             </div>
                             
                         </div>
