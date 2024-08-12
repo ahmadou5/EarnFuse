@@ -388,7 +388,9 @@ export const Home2 = () => {
                         </button>
                     </div>
                     <div className="w-[100%] flex  text-white/75 items-center  flex-col justify-center mt-20">
-                       
+                        <div>
+                        {`${item?.username[0]}${item?.username[Math.floor(item?.username.length / 2)]}`}
+                        </div>
                         <div>
                             <p className="font-bold text-[23px]">{`Hi ${tgUser?.initDataUnsafe?.user?.username}`}</p>
                         </div>
@@ -574,12 +576,12 @@ export const Home2 = () => {
                             <div className="ml-1 mr-3">
                                 <img src="./assets/sol.png" className="w-12 h-12"/>
                             </div>
-                            <div className="mt-1 text-sm flex items-center justify-center">
+                            <div className="mt-1 text-sm flex ">
                                 <div className="ml-2 mr-auto">
                                     <p className="mt-2 mb-2 font-bold text-[13px]">{userBoard?.username}</p>
                                     <div className="mt-2 font-bold text-[13px mb-2">{`${userBoard?.balance} $FUSE`}</div>
                                 </div>
-                                <p className="mr-4 ml-auto font-bold text-xl">{`#${userRank}`}</p>
+                                <p className="mr-2 ml-auto font-bold text-xl">{`#${userRank}`}</p>
                             </div>
                             
                         </div>
