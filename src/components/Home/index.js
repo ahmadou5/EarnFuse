@@ -170,7 +170,7 @@ export const Home2 = () => {
     updateTimestamp()
     getClaimValue()
     getTime()
-    //setCanClaim(false)
+    setCanClaim(false)
 }
 
 
