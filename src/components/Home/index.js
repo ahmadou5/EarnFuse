@@ -206,12 +206,11 @@ export const Home2 = () => {
         return timeString.join(' ');
       }
     
-    const getTime = async ({last}) => {
-        //const lastClaimTime = 1723493891548;
+    const getTime = async () => {  
         const currentTime = date.getTime();
         const cooldownTime = 12 * 60 * 60 * 1000; //
         console.log('korrent',currentTime)
-        const timeDiff = currentTime - last;
+        const timeDiff = currentTime - lastClaim;
         if (timeDiff >= cooldownTime) {
           setCanClaim(true);
         } else {
@@ -265,13 +264,10 @@ export const Home2 = () => {
     const accumulative = (a,b) => {
        return a+b;
     }
-    const theFunct = async () => {
-       await getTime(1723493701292);
-       setTime2(formatTimeRemaining(timeRemaining))
-    }
+   
     useEffect(() => {
         const intervalId = setInterval(() => {
-            getTime(lastClaim);
+            getTime();
           }, 1000);
           return () => clearInterval(intervalId);
     },[])
