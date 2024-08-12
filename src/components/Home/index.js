@@ -18,9 +18,10 @@ import { retrieveLaunchParams } from '@telegram-apps/sdk';
 
 export const Home2 = () => {
     //const utils = useUtils()
-    const [canClaim,setCanClaim] = useState(false)
+    const [canClaim,setCanClaim] = useState(true)
     const [timeRemaining,setTimeRemaining] = useState(0)
     const [time2,setTime2] = useState('')
+    const [claimVal,setClaimVal] = useState(100000)
 
     const utils = useUtils()
     const createUser = async() => {
@@ -83,10 +84,7 @@ export const Home2 = () => {
     const date = new Date()
     const pointsAdd = 1
     const EnergyRemove = 1
-    
-    //const user = useInitData()
-   // console.log(user?.initDataUnsafe?.user?.username)
-    //const { initData } = retrieveLaunchParams();
+  
     const handleClick = (e) => {
         if(energy - EnergyRemove < 0 && points >= 20) {
             setClaimMode(true)
@@ -101,7 +99,7 @@ export const Home2 = () => {
         setEnergy(energy - EnergyRemove < 0 ? 0 : energy - EnergyRemove)
         setClicks([...clicks, {id: Date.now(),x,y}])
     }
-    //console.log('datauserinit',user?.chat?.photoUrl)
+  
     const handleAnimationEnd = (id) => {
         setClicks((prevClick) => prevClick.filter(click => click.id !== id));
     }
@@ -111,15 +109,53 @@ export const Home2 = () => {
         'Its Fuse Earning Time! Join and Start Farming Fuse Points now!🎁'
        )
     }
-    const handleClaim  = async () => {
-        //update balance
-        //update with timestamp
-    }
+    
 
     //console.log('Leadership', leads)
            
     const refLink = `https://t.me/InFuseTapbot?start=${tgUser?.initDataUnsafe?.user?.id}`
-   
+    const updateTimestamp =  async () => {
+        try {
+
+          const currentTime = date.getTime();
+          const { data, error } = await Supabase
+          .from('Users')
+          .update({ lastRewardClaim: currentTime })
+          .eq('id', tgUser?.initDataUnsafe?.user?.id)
+
+          if(data) {
+              console.log('updated time',data)
+          }
+          if(error) {
+              throw error
+          }
+        } catch (error) {
+          console.log(error)
+        }
+  }
+    const updateClaimBalance =  async () => {
+        try {
+          const { data, error } = await Supabase
+          .from('Users')
+          .update({ balance: accumulative(userBalance,claimVal) })
+          .eq('id', tgUser?.initDataUnsafe?.user?.id)
+
+          if(data) {
+              console.log('updated',data)
+          }
+          if(error) {
+              throw error
+          }
+        } catch (error) {
+          console.log(error)
+        }
+  }
+  const handleClaim  = async () => {
+    updateClaimBalance()
+    updateTimestamp()
+}
+
+
     const updateBalance =  async () => {
           try {
             const { data, error } = await Supabase
@@ -408,7 +444,7 @@ export const Home2 = () => {
                 <div className="w-[100%] mt-[60px] mb-[20px] flex items-center justify-center">
                     {canClaim ? 
                     <>
-                    <div className="bg-black/90 w-[90%] rounded-2xl text-white flex items-center justify-center h-12">
+                    <div onClick={() => handleClaim()} className="bg-black/90 w-[90%] rounded-2xl text-white flex items-center justify-center h-12">
                         <div className="text-xl">
                             Claim now
                         </div>
