@@ -169,8 +169,8 @@ export const Home2 = () => {
     updateClaimBalance()
     updateTimestamp()
     getClaimValue()
-    getTime()
     setCanClaim(false)
+    getTime()
 }
 
 
