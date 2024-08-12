@@ -168,7 +168,7 @@ export const Home2 = () => {
       }
     
     const getTime = async ({last}) => {
-        const lastClaimTime = 1723188918093;
+        const lastClaimTime = 1723493891548;
         const currentTime = date.getTime();
         const cooldownTime = 12 * 60 * 60 * 1000; //
         console.log('korrent',currentTime)
