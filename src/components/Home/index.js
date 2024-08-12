@@ -579,7 +579,7 @@ export const Home2 = () => {
                                     <p className="mt-2 mb-2 font-bold text-[17px]">{userBoard?.username}</p>
                                     <div className="mt-2 font-bold text-[17px mb-2">{`${userBoard?.balance} $FUSE`}</div>
                                 </div>
-                                <p className="ml-4 mr-auto font-bold text-xl">{`#${userRank}`}</p>
+                                <p className="mr-4 ml-auto font-bold text-xl">{`#${userRank}`}</p>
                             </div>
                             
                         </div>
