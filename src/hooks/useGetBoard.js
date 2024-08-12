@@ -2,8 +2,12 @@ import { useEffect, useState } from "react";
 import { GlobalContext } from "@/context/AppContext";
 import { Supabase } from "@/utils/supabasedb";
 export const UseGetBoard = () => {
-  const { tgUser, setTgUser, userBalance,userData,setUserData, setUserBalance ,reffs,
-    setReff, } = GlobalContext();
+  const { leads,
+    userRank,
+    userBoard,
+    setUserBoad,
+    setUserRank,
+    setLeads,} = GlobalContext();
 
   useEffect(() => {
     async function initTg() {
@@ -26,9 +30,12 @@ export const UseGetBoard = () => {
 
           if (data) {
             console.log('leaders',data)
+            setLeads(data)
             console.log(id,'is it')
             const filterone = data.find((item) => item.id === id )
+            setUserBoad(filterone)
             const filterNumb = data.findIndex((item) => item.id === id )
+            setUserRank(filterNumb + 1)
             console.log('user details', filterone)
             console.log('user Rank', filterNumb + 1)
             
