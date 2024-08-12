@@ -576,8 +576,8 @@ export const Home2 = () => {
                             </div>
                             <div className="mt-1 text-sm flex items-center justify-center">
                                 <div className="ml-2 mr-auto">
-                                    <p className="mt-2 mb-2 font-bold text-[17px]">{userBoard?.username}</p>
-                                    <div className="mt-2 font-bold text-[17px mb-2">{`${userBoard?.balance} $FUSE`}</div>
+                                    <p className="mt-2 mb-2 font-bold text-[13px]">{userBoard?.username}</p>
+                                    <div className="mt-2 font-bold text-[13px mb-2">{`${userBoard?.balance} $FUSE`}</div>
                                 </div>
                                 <p className="mr-4 ml-auto font-bold text-xl">{`#${userRank}`}</p>
                             </div>
@@ -616,12 +616,16 @@ export const Home2 = () => {
                         <div 
                           key={i} className="w-[100%] mt-2 mb-2 h-auto flex rounded-xl py-3 px-3 bg-white/15">
                             <div className="ml-1 mr-3">
-                                <img src="./assets/sol.png" className="w-12 h-12"/>
+                                <div className="bg-black/50 w-12 h-12">
+                                    {`${item?.username[0]} ${item?.username[Math.floor(item?.username.length / 2)]}`}
+                                </div>
                             </div>
-                            <div className="mt-1 text-sm">
-                                <p>{`Rank${i + 1}`}</p>
-                                <div>{item.username}</div>
-                                <div>{item.balance}</div>
+                            <div className="mt-1 text-sm flex items-center justify-center">
+                                <div className="ml-2 mr-auto">
+                                    <p className="mt-2 mb-2 font-bold text-[13px]">{item?.username}</p>
+                                    <div className="mt-2 font-bold text-[13px mb-2">{`${item?.balance} $FUSE`}</div>
+                                </div>
+                                <p className="mr-4 ml-auto font-bold text-xl">{`#${i + 1}`}</p>
                             </div>
                             
                         </div>
