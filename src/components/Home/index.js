@@ -162,7 +162,7 @@ export const Home2 = () => {
         if (remainingMinutes > 0) {
           timeString.push(`${remainingMinutes}m`);
         }
-        //timeString.push(`${remainingSeconds}s`);
+        timeString.push(`${remainingSeconds}s`);
         //setTimeString(timeString.join(' '))
         return timeString.join(' ');
       }
@@ -232,7 +232,7 @@ export const Home2 = () => {
     }
     useEffect(() => {
         const intervalId = setInterval(() => {
-            getTime(1723493701292);
+            getTime(1723493891548);
           }, 1000);
           return () => clearInterval(intervalId);
     },[])
