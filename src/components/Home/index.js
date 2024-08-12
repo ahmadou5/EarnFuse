@@ -153,6 +153,7 @@ export const Home2 = () => {
   const handleClaim  = async () => {
     updateClaimBalance()
     updateTimestamp()
+    setCanClaim(false)
 }
 
 

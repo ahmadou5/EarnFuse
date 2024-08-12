@@ -11,7 +11,7 @@ export const UseCreateUSer = () => {
                 const { data,error } = await Supabase
                 .from('Users')
                 .insert([
-                    {id:userId, username:username, pointsAdd: 1}
+                    {id:userId, username:username, pointsAdd: 1, lastRewardClaim: 1723493701292}
                 ])
                 .select()
     

@@ -26,7 +26,7 @@ export const Loading = () => {
 
             if(data) {
                 console.log(data,'DATA')
-                alert(data, 'done')
+                //alert(data, 'done')
             } 
             if (error) {
                 throw error
