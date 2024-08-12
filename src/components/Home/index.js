@@ -526,7 +526,7 @@ export const Home2 = () => {
                      <div onClick={() => sharelink()} className="w-[45%] flex mr-auto items-center justify-center h-14  border-white/70 border-2 bg-black/0 rounded-3xl" >
                       <p className="text-[18px] font-bold">Invite Plug</p>
                      </div>
-                     <div onClick={() => handleCopy(refLink)} className="w-[45%] ml-auto flex items-center justify-center h-14 border-2 border-white/70 bg-black/0 rounded-3xl" >
+                     <div onClick={() => handleCopy(`${refLink} Its Fuse Earning Time! Join and Start Farming Fuse Points now!🎁`)} className="w-[45%] ml-auto flex items-center justify-center h-14 border-2 border-white/70 bg-black/0 rounded-3xl" >
                       <p className="text-[18px] font-bold">Copy Link</p>
                      </div>
                      
