@@ -103,18 +103,18 @@ export const Home2 = () => {
     const handleAnimationEnd = (id) => {
         setClicks((prevClick) => prevClick.filter(click => click.id !== id));
     }
-    //const sharelink = () => {
-    //   utils.shareURL(
-    //    refLink,
-    //    'ahmadou get this'
-    //   )
-    //}
+    const sharelink = () => {
+       utils.shareURL(
+        refLink,
+        'Its Fuse Earning Time! Join and Start Farming Fuse Points now!🎁'
+       )
+    }
     const handleClaim  = async () => {
         //update balance
         //update with timestamp
     }
 
-    console.log('Leadership', leads)
+    //console.log('Leadership', leads)
            
     const refLink = `https://t.me/InFuseTapbot?start=${tgUser?.initDataUnsafe?.user?.id}`
    
@@ -138,7 +138,7 @@ export const Home2 = () => {
     const twelveHoursInMs = 12 * 60 * 60 * 1000;
     function formatTimeRemaining(milliseconds) {
         if (milliseconds <= 0) {
-          return 'Claim available now';
+          return '';
         }
       
         const seconds = Math.floor(milliseconds / 1000);
@@ -147,7 +147,7 @@ export const Home2 = () => {
         const days = Math.floor(hours / 24);
       
         const   
-       remainingSeconds = seconds % 60;
+        remainingSeconds = seconds % 60;
         const remainingMinutes = minutes % 60;
         const remainingHours = hours % 24;
       
@@ -162,7 +162,7 @@ export const Home2 = () => {
         if (remainingMinutes > 0) {
           timeString.push(`${remainingMinutes}m`);
         }
-        timeString.push(`${remainingSeconds}s`);
+        //timeString.push(`${remainingSeconds}s`);
         //setTimeString(timeString.join(' '))
         return timeString.join(' ');
       }
