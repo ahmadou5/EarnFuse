@@ -388,7 +388,7 @@ export const Home2 = () => {
                         </button>
                     </div>
                     <div className="w-[100%] flex  text-white/75 items-center  flex-col justify-center mt-12">
-                        <div className="flex items-center justify-center w-[180px] h-[180px] bg-black/70 rounded-full">
+                        <div className="flex items-center justify-center text-white/80 font-extrabold w-[180px] h-[180px] bg-black/70 rounded-full">
                         {`${tgUser?.initDataUnsafe?.user?.username[0]}${tgUser?.initDataUnsafe?.user?.username[Math.floor(tgUser?.initDataUnsafe?.user?.username?.length / 2)]}`}
                         </div>
                         <div>
