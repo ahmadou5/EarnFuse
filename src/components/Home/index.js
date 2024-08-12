@@ -113,6 +113,8 @@ export const Home2 = () => {
         //update balance
         //update with timestamp
     }
+
+    console.log('Leadership', leads)
            
     const refLink = `https://t.me/InFuseTapbot?start=${tgUser?.initDataUnsafe?.user?.id}`
    
