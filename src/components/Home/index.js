@@ -201,7 +201,7 @@ export const Home2 = () => {
         if (remainingMinutes > 0) {
           timeString.push(`${remainingMinutes}m`);
         }
-        //timeString.push(`${remainingSeconds}s`);
+        timeString.push(`${remainingSeconds}s`);
         //setTimeString(timeString.join(' '))
         return timeString.join(' ');
       }
