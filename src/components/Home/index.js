@@ -227,12 +227,12 @@ export const Home2 = () => {
        return a+b;
     }
     const theFunct = async () => {
-       await getTime(1723188918093);
+       await getTime(1723493701292);
        setTime2(formatTimeRemaining(timeRemaining))
     }
     useEffect(() => {
         const intervalId = setInterval(() => {
-            getTime(1723188918093);
+            getTime(1723493701292);
           }, 1000);
           return () => clearInterval(intervalId);
     },[])
