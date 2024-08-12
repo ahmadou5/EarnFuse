@@ -566,11 +566,21 @@ export const Home2 = () => {
                       <p className="text-white/70 font-extrabold">Leaderboard</p>
                     </div>
                 </div>
-                <div className="mt-7 py-2 bg-black w-[97%] h-auto rounded-xl flex flex-col items-center justify-center">
-                    <p className="text-[18px] text-white font-light">Your Fuse Point:</p>
-                    <div className="flex items-center justify-center">
-                        <img className="h-16 w-16 ml-auto mr-1 " src="./assets/show.png" />
-                        <p className="text-4xl ml-1 text-white mr-auto font-bold ">{accumulative(userBalance,points).toLocaleString()}</p>
+                <div className="w-[100%] h-auto px-2 mt-5 mb-2 py-5 flex flex-col justify-center items-center">
+                    <div className="w-[100%] h-auto rounded-xl text-white/70 bg-black/0 p-0 mt-2">
+                     
+                        <div 
+                           className="w-[100%] mt-2 mb-2 h-auto flex rounded-xl py-3 px-3 bg-black/15">
+                            <div className="ml-1 mr-3">
+                                <img src="./assets/sol.png" className="w-12 h-12"/>
+                            </div>
+                            <div className="mt-1 text-sm">
+                                <p>{`Rank${1}`}</p>
+                                <div>{'Ahmadou'}</div>
+                                <div>{4000}</div>
+                            </div>
+                            
+                        </div>
                     </div>
                 </div>
                 {/**<div className="w-[100%] h-auto px-2 mt-2 mb-1 py-5 flex flex-col justify-center items-center">
