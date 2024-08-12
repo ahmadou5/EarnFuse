@@ -25,13 +25,13 @@ export const UseGetTgData = () => {
                 const { data,error } = await Supabase
                 .from('Users')
                 .insert([
-                    {id:userId, username:username, pointsAdd: 1}
+                    {id:userId, username:username, pointsAdd: 1,lastRewardClaim: 1723071600}
                 ])
                 .select()
     
                 if(data) {
                     console.log(data)
-                    alert(data, 'done')
+                    //alert(data, 'done')
                 } 
                 if (error) {
                     throw error

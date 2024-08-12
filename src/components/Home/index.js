@@ -63,6 +63,7 @@ export const Home2 = () => {
         isConfe,
         reffs,
         setReff,
+        userData,
         setIsConfe,
         isBoostModal,
         lastClaim,
@@ -133,6 +134,20 @@ export const Home2 = () => {
           console.log(error)
         }
   }
+    const getClaimValue = async () => {
+        const { data, error } = await Supabase
+              .from('Users')
+              .select('*')
+              .eq('id',userData[0].id)
+
+              if(data) {
+                const sele = JSON.stringify(data)
+                setLastClaim(data[0].lastRewardClaim)
+              }
+              if(error) {
+                console.log('error',error)
+              }
+    }
     const updateClaimBalance =  async () => {
         try {
           const { data, error } = await Supabase
@@ -153,7 +168,9 @@ export const Home2 = () => {
   const handleClaim  = async () => {
     updateClaimBalance()
     updateTimestamp()
-    setCanClaim(false)
+    getClaimValue()
+    getTime()
+    //setCanClaim(false)
 }
 
 
@@ -266,10 +283,7 @@ export const Home2 = () => {
     }
    
     useEffect(() => {
-        const intervalId = setInterval(() => {
-            getTime();
-          }, 1000);
-          return () => clearInterval(intervalId);
+        getTime();
     },[])
    
     const todo =  [
