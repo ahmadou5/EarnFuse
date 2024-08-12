@@ -602,7 +602,7 @@ export const Home2 = () => {
                                 <img src="./assets/sol.png" className="w-12 h-12"/>
                             </div>
                             <div className="mt-1 text-sm">
-                                <p>{`Rank${item.i + 1}`}</p>
+                                <p>{`Rank${i + 1}`}</p>
                                 <div>{item.username}</div>
                             </div>
                             
