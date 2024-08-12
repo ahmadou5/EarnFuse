@@ -1,7 +1,7 @@
 import { createClient } from "@supabase/supabase-js";
-import dotenv from 'dotenv'
+import 'dotenv/config'
 
-dotenv.config()
+require('dotenv').config()
 
 
 const Url = process.env.SUPERURL
