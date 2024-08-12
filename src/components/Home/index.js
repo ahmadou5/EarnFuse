@@ -559,8 +559,8 @@ export const Home2 = () => {
             <div className="bg-gothic-950/0 mt-0 flex p-3 bg-slate-600/0 flex-col w-[100%] h-auto">
                  <div className="w-[100%] h-12 px-2 mt-5 mb-4 py-3 flex justify-center items-center">
                     <div className="flex ">
-                      <p className="text-[39px] font-bold  text-white/75">Leaderboard</p>
-                      <img src="./assets/board.svg" className="w-7 h-7" />
+                      <p className="text-[35px] font-bold  text-white/75">Leaderboard</p>
+                      <img src="./assets/board.svg" className="w-10 h-10" />
                     </div>
                 </div>
                 <div className="mt-7 py-2 flex flex-col items-center justify-center">
