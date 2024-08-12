@@ -582,7 +582,7 @@ export const Home2 = () => {
                                     <p className="mt-0.5 mb-0.5 font-bold text-[13px]">{userBoard?.username}</p>
                                     <div className="mt-0.5 font-bold text-[13px] mb-0.5">{`${userBoard?.balance} $FUSE`}</div>
                                 </div>
-                                <p className="mr-3 ml-auto font-bold text-xl">{`#${userRank}`}</p>
+                                <p className="mr-3 ml-auto font-bold mt-1 text-xl">{`#${userRank}`}</p>
                             </div>
                             
                         </div>
