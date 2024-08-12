@@ -27,7 +27,7 @@ export const BackMenu = () => {
   return (
     <div
       style={{ "backdrop-filter": "blur(12px)" }}
-      className=" w-[60px] h-[60px] ml-5 mr-auto rounded-full px-1.5 z-100 bg-white/15 mb-6 text-white/75  fixed inset-x-0 bottom-1 flex justify-center items-center"
+      className=" w-[60px] h-[60px] ml-5 mr-auto rounded-full px-1.5 z-100 bg-[#2f70d8]/35 mb-6 text-white/75  fixed inset-x-0 bottom-1 flex justify-center items-center"
     >
       <div className="lg:py-2.5 py-0 lg:px-2.5 px-1.5  mt-auto mb-auto ml-auto mr-auto w-[98%] flex items-center justify-center  h-[90%]">
         <div
@@ -40,7 +40,7 @@ export const BackMenu = () => {
           }}
           className={`h-11 ml-auto mr-auto w-[90%] bg-white/0 flex flex-col items-center justify-center`}
         >
-          <img src="./assets/home.svg" className="w-8 h-8" />
+          <img src="./assets/home.svg" className="w-6 h-6" />
         </div>
       </div>
     </div>

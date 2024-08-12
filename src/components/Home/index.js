@@ -334,7 +334,7 @@ export const Home2 = () => {
                 </div>
             
             </div>
-            <Menu />
+            <BackMenu />
             {claimMode && <div className="inset-0 fixed bg-white/0 bg-opacity-100 w-[100%] z-[99999999] min-h-screen h-auto backdrop-blur-sm flex ">
         <div className="w-[100%] flex items-center px-3 justify-center">
             <div className="h-[220px] ml-auto mr-auto py-2 px-2 w-[89%] bg-white/75  border-[#448cff]/90 border rounded-xl">
