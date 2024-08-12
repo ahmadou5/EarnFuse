@@ -18,7 +18,7 @@ import { retrieveLaunchParams } from '@telegram-apps/sdk';
 
 export const Home2 = () => {
     //const utils = useUtils()
-    const [canClaim,setCanClaim] = useState(true)
+    const [canClaim,setCanClaim] = useState(false)
     const [timeRemaining,setTimeRemaining] = useState(0)
     const [time2,setTime2] = useState('')
     const [claimVal,setClaimVal] = useState(100000)
@@ -207,11 +207,11 @@ export const Home2 = () => {
       }
     
     const getTime = async ({last}) => {
-        const lastClaimTime = 1723493891548;
+        //const lastClaimTime = 1723493891548;
         const currentTime = date.getTime();
         const cooldownTime = 12 * 60 * 60 * 1000; //
         console.log('korrent',currentTime)
-        const timeDiff = currentTime - lastClaimTime;
+        const timeDiff = currentTime - last;
         if (timeDiff >= cooldownTime) {
           setCanClaim(true);
         } else {
@@ -271,7 +271,7 @@ export const Home2 = () => {
     }
     useEffect(() => {
         const intervalId = setInterval(() => {
-            getTime(1723493891548);
+            getTime(lastClaim);
           }, 1000);
           return () => clearInterval(intervalId);
     },[])
