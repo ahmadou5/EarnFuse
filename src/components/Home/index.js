@@ -566,7 +566,7 @@ export const Home2 = () => {
                       <p className="text-white/70 font-extrabold">Leaderboard</p>
                     </div>
                 </div>
-                <div className="mt-7 py-2 flex flex-col items-center justify-center">
+                <div className="mt-7 py-2 bg-black w-[97%] h-auto rounded-xl flex flex-col items-center justify-center">
                     <p className="text-[18px] text-white font-light">Your Fuse Point:</p>
                     <div className="flex items-center justify-center">
                         <img className="h-16 w-16 ml-auto mr-1 " src="./assets/show.png" />
