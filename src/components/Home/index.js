@@ -562,7 +562,7 @@ export const Home2 = () => {
             isBoost && (
             <>
             <div className="bg-gothic-950/0 mt-0 flex p-3 bg-slate-600/0 flex-col w-[100%] h-auto">
-                 <div className="w-[100%] h-12 px-2 mt-5 mb-4 py-3 flex justify-center items-center">
+                <div className="w-[100%] h-12 px-2 mt-5 mb-4 py-3 flex justify-center items-center">
                     <div className="flex flex-col items-center justify-center">
                       <img src="./assets/board.svg" className="w-16 h-16 mt-0.5" />
                       <p className="text-white/70 font-extrabold">Leaderboard</p>
@@ -571,14 +571,13 @@ export const Home2 = () => {
                 <div className="w-[100%] h-auto px-2 mt-5 mb-2 py-5 flex flex-col justify-center items-center">
                     <div className="w-[100%] h-auto rounded-xl text-white/70 bg-black/0 p-0 mt-2">
                      
-                        <div 
-                           className="w-[100%] mt-2 mb-2 h-auto flex rounded-xl py-4 px-3 bg-black/15">
-                            <div className="ml-1 mr-3">
+                        <div className="w-[100%] mt-2 mb-2 h-auto flex rounded-xl py-4 px-3 bg-black/15">
+                            <div className="ml-1 mr-3 w-[30%]">
                                 <div className="bg-black/50 flex items-center justify-center rounded-full w-12 h-12">
                                     {`${userBoard?.username[0]}`}
                                 </div>
                             </div>
-                            <div className="mt-1 w-auto text-sm flex ">
+                            <div className="mt-1 w-[70%] text-sm flex ">
                                 <div className="ml-2 mr-auto">
                                     <p className="mt-0.5 mb-0.5 font-bold text-[13px]">{userBoard?.username}</p>
                                     <div className="mt-0.5 font-bold text-[13px] mb-0.5">{`${userBoard?.balance} $FUSE`}</div>
