@@ -22,11 +22,16 @@ export const UseGetBoard = () => {
          const { data, error } = await Supabase
           .from("Users")
           .select('*')
-          .order('balance',{ascending:false, nullsFirst: false})
+          .order('balance',{ascending:false ,nullsFirst: false})
 
           if (data) {
             console.log('leaders',data)
-           
+            console.log(id,'is it')
+            const filterone = data.filter((item) => item.id === id )
+            console.log('user details', filterone)
+            
+            console.log('filtered balance', filterone[0].balance)
+            //console.log(reffs,'it is')
           }
           if (error) {
             //console.log("error", error);
