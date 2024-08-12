@@ -22,7 +22,7 @@ export const UseGetBoard = () => {
          const { data, error } = await Supabase
           .from("Users")
           .select('*')
-          .order('balance',{ascending:true})
+          .order('balance',{ascending:false, nullsFirst: false})
 
           if (data) {
             console.log('leaders',data)
