@@ -570,16 +570,16 @@ export const Home2 = () => {
                     <div className="w-[100%] h-auto rounded-xl text-white/70 bg-black/0 p-0 mt-2">
                      
                         <div 
-                           className="w-[100%] mt-2 mb-2 h-auto flex rounded-xl py-3 px-3 bg-white/15">
+                           className="w-[100%] mt-2 mb-2 h-auto flex rounded-xl py-4 px-3 bg-black/15">
                             <div className="ml-1 mr-3">
                                 <img src="./assets/sol.png" className="w-12 h-12"/>
                             </div>
-                            <div className="mt-1 text-sm flex">
+                            <div className="mt-1 text-sm flex items-center justify-center">
                                 <div className="ml-2 mr-auto">
                                     <p>{userBoard?.username}</p>
                                     <div>{`${userBoard?.balance}FUSE`}</div>
                                 </div>
-                                <p className="ml-auto m-4">{`#${userRank}`}</p>
+                                <p className="ml-auto mr-4 font-bold text-xl">{`#${userRank}`}</p>
                             </div>
                             
                         </div>
@@ -614,7 +614,7 @@ export const Home2 = () => {
                        leads && leads.map((item,i) => (
                         <>
                         <div 
-                          key={i} className="w-[100%] mt-2 mb-2 h-auto flex rounded-xl py-3 px-3 bg-black/15">
+                          key={i} className="w-[100%] mt-2 mb-2 h-auto flex rounded-xl py-3 px-3 bg-white/35">
                             <div className="ml-1 mr-3">
                                 <img src="./assets/sol.png" className="w-12 h-12"/>
                             </div>
