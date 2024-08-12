@@ -273,16 +273,8 @@ export const Home2 = () => {
             <>
             <div className="bg-gothic-950/0 mt-0 flex bg-slate-600/0 flex-col w-[100%] h-auto">
             <div className="w-[100%] bg-black/0">
-                <div className="w-[100%] h-12 px-2 mt-2 py-3 flex">
-                    <div className="ml-2 mr-auto">
-                    <p className="text-[18px] font-bold  text-white/75">EarnFuse</p>
-                    </div>
-                    <div className="ml-auto py-1 mr-2 flex">
-                        <IoWallet className="ml-4 text-white/75 mr-4 text-[20px]"/>
-                        <IoSettings className="ml-4  text-white/75 mr-2 text-[20px]"/>
-                    </div>
-                </div>
-                <div className="mt-7 py-2 flex flex-col items-center justify-center">
+                
+                <div className="mt-20 py-2 flex flex-col items-center justify-center">
                     <p className="text-[18px] text-white font-light">Your Fuse Point:</p>
                     <div className="flex items-center justify-center">
                         <img className="h-16 w-16 ml-auto mr-1 " src="./assets/show.png" />
@@ -425,26 +417,7 @@ export const Home2 = () => {
             
             </div>
             <Menu />
-            {claimMode && <div className="inset-0 fixed bg-white/0 bg-opacity-100 w-[100%] z-[99999999] min-h-screen h-auto backdrop-blur-sm flex ">
-        <div className="w-[100%] flex items-center px-3 justify-center">
-            <div className="h-[220px] ml-auto mr-auto py-2 px-2 w-[89%] bg-white/75  border-[#448cff]/90 border rounded-xl">
-            {
-                <div className="mt-5 ml-auto mr-auto flex flex-col items-center justify-center text-center">
-                <div className="w-[80%] mb-2 ml-auto mr-auto py-1 px-3 flex  items-center justify-center rounded-full mt-8 h-9">
-                  <p className="text-black/85 text-[18px] font-light ml-auto mr-auto ">{`Claim Your ${points} Fuse Points`}</p>
-                </div>
-                <div onClick={() => {
-                    setClaimMode(false)
-                    updateBalance()
-                    }} className="w-[175px] mt-6  ml-auto mr-auto py-1 px-3 text-white border  border-[#448cff]/60 flex  items-center justify-center bg-black/90 rounded-full h-9">
-                  <p>{'Claim'}</p>
-                </div>
-            </div>
-            }
             
-            </div>
-        </div>
-    </div>}
             </div>
             </>
         )
