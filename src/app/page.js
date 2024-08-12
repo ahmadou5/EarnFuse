@@ -7,13 +7,14 @@ import { UseGetBalance } from "@/hooks/useGetBalance";
 import { UseGetRefferals } from "@/hooks/useGetRefs";
 import Image from "next/image";
 import { useEffect, useState } from "react";
+import { UseGetBoard } from "@/hooks/useGetBoard";
 
 export default function Home() {
   const {isAuth,setIsAuth, tgUser, setTgUser} = GlobalContext()
   const user = UseGetTgData()
   const balance = UseGetBalance()
   const refs =UseGetRefferals()
-  //const user = UseGetTgData()
+  const board = UseGetBoard()
   useEffect(() => {
     const initTg = () => {
       if (
@@ -29,7 +30,7 @@ export default function Home() {
       }
     }
     initTg()
-    console.log(user,balance,refs)
+    console.log(user,balance,refs,board)
     const interval = setInterval(() => {
        setIsAuth(true)
     },6000)
