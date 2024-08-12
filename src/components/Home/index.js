@@ -392,7 +392,7 @@ export const Home2 = () => {
                         {`${tgUser?.initDataUnsafe?.user?.username[0]}${tgUser?.initDataUnsafe?.user?.username[Math.floor(tgUser?.initDataUnsafe?.user?.username?.length / 2)]}`}
                         </div>
                         <div>
-                            <p className="font-bold text-[23px] mt-3">{`Hi ${tgUser?.initDataUnsafe?.user?.username}`}</p>
+                            <p className="font-bold text-[23px] mt-7">{`Hi ${tgUser?.initDataUnsafe?.user?.username}`}</p>
                         </div>
                     </div>
                 </div>
