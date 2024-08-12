@@ -108,8 +108,8 @@ export const Menu = () => {
               setIsBoost(false)
               setIsHome(false)
               setIsTask(true)
-            }} className={`h-12 ml-auto mr-auto w-[30%] bg-white/0 flex flex-col items-center justify-center`}>
-                <img src="./assets/task.svg" className="w-8 h-8" />
+            }} className={`h-12 ml-auto mr-auto w-[25%] bg-white/0 flex flex-col items-center justify-center`}>
+                <img src="./assets/task.svg" className="w-7 h-7" />
                 <p className={`font-light mt-1 text-white text-[10px]`}>Tasks</p>
             </div>
             
@@ -119,9 +119,19 @@ export const Menu = () => {
              setIsBoost(false)
              setIsHome(false)
              setIsTask(false)
-            }} className={`h-12 ml-auto mr-auto w-[30%] bg-white/0 flex flex-col items-center justify-center`}>
-                 <img src="./assets/pad.svg" className="w-8 h-8"/>
+            }} className={`h-12 ml-auto mr-auto w-[25%] bg-white/0 flex flex-col items-center justify-center`}>
+                 <img src="./assets/pad.svg" className="w-7 h-7"/>
                 <p className={`font-light mt-1 text-white text-[10px]`}>Games</p>
+            </div>
+            <div onClick={() => {
+             setIsGame(false)
+             setIsFrens(false)
+             setIsBoost(true)
+             setIsHome(false)
+             setIsTask(false)
+            }} className={`h-12 ml-auto mr-auto w-[25%] bg-white/0 flex flex-col items-center justify-center`}>
+                 <img src="./assets/board.svg" className="w-7 h-7"/>
+                <p className={`font-light mt-1 text-white text-[10px]`}>Leaderboard</p>
             </div>
             <div onClick={() => {
 
@@ -131,8 +141,8 @@ export const Menu = () => {
               setIsTask(false)
               setIsGame(false)
             }}
-             className={`h-12 ml-auto mr-auto w-[30%] bg-white/0 flex flex-col items-center justify-center`}>
-                 <img src="./assets/community.svg" className="w-8 h-8"/>
+             className={`h-12 ml-auto mr-auto w-[25%] bg-white/0 flex flex-col items-center justify-center`}>
+                 <img src="./assets/community.svg" className="w-7 h-7"/>
                  <p className={`font-light mt-1 text-white text-[10px]`}>Plugs</p>
             </div>
             
