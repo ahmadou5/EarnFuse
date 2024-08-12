@@ -591,25 +591,19 @@ export const Home2 = () => {
                 </div>**/}
                 <div className="w-[100%] h-auto px-2 mt-5 mb-2 py-5 flex flex-col justify-center items-center">
                     <p>Booster</p>
-                    <>
-                    
-                        <div>{`${userRank} Rank`}</div>
-                        <div>{userBoard?.balance}</div>
-                        
-                    </>
+                  
                     <div className="w-[100%] h-auto rounded-xl text-white/70 bg-black/0 p-0 mt-2">
                      {
-                       boost && boost.filter((boos) => boos.boostType == 'booster').map((item,i) => (
+                       leads && leads.map((item,i) => (
                         <>
-                        <div onClick={() => {
-                            setIsBoostModal(true)
-                        }} key={i} className="w-[100%] mt-2 mb-2 h-auto flex rounded-xl py-3 px-3 bg-black/15">
+                        <div 
+                          key={i} className="w-[100%] mt-2 mb-2 h-auto flex rounded-xl py-3 px-3 bg-black/15">
                             <div className="ml-1 mr-3">
                                 <img src="./assets/sol.png" className="w-12 h-12"/>
                             </div>
                             <div className="mt-1 text-sm">
-                                <p>{item.boostName}</p>
-                                <div>{item.amount.toLocaleString()}</div>
+                                <p>{`Rank${item.i + 1}`}</p>
+                                <div>{item.username}</div>
                             </div>
                             
                         </div>
