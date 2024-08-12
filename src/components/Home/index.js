@@ -576,10 +576,10 @@ export const Home2 = () => {
                             </div>
                             <div className="mt-1 text-sm flex items-center justify-center">
                                 <div className="ml-2 mr-auto">
-                                    <p>{userBoard?.username}</p>
-                                    <div>{`${userBoard?.balance}FUSE`}</div>
+                                    <p className="mt-2 mb-2 font-bold text-[17px]">{userBoard?.username}</p>
+                                    <div className="mt-2 font-bold text-[17px mb-2">{`${userBoard?.balance} $FUSE`}</div>
                                 </div>
-                                <p className="ml-auto mr-4 font-bold text-xl">{`#${userRank}`}</p>
+                                <p className="ml-4 mr-auto font-bold text-xl">{`#${userRank}`}</p>
                             </div>
                             
                         </div>
