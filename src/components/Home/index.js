@@ -639,7 +639,7 @@ export const Home2 = () => {
                 </div>
                 
                 <div className="w-[100%] h-auto px-2 mt-4 mb-2 py-3 flex flex-col justify-center items-center">
-                    <p className="text-start text-xl font-bold text-white/50">{`${leads?.length} Fuse Earners`}</p>
+                    <p className="ml-3 mr-auto text-xl font-bold text-white/50">{`${leads?.length} Fuse Earners`}</p>
                   
                     <div className="w-[100%] h-auto rounded-xl text-white/70 bg-black/0 p-0 mt-2">
                      {
@@ -655,7 +655,7 @@ export const Home2 = () => {
                             <div className="mt-1 w-[85%] text-sm flex ">
                                 <div className="ml-2 mr-auto">
                                     <p className="mt-0.5 mb-0.5 font-bold text-[13px]">{item?.username === null  ? 'User' : item?.username}</p>
-                                    <div className="mt-0.5 font-bold text-white/40 text-[13px] mb-0.5">{`${item?.balance?.toLocaleString()} FUSE`}</div>
+                                    <div className="mt-0.5 font-bold text-black/40 text-[13px] mb-0.5">{`${item?.balance?.toLocaleString()} FUSE`}</div>
                                 </div>
                                 <p className="mr-3 ml-auto font-bold mt-1.5 text-xl">{`#${i + 1}`}</p>
                             </div>
