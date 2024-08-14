@@ -438,7 +438,7 @@ export const Home2 = () => {
                     </div>
                     <div className="w-[100%] flex  text-white/75 items-center  flex-col justify-center mt-12">
                         <div className="flex items-center justify-center text-white/80 font-extrabold w-[130px] h-[130px] bg-black/70 rounded-full">
-                        {`${tgUser?.initDataUnsafe?.user?.username[0]}${tgUser?.initDataUnsafe?.user?.username[Math.floor(tgUser?.initDataUnsafe?.user?.username?.length / 1.7)]}`}
+                        {`${tgUser?.initDataUnsafe?.user?.username[0]}${tgUser?.initDataUnsafe?.user?.username[Math.floor(tgUser?.initDataUnsafe?.user?.username?.length / 3)]}`}
                         </div>
                         <div>
                             <p className="font-bold text-[23px] mt-7">{`Hi ${tgUser?.initDataUnsafe?.user?.username}`}</p>
@@ -669,7 +669,7 @@ export const Home2 = () => {
                           key={i} className="w-[100%] mt-2 mb-2 h-auto flex rounded-xl py-3 px-3 bg-white/10">
                             <div className="ml-1 mr-3 w-[15%]">
                                 <div className="bg-black/50 flex items-center justify-center rounded-full w-12 h-12">
-                                    {`${item?.username.toString()[0]}`}
+                                    {`${item?.username[0]}`}
                                 </div>
                             </div>
                             <div className="mt-1 w-[85%] text-sm flex ">
