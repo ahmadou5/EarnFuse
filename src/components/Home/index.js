@@ -659,7 +659,7 @@ export const Home2 = () => {
                     </div>
                 </div>**/}
                 <div className="w-[100%] h-auto px-2 mt-5 mb-2 py-5 flex flex-col justify-center items-center">
-                    <p>{`${leads?.length} Fuse Earners`}</p>
+                    <p className="text-start text-xl font-bold">{`${leads?.length} Fuse Earners`}</p>
                   
                     <div className="w-[100%] h-auto rounded-xl text-white/70 bg-black/0 p-0 mt-2">
                      {
