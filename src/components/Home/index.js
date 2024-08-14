@@ -669,7 +669,7 @@ export const Home2 = () => {
                           key={i} className="w-[100%] mt-2 mb-2 h-auto flex rounded-xl py-3 px-3 bg-white/10">
                             <div className="ml-1 mr-3 w-[15%]">
                                 <div className="bg-black/50 flex items-center justify-center rounded-full w-12 h-12">
-                                    {`${item?.username[0]}`}
+                                    {`${item?.username.substring(0,1)}`}
                                 </div>
                             </div>
                             <div className="mt-1 w-[85%] text-sm flex ">
