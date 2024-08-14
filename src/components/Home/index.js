@@ -655,7 +655,7 @@ export const Home2 = () => {
                             <div className="mt-1 w-[85%] text-sm flex ">
                                 <div className="ml-2 mr-auto">
                                     <p className="mt-0.5 mb-0.5 font-bold text-[13px]">{item?.username === null  ? 'User' : item?.username}</p>
-                                    <div className="mt-0.5 font-bold text-black/40 text-[13px] mb-0.5">{`${item?.balance?.toLocaleString()} FUSE`}</div>
+                                    <div className="mt-0.5 font-bold text-white/25 text-[13px] mb-0.5">{`${item?.balance?.toLocaleString()} FUSE`}</div>
                                 </div>
                                 <p className="mr-3 ml-auto font-bold mt-1.5 text-xl">{`#${i + 1}`}</p>
                             </div>
