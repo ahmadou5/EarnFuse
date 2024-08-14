@@ -669,12 +669,12 @@ export const Home2 = () => {
                           key={i} className="w-[100%] mt-2 mb-2 h-auto flex rounded-xl py-3 px-3 bg-white/10">
                             <div className="ml-1 mr-3 w-[15%]">
                                 <div className="bg-black/50 flex items-center justify-center rounded-full w-12 h-12">
-                                    {`${item?.username?.substring(0,1)}`}
+                                    {`${item?.username === undefined  ? 'U' : item?.username?.substring(0,1)}`}
                                 </div>
                             </div>
                             <div className="mt-1 w-[85%] text-sm flex ">
                                 <div className="ml-2 mr-auto">
-                                    <p className="mt-0.5 mb-0.5 font-bold text-[13px]">{item?.username}</p>
+                                    <p className="mt-0.5 mb-0.5 font-bold text-[13px]">{item?.username === undefined  ? 'User' : item?.username}</p>
                                     <div className="mt-0.5 font-bold text-white/70 text-[13px] mb-0.5">{`${item?.balance?.toLocaleString()} FUSE`}</div>
                                 </div>
                                 <p className="mr-3 ml-auto font-bold mt-1.5 text-xl">{`#${i + 1}`}</p>
