@@ -452,7 +452,7 @@ export const Home2 = () => {
                         <p className="text-4xl ml-1 text-white mr-auto font-bold ">{accumulative(userBalance,points)?.toLocaleString()}</p>
                     </div>
                 </div>
-                <div className="w-[100%] mt-[60px] mb-[20px] flex items-center justify-center">
+                <div className="w-[100%] mt-[50px] mb-[40px] flex items-center justify-center">
                     {canClaim ? 
                     <>
                     <div onClick={() => handleClaim()} className="bg-black/90 w-[90%] rounded-2xl text-white flex items-center justify-center h-12">
