@@ -112,7 +112,7 @@ export const Home2 = () => {
     }
     
 
-    console.log('Leadership', lastClaim)
+    console.log('Leadership', leads)
            
     const refLink = `https://t.me/InFuseTapbot?start=${tgUser?.initDataUnsafe?.user?.id}`
     const updateTimestamp =  async () => {
