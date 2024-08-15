@@ -506,7 +506,7 @@ export const Home2 = () => {
                   src="./assets/community.svg"
                   className="w-16 h-16 mt-0.5"
                 />
-                <p className="text-white/70 font-extrabold">Plugs</p>
+                <p className="text-white/70 font-extrabold">Frens</p>
               </div>
             </div>
             <div className="w-[100%] h-[70px] px-2 mt-4 py-3 flex">
@@ -530,7 +530,7 @@ export const Home2 = () => {
                         </p>
                       </div>
                       <div className="flex ml-auto mr-auto w-[80%] bg-white/0 items-center justify-center">
-                        <p className="text-2xl mt-2 ml-4 mr-auto text-white font-extrabold">{`Plugs`}</p>
+                        <p className="text-2xl mt-2 ml-4 mr-auto text-white font-extrabold">{`Frens`}</p>
                          <p className="text-4xl mt-1 ml-auto mr-8 text-white font-extrabold">{`${
                           reffs && reffs.length
                         }`}</p>
@@ -553,7 +553,7 @@ export const Home2 = () => {
                   onClick={() => sharelink()}
                   className="w-[45%] flex mr-auto items-center justify-center h-14  border-white/70 border-2 bg-black/0 rounded-3xl"
                 >
-                  <p className="text-[18px] font-bold">Invite Plug</p>
+                  <p className="text-[18px] font-bold">Invite Frens</p>
                 </div>
                 <div
                   onClick={() =>
