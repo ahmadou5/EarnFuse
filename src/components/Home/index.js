@@ -490,18 +490,10 @@ export const Home2 = () => {
                     </div>
                 </div>
                 <div className="w-[100%] h-[70px] px-2 mt-4 py-3 flex">
-                    <div className="w-[75%]">
+                    <div className="w-[100%] flex items-center justify-center">
                       <p className="text-[23px] mb-2 font-bold  text-white/75">
                         invite frens, earn points!
                       </p>
-                    </div>
-                    <div className="w-[25%] flex items-center justify-center">
-                        <div className="bg-white/10 h-[74px] flex items-center flex-col justify-center mt-12 w-[74px] rounded-xl">
-                            <div className="text-3xl font-bold text-white">{
-                                reffs && getLevel(reffs.length)
-                                }</div>
-                            <p className="text-sm mt-0.5 font-bold text-white">Level</p>
-                        </div>
                     </div>
                 </div>
                 <div className="w-[100%] h-[150px] bg-blue-700/0 px-2 mt-20 p-4 flex">
