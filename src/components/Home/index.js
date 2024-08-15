@@ -491,12 +491,12 @@ export const Home2 = () => {
                 </div>
                 <div className="w-[100%] h-[70px] px-2 mt-4 py-3 flex">
                     <div className="w-[100%] flex items-center justify-center">
-                      <p className="text-[23px] mb-2 font-bold  text-white/75">
+                      <p className="text-[25px] mb-2 mt-7 font-extrabold  text-white/75">
                         invite frens, earn points!
                       </p>
                     </div>
                 </div>
-                <div className="w-[100%] h-[150px] bg-blue-700/0 px-2 mt-20 p-4 flex">
+                <div className="w-[100%] h-[150px] bg-blue-700/0 px-2 mt-12 p-4 flex">
                     <div className="w-[100%] flex h-[100%] text-white bg-white/5 rounded-xl">
                      <div className="w-[70%] py-3 px-3 ">
                         <div className='flex'>
