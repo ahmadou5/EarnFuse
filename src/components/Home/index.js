@@ -483,8 +483,8 @@ export const Home2 = () => {
                 ) : (
                   <>
                     <div className="bg-black/30 w-[90%] rounded-2xl text-white py-2 flex items-center justify-center h-[52px]">
-                      <div className="text-[21px] ml-2 mr-2 flex text-blue-600">
-                      <div className="text-[16px] mt-2 mr-2 ml-2 text-white/70">Claim Available in</div>
+                      <div className="text-[21px] ml-2 mr-2 flex text-blue-600 font-extrabold">
+                      <div className="text-[18px] mt-2 mr-2 ml-2 font-light text-white/70">Claim Available in</div>
                         {`${formatTimeRemaining(
                           timeRemaining
                         )}`}
