@@ -501,15 +501,15 @@ export const Home2 = () => {
                      <div className="w-[70%] py-3 px-3 ">
                         <div className='flex'>
                             <div className="flex ml-2 py-2 mr-" >
-                            <div className="bg-white/10 h-[74px] flex items-center flex-col justify-center mt-0 w-[74px] rounded-xl">
+                            <div className="bg-black/15 h-[74px] flex items-center flex-col justify-center mt-0 w-[74px] rounded-xl">
                             <div className="text-3xl font-bold text-white">{
                                 reffs && getLevel(reffs.length)
                                 }</div>
                             <p className="text-sm mt-0.5 font-bold text-white">Level</p>
                         </div>
-                        <div className="flex">
-                        <p className="text-2xl mt-5 ml-auto mr-auto text-white font-extrabold">{`Plugs`}</p>  
-                        <p className="text-2xl mt-5 mr-2 ml-auto text-white font-extrabold">{`${reffs && reffs.length}`}</p>
+                        <div className="flex items-center justify-center">
+                        <p className="text-2xl mt-5  text-white font-extrabold">{`Plugs`}</p>  
+                        <p className="text-2xl mt-5  text-white font-extrabold">{`${reffs && reffs.length}`}</p>
                         </div>
                             </div>
                         </div>
