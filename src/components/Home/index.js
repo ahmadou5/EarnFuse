@@ -508,8 +508,8 @@ export const Home2 = () => {
                             <p className="text-sm mt-0.5 font-bold text-white">Level</p>
                         </div>
                         <div className="flex">
-                        <p className="text-2xl mt-5 ml-auto mr-4 text-white font-extrabold">{`Plugs`}</p>  
-                        <p className="text-2xl mt-5 mr-auto ml-4 text-white font-extrabold">{`${reffs && reffs.length}`}</p>
+                        <p className="text-2xl mt-5 ml-auto mr-auto text-white font-extrabold">{`Plugs`}</p>  
+                        <p className="text-2xl mt-5 mr-2 ml-auto text-white font-extrabold">{`${reffs && reffs.length}`}</p>
                         </div>
                             </div>
                         </div>
