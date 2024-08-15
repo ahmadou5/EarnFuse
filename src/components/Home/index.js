@@ -87,6 +87,7 @@ export const Home2 = () => {
   } = GlobalContext();
   const [countDown, setCountDown] = useState(false);
   const [claimMode, setClaimMode] = useState(false);
+  const [claimed, setClaimed] = useState(false)
   const [points, setPoints] = useState(0);
   const [energy, setEnergy] = useState(20);
   const [clicks, setClicks] = useState([]);
@@ -483,8 +484,8 @@ export const Home2 = () => {
                 ) : (
                   <>
                     <div className="bg-black/30 w-[90%] rounded-2xl text-white py-2 flex items-center justify-center h-[52px]">
-                      <div className="text-[21px] ml-2 mr-2 flex text-blue-500/70 font-extrabold">
-                      <div className="text-[17px] mt-1 mr-2 ml-2 font-light text-white/70">Claim Available in</div>
+                      <div className="text-[21px] ml-auto mr-2 flex text-blue-500/70 font-extrabold">
+                      <div className="text-[17px] mt-1 mr-auto ml-2 font-light text-white/70">Claim Available in</div>
                         {`${formatTimeRemaining(
                           timeRemaining
                         )}`}
@@ -494,7 +495,31 @@ export const Home2 = () => {
                 )}
               </div>
             </div>
+            
             <Menu />
+            {claimed && (
+                <div className="inset-0 fixed bg-white/0 bg-opacity-100 w-[100%] z-[99999999] min-h-screen h-auto backdrop-blur-sm flex ">
+                <div className="w-[100%] flex items-center px-3 justify-center">
+                  <div className="h-[220px] ml-auto mr-auto py-2 px-2 w-[89%] bg-white/75  border-[#448cff]/90 border rounded-xl">
+                    {
+                      <div className="mt-5 ml-auto mr-auto flex flex-col items-center justify-center text-center">
+                        <div className="w-[80%] mb-2 ml-auto mr-auto py-1 px-3 flex  items-center justify-center rounded-full mt-8 h-9">
+                          <p className="text-black/85 text-[18px] font-light ml-auto mr-auto ">{`Claim Your ${points} Fuse Points`}</p>
+                        </div>
+                        <div
+                          onClick={() => {
+                           setClaimed(false)
+                          }}
+                          className="w-[175px] mt-6  ml-auto mr-auto py-1 px-3 text-white border  border-[#448cff]/60 flex  items-center justify-center bg-black/90 rounded-full h-9"
+                        >
+                          <p>{"Close"}</p>
+                        </div>
+                      </div>
+                    }
+                  </div>
+                </div>
+              </div>
+            )}
           </div>
         </>
       )}
