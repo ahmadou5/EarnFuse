@@ -531,7 +531,7 @@ export const Home2 = () => {
                       </div>
                       <div className="flex ml-auto mr-auto w-[80%] bg-white/0 items-center justify-center">
                         <p className="text-2xl mt-2 ml-4 mr-auto text-white font-extrabold">{`Plugs`}</p>
-                         <p className="text-2xl mt-2 ml-auto mr-4 text-white font-extrabold">{`${
+                         <p className="text-4xl mt-1 ml-auto mr-8 text-white font-extrabold">{`${
                           reffs && reffs.length
                         }`}</p>
                       </div>
