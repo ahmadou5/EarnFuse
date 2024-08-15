@@ -499,7 +499,7 @@ export const Home2 = () => {
                 <div className="w-[100%] h-[150px] bg-blue-700/0 px-2 mt-12 p-4 flex">
                     <div className="w-[100%] flex h-[100%] text-white bg-white/5 rounded-xl">
                      <div className="w-[100%] py-3 px-3 ">
-                        <div className='flex'>
+                        <div className='flex w-[] bg-red-500 ml-4'>
                             <div className="flex ml-2 py-2 mr-" >
                             <div className="bg-black/15 h-[74px] flex items-center flex-col justify-center mt-0 w-[74px] rounded-xl">
                             <div className="text-3xl font-bold text-white">{
@@ -507,8 +507,8 @@ export const Home2 = () => {
                                 }</div>
                             <p className="text-sm mt-0.5 font-bold text-white">Level</p>
                         </div>
-                        <div className="flex items-center justify-center">
-                           <p className="text-2xl mt-5  text-white font-extrabold">{`Plugs    ${reffs && reffs.length}`}</p>  
+                        <div className="flex bg-white items-center justify-center">
+                           <p className="text-2xl mt-2  text-white font-extrabold">{`Plugs    ${reffs && reffs.length}`}</p>  
                         </div>
                             </div>
                         </div>
