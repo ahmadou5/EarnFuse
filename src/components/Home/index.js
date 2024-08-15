@@ -436,7 +436,7 @@ export const Home2 = () => {
                             
                         </button>
                     </div>
-                    <div className="w-[100%] flex  text-white/75 items-center  flex-col justify-center mt-12">
+                    <div className="w-[100%] flex  text-white/75 items-center  flex-col justify-center mt-7">
                         <div className="flex items-center justify-center text-white/80 font-extrabold w-[130px] h-[130px] bg-black/70 rounded-full">
                         {`${tgUser?.initDataUnsafe?.user?.username[0]}${tgUser?.initDataUnsafe?.user?.username[Math.floor(tgUser?.initDataUnsafe?.user?.username?.length / 3)]}`}
                         </div>
@@ -452,7 +452,7 @@ export const Home2 = () => {
                         <p className="text-4xl ml-1 text-white mr-auto font-bold ">{accumulative(userBalance,points)?.toLocaleString()}</p>
                     </div>
                 </div>
-                <div className="w-[100%] mt-[30px] mb-[70px] flex items-center justify-center">
+                <div className="w-[100%] mt-[20px] mb-[80px] flex items-center justify-center">
                     {canClaim ? 
                     <>
                     <div onClick={() => handleClaim()} className="bg-black/90 w-[90%] rounded-2xl text-white flex items-center justify-center h-12">
