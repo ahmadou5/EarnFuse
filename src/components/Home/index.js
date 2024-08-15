@@ -491,11 +491,8 @@ export const Home2 = () => {
                 </div>
                 <div className="w-[100%] h-[70px] px-2 mt-4 py-3 flex">
                     <div className="w-[75%]">
-                      <p className="text-[17px] mb-2 font-bold  text-white/75">
+                      <p className="text-[23px] mb-2 font-bold  text-white/75">
                         invite frens, earn points!
-                      </p>
-                      <p className="text-sm font-bold p-0 textt-center mt-3 text-white/75">
-                        Claim Level 1 Plug Reward, <br/> by inviting 5 frens.
                       </p>
                     </div>
                     <div className="w-[25%] flex items-center justify-center">
@@ -512,9 +509,12 @@ export const Home2 = () => {
                      <div className="w-[70%] py-3 px-3 ">
                         <div className='flex'>
                             <div className="flex ml-2 py-2 mr-" >
-                                <div className="w-[80px] h-[80px]  text-3xl flex items-center justify-center mr-4 bg-black/25 rounded-2xl">
-                                  <p>🔌</p>
-                                </div>
+                            <div className="bg-white/10 h-[74px] flex items-center flex-col justify-center mt-12 w-[74px] rounded-xl">
+                            <div className="text-3xl font-bold text-white">{
+                                reffs && getLevel(reffs.length)
+                                }</div>
+                            <p className="text-sm mt-0.5 font-bold text-white">Level</p>
+                        </div>
                                 <p className="text-2xl mt-5 text-white font-extrabold">{`Plugs`}</p>  
                                 <p className="text-2xl mt-5 text-white font-extrabold">{`${reffs && reffs.length}`}</p>
                             </div>
@@ -655,7 +655,7 @@ export const Home2 = () => {
                             <div className="mt-1 w-[85%] text-sm flex ">
                                 <div className="ml-2 mr-auto">
                                     <p className="mt-0.5 mb-0.5 font-bold text-[13px]">{item?.username === null  ? 'User' : item?.username}</p>
-                                    <div className="mt-0.5 font-bold text-white/25 text-[13px] mb-0.5">{`${item?.balance?.toLocaleString()} FUSE`}</div>
+                                    <div className="mt-0.5 font-bold text-white/25 text-[13px] mb-0.5">{`${item?.balance === null ? 0 : item?.balance?.toLocaleString()} FUSE`}</div>
                                 </div>
                                 <p className="mr-3 ml-auto font-bold mt-1.5 text-xl">{`#${i + 1}`}</p>
                             </div>
