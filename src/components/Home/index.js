@@ -516,7 +516,7 @@ export const Home2 = () => {
                 </p>
               </div>
             </div>
-            <div className="w-[100%] h-[150px] bg-blue-700/0 px-2 mt-12 p-4 flex">
+            <div className="w-[100%] h-[150px] bg-blue-700/0 px-2 mt-8 p-4 flex">
               <div className="w-[100%] flex h-[100%] text-white bg-white/5 rounded-xl">
                 <div className="w-[100%] py-3 px-3 ">
                   <div className="flex w-[100%] ">
@@ -540,7 +540,7 @@ export const Home2 = () => {
                 </div>
               </div>
             </div>
-            <div className="w-[100%] mt-8 ">
+            <div className="w-[100%] mt-4 ">
               <div className="h-20 w-[98%] px-2 rounded-2xl flex items-center justify-center bg-black/25">
                 <p className="text-[16px] flex items-center justify-center ml-auto mr-auto text-center text-white font-light">
                   {refLink}
