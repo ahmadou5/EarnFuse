@@ -86,7 +86,7 @@ export const Home2 = () => {
     userBalance,
   } = GlobalContext();
   const [countDown, setCountDown] = useState(false);
-  const [claimMode, setClaimMode] = useState(false);
+  const [claimMode, setClaimMode] = useState(true);
   const [points, setPoints] = useState(0);
   const [energy, setEnergy] = useState(20);
   const [clicks, setClicks] = useState([]);
@@ -475,7 +475,7 @@ export const Home2 = () => {
                   <>
                     <div
                       onClick={() => handleClaim()}
-                      className="bg-black/90 w-[90%] rounded-2xl text-white flex items-center justify-center h-[52px]"
+                      className="bg-blue-400/90 w-[90%] rounded-2xl text-white flex items-center justify-center h-[52px]"
                     >
                       <div className="text-xl">Claim now</div>
                     </div>
@@ -483,8 +483,8 @@ export const Home2 = () => {
                 ) : (
                   <>
                     <div className="bg-black/30 w-[90%] rounded-2xl text-white py-2 flex items-center justify-center h-[52px]">
-                      <div className="text-[21px] ml-2 mr-2 flex text-blue-600 font-extrabold">
-                      <div className="text-[18px] mt-1 mr-2 ml-2 font-light text-white/70">Claim Available in</div>
+                      <div className="text-[21px] ml-2 mr-2 flex text-blue-500/70 font-extrabold">
+                      <div className="text-[18px] mt-0.5 mr-2 ml-2 font-light text-white/70">Claim Available in</div>
                         {`${formatTimeRemaining(
                           timeRemaining
                         )}`}
