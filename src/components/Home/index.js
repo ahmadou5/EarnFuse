@@ -283,6 +283,35 @@ export const Home2 = () => {
   const accumulative = (a, b) => {
     return a + b;
   };
+
+  const handleUpdatedBalance = async() => {
+    try {
+      console.log(userData, 'tg user')
+      const { data, error } = await Supabase
+      .from('Users')
+      .select('*')
+      .eq('id',tgUser?.initDataUnsafe?.user?.id)
+
+      if(data) {
+        const sele = JSON.stringify(data)
+        console.log(sele,'cele ne')
+        console.log('hey balance data',data[0].balance)
+        console.log(data[0].id,'aeki')
+        console.log(data[0].isClick,'counter')
+        console.log(data[0].lastClaim,'claim')
+        setUserData(data)
+        //setLastClaim(data[0].lastRewardClaim)
+        setUserBalance(data[0].balance)
+      }
+      if(error) {
+        console.log('error',error)
+        throw error
+      }
+        
+       } catch (error) {
+        console.log(error)
+       }
+  }
   const handleUpdateBoard = async () => {
     try {
       const { data, error } = await Supabase
@@ -312,55 +341,10 @@ export const Home2 = () => {
       console.log(error)
     }
   }
-  const handleUpdatedBalance = async() => {
-    try {
-      console.log(userData, 'tg user')
-      const { data, error } = await Supabase
-      .from('Users')
-      .select('*')
-      .eq('id',tgUser?.initDataUnsafe?.user?.id)
-
-      if(data) {
-        const sele = JSON.stringify(data)
-        console.log(sele,'cele ne')
-        console.log('hey balance data',data[0].balance)
-        console.log(data[0].id,'aeki')
-        console.log(data[0].isClick,'counter')
-        console.log(data[0].lastClaim,'claim')
-        setUserData(data)
-        //setLastClaim(data[0].lastRewardClaim)
-        setUserBalance(data[0].balance)
-      }
-      if(error) {
-        console.log('error',error)
-        throw error
-      }
-        
-       } catch (error) {
-        console.log(error)
-       }
-  }
   useEffect(() => {
     getTime();
-    const getUserBalance = async () => {
-
-      console.log(tgUser, 'tg user')
-      const { data, error } = await Supabase
-      .from('Users')
-      .select('*')
-      .eq('id',tgUser?.initDataUnsafe?.user?.id)
-
-      if(data) {
-        console.log('hey',data)
-      }
-      if(error) {
-        console.log('error',error)
-        throw error
-      }
-     
-    }
-  getUserBalance()
-  }, [setCanClaim]);
+   
+  }, []);
 
   const todo = [
     {
@@ -556,6 +540,7 @@ export const Home2 = () => {
                     <div
                       onClick={() => {
                         handleClaim()
+                        getTime()
                         setCanClaim(false)
                         setClaimed(true)
                       }}
@@ -591,8 +576,8 @@ export const Home2 = () => {
                         </div>
                         <div
                           onClick={() => {
-                           handleUpdatedBalance()
                            handleUpdateBoard()
+                           handleUpdatedBalance()    
                            setClaimed(false)
                           }}
                           className="w-[175px] mt-6  ml-auto mr-auto py-1 px-3 text-white border  border-[#448cff]/60 flex  items-center justify-center bg-black/90 rounded-full h-9"
