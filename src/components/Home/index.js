@@ -242,7 +242,7 @@ export const Home2 = () => {
   const getLevel = (length) => {
     if (length < 5) {
       return 0;
-    } else if (length = 5) {
+    } else if (length >= 5) {
       return 1;
     } else if (length = 10) {
       return 2;
@@ -493,7 +493,7 @@ export const Home2 = () => {
                 {canClaim ? (
                   <>
                     <div
-                      onClick={() => handleClaim()}
+                      onClick={() => setClaimed(true)}
                       className="bg-blue-400/90 w-[90%] rounded-2xl text-white flex items-center justify-center h-[52px]"
                     >
                       <div className="text-xl">Claim now</div>
