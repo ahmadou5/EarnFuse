@@ -15,6 +15,7 @@ export const Loading = () => {
             const username = tgUser?.initDataUnsafe?.user?.username
             const userId = tgUser?.initDataUnsafe?.user?.id
             console.log('starting...........................')
+            console.log(tgUser,'user ne')
             console.log('id',userId)
             console.log('name',username)
             const { data,error } = await Supabase
