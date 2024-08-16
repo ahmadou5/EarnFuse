@@ -334,6 +334,7 @@ export const Home2 = () => {
       botton: "Follow",
     },
   ];
+  const todo1 = []
   return (
     <div>
       {isGame && (
@@ -636,8 +637,8 @@ export const Home2 = () => {
 
             <div className="w-[100%] h-auto px-2 mt-4 mb-4 py-5 flex justify-center items-center">
               <div className="w-[100%] h-auto rounded-xl text-white/70 bg-black/0 p-0 mt-2">
-                {todo ?
-                  todo.map((item, i) => (
+                {todo1 ?
+                  todo1.map((item, i) => (
                     <>
                       <div
                         key={i}
