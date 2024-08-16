@@ -282,7 +282,25 @@ export const Home2 = () => {
 
   useEffect(() => {
     getTime();
-  }, []);
+    const getUserBalance = async () => {
+
+      console.log(tgUser, 'tg user')
+      const { data, error } = await Supabase
+      .from('Users')
+      .select('*')
+      .eq('id',tgUser?.initDataUnsafe?.user?.id)
+
+      if(data) {
+        console.log('hey',data)
+      }
+      if(error) {
+        console.log('error',error)
+        throw error
+      }
+     
+    }
+  getUserBalance()
+  }, [setCanClaim]);
 
   const todo = [
     {
