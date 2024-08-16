@@ -8,10 +8,11 @@ export const UseCreateUSer = () => {
                 const username = tgUser?.initDataUnsafe?.user?.username
                 const userId = tgUser?.initDataUnsafe?.user?.id
                 console.log(username,'name')
+                console.log(tgUser,'gggraaa')
                 const { data,error } = await Supabase
                 .from('Users')
                 .insert([
-                    {id:userId, username:username, pointsAdd: 1, lastRewardClaim: 1723493701292}
+                    {id:userId, username:username, pointsAdd: 1, lastRewardClaim: 1723071600}
                 ])
                 .select()
     
