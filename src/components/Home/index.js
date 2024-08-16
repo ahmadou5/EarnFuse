@@ -528,7 +528,7 @@ export const Home2 = () => {
                         setCanClaim(false)
                         setClaimed(true)
                       }}
-                      className="bg-blue-400/90 w-[90%] rounded-2xl text-white flex items-center justify-center h-[52px]"
+                      className="bg-[#046ae2]  w-[90%] rounded-2xl text-white flex items-center justify-center h-[52px]"
                     >
                       <div className="text-xl">Claim now</div>
                     </div>
