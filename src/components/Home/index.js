@@ -558,6 +558,7 @@ export const Home2 = () => {
                         </div>
                         <div
                           onClick={() => {
+                           handleUpdatedBalance()
                            setClaimed(false)
                           }}
                           className="w-[175px] mt-6  ml-auto mr-auto py-1 px-3 text-white border  border-[#448cff]/60 flex  items-center justify-center bg-black/90 rounded-full h-9"
