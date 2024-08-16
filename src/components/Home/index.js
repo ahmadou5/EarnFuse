@@ -75,6 +75,8 @@ export const Home2 = () => {
     setIsBoostModal,
     setTaskAmount,
     taskButton,
+    setUserRank,
+    setUserBoad,
     setTaskButton,
     taskURL,
     setTaskURL,
@@ -281,6 +283,35 @@ export const Home2 = () => {
   const accumulative = (a, b) => {
     return a + b;
   };
+  const handleUpdateBoard = async () => {
+    try {
+      const { data, error } = await Supabase
+          .from("Users")
+          .select('*')
+          .order('balance',{ascending:false ,nullsFirst: false})
+
+          if (data) {
+            console.log('leaders',data)
+            setLeads(data)
+            console.log(id,'is it')
+            const filterone = data.find((item) => item.id === id )
+            setUserBoad(filterone)
+            const filterNumb = data.findIndex((item) => item.id === id )
+            setUserRank(filterNumb + 1)
+            console.log('user details', filterone)
+            console.log('user Rank', filterNumb + 1)
+            
+            console.log('filtered balance', filterone[0].balance)
+            //console.log(reffs,'it is')
+          }
+          if (error) {
+            //console.log("error", error);
+            throw error;
+          }
+    } catch (error) {
+      console.log(error)
+    }
+  }
   const handleUpdatedBalance = async() => {
     try {
       console.log(userData, 'tg user')
@@ -561,6 +592,7 @@ export const Home2 = () => {
                         <div
                           onClick={() => {
                            handleUpdatedBalance()
+                           handleUpdateBoard()
                            setClaimed(false)
                           }}
                           className="w-[175px] mt-6  ml-auto mr-auto py-1 px-3 text-white border  border-[#448cff]/60 flex  items-center justify-center bg-black/90 rounded-full h-9"

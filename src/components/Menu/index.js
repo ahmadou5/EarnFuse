@@ -27,7 +27,7 @@ export const BackMenu = () => {
   return (
     <div
       style={{ "backdrop-filter": "blur(12px)" }}
-      className=" w-[60px] h-[60px] ml-5 mr-auto rounded-full px-1.5 z-100 bg-[#046ae2]/45 mb-6 text-white/75  fixed inset-x-0 bottom-1 flex justify-center items-center"
+      className=" w-[60px] h-[60px] ml-5 mr-auto rounded-full px-1.5 z-100 bg-[#046ae2]/65 mb-6 text-white/75  fixed inset-x-0 bottom-1 flex justify-center items-center"
     >
       <div className="lg:py-2.5 py-0 lg:px-2.5 px-1.5  mt-auto mb-auto ml-auto mr-auto w-[98%] flex items-center justify-center  h-[90%]">
         <div
