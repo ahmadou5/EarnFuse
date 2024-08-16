@@ -541,7 +541,7 @@ export const Home2 = () => {
                       onClick={() => {
                         handleClaim()
                         getTime()
-                        setCanClaim(false)
+                        //setCanClaim(false)
                         setClaimed(true)
                       }}
                       className="bg-[#046ae2]  w-[90%] rounded-2xl text-white flex items-center justify-center h-[52px]"
