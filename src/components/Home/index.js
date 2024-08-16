@@ -524,6 +524,7 @@ export const Home2 = () => {
                     <div
                       onClick={() => {
                         handleClaim()
+                        setCanClaim(false)
                         setClaimed(true)
                       }}
                       className="bg-blue-400/90 w-[90%] rounded-2xl text-white flex items-center justify-center h-[52px]"
