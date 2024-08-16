@@ -18,7 +18,7 @@ export const Home2 = () => {
   const [canClaim, setCanClaim] = useState(false);
   const [timeRemaining, setTimeRemaining] = useState(0);
   const [time2, setTime2] = useState("");
-  const [claimVal, setClaimVal] = useState(100000);
+  const [claimVal, setClaimVal] = useState(500);
 
   const utils = useUtils();
   const createUser = async () => {
@@ -494,7 +494,10 @@ export const Home2 = () => {
                 {canClaim ? (
                   <>
                     <div
-                      onClick={() => setClaimed(true)}
+                      onClick={() => {
+                        handleClaim()
+                        setClaimed(true)
+                      }}
                       className="bg-blue-400/90 w-[90%] rounded-2xl text-white flex items-center justify-center h-[52px]"
                     >
                       <div className="text-xl">Claim now</div>
@@ -523,7 +526,7 @@ export const Home2 = () => {
                     {
                       <div className="mt-5 ml-auto mr-auto flex flex-col items-center justify-center text-center">
                         <div className="w-[80%] mb-2 ml-auto mr-auto py-1 px-3 flex  items-center justify-center rounded-full mt-8 h-9">
-                          <p className="text-black/85 text-[18px] font-light ml-auto mr-auto ">{`Claim Your ${points} Fuse Points`}</p>
+                          <p className="text-black/85 text-[18px] font-light ml-auto mr-auto ">{`You Just Claim ${claimVal} as Your Daily Reward`}</p>
                         </div>
                         <div
                           onClick={() => {
