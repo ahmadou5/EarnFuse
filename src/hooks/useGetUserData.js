@@ -21,6 +21,7 @@ export const UseGetTgData = () => {
                 const userId = tgData?.initDataUnsafe?.user?.id
                 console.log('starting.........................1111111.')
                 console.log('id',userId)
+                console.log(tgData,'DATAAA')
                 console.log('name',username)
                 const { data,error } = await Supabase
                 .from('Users')
