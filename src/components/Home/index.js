@@ -66,6 +66,7 @@ export const Home2 = () => {
     userData,
     setIsConfe,
     isBoostModal,
+    setUserBalance,
     lastClaim,
     leads,
     userRank,
@@ -279,7 +280,34 @@ export const Home2 = () => {
   const accumulative = (a, b) => {
     return a + b;
   };
+  const handleUpdatedBalance = async() => {
+    try {
+      console.log(userData, 'tg user')
+      const { data, error } = await Supabase
+      .from('Users')
+      .select('*')
+      .eq('id',userData?.initDataUnsafe?.user?.id)
 
+      if(data) {
+        const sele = JSON.stringify(data)
+        console.log(sele,'cele ne')
+        console.log('hey balance data',data[0].balance)
+        console.log(data[0].id,'aeki')
+        console.log(data[0].isClick,'counter')
+        console.log(data[0].lastClaim,'claim')
+        //setUserData(data)
+        //setLastClaim(data[0].lastRewardClaim)
+        setUserBalance(data[0].balance)
+      }
+      if(error) {
+        console.log('error',error)
+        throw error
+      }
+        
+       } catch (error) {
+        console.log(error)
+       }
+  }
   useEffect(() => {
     getTime();
     const getUserBalance = async () => {
