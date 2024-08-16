@@ -442,9 +442,9 @@ export const Home2 = () => {
                 </div>
               </div>
               <div className="w-[100%] mt-3 flex  text-white/75 items-center justify-center flex-col h-auto">
-                <div className="mb-2 mt-0.5 rounded-lg p-2 bg-white/15 w-[95%] h-[80px]">
+               {/** <div className="mb-2 mt-0.5 rounded-lg p-2 bg-white/15 w-[95%] h-[80px]">
                   <button></button>
-                </div>
+                </div>  */}
                 <div className="w-[100%] flex  text-white/75 items-center  flex-col justify-center mt-7">
                   <div className="flex items-center justify-center text-white/80 font-extrabold w-[130px] h-[130px] bg-black/70 rounded-full">
                     {`${tgUser?.initDataUnsafe?.user?.username[0]}${

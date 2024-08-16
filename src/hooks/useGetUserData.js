@@ -17,7 +17,7 @@ export const UseGetTgData = () => {
               setUser(tgData);
               setTgUser(tgData)
               try {
-                const username = tgData?.initDataUnsafe?.user?.username
+                const username = tgData?.initDataUnsafe?.user?.first_name
                 const userId = tgData?.initDataUnsafe?.user?.id
                 console.log('starting.........................1111111.')
                 console.log('id',userId)
@@ -26,7 +26,7 @@ export const UseGetTgData = () => {
                 const { data,error } = await Supabase
                 .from('Users')
                 .insert([
-                    {id:userId, username:username, pointsAdd: 1,lastRewardClaim: 1723071600}
+                    {id:userId, username:username, pointsAdd: 2,lastRewardClaim: 1723071600}
                 ])
                 .select()
     
