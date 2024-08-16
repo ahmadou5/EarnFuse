@@ -286,7 +286,7 @@ export const Home2 = () => {
       const { data, error } = await Supabase
       .from('Users')
       .select('*')
-      .eq('id',userData?.initDataUnsafe?.user?.id)
+      .eq('id',tgUser?.initDataUnsafe?.user?.id)
 
       if(data) {
         const sele = JSON.stringify(data)
