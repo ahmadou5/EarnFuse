@@ -242,9 +242,9 @@ export const Home2 = () => {
   const getLevel = (length) => {
     if (length < 5) {
       return 0;
-    } else if (length >= 5) {
+    } else if (length = 5) {
       return 1;
-    } else if (length >= 10) {
+    } else if (length = 10) {
       return 2;
     }
   };
