@@ -629,7 +629,7 @@ export const Home2 = () => {
               <div className="w-[100%] p-4 flex h-[100%] text-white bg-white/0 rounded-xl">
                 <div
                   onClick={() => sharelink()}
-                  className="w-[45%] flex mr-auto items-center justify-center h-14  border-white/70 border-2 bg-black/0 rounded-3xl"
+                  className="w-[45%] flex mr-auto items-center justify-center h-14 bg-[#046ae2]  border-white/70 border-2 bg-black/0 rounded-3xl"
                 >
                   <p className="text-[18px] font-bold">Invite Frens</p>
                 </div>
