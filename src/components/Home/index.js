@@ -245,17 +245,17 @@ export const Home2 = () => {
           .order('balance',{ascending:false ,nullsFirst: false})
 
           if (data) {
-            //console.log('leaders',data)
+            console.log('updated leaders',data)
             setLeads(data)
             //console.log(id,'is it')
             const filterone = data.find((item) => item.id === id )
             setUserBoad(filterone)
             const filterNumb = data.findIndex((item) => item.id === id )
             setUserRank(filterNumb + 1)
-            console.log('user details', filterone)
-            console.log('user Rank', filterNumb + 1)
+            console.log('update user details', filterone)
+            console.log('updated  user Rank', filterNumb + 1)
             
-            console.log('filtered balance', filterone[0].balance)
+            console.log('filtered fucking balance', filterone[0].balance)
             //console.log(reffs,'it is')
           }
           if (error) {
