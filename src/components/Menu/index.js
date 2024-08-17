@@ -20,6 +20,7 @@ export const BackMenu = () => {
     isTask,
     isBoost,
     setIsBoost,
+    setLeads,
     setIsTask,
     setIsGame,
     setIsFrens,
@@ -54,9 +55,13 @@ export const Menu = () => {
     isFrens,
     isTask,
     isBoost,
+    tgUser,
     setIsBoost,
     setIsTask,
     setIsFrens,
+    setLeads,
+    setUserBoad,
+    setUserRank,
     isGame,
     setIsGame,
     setIsHome,
@@ -96,6 +101,7 @@ export const Menu = () => {
   };
   const handleUpdateBoard = async () => {
     try {
+      const id = tgUser?.initDataUnsafe?.user?.id
       const { data, error } = await Supabase
           .from("Users")
           .select('*')
