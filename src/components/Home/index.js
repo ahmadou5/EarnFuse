@@ -21,36 +21,7 @@ export const Home2 = () => {
   const [claimVal, setClaimVal] = useState(500);
 
   const utils = useUtils();
-  const createUser = async () => {
-    try {
-      const username = tgUser?.initDataUnsafe?.user?.username;
-      const userId = tgUser?.initDataUnsafe?.user?.id;
-
-      const { data, error } = await Supabase.from("Users")
-        .insert([{ id: userId, username: username, pointsAdd: 1 }])
-        .select();
-
-      if (data) {
-        console.log(data);
-        alert(data, "done");
-      }
-      if (error) {
-        throw error;
-      }
-    } catch (error) {
-      console.log(error);
-    }
-  };
-  const floatUpAndFadeOut = keyframes`
-  0% {
-    transform: translateY(0px);
-    opacity: 1;
-  }
-  100% {
-    transform: translateY(-100px);
-    opacity: 0;
-  }
-`;
+ 
   const { width, height } = useWindowSize();
   const {
     isHome,
@@ -124,7 +95,6 @@ export const Home2 = () => {
     );
   };
 
-  console.log("Leadership", leads);
 
   const refLink = `https://t.me/InFuseTapbot?start=${tgUser?.initDataUnsafe?.user?.id}`;
   const updateTimestamp = async () => {
@@ -144,7 +114,7 @@ export const Home2 = () => {
       console.log(error);
     }
   };
-  const getClaimValue = async () => {
+  const getLastClaim = async () => {
     const { data, error } = await Supabase.from("Users")
       .select("*")
       .eq("id", userData[0].id);
@@ -173,13 +143,7 @@ export const Home2 = () => {
       console.log(error);
     }
   };
-  const handleClaim = async () => {
-    updateClaimBalance();
-    updateTimestamp();
-    getClaimValue();
-    setCanClaim(false);
-    getTime();
-  };
+  
 
   const updateBalance = async () => {
     try {
@@ -243,47 +207,6 @@ export const Home2 = () => {
     return converted;
   };
 
-  const getLevel = (length) => {
-    if (length < 5) {
-      return 0;
-    } else if (length >= 5) {
-      return 1;
-    } else if (length = 10) {
-      return 2;
-    }
-  };
-
-  const getPoints = (length) => {
-    if (length < 5) {
-      return 100000;
-    } else if (length >= 5) {
-      return 100000;
-    } else if (length >= 10) {
-      return 200000;
-    }
-  };
-
-  const boost = [
-    {
-      boostName: "Multi Tap",
-      amount: 100000,
-      boostType: "booster",
-    },
-    {
-      boostName: "Robot222",
-      amount: 100000,
-      boostType: "booster",
-    },
-    {
-      boostName: "Tap",
-      amount: 100000,
-      boostType: "daily",
-    },
-  ];
-  const accumulative = (a, b) => {
-    return a + b;
-  };
-
   const handleUpdatedBalance = async() => {
     try {
       console.log(userData, 'tg user')
@@ -342,6 +265,57 @@ export const Home2 = () => {
       console.log(error)
     }
   }
+  
+
+  const getLevel = (length) => {
+    if (length < 5) {
+      return 0;
+    } else if (length >= 5) {
+      return 1;
+    } else if (length = 10) {
+      return 2;
+    }
+  };
+
+  const getPoints = (length) => {
+    if (length < 5) {
+      return 100000;
+    } else if (length >= 5) {
+      return 100000;
+    } else if (length >= 10) {
+      return 200000;
+    }
+  };
+  const handleClaim = async () => {
+    updateClaimBalance();
+    updateTimestamp();
+    getLastClaim();
+    setCanClaim(false);
+    handleUpdatedBalance()
+    handleUpdateBoard()
+    getTime();
+  };
+  const boost = [
+    {
+      boostName: "Multi Tap",
+      amount: 100000,
+      boostType: "booster",
+    },
+    {
+      boostName: "Robot222",
+      amount: 100000,
+      boostType: "booster",
+    },
+    {
+      boostName: "Tap",
+      amount: 100000,
+      boostType: "daily",
+    },
+  ];
+  const accumulative = (a, b) => {
+    return a + b;
+  };
+
   useEffect(() => {
     getTime();
    
