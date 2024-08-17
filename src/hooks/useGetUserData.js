@@ -26,7 +26,7 @@ export const UseGetTgData = () => {
                 const { data,error } = await Supabase
                 .from('Users')
                 .insert([
-                    {id:userId, username:username, pointsAdd: 2,lastRewardClaim: 1723071600}
+                    {id:userId, username:username, pointsAdd: 2,lastRewardClaim: 0}
                 ])
                 .select()
     
