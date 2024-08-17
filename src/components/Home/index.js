@@ -45,6 +45,7 @@ export const Home2 = () => {
     setLastClaim,
     setIsBoostModal,
     setTaskAmount,
+    setLeads,
     taskButton,
     setUserRank,
     setUserBoad,
