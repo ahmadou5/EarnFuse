@@ -2,6 +2,7 @@
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
+import { Supabase } from "@/utils/supabasedb";
 import { IoFlash, IoHome, IoSettings, IoWallet } from "react-icons/io5";
 import { GiTwoCoins } from "react-icons/gi";
 import { MdSwapHoriz } from "react-icons/md";
