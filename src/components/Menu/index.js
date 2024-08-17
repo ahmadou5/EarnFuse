@@ -99,36 +99,7 @@ export const Menu = () => {
       }
     );
   };
-  const handleUpdateBoard = async () => {
-    try {
-      const id = tgUser?.initDataUnsafe?.user?.id
-      const { data, error } = await Supabase
-          .from("Users")
-          .select('*')
-          .order('balance',{ascending:false ,nullsFirst: false})
-
-          if (data) {
-            console.log('leaders',data)
-            setLeads(data)
-            console.log(id,'is it')
-            const filterone = data.find((item) => item.id === id )
-            setUserBoad(filterone)
-            const filterNumb = data.findIndex((item) => item.id === id )
-            setUserRank(filterNumb + 1)
-            console.log('user details', filterone)
-            console.log('user Rank', filterNumb + 1)
-            
-            console.log('filtered balance', filterone[0].balance)
-            //console.log(reffs,'it is')
-          }
-          if (error) {
-            //console.log("error", error);
-            throw error;
-          }
-    } catch (error) {
-      console.log(error)
-    }
-  }
+  
 
   
   return (
@@ -186,7 +157,7 @@ export const Menu = () => {
                 setIsBoost(true);
                 setIsHome(false);
                 setIsTask(false);
-                handleUpdateBoard()
+              //SSSS  handleUpdateBoard()
               }}
               className="flex ml-auto mr-auto flex-col items-center justify-center"
             >
