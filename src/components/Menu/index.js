@@ -123,9 +123,7 @@ export const Menu = () => {
     }
   }
 
-  useEffect(() => {
-    handleUpdateBoard()
-  },[isBoost])
+  
   return (
     <>
       {/**for mobile view **/}
@@ -181,6 +179,7 @@ export const Menu = () => {
                 setIsBoost(true);
                 setIsHome(false);
                 setIsTask(false);
+                handleUpdateBoard()
               }}
               className="flex ml-auto mr-auto flex-col items-center justify-center"
             >

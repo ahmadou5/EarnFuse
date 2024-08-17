@@ -314,15 +314,16 @@ export const Home2 = () => {
   }
   const handleUpdateBoard = async () => {
     try {
+      console.log('boarddddddddd')
       const { data, error } = await Supabase
           .from("Users")
           .select('*')
           .order('balance',{ascending:false ,nullsFirst: false})
 
           if (data) {
-            console.log('leaders',data)
+            //console.log('leaders',data)
             setLeads(data)
-            console.log(id,'is it')
+            //console.log(id,'is it')
             const filterone = data.find((item) => item.id === id )
             setUserBoad(filterone)
             const filterNumb = data.findIndex((item) => item.id === id )
@@ -541,7 +542,7 @@ export const Home2 = () => {
                       onClick={() => {
                         handleClaim()
                         getTime()
-                        //setCanClaim(false)
+                        setCanClaim(false)
                         setClaimed(true)
                       }}
                       className="bg-[#046ae2]  w-[90%] rounded-2xl text-white flex items-center justify-center h-[52px]"
