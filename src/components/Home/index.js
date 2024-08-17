@@ -290,7 +290,7 @@ export const Home2 = () => {
     updateClaimBalance();
     updateTimestamp();
     getLastClaim();
-    setCanClaim(false);
+    //setCanClaim(false);
     handleUpdatedBalance()
     handleUpdateBoard()
     getTime();
