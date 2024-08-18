@@ -248,11 +248,11 @@ export const Home2 = () => {
         console.log("data the first id", tgData?.initDataUnsafe?.user?.id);
         const id = tgData?.initDataUnsafe?.user?.id.toString()
 
-        console.log( "tg user refferalss",id);
+        console.log( "task id",id);
 
          const { data, error } = await Supabase
            .rpc('get_unclaimed_tasks', {
-            userid : id
+            userid: id
          })
 
           if (data) {
