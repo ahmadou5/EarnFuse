@@ -248,21 +248,13 @@ export const Home2 = () => {
 
         console.log("task id", id);
 
-        const { data, error } = await Supabase.from("claimed_task")
-          .select(
-            `
-    *,
-    task (
-      *
-    )
-  `
-          )
-          .eq("user_id", id);
+        const { data, error } = await Supabase.rpc("get_claimed_tasks", {
+          userid: id,
+        });
+
         if (data) {
-          console.log("wahala claimed task", data);
-          const needData = data[0].task
-          console.log('what we need actually',needData)
-          setClaimedTask(needData);
+          console.log("wahala Claimed task", data);
+          setClaimedTask(data);
         }
         if (error) {
           //console.log("error", error);
