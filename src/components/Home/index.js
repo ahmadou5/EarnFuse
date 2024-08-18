@@ -441,6 +441,7 @@ export const Home2 = () => {
   useEffect(() => {
     getTime();
     customHandle()
+    customHandleDone()
   }, []);
 
   const todo = [
