@@ -253,10 +253,13 @@ export const Home2 = () => {
         console.log( "task id",id);
 
          const { data, error } = await Supabase
-          .from('task')
-          .select('*,(claimed_task('*'))')
-          .eq('user_id', id)
-
+          .from("user")
+          .select(`
+             *,
+             claimed_task (
+              *
+             )
+           `);
           if (data) {
             console.log('wahala claimed task',data)
             setClaimedTask(data)
