@@ -253,10 +253,10 @@ export const Home2 = () => {
         console.log( "task id",id);
 
          const { data, error } = await Supabase
-          .from("user")
+          .from("task")
           .select(`
              *,
-             claimed_task (
+             claimed_task(
               *
              )
            `);
