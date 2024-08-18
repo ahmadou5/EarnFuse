@@ -21,7 +21,7 @@ export const Home2 = () => {
   const [claimVal, setClaimVal] = useState(500);
 
   const utils = useUtils();
- 
+
   const { width, height } = useWindowSize();
   const {
     isHome,
@@ -63,12 +63,12 @@ export const Home2 = () => {
   } = GlobalContext();
   const [countDown, setCountDown] = useState(false);
   const [claimMode, setClaimMode] = useState(false);
-  const [claimed, setClaimed] = useState(false)
+  const [claimed, setClaimed] = useState(false);
   const [points, setPoints] = useState(0);
   const [energy, setEnergy] = useState(20);
   const [clicks, setClicks] = useState([]);
-  const [tasks,setTask] = useState([])
-  const [claimedTask,setClaimedTask] = useState([])
+  const [tasks, setTask] = useState([]);
+  const [claimedTask, setClaimedTask] = useState([]);
   const date = new Date();
   const pointsAdd = 1;
   const EnergyRemove = 1;
@@ -97,7 +97,6 @@ export const Home2 = () => {
       "Its Fuse Earning Time! Join and Start Farming Fuse Points now!🎁"
     );
   };
-
 
   const refLink = `https://t.me/InFuseTapbot?start=${tgUser?.initDataUnsafe?.user?.id}`;
   const updateTimestamp = async () => {
@@ -146,7 +145,6 @@ export const Home2 = () => {
       console.log(error);
     }
   };
-  
 
   const updateBalance = async () => {
     try {
@@ -210,34 +208,32 @@ export const Home2 = () => {
     return converted;
   };
 
-  const handleUpdatedBalance = async() => {
+  const handleUpdatedBalance = async () => {
     try {
-      console.log(userData, 'tg user')
-      const { data, error } = await Supabase
-      .from('users')
-      .select('*')
-      .eq('id',tgUser?.initDataUnsafe?.user?.id)
+      console.log(userData, "tg user");
+      const { data, error } = await Supabase.from("users")
+        .select("*")
+        .eq("id", tgUser?.initDataUnsafe?.user?.id);
 
-      if(data) {
-        const sele = JSON.stringify(data)
-        console.log(sele,'cele ne')
-        console.log('hey balance data',data[0].balance)
-        console.log(data[0].id,'aeki')
-        console.log(data[0].isClick,'counter')
-        console.log(data[0].lastClaim,'claim')
-        setUserData(data)
+      if (data) {
+        const sele = JSON.stringify(data);
+        console.log(sele, "cele ne");
+        console.log("hey balance data", data[0].balance);
+        console.log(data[0].id, "aeki");
+        console.log(data[0].isClick, "counter");
+        console.log(data[0].lastClaim, "claim");
+        setUserData(data);
         //setLastClaim(data[0].lastRewardClaim)
-     //   setUserBalance(data[0].balance)
+        //   setUserBalance(data[0].balance)
       }
-      if(error) {
-        console.log('error',error)
-        throw error
+      if (error) {
+        console.log("error", error);
+        throw error;
       }
-        
-       } catch (error) {
-        console.log(error)
-       }
-  }
+    } catch (error) {
+      console.log(error);
+    }
+  };
   const customHandleDone = async () => {
     try {
       if (
@@ -248,37 +244,37 @@ export const Home2 = () => {
         console.log("Telegram WebApp is set");
         const tgData = window.Telegram.WebApp;
         console.log("data the first id", tgData?.initDataUnsafe?.user?.id);
-        const id = tgData?.initDataUnsafe?.user?.id.toString()
+        const id = tgData?.initDataUnsafe?.user?.id.toString();
 
-        console.log( "task id",id);
+        console.log("task id", id);
 
-         const { data, error } = await Supabase
-         .from('task')
-  .select(`
+        const { data, error } = await Supabase.from("claimed_task")
+          .select(
+            `
     *,
-    claimed_task (
-      user_id: ${id.toString()}
+    task (
+      *
     )
-  `)
-          if (data) {
-            console.log('wahala claimed task',data)
-            setClaimedTask(data)
-            
-          }
-          if (error) {
-            //console.log("error", error);
-            throw error;
-          }
-       
+  `
+          )
+          .eq("user_id", id);
+        if (data) {
+          console.log("wahala claimed task", data);
+          setClaimedTask(data);
+        }
+        if (error) {
+          //console.log("error", error);
+          throw error;
+        }
       } else {
         //console.log("Telegram WebApp is undefined, retrying…");
         //console.log(user);
         setTimeout(initTg, 500);
       }
     } catch (error) {
-      console.log(error)
+      console.log(error);
     }
-  }
+  };
   const customHandle = async () => {
     try {
       if (
@@ -289,112 +285,107 @@ export const Home2 = () => {
         console.log("Telegram WebApp is set");
         const tgData = window.Telegram.WebApp;
         console.log("data the first id", tgData?.initDataUnsafe?.user?.id);
-        const id = tgData?.initDataUnsafe?.user?.id.toString()
+        const id = tgData?.initDataUnsafe?.user?.id.toString();
 
-        console.log( "task id",id);
+        console.log("task id", id);
 
-         const { data, error } = await Supabase
-           .rpc('get_unclaimed_tasks', {
-            userid: id
-         })
+        const { data, error } = await Supabase.rpc("get_unclaimed_tasks", {
+          userid: id,
+        });
 
-          if (data) {
-            console.log('wahala task',data)
-            setTask(data)
-            
-          }
-          if (error) {
-            //console.log("error", error);
-            throw error;
-          }
-       
+        if (data) {
+          console.log("wahala task", data);
+          setTask(data);
+        }
+        if (error) {
+          //console.log("error", error);
+          throw error;
+        }
       } else {
         //console.log("Telegram WebApp is undefined, retrying…");
         //console.log(user);
         setTimeout(initTg, 500);
       }
     } catch (error) {
-      console.log(error)
+      console.log(error);
     }
-  }
+  };
   const handleUpdateBoard = async () => {
     try {
-      const id = tgUser?.initDataUnsafe?.user?.id
-      console.log('boarddddddddd')
-      const { data, error } = await Supabase
-          .from("users")
-          .select('*')
-          .order('balance',{ascending:false ,nullsFirst: false})
+      const id = tgUser?.initDataUnsafe?.user?.id;
+      console.log("boarddddddddd");
+      const { data, error } = await Supabase.from("users")
+        .select("*")
+        .order("balance", { ascending: false, nullsFirst: false });
 
-          if (data)if (
-            typeof window !== "undefined" &&
-            window.Telegram &&
-            window.Telegram.WebApp
-          ) {
-            console.log("Telegram WebApp is set");
-            const tgData = window.Telegram.WebApp;
-            console.log("data the first id", tgData?.initDataUnsafe?.user?.id);
-            const id = tgData?.initDataUnsafe?.user?.id.toString()
-    
-            console.log( "tg user refferalss",id);
-    
-             const { data, error } = await Supabase
-              .from("users")
-              .select('*')
-              .order('balance',{ascending:false ,nullsFirst: false})
-    
-              if (data) {
-                console.log('leaders',data)
-                setLeads(data)
-                console.log(id,'is it')
-                const filterone = data.find((item) => item.id === id )
-                setUserBoad(filterone)
-                const filterNumb = data.findIndex((item) => item.id === id )
-                setUserRank(filterNumb + 1)
-                console.log('user details', filterone)
-                console.log('user Rank', filterNumb + 1)
-                
-               // console.log('filtered balance', filterone[0].balance)
-                //console.log(reffs,'it is')
-              }
-              if (error) {
-                //console.log("error", error);
-                throw error;
-              }
-           
-          } else {
-            //console.log("Telegram WebApp is undefined, retrying…");
-            //console.log(user);
-            setTimeout(initTg, 500);
-          } {
-            console.log('updated leaders',data)
-            setLeads(data)
-            console.log(id,'is it')
-            const filterone = data.find((item) => item.id === id )
-            setUserBoad(filterone)
-            const filterNumb = data.findIndex((item) => item.id === id )
-            setUserRank(filterNumb + 1)
-            console.log('update user details', filterone)
-            console.log('updated  user Rank', filterNumb + 1)
-            
+      if (data)
+        if (
+          typeof window !== "undefined" &&
+          window.Telegram &&
+          window.Telegram.WebApp
+        ) {
+          console.log("Telegram WebApp is set");
+          const tgData = window.Telegram.WebApp;
+          console.log("data the first id", tgData?.initDataUnsafe?.user?.id);
+          const id = tgData?.initDataUnsafe?.user?.id.toString();
+
+          console.log("tg user refferalss", id);
+
+          const { data, error } = await Supabase.from("users")
+            .select("*")
+            .order("balance", { ascending: false, nullsFirst: false });
+
+          if (data) {
+            console.log("leaders", data);
+            setLeads(data);
+            console.log(id, "is it");
+            const filterone = data.find((item) => item.id === id);
+            setUserBoad(filterone);
+            const filterNumb = data.findIndex((item) => item.id === id);
+            setUserRank(filterNumb + 1);
+            console.log("user details", filterone);
+            console.log("user Rank", filterNumb + 1);
+
+            // console.log('filtered balance', filterone[0].balance)
             //console.log(reffs,'it is')
           }
           if (error) {
             //console.log("error", error);
             throw error;
           }
+        } else {
+          //console.log("Telegram WebApp is undefined, retrying…");
+          //console.log(user);
+          setTimeout(initTg, 500);
+        }
+      {
+        console.log("updated leaders", data);
+        setLeads(data);
+        console.log(id, "is it");
+        const filterone = data.find((item) => item.id === id);
+        setUserBoad(filterone);
+        const filterNumb = data.findIndex((item) => item.id === id);
+        setUserRank(filterNumb + 1);
+        console.log("update user details", filterone);
+        console.log("updated  user Rank", filterNumb + 1);
+
+        //console.log(reffs,'it is')
+      }
+      if (error) {
+        //console.log("error", error);
+        throw error;
+      }
     } catch (error) {
-      console.log(error)
+      console.log(error);
     }
-  }
-  
+  };
 
   const getLevel = (length) => {
     if (length < 5) {
       return 0;
     } else if (length >= 5) {
       return 1;
-    } else if (length = 10) {
+    } else if ((length = 10)) {
       return 2;
     }
   };
@@ -413,9 +404,9 @@ export const Home2 = () => {
     updateTimestamp();
     getLastClaim();
     setCanClaim(false);
-    handleUpdatedBalance()
-    handleUpdateBoard()
-    getTime()    
+    handleUpdatedBalance();
+    handleUpdateBoard();
+    getTime();
   };
   const boost = [
     {
@@ -440,8 +431,8 @@ export const Home2 = () => {
 
   useEffect(() => {
     getTime();
-    customHandle()
-    customHandleDone()
+    customHandle();
+    customHandleDone();
   }, []);
 
   const todo = [
@@ -476,7 +467,7 @@ export const Home2 = () => {
       botton: "Follow",
     },
   ];
-  const todo1 = []
+  const todo1 = [];
   return (
     <div>
       {isGame && (
@@ -573,7 +564,7 @@ export const Home2 = () => {
                           onClick={() => {
                             setClaimMode(false);
                             //handleUpdatedBalance()
-                            handleUpdateBoard()
+                            handleUpdateBoard();
                             updateBalance();
                           }}
                           className="w-[175px] mt-6  ml-auto mr-auto py-1 px-3 text-white border  border-[#448cff]/60 flex  items-center justify-center bg-black/90 rounded-full h-9"
@@ -605,7 +596,7 @@ export const Home2 = () => {
                 </div>
               </div>
               <div className="w-[100%] mt-3 flex  text-white/75 items-center justify-center flex-col h-auto">
-               {/** <div className="mb-2 mt-0.5 rounded-lg p-2 bg-white/15 w-[95%] h-[80px]">
+                {/** <div className="mb-2 mt-0.5 rounded-lg p-2 bg-white/15 w-[95%] h-[80px]">
                   <button></button>
                 </div>  */}
                 <div className="w-[100%] flex  text-white/75 items-center  flex-col justify-center mt-7">
@@ -639,10 +630,10 @@ export const Home2 = () => {
                   <>
                     <div
                       onClick={() => {
-                        handleClaim()
-                        getTime()
-                        setCanClaim(false)
-                        setClaimed(true)
+                        handleClaim();
+                        getTime();
+                        setCanClaim(false);
+                        setClaimed(true);
                       }}
                       className="bg-[#046ae2]  w-[90%] rounded-2xl text-white flex items-center justify-center h-[52px]"
                     >
@@ -652,45 +643,51 @@ export const Home2 = () => {
                 ) : (
                   <>
                     <div className="bg-black/30 w-[90%] rounded-2xl text-white py-2 flex items-center justify-center h-[52px]">
-                      <div className="text-[17px] mt-1 ml-auto mr-3 font-light text-white/70">{timeRemaining === 0 ? 'Loading' : 'Claim Available in'}</div>
-                       <div className="text-[21px] ml-3 mr-auto flex text-blue-500/70 font-extrabold"> {`${timeRemaining === 0 ? "..." : formatTimeRemaining(
-                          timeRemaining
-                        )}`}</div>
+                      <div className="text-[17px] mt-1 ml-auto mr-3 font-light text-white/70">
+                        {timeRemaining === 0 ? "Loading" : "Claim Available in"}
+                      </div>
+                      <div className="text-[21px] ml-3 mr-auto flex text-blue-500/70 font-extrabold">
+                        {" "}
+                        {`${
+                          timeRemaining === 0
+                            ? "..."
+                            : formatTimeRemaining(timeRemaining)
+                        }`}
+                      </div>
                     </div>
                   </>
                 )}
               </div>
             </div>
-            
+
             <Menu />
-            
           </div>
           {claimed && (
-                <div className="inset-0 fixed bg-white/0 bg-opacity-100 w-[100%] z-[99999999] min-h-screen h-auto backdrop-blur-sm flex ">
-                <div className="w-[100%] flex items-center px-3 justify-center">
-                  <div className="h-[220px] ml-auto mr-auto py-2 px-2 w-[89%] bg-white/75  border-[#448cff]/90 border rounded-xl">
-                    {
-                      <div className="mt-5 ml-auto mr-auto flex flex-col items-center justify-center text-center">
-                        <div className="w-[80%] mb-2 ml-auto mr-auto py-1 px-3 flex  items-center justify-center rounded-full mt-8 h-9">
-                          <p className="text-black/85 text-[18px] font-light ml-auto mr-auto ">{`You Just Claim ${claimVal} as Your Daily Reward`}</p>
-                        </div>
-                        <div
-                          onClick={() => {
-                           handleUpdateBoard()
-                           handleUpdatedBalance()    
-                           getTime()
-                           setClaimed(false)
-                          }}
-                          className="w-[175px] mt-6  ml-auto mr-auto py-1 px-3 text-white border  border-[#448cff]/60 flex  items-center justify-center bg-black/90 rounded-full h-9"
-                        >
-                          <p>{"Close"}</p>
-                        </div>
+            <div className="inset-0 fixed bg-white/0 bg-opacity-100 w-[100%] z-[99999999] min-h-screen h-auto backdrop-blur-sm flex ">
+              <div className="w-[100%] flex items-center px-3 justify-center">
+                <div className="h-[220px] ml-auto mr-auto py-2 px-2 w-[89%] bg-white/75  border-[#448cff]/90 border rounded-xl">
+                  {
+                    <div className="mt-5 ml-auto mr-auto flex flex-col items-center justify-center text-center">
+                      <div className="w-[80%] mb-2 ml-auto mr-auto py-1 px-3 flex  items-center justify-center rounded-full mt-8 h-9">
+                        <p className="text-black/85 text-[18px] font-light ml-auto mr-auto ">{`You Just Claim ${claimVal} as Your Daily Reward`}</p>
                       </div>
-                    }
-                  </div>
+                      <div
+                        onClick={() => {
+                          handleUpdateBoard();
+                          handleUpdatedBalance();
+                          getTime();
+                          setClaimed(false);
+                        }}
+                        className="w-[175px] mt-6  ml-auto mr-auto py-1 px-3 text-white border  border-[#448cff]/60 flex  items-center justify-center bg-black/90 rounded-full h-9"
+                      >
+                        <p>{"Close"}</p>
+                      </div>
+                    </div>
+                  }
                 </div>
               </div>
-            )}
+            </div>
+          )}
         </>
       )}
       {isFrens && (
@@ -727,7 +724,7 @@ export const Home2 = () => {
                       </div>
                       <div className="flex ml-auto mr-auto w-[80%] bg-white/0 items-center justify-center">
                         <p className="text-2xl mt-2 ml-4 mr-auto text-white font-extrabold">{`Frens`}</p>
-                         <p className="text-4xl mt-1 ml-auto mr-8 text-white font-extrabold">{`${
+                        <p className="text-4xl mt-1 ml-auto mr-8 text-white font-extrabold">{`${
                           reffs && reffs.length
                         }`}</p>
                       </div>
@@ -790,7 +787,7 @@ export const Home2 = () => {
             <div className="w-[100%] h-auto px-2 mt-4 mb-4 py-5 flex flex-col justify-center items-center">
               <p className="text-sm ml-4 mr-auto">Active tasks</p>
               <div className="w-[100%] h-auto rounded-xl text-white/70 bg-black/0 p-0 mt-2">
-                {tasks ?
+                {tasks ? (
                   tasks.map((item, i) => (
                     <>
                       <div
@@ -821,13 +818,16 @@ export const Home2 = () => {
                         {isClaimModal && <ClaimModal />}
                       </div>
                     </>
-                  )):<>
-                  <p>No task Added Yet</p>
-                  </>}
+                  ))
+                ) : (
+                  <>
+                    <p>No task Added Yet</p>
+                  </>
+                )}
               </div>
               <p className="text-sm ml-4 mr-auto">Claimed tasks</p>
               <div className="w-[100%] h-auto rounded-xl text-white/70 bg-black/0 p-0 mt-2">
-                {claimedTask ?
+                {claimedTask ? (
                   claimedTask.map((item, i) => (
                     <>
                       <div
@@ -842,19 +842,19 @@ export const Home2 = () => {
                           <div>{item.points.toLocaleString()}</div>
                         </div>
                         <div className="ml-auto mr-2 mt-2">
-                          <div
-                            
-                            className="bg-[#046ae2]/25 rounded-3xl text-sm flex items-center justify-center w-[78px] h-8"
-                          >
-                            {'Claimed'}
+                          <div className="bg-[#046ae2]/25 rounded-3xl text-sm flex items-center justify-center w-[78px] h-8">
+                            {"Claimed"}
                           </div>
                         </div>
                         {isClaimModal && <ClaimModal />}
                       </div>
                     </>
-                  )):<>
-                  <p>No task Added Yet</p>
-                  </>}
+                  ))
+                ) : (
+                  <>
+                    <p>No task Added Yet</p>
+                  </>
+                )}
               </div>
             </div>
             <BackMenu />
