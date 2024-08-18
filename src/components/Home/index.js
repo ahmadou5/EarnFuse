@@ -406,7 +406,7 @@ export const Home2 = () => {
 
   useEffect(() => {
     getTime();
-  }, []);
+  }, [canClaim,updateClaimBalance]);
 
   const todo = [
     {
