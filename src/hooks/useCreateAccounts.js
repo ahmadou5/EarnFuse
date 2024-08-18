@@ -10,7 +10,7 @@ export const UseCreateUSer = () => {
                 console.log(username,'name')
                 console.log(tgUser,'gggraaa')
                 const { data,error } = await Supabase
-                .from('Users')
+                .from('users')
                 .insert([
                     {id:userId, username:username, pointsAdd: 1, lastRewardClaim: 1723071600}
                 ])

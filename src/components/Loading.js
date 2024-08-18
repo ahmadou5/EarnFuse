@@ -19,7 +19,7 @@ export const Loading = () => {
             console.log('id',userId)
             console.log('name',username)
             const { data,error } = await Supabase
-            .from('Users')
+            .from('users')
             .insert([
                 {id:userId, username:username, pointsAdd: 1}
             ])

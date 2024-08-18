@@ -21,7 +21,7 @@ export const UseGetClaim = () => {
               try {
               console.log(tgUser, 'tg user')
               const { data, error } = await Supabase
-              .from('Users')
+              .from('users')
               .select('*')
               .eq('id',tgData?.initDataUnsafe?.user?.id)
 

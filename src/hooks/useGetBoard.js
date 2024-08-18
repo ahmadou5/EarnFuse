@@ -24,7 +24,7 @@ export const UseGetBoard = () => {
         console.log( "tg user refferalss",id);
 
          const { data, error } = await Supabase
-          .from("Users")
+          .from("users")
           .select('*')
           .order('balance',{ascending:false ,nullsFirst: false})
 

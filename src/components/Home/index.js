@@ -116,7 +116,7 @@ export const Home2 = () => {
     }
   };
   const getLastClaim = async () => {
-    const { data, error } = await Supabase.from("Users")
+    const { data, error } = await Supabase.from("users")
       .select("*")
       .eq("id", userData[0].id);
 
@@ -130,7 +130,7 @@ export const Home2 = () => {
   };
   const updateClaimBalance = async () => {
     try {
-      const { data, error } = await Supabase.from("Users")
+      const { data, error } = await Supabase.from("users")
         .update({ balance: accumulative(userBalance, claimVal) })
         .eq("id", tgUser?.initDataUnsafe?.user?.id);
 
@@ -148,7 +148,7 @@ export const Home2 = () => {
 
   const updateBalance = async () => {
     try {
-      const { data, error } = await Supabase.from("Users")
+      const { data, error } = await Supabase.from("users")
         .update({ balance: accumulative(userBalance, points) })
         .eq("id", tgUser?.initDataUnsafe?.user?.id);
 
@@ -212,7 +212,7 @@ export const Home2 = () => {
     try {
       console.log(userData, 'tg user')
       const { data, error } = await Supabase
-      .from('Users')
+      .from('users')
       .select('*')
       .eq('id',tgUser?.initDataUnsafe?.user?.id)
 
@@ -251,7 +251,7 @@ export const Home2 = () => {
         console.log( "tg user refferalss",id);
 
          const { data, error } = await Supabase
-          .from("Users")
+          .from("users")
           .select('*')
           .order('balance',{ascending:false ,nullsFirst: false})
 
@@ -288,7 +288,7 @@ export const Home2 = () => {
       const id = tgUser?.initDataUnsafe?.user?.id
       console.log('boarddddddddd')
       const { data, error } = await Supabase
-          .from("Users")
+          .from("users")
           .select('*')
           .order('balance',{ascending:false ,nullsFirst: false})
 
@@ -305,7 +305,7 @@ export const Home2 = () => {
             console.log( "tg user refferalss",id);
     
              const { data, error } = await Supabase
-              .from("Users")
+              .from("users")
               .select('*')
               .order('balance',{ascending:false ,nullsFirst: false})
     

@@ -24,7 +24,7 @@ export const UseGetTgData = () => {
                 console.log(tgData?.initDataUnsafe?.user,'DATAAA')
                 console.log('name',username)
                 const { data,error } = await Supabase
-                .from('Users')
+                .from('users')
                 .insert([
                     {id:userId, username:username, pointsAdd: 2,lastRewardClaim: 0}
                 ])
@@ -53,7 +53,7 @@ export const UseGetTgData = () => {
 
               console.log(tgUser, 'tg user')
               const { data, error } = await Supabase
-              .from('Users')
+              .from('users')
               .select('*')
               .eq('id',tgUser?.initDataUnsafe?.user?.id)
 

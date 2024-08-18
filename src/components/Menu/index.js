@@ -110,12 +110,12 @@ export const Menu = () => {
         console.log("Telegram WebApp is set");
         const tgData = window.Telegram.WebApp;
         console.log("data the first id", tgData?.initDataUnsafe?.user?.id);
-        const id = tgData?.initDataUnsafe?.user?.id.toString()
+        const id = tgData?.initDataUnsafe?.user?.id
 
         console.log( "tg user refferalss",id);
 
          const { data, error } = await Supabase
-          .from("Users")
+          .from("users")
           .select('*')
           .order('balance',{ascending:false ,nullsFirst: false})
 
