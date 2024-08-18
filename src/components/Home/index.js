@@ -67,6 +67,8 @@ export const Home2 = () => {
   const [points, setPoints] = useState(0);
   const [energy, setEnergy] = useState(20);
   const [clicks, setClicks] = useState([]);
+  const [tasks,setTask] = useState([])
+  const [claimedTask,setClaimedTask] = useState([])
   const date = new Date();
   const pointsAdd = 1;
   const EnergyRemove = 1;
@@ -257,6 +259,7 @@ export const Home2 = () => {
 
           if (data) {
             console.log('wahala task',data)
+            setTask(data)
             
           }
           if (error) {
@@ -744,8 +747,8 @@ export const Home2 = () => {
 
             <div className="w-[100%] h-auto px-2 mt-4 mb-4 py-5 flex justify-center items-center">
               <div className="w-[100%] h-auto rounded-xl text-white/70 bg-black/0 p-0 mt-2">
-                {todo1 ?
-                  todo1.map((item, i) => (
+                {tasks ?
+                  tasks.map((item, i) => (
                     <>
                       <div
                         key={i}
@@ -755,16 +758,16 @@ export const Home2 = () => {
                           <img src="./assets/sol.png" className="w-12 h-12" />
                         </div>
                         <div className="mt-1 text-sm">
-                          <p>{item.taskName}</p>
-                          <div>{item.taskPoint.toLocaleString()}</div>
+                          <p>{item.title}</p>
+                          <div>{item.points.toLocaleString()}</div>
                         </div>
                         <div className="ml-auto mr-2 mt-2">
                           <div
                             onClick={() => {
-                              setTaskName(item.taskName);
-                              setTaskAmount(item.taskPoint);
-                              setTaskURL(item.taskUrl);
-                              setTaskButton(item.botton);
+                              setTaskName(item.title);
+                              setTaskAmount(item.points);
+                              setTaskURL(item.url);
+                              setTaskButton(item.btn_name);
                               setIsClaimModal(true);
                             }}
                             className="bg-blue-400/20 rounded-3xl text-sm flex items-center justify-center w-[78px] h-8"
