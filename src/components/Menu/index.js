@@ -131,7 +131,7 @@ export const Menu = () => {
             </div>
           </div>
 
-          <div
+        {/** <div
             className={`h-12 ml-auto mr-auto w-[25%] bg-white/0 flex items-center justify-center`}
           >
             <div
@@ -147,7 +147,7 @@ export const Menu = () => {
               <img src="./assets/pad.svg" className="w-7 h-7" />
               <p className={`font-light mt-1 text-white text-[10px]`}>Games</p>
             </div>
-          </div>
+          </div>  */} 
           <div
             className={`h-12 ml-auto mr-auto w-[25%] bg-white/0 flex  items-center justify-center`}
           >

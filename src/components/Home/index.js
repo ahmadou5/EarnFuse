@@ -12,6 +12,7 @@ import useWindowSize from "react-use/lib/useWindowSize";
 import { Supabase } from "@/utils/supabasedb";
 import { BoostModal } from "../Modals/BoostModal";
 import { retrieveLaunchParams } from "@telegram-apps/sdk";
+import Image from "next/image";
 
 export const Home2 = () => {
   //const utils = useUtils()
@@ -585,8 +586,8 @@ export const Home2 = () => {
                   </p>
                 </div>
                 <div className="ml-auto py-1 mr-2 flex">
-                  <IoWallet className="ml-4 text-white/75 mr-4 text-[20px]" />
-                  <IoSettings className="ml-4  text-white/75 mr-2 text-[20px]" />
+                  
+                  <Image src={'./assets/setting.svg'} className="ml-4  text-white/75 mr-2 text-[20px]" />
                 </div>
               </div>
               <div className="w-[100%] mt-3 flex  text-white/75 items-center justify-center flex-col h-auto">
@@ -669,7 +670,7 @@ export const Home2 = () => {
                         onClick={() => {
                           handleUpdateBoard();
                           handleUpdatedBalance();
-                          getTime();
+                          //getTime();
                           setCanClaim(false)
                           setClaimed(false);
                         }}
