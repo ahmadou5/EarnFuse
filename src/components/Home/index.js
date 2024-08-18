@@ -343,7 +343,6 @@ export const Home2 = () => {
             console.log('update user details', filterone)
             console.log('updated  user Rank', filterNumb + 1)
             
-            console.log('filtered fucking balance', filterone[0].balance)
             //console.log(reffs,'it is')
           }
           if (error) {
