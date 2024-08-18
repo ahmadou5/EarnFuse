@@ -752,7 +752,7 @@ export const Home2 = () => {
                     <>
                       <div
                         key={i}
-                        className="w-[100%] mt-2 mb-2 h-auto flex rounded-xl py-3 px-3 bg-black/15"
+                        className="w-[100%] mt-2 mb-2 h-auto flex rounded-xl py-3 px-3 bg-white/15"
                       >
                         <div className="ml-1 mr-3">
                           <img src="./assets/sol.png" className="w-12 h-12" />
@@ -770,9 +770,39 @@ export const Home2 = () => {
                               setTaskButton(item.btn_name);
                               setIsClaimModal(true);
                             }}
-                            className="bg-blue-400/20 rounded-3xl text-sm flex items-center justify-center w-[78px] h-8"
+                            className="bg-[#046ae2]/75 rounded-3xl text-sm flex items-center justify-center w-[78px] h-8"
                           >
                             {item.btn_name}
+                          </div>
+                        </div>
+                        {isClaimModal && <ClaimModal />}
+                      </div>
+                    </>
+                  )):<>
+                  <p>No task Added Yet</p>
+                  </>}
+              </div>
+              <div className="w-[100%] h-auto rounded-xl text-white/70 bg-black/0 p-0 mt-2">
+                {claimedTask ?
+                  claimedTask.map((item, i) => (
+                    <>
+                      <div
+                        key={i}
+                        className="w-[100%] mt-2 mb-2 h-auto flex rounded-xl py-3 px-3 bg-white/15"
+                      >
+                        <div className="ml-1 mr-3">
+                          <img src="./assets/sol.png" className="w-12 h-12" />
+                        </div>
+                        <div className="mt-1 text-sm">
+                          <p>{item.title}</p>
+                          <div>{item.points.toLocaleString()}</div>
+                        </div>
+                        <div className="ml-auto mr-2 mt-2">
+                          <div
+                            
+                            className="bg-[#046ae2]/25 rounded-3xl text-sm flex items-center justify-center w-[78px] h-8"
+                          >
+                            {'Claimed'}
                           </div>
                         </div>
                         {isClaimModal && <ClaimModal />}
