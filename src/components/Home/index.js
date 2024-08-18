@@ -379,10 +379,10 @@ export const Home2 = () => {
     updateClaimBalance();
     updateTimestamp();
     getLastClaim();
-    //setCanClaim(false);
     handleUpdatedBalance()
     handleUpdateBoard()
-    //getTime();
+    getTime();
+    setCanClaim(false);
   };
   const boost = [
     {
