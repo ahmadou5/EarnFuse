@@ -257,7 +257,7 @@ export const Home2 = () => {
   .select(`
     *,
     task (
-      user_id: ${id}
+      *
     )
   `)
           if (data) {
