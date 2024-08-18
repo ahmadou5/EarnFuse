@@ -605,7 +605,7 @@ export const Home2 = () => {
                     <div
                       onClick={() => {
                         handleClaim()
-                        //getTime()
+                        getTime()
                         setCanClaim(false)
                         setClaimed(true)
                       }}
