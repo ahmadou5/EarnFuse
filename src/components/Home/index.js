@@ -381,7 +381,7 @@ export const Home2 = () => {
     setCanClaim(false);
     handleUpdatedBalance()
     handleUpdateBoard()
-    
+    getTime()    
   };
   const boost = [
     {
@@ -604,7 +604,7 @@ export const Home2 = () => {
                     <div
                       onClick={() => {
                         handleClaim()
-                        getTime()
+                        //getTime()
                         //setCanClaim(false)
                         setClaimed(true)
                       }}
