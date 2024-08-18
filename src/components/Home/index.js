@@ -616,7 +616,7 @@ export const Home2 = () => {
                 ) : (
                   <>
                     <div className="bg-black/30 w-[90%] rounded-2xl text-white py-2 flex items-center justify-center h-[52px]">
-                      <div className="text-[17px] mt-1 ml-auto mr-3 font-light text-white/70">{timeRemaining === 0 ? 'Loading' : 'Claim Available in'}</div>
+                      <div className="text-[17px] mt-0.5 ml-auto mr-3 font-light text-white/70">{timeRemaining === 0 ? 'Loading' : 'Claim Available in'}</div>
                        <div className="text-[21px] ml-3 mr-auto flex text-blue-500/70 font-extrabold"> {`${timeRemaining === 0 ? "..." : formatTimeRemaining(
                           timeRemaining
                         )}`}</div>
