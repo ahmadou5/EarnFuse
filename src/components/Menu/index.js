@@ -205,7 +205,7 @@ export const Menu = () => {
                 setIsBoost(true);
                 setIsHome(false);
                 setIsTask(false);
-                customHandle()
+                //customHandle()
               }}
               className="flex ml-auto mr-auto flex-col items-center justify-center"
             >
