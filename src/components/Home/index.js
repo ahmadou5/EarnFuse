@@ -598,7 +598,7 @@ export const Home2 = () => {
                   </p>
                 </div>
               </div>
-              <div className="w-[100%] mt-[20px] mb-[80px] flex items-center justify-center">
+              <div className="w-[100%] sm:mt-[20px] md:mt-[50px] mb-[80px] flex items-center justify-center">
                 {canClaim ? (
                   <>
                     <div
