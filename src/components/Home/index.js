@@ -260,7 +260,9 @@ export const Home2 = () => {
           .eq("user_id", id);
         if (data) {
           console.log("wahala claimed task", data);
-          setClaimedTask(data);
+          const needData = data[0].task
+          console.log('what we need actually',needData)
+          setClaimedTask(needData);
         }
         if (error) {
           //console.log("error", error);
