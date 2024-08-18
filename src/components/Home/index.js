@@ -772,7 +772,7 @@ export const Home2 = () => {
                             }}
                             className="bg-blue-400/20 rounded-3xl text-sm flex items-center justify-center w-[78px] h-8"
                           >
-                            {item.botton}
+                            {item.btn_name}
                           </div>
                         </div>
                         {isClaimModal && <ClaimModal />}
