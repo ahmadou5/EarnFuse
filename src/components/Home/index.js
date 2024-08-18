@@ -382,7 +382,7 @@ export const Home2 = () => {
     //setCanClaim(false);
     handleUpdatedBalance()
     handleUpdateBoard()
-    getTime();
+    //getTime();
   };
   const boost = [
     {
@@ -538,6 +538,8 @@ export const Home2 = () => {
                         <div
                           onClick={() => {
                             setClaimMode(false);
+                            //handleUpdatedBalance()
+                            handleUpdateBoard()
                             updateBalance();
                           }}
                           className="w-[175px] mt-6  ml-auto mr-auto py-1 px-3 text-white border  border-[#448cff]/60 flex  items-center justify-center bg-black/90 rounded-full h-9"
