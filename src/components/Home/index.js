@@ -598,14 +598,14 @@ export const Home2 = () => {
                   </p>
                 </div>
               </div>
-              <div className="w-[100%] sm:mt-[20px] md:mt-[50px] mb-[80px] flex items-center justify-center">
+              <div className="w-[100%] mt-[30px] mb-[80px] flex items-center justify-center">
                 {canClaim ? (
                   <>
                     <div
                       onClick={() => {
                         handleClaim()
-                        //getTime()
-                        //setCanClaim(false)
+                        getTime()
+                        setCanClaim(false)
                         setClaimed(true)
                       }}
                       className="bg-[#046ae2]  w-[90%] rounded-2xl text-white flex items-center justify-center h-[52px]"
@@ -616,7 +616,7 @@ export const Home2 = () => {
                 ) : (
                   <>
                     <div className="bg-black/30 w-[90%] rounded-2xl text-white py-2 flex items-center justify-center h-[52px]">
-                      <div className="text-[17px] mt-0.5 ml-auto mr-3 font-light text-white/70">{timeRemaining === 0 ? 'Loading' : 'Claim Available in'}</div>
+                      <div className="text-[17px] mt-1 ml-auto mr-3 font-light text-white/70">{timeRemaining === 0 ? 'Loading' : 'Claim Available in'}</div>
                        <div className="text-[21px] ml-3 mr-auto flex text-blue-500/70 font-extrabold"> {`${timeRemaining === 0 ? "..." : formatTimeRemaining(
                           timeRemaining
                         )}`}</div>
