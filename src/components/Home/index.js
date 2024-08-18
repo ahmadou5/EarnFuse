@@ -225,7 +225,7 @@ export const Home2 = () => {
         console.log(data[0].lastClaim,'claim')
         setUserData(data)
         //setLastClaim(data[0].lastRewardClaim)
-        setUserBalance(data[0].balance)
+     //   setUserBalance(data[0].balance)
       }
       if(error) {
         console.log('error',error)
@@ -320,7 +320,7 @@ export const Home2 = () => {
                 console.log('user details', filterone)
                 console.log('user Rank', filterNumb + 1)
                 
-                console.log('filtered balance', filterone[0].balance)
+               // console.log('filtered balance', filterone[0].balance)
                 //console.log(reffs,'it is')
               }
               if (error) {
@@ -378,10 +378,10 @@ export const Home2 = () => {
     updateClaimBalance();
     updateTimestamp();
     getLastClaim();
+    setCanClaim(false);
     handleUpdatedBalance()
     handleUpdateBoard()
-    getTime();
-    setCanClaim(false);
+    
   };
   const boost = [
     {
