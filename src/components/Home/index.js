@@ -407,8 +407,7 @@ export const Home2 = () => {
 
   useEffect(() => {
     getTime();
-   
-  }, [claimed]);
+  }, []);
 
   const todo = [
     {
