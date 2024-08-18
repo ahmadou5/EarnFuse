@@ -101,7 +101,7 @@ export const Home2 = () => {
   const updateTimestamp = async () => {
     try {
       const currentTime = date.getTime();
-      const { data, error } = await Supabase.from("Users")
+      const { data, error } = await Supabase.from("users")
         .update({ lastRewardClaim: currentTime })
         .eq("id", tgUser?.initDataUnsafe?.user?.id);
 
