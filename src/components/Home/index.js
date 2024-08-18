@@ -194,7 +194,7 @@ export const Home2 = () => {
 
   const getTime = async () => {
     const currentTime = date.getTime();
-    const cooldownTime = 12 * 60 * 60 * 1000; //
+    const cooldownTime = 24 * 60 * 60 * 1000; //
     console.log("korrent", currentTime);
     const timeDiff = currentTime - lastClaim;
     if (timeDiff >= cooldownTime) {
@@ -617,8 +617,8 @@ export const Home2 = () => {
                 ) : (
                   <>
                     <div className="bg-black/30 w-[90%] rounded-2xl text-white py-2 flex items-center justify-center h-[52px]">
-                      <div className="text-[17px] mt-1 ml-auto mr-3 font-light text-white/70">Claim Available in</div>
-                       <div className="text-[21px] ml-3 mr-auto flex text-blue-500/70 font-extrabold"> {`${formatTimeRemaining(
+                      <div className="text-[17px] mt-1 ml-auto mr-3 font-light text-white/70">{timeRemaining === 0 ? 'Loading' : 'Claim Available in'}</div>
+                       <div className="text-[21px] ml-3 mr-auto flex text-blue-500/70 font-extrabold"> {`${timeRemaining === 0 ? "..." : formatTimeRemaining(
                           timeRemaining
                         )}`}</div>
                     </div>
@@ -643,6 +643,7 @@ export const Home2 = () => {
                           onClick={() => {
                            handleUpdateBoard()
                            handleUpdatedBalance()    
+                           getTime()
                            setClaimed(false)
                           }}
                           className="w-[175px] mt-6  ml-auto mr-auto py-1 px-3 text-white border  border-[#448cff]/60 flex  items-center justify-center bg-black/90 rounded-full h-9"
