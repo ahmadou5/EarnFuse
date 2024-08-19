@@ -224,7 +224,7 @@ export const Home2 = () => {
         console.log(data[0].isClick, "counter");
         console.log(data[0].lastClaim, "claim");
         setUserData(data);
-        //setLastClaim(data[0].lastRewardClaim)
+        setLastClaim(data[0].lastRewardClaim)
         //   setUserBalance(data[0].balance)
       }
       if (error) {
