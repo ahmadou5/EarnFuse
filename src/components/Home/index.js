@@ -207,13 +207,13 @@ export const Home2 = () => {
         console.log("Telegram WebApp is set");
         const tgData = window.Telegram.WebApp;
         console.log("data the first id", tgData?.initDataUnsafe?.user?.id);
-        const id = tgData?.initDataUnsafe?.user?.id.toString();
+        const id = tgData?.initDataUnsafe?.user?.id;
 
-        console.log("task id", id);
+        console.log("task dlllll id", id);
 
         const { data, error } = await Supabase.from("users")
         .select("*")
-        .eq("id", tgData?.initDataUnsafe?.user?.id);
+        .eq("id", id);
 
         if (data) {
        // const sele = JSON.stringify(data);
