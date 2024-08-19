@@ -89,7 +89,7 @@ export const Home2 = () => {
     setClicks([...clicks, { id: Date.now(), x, y }]);
   };
   console.log('userData',userData);
-  console,log('tgUser',tgUser)
+  console.log('tgUser',tgUser)
   console.log(lastClaim,'last')
   const handleAnimationEnd = (id) => {
     setClicks((prevClick) => prevClick.filter((click) => click.id !== id));
