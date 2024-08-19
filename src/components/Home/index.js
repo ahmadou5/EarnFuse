@@ -329,11 +329,11 @@ export const Home2 = () => {
           .order("balance", { ascending: false, nullsFirst: false });
 
         if (data) {
-      //    console.log("leaders here", data);
+          console.log("leaders here", data);
           setLeads(data);
           console.log('data set')
       //    console.log(id, "is it here");
-          const filterone = data.find((item) => item.id === id);
+          const filterone = data?.find((item) => item.id === id);
           setUserBoad(filterone);
           const filterNumb = data.findIndex((item) => item.id === id);
           setUserRank(filterNumb + 1);
