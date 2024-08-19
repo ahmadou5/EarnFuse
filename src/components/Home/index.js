@@ -583,6 +583,7 @@ export const Home2 = () => {
       )}
       {isHome && (
         <>
+          
           <div className="bg-gothic-950/0 mt-0 flex bg-slate-600/0 flex-col w-[100%] h-auto">
             <div className="w-[100%] bg-black/0">
               <div className="w-[100%] h-12 px-2 mt-2 py-3 flex">
@@ -664,10 +665,17 @@ export const Home2 = () => {
             <Menu />
           </div>
           {claimed && (
-            <div className="inset-0 fixed bg-white/0 bg-opacity-100 w-[100%] z-[99999999] min-h-screen h-auto backdrop-blur-sm flex ">
-              <div className="w-[100%] flex items-center px-3 justify-center">
-                <div className="h-[320px] ml-auto mr-auto py-2 px-2 w-[95%] bg-white/75  border-[#448cff]/90 border rounded-2xl">
-                  {
+            <div className="inset-0 fixed bg-black bg-opacity-100 w-[100%] z-[99999999] min-h-screen h-auto backdrop-blur-sm flex ">
+            <div className="w-[100%] py-4 px-4 bg-white/20 rounded-t-3xl h-auto mt-[90px]">
+              <div className="">
+                <div
+                  onClick={() => setIsSend(false)}
+                  className="w-20 rounded-xl text-black text-xl font-light flex items-center justify-center h-9 bg-white/90"
+                >
+                  <p>esc</p>
+                </div>
+              </div>
+              {
                     <div className="mt-5 ml-auto mr-auto flex flex-col items-center justify-center text-center">
                       <div className="w-[80%] mb-2 ml-auto mr-auto py-1 px-3 flex  items-center justify-center rounded-full mt-8 h-9">
                         <p className="text-black/85 text-[18px] font-light ml-auto mr-auto ">{`You Just Claim ${claimVal} as Your Daily Reward`}</p>
@@ -686,9 +694,9 @@ export const Home2 = () => {
                       </div>
                     </div>
                   }
-                </div>
-              </div>
             </div>
+          </div>
+            
           )}
         </>
       )}
