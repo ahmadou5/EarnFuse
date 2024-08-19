@@ -88,8 +88,8 @@ export const Home2 = () => {
     setEnergy(energy - EnergyRemove < 0 ? 0 : energy - EnergyRemove);
     setClicks([...clicks, { id: Date.now(), x, y }]);
   };
-  //console.log('userData',userData);
-  //console.log('tgUser',tgUser)
+  console.log('userData',userData);
+  console.log('tgUser',tgUser)
   //console.log(lastClaim,'last')
   const handleAnimationEnd = (id) => {
     setClicks((prevClick) => prevClick.filter((click) => click.id !== id));
@@ -320,7 +320,7 @@ export const Home2 = () => {
        // console.log("Telegram WebApp is set");
         const tgData = window.Telegram.WebApp;
       //  console.log("data the first id", tgData?.initDataUnsafe?.user?.id);
-        const id = tgData?.initDataUnsafe?.user?.id;
+        const id = tgData?.initDataUnsafe?.user?.id.toString();
 
        // console.log("tg user refferalss   ", id);
 
@@ -333,9 +333,9 @@ export const Home2 = () => {
           setLeads(data);
           console.log('data set')
       //    console.log(id, "is it here");
-          const filterone = data?.find((item) => item.id === '6025922653');
+          const filterone = data?.find((item) => item.id === id);
           setUserBoad(filterone);
-          const filterNumb = data.findIndex((item) => item.id === '6025922653');
+          const filterNumb = data.findIndex((item) => item.id === id);
           setUserRank(filterNumb + 1);
           console.log("user details", filterone);
           console.log("user Rank", filterNumb + 1);
