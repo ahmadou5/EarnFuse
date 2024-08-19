@@ -324,16 +324,16 @@ export const Home2 = () => {
         console.log("data the first id", tgData?.initDataUnsafe?.user?.id);
         const id = tgData?.initDataUnsafe?.user?.id;
 
-        console.log("tg user refferalss", id);
+        console.log("tg user refferalss   ", id);
 
         const { data, error } = await Supabase.from("users")
           .select("*")
           .order("balance", { ascending: false, nullsFirst: false });
 
         if (data) {
-          console.log("leaders", data);
+          console.log("leaders here", data);
           setLeads(data);
-          console.log(id, "is it");
+          console.log(id, "is it here");
           const filterone = data.find((item) => item.id === id);
           setUserBoad(filterone);
           const filterNumb = data.findIndex((item) => item.id === id);
