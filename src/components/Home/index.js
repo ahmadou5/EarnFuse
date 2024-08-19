@@ -88,9 +88,9 @@ export const Home2 = () => {
     setEnergy(energy - EnergyRemove < 0 ? 0 : energy - EnergyRemove);
     setClicks([...clicks, { id: Date.now(), x, y }]);
   };
-  console.log('userData',userData);
-  console.log('tgUser',tgUser)
-  console.log(lastClaim,'last')
+  //console.log('userData',userData);
+  //console.log('tgUser',tgUser)
+  //console.log(lastClaim,'last')
   const handleAnimationEnd = (id) => {
     setClicks((prevClick) => prevClick.filter((click) => click.id !== id));
   };
@@ -110,7 +110,7 @@ export const Home2 = () => {
         .eq("id", tgUser?.initDataUnsafe?.user?.id);
 
       if (data) {
-        console.log("updated time", data);
+        //console.log("updated time", data);
       }
       if (error) {
         throw error;
@@ -139,7 +139,7 @@ export const Home2 = () => {
         .eq("id", tgUser?.initDataUnsafe?.user?.id);
 
       if (data) {
-        console.log("updated", data);
+     //   console.log("updated", data);
       }
       if (error) {
         throw error;
@@ -197,19 +197,19 @@ export const Home2 = () => {
   };
 
   const handleUpdatedBalance = async () => {
-    console.log('balance updateee')
+   // console.log('balance updateee')
     try {
       if (
         typeof window !== "undefined" &&
         window.Telegram &&
         window.Telegram.WebApp
       ) {
-        console.log("Telegram WebApp is set");
+       // console.log("Telegram WebApp is set");
         const tgData = window.Telegram.WebApp;
-        console.log("data the first id", tgData?.initDataUnsafe?.user?.id);
+        //console.log("data the first id", tgData?.initDataUnsafe?.user?.id);
         const id = tgData?.initDataUnsafe?.user?.id;
 
-        console.log("task dlllll id", id);
+      //  console.log("task dlllll id", id);
 
         const { data, error } = await Supabase.from("users")
         .select("*")
@@ -218,10 +218,8 @@ export const Home2 = () => {
         if (data) {
        // const sele = JSON.stringify(data);
         //console.log(sele, "cele ne");
-        console.log("hey balance data", data[0].balance);
+        console.log("hey balance data", data[0]);
         console.log(data[0].id, "aeki");
-        console.log(data[0].isClick, "counter");
-        console.log(data[0].lastClaim, "claim");
         setUserData(data);
         //setLastClaim(data[0].lastRewardClaim)
         //   setUserBalance(data[0].balance)
@@ -247,12 +245,12 @@ export const Home2 = () => {
         window.Telegram &&
         window.Telegram.WebApp
       ) {
-        console.log("Telegram WebApp is set");
+      //  console.log("Telegram WebApp is set");
         const tgData = window.Telegram.WebApp;
-        console.log("data the first id", tgData?.initDataUnsafe?.user?.id);
+     //   console.log("data the first id", tgData?.initDataUnsafe?.user?.id);
         const id = tgData?.initDataUnsafe?.user?.id.toString();
 
-        console.log("task id", id);
+       // console.log("task id", id);
 
         const { data, error } = await Supabase.rpc("get_claimed_tasks", {
           userid: id,
@@ -284,10 +282,10 @@ export const Home2 = () => {
       ) {
         console.log("Telegram WebApp is set");
         const tgData = window.Telegram.WebApp;
-        console.log("data the first id", tgData?.initDataUnsafe?.user?.id);
+       // console.log("data the first id", tgData?.initDataUnsafe?.user?.id);
         const id = tgData?.initDataUnsafe?.user?.id.toString();
 
-        console.log("task id", id);
+       // console.log("task id", id);
 
         const { data, error } = await Supabase.rpc("get_unclaimed_tasks", {
           userid: id,
@@ -319,21 +317,22 @@ export const Home2 = () => {
         window.Telegram &&
         window.Telegram.WebApp
       ) {
-        console.log("Telegram WebApp is set");
+       // console.log("Telegram WebApp is set");
         const tgData = window.Telegram.WebApp;
-        console.log("data the first id", tgData?.initDataUnsafe?.user?.id);
+      //  console.log("data the first id", tgData?.initDataUnsafe?.user?.id);
         const id = tgData?.initDataUnsafe?.user?.id;
 
-        console.log("tg user refferalss   ", id);
+       // console.log("tg user refferalss   ", id);
 
         const { data, error } = await Supabase.from("users")
           .select("*")
           .order("balance", { ascending: false, nullsFirst: false });
 
         if (data) {
-          console.log("leaders here", data);
+      //    console.log("leaders here", data);
           setLeads(data);
-          console.log(id, "is it here");
+          console.log('data set')
+      //    console.log(id, "is it here");
           const filterone = data.find((item) => item.id === id);
           setUserBoad(filterone);
           const filterNumb = data.findIndex((item) => item.id === id);
