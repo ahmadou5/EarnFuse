@@ -45,7 +45,7 @@ export const Loading = () => {
            <div className="w-auto h-auto mt-1">
             <img src='./assets/show.png' className="w-[250px] h-[250px]" />
            </div>
-           <div class="loader"></div> 
+           <div className="loader"></div> 
         </div>
     </div>
     )

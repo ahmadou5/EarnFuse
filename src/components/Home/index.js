@@ -595,7 +595,7 @@ export const Home2 = () => {
                   <button></button>
                 </div>  */}
                 <div className="w-[100%] flex  text-white/75 items-center  flex-col justify-center mt-7">
-                  <div className="flex items-center text-xl justify-center text-white/80 font-extrabold w-[130px] h-[130px] bg-black/70 rounded-full">
+                  <div className="flex items-center text-2xl justify-center text-white/80 font-extrabold w-[130px] h-[130px] bg-black/70 rounded-full">
                     {`${tgUser?.initDataUnsafe?.user?.username[0]}${
                       tgUser?.initDataUnsafe?.user?.username[
                         Math.floor(
@@ -626,9 +626,9 @@ export const Home2 = () => {
                     <div
                       onClick={() => {
                         handleClaim();
-                        //getTime();
                         setCanClaim(false);
-                        //setClaimed(true);
+                        setClaimed(true);
+                        getTime()
                       }}
                       className="bg-[#046ae2]  w-[90%] rounded-2xl text-white flex items-center justify-center h-[52px]"
                     >
@@ -660,7 +660,7 @@ export const Home2 = () => {
           {claimed && (
             <div className="inset-0 fixed bg-white/0 bg-opacity-100 w-[100%] z-[99999999] min-h-screen h-auto backdrop-blur-sm flex ">
               <div className="w-[100%] flex items-center px-3 justify-center">
-                <div className="h-[220px] ml-auto mr-auto py-2 px-2 w-[89%] bg-white/75  border-[#448cff]/90 border rounded-xl">
+                <div className="h-[320px] ml-auto mr-auto py-2 px-2 w-[95%] bg-white/75  border-[#448cff]/90 border rounded-2xl">
                   {
                     <div className="mt-5 ml-auto mr-auto flex flex-col items-center justify-center text-center">
                       <div className="w-[80%] mb-2 ml-auto mr-auto py-1 px-3 flex  items-center justify-center rounded-full mt-8 h-9">
