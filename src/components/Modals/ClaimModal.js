@@ -254,8 +254,8 @@ export const ClaimModal = () => {
     const handleClaimTask = async () => {
       UpdateBalanceByTask()
       taskClaimed()
-      handleGetClaimedTasks()
-      handleGetUnClaimedTasks()
+      //handleGetClaimedTasks()
+      //handleGetUnClaimedTasks()
       handleUpdatedBalance()
       handleUpdateBoard()
     };
