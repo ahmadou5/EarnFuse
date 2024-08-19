@@ -314,182 +314,7 @@ export const Home2 = () => {
       console.log(error);
     }
   };
-  const taskClaimed = async () => {
-    try {
-      if (
-        typeof window !== "undefined" &&
-        window.Telegram &&
-        window.Telegram.WebApp
-      ) {
-        console.log("Telegram WebApp is set");
-        const tgData = window.Telegram.WebApp;
-       // console.log("data the first id", tgData?.initDataUnsafe?.user?.id);
-       const id = tgData?.initDataUnsafe?.user?.id.toString();
-     
-       // console.log("task id", id);
-       const { data, error } = await Supabase.from("claimed_task")
-       .insert({ user_id: id, task_id: taskId })
-       .select()
-
-
-        if (data) {
-          console.log("wahala task claimed", data);
-          console.log(data);
-        }
-        if (error) {
-          //console.log("error", error);
-          throw error;
-        }
-      } else {
-        //console.log("Telegram WebApp is undefined, retrying…");
-        //console.log(user);
-        setTimeout(initTg, 500);
-      }
-    } catch (error) {
-      console.log(error);
-    }
-  }
-  const UpdateBalanceByTask = async () => {
-    try {
-      if (
-        typeof window !== "undefined" &&
-        window.Telegram &&
-        window.Telegram.WebApp
-      ) {
-        console.log("Telegram WebApp is set");
-        const tgData = window.Telegram.WebApp;
-       // console.log("data the first id", tgData?.initDataUnsafe?.user?.id);
-        //const id = tgData?.initDataUnsafe?.user?.id.toString();
-
-       // console.log("task id", id);
-       const { data, error } = await Supabase.from("users")
-       .update({ balance: accumulative(userBalance, taskAmount) })
-       .eq("id", tgUser?.initDataUnsafe?.user?.id);
-
-
-        if (data) {
-          console.log("wahala task paid", data);
-          setTask(data);
-        }
-        if (error) {
-          //console.log("error", error);
-          throw error;
-        }
-      } else {
-        //console.log("Telegram WebApp is undefined, retrying…");
-        //console.log(user);
-        setTimeout(initTg, 500);
-      }
-    } catch (error) {
-      console.log(error);
-    }
-  }
-  const handleGetTasks = async () => {
-    try {
-      if (
-        typeof window !== "undefined" &&
-        window.Telegram &&
-        window.Telegram.WebApp
-      ) {
-        console.log("Telegram WebApp is set");
-        const tgData = window.Telegram.WebApp;
-       // console.log("data the first id", tgData?.initDataUnsafe?.user?.id);
-        const id = tgData?.initDataUnsafe?.user?.id.toString();
-
-       // console.log("task id", id);
-
-        const { data, error } = await Supabase.rpc("get_unclaimed_tasks", {
-          userid: id,
-        });
-
-        if (data) {
-          console.log("wahala task", data);
-          setTask(data);
-        }
-        if (error) {
-          //console.log("error", error);
-          throw error;
-        }
-      } else {
-        //console.log("Telegram WebApp is undefined, retrying…");
-        //console.log(user);
-        setTimeout(initTg, 500);
-      }
-    } catch (error) {
-      console.log(error);
-    }
-  }
-
-  const handleGetClaimedTasks = async () => {
-    try {
-      if (
-        typeof window !== "undefined" &&
-        window.Telegram &&
-        window.Telegram.WebApp
-      ) {
-        console.log("Telegram WebApp is set");
-        const tgData = window.Telegram.WebApp;
-       // console.log("data the first id", tgData?.initDataUnsafe?.user?.id);
-        const id = tgData?.initDataUnsafe?.user?.id.toString();
-
-       // console.log("task id", id);
-
-        const { data, error } = await Supabase.rpc("get_unclaimed_tasks", {
-          userid: id,
-        });
-
-        if (data) {
-          console.log("wahala task", data);
-          setTask(data);
-        }
-        if (error) {
-          //console.log("error", error);
-          throw error;
-        }
-      } else {
-        //console.log("Telegram WebApp is undefined, retrying…");
-        //console.log(user);
-        setTimeout(initTg, 500);
-      }
-    } catch (error) {
-      console.log(error);
-    }
-  }
-  const handleClaimTask = async () => {
-    try {
-      if (
-        typeof window !== "undefined" &&
-        window.Telegram &&
-        window.Telegram.WebApp
-      ) {
-        console.log("Telegram WebApp is set");
-        const tgData = window.Telegram.WebApp;
-       // console.log("data the first id", tgData?.initDataUnsafe?.user?.id);
-        const id = tgData?.initDataUnsafe?.user?.id.toString();
-
-       // console.log("task id", id);
-
-        const { data, error } = await Supabase.rpc("get_unclaimed_tasks", {
-          userid: id,
-        });
-
-        if (data) {
-          console.log("wahala task", data);
-          setTask(data);
-        }
-        if (error) {
-          //console.log("error", error);
-          throw error;
-        }
-      } else {
-        //console.log("Telegram WebApp is undefined, retrying…");
-        //console.log(user);
-        setTimeout(initTg, 500);
-      }
-    } catch (error) {
-      console.log(error);
-    }
-  };
+  
 
   const handleUpdateBoard = async () => {
     try {
@@ -786,12 +611,12 @@ export const Home2 = () => {
               </div>
               <div className="mt-3 py-2 flex flex-col items-center justify-center">
                 <div className="flex items-center justify-center">
-                  <img
+                 {/** <img
                     className="h-16 w-16 ml-auto mr-1 "
                     src="./assets/show.png"
-                  />
+                  />  */}
                   <p className="text-4xl ml-1 text-white mr-auto font-bold ">
-                    {accumulative(userBalance, points)?.toLocaleString()}
+                    {`${accumulative(userBalance, points)?.toLocaleString()} FUSE`}
                   </p>
                 </div>
               </div>
