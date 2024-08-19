@@ -8,6 +8,7 @@ const TapContext = createContext()
 
 export const TapContextProvider = ({children}) => {
   const [userRank,setUserRank] = useState(0)
+  const [taskId,setTaskId] = useState('')
   const [userBoard,setUserBoad] = useState(null)
   const [reffs,setReff] = useState([])
   const [leads,setLeads] = useState([])
@@ -29,6 +30,8 @@ export const TapContextProvider = ({children}) => {
   const [userBalance,setUserBalance] = useState(0)
   const [isClaimModal,setIsClaimModal] = useState(false)
   const [isBoostModal,setIsBoostModal] = useState(false)
+  const [tasks, setTask] = useState([])
+  const [claimedTask, setClaimedTask] = useState([]);
   const value = {
     isHome,
     isFrens,
@@ -52,6 +55,12 @@ export const TapContextProvider = ({children}) => {
     leads,
     userRank,
     userBoard,
+    taskId,
+    tasks,
+    claimedTask, 
+    setClaimedTask,
+    setTask,
+    setTaskId,
     setUserBoad,
     setUserRank,
     setLeads,
