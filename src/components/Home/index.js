@@ -375,15 +375,19 @@ export const Home2 = () => {
     }
   };
 
-  const getLevel = (length) => {
-    if (length < 5) {
-      return 0;
-    } else if (length >= 5) {
-      return 1;
-    } else if ((length = 10)) {
+  const getLevel = (referralCount) => {
+    if (referralCount >= 50) {
+      return 4;
+    } else if (referralCount >= 25) {
+      return 3;
+    } else if (referralCount >= 15) {
       return 2;
+    } else if (referralCount >= 5) {
+      return 1;
+    } else {
+      return 0; // Or handle users with less than 5 referrals as needed
     }
-  };
+  }
 
   const getPoints = (length) => {
     if (length < 5) {
