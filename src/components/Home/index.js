@@ -20,9 +20,9 @@ export const Home2 = () => {
   const [timeRemaining, setTimeRemaining] = useState(0);
   const [time2, setTime2] = useState("");
   const [claimVal, setClaimVal] = useState(500);
-
+  
   const utils = useUtils();
-
+ 
   const { width, height } = useWindowSize();
   const {
     isHome,
@@ -88,7 +88,9 @@ export const Home2 = () => {
     setEnergy(energy - EnergyRemove < 0 ? 0 : energy - EnergyRemove);
     setClicks([...clicks, { id: Date.now(), x, y }]);
   };
-
+  console.log('userData',userData);
+  console,log('tgUser',tgUser)
+  console.log(lastClaim,'last')
   const handleAnimationEnd = (id) => {
     setClicks((prevClick) => prevClick.filter((click) => click.id !== id));
   };
@@ -123,7 +125,7 @@ export const Home2 = () => {
       .eq("id", userData[0].id);
 
     if (data) {
-      const sele = JSON.stringify(data);
+      //const sele = JSON.stringify(data);
       setLastClaim(data[0].lastRewardClaim);
     }
     if (error) {
@@ -147,23 +149,8 @@ export const Home2 = () => {
     }
   };
 
-  const updateBalance = async () => {
-    try {
-      const { data, error } = await Supabase.from("users")
-        .update({ balance: accumulative(userBalance, points) })
-        .eq("id", tgUser?.initDataUnsafe?.user?.id);
 
-      if (data) {
-        console.log("updated", data);
-      }
-      if (error) {
-        throw error;
-      }
-    } catch (error) {
-      console.log(error);
-    }
-  };
-  const twelveHoursInMs = 12 * 60 * 60 * 1000;
+ 
   function formatTimeRemaining(milliseconds) {
     if (milliseconds <= 0) {
       return "";
@@ -224,7 +211,7 @@ export const Home2 = () => {
         console.log(data[0].isClick, "counter");
         console.log(data[0].lastClaim, "claim");
         setUserData(data);
-        setLastClaim(data[0].lastRewardClaim)
+        //setLastClaim(data[0].lastRewardClaim)
         //   setUserBalance(data[0].balance)
       }
       if (error) {
@@ -335,7 +322,7 @@ export const Home2 = () => {
           setUserRank(filterNumb + 1);
           console.log("user details", filterone);
           console.log("user Rank", filterNumb + 1);
-
+          
           // console.log('filtered balance', filterone[0].balance)
           //console.log(reffs,'it is')
         }
