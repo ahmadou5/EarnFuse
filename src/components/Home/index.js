@@ -222,7 +222,7 @@ export const Home2 = () => {
         console.log(data[0].id, "aeki");
         setUserData(data);
         //setLastClaim(data[0].lastRewardClaim)
-        //   setUserBalance(data[0].balance)
+        setUserBalance(data[0].balance)
         }
         if (error) {
           //console.log("error", error);
@@ -663,7 +663,6 @@ export const Home2 = () => {
                         onClick={() => {
                           handleUpdateBoard();
                           handleUpdatedBalance();
-                          //getTime();
                           setCanClaim(false)
                           setClaimed(false);
                         }}
