@@ -190,16 +190,16 @@ export const ClaimModal = () => {
           console.log("Telegram WebApp is set");
           const tgData = window.Telegram.WebApp;
          // console.log("data the first id", tgData?.initDataUnsafe?.user?.id);
-          const id = tgData?.initDataUnsafe?.user?.id.toString();
+          const id = tgUser?.initDataUnsafe?.user?.id;
   
-         // console.log("task id", id);
+         console.log("task id", id);
   
           const { data, error } = await Supabase.rpc("get_unclaimed_tasks", {
             userid: id,
           });
   
           if (data) {
-            console.log("wahala task", data);
+            console.log("wahala 22222 task", data);
             setTask(data);
           }
           if (error) {
@@ -228,14 +228,14 @@ export const ClaimModal = () => {
          // console.log("data the first id", tgData?.initDataUnsafe?.user?.id);
           const id = tgData?.initDataUnsafe?.user?.id.toString();
   
-         // console.log("task id", id);
+          console.log("task id oneeee", id);
   
           const { data, error } = await Supabase.rpc("get_claimed_tasks", {
             userid: id,
           });
   
           if (data) {
-            console.log("wahala task", data);
+            console.log("wahala 333 task", data);
             setTask(data);
           }
           if (error) {
