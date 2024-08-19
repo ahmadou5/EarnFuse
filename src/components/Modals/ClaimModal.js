@@ -1,5 +1,5 @@
 import { GlobalContext } from "@/context/AppContext"
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import Confetti from "react-confetti"
 import { Supabase } from "@/utils/supabasedb"
 //import { useGetUserId } from "@/hooks/useGetUserId"
@@ -254,12 +254,13 @@ export const ClaimModal = () => {
     const handleClaimTask = async () => {
       UpdateBalanceByTask()
       taskClaimed()
-      //handleGetClaimedTasks()
-      //handleGetUnClaimedTasks()
       handleUpdatedBalance()
       handleUpdateBoard()
     };
-
+    useEffect(() => {
+      handleGetClaimedTasks()
+      handleGetUnClaimedTasks()
+    },[handleClaimTask])
 
     return(
     <div className="inset-0 fixed bg-white/0 bg-opacity-100 w-[100%] z-[99999999] min-h-screen h-auto backdrop-blur-sm flex ">
