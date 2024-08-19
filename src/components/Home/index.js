@@ -377,6 +377,8 @@ export const Home2 = () => {
 
   const getLevel = (referralCount) => {
     if (referralCount >= 50) {
+      return 5;
+    } else if (referralCount >= 15) {
       return 4;
     } else if (referralCount >= 10) {
       return 3;
