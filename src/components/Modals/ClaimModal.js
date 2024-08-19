@@ -6,8 +6,110 @@ import { Supabase } from "@/utils/supabasedb"
 
 export const ClaimModal = () => {
     const [claim,setClaim] = useState(false)
-    const { isClaimModal,setIsClaimModal,taskURL,setTaskURL,taskName, userBalance, tgUser, taskId, claimedTask, setClaimedTask, tasks, setTask, isConfe, setIsConfe, taskButton,setTaskButton, taskAmount } = GlobalContext()
+    const { isClaimModal,setIsClaimModal,taskURL,setTaskURL,taskName, userBalance, tgUser, taskId, claimedTask, setLeads, setUserData, setUserBalance, setUserBoad, setUserRank, setClaimedTask, tasks, setTask, isConfe, setIsConfe, taskButton,setTaskButton, taskAmount } = GlobalContext()
     
+
+    const accumulative = (a, b) => {
+      return a + b;
+    };
+
+    const handleUpdatedBalance = async () => {
+      // console.log('balance updateee')
+       try {
+         if (
+           typeof window !== "undefined" &&
+           window.Telegram &&
+           window.Telegram.WebApp
+         ) {
+          // console.log("Telegram WebApp is set");
+           const tgData = window.Telegram.WebApp;
+           //console.log("data the first id", tgData?.initDataUnsafe?.user?.id);
+           const id = tgData?.initDataUnsafe?.user?.id;
+   
+         //  console.log("task dlllll id", id);
+   
+           const { data, error } = await Supabase.from("users")
+           .select("*")
+           .eq("id", id);
+   
+           if (data) {
+          // const sele = JSON.stringify(data);
+           //console.log(sele, "cele ne");
+           console.log("hey balance data", data[0]);
+           console.log(data[0].id, "aeki");
+           setUserData(data);
+           //setLastClaim(data[0].lastRewardClaim)
+           setUserBalance(data[0].balance)
+           }
+           if (error) {
+             //console.log("error", error);
+             throw error;
+           }
+         } else {
+           //console.log("Telegram WebApp is undefined, retrying…");
+           //console.log(user);
+           setTimeout(initTg, 500);
+         }
+       } catch (error) {
+         console.log(error);
+       }
+      
+     };
+
+     const handleUpdateBoard = async () => {
+      try {
+        const id = tgUser?.initDataUnsafe?.user?.id;
+        console.log("boarddddddddd");
+        if (
+          typeof window !== "undefined" &&
+          window.Telegram &&
+          window.Telegram.WebApp
+        ) {
+         // console.log("Telegram WebApp is set");
+          const tgData = window.Telegram.WebApp;
+        //  console.log("data the first id", tgData?.initDataUnsafe?.user?.id);
+          const id = tgData?.initDataUnsafe?.user?.id.toString();
+  
+         // console.log("tg user refferalss   ", id);
+  
+          const { data, error } = await Supabase.from("users")
+            .select("*")
+            .order("balance", { ascending: false, nullsFirst: false });
+  
+          if (data) {
+            console.log("leaders here", data);
+            setLeads(data);
+            console.log('data set')
+        //    console.log(id, "is it here");
+            const filterone = data?.find((item) => item.id === id);
+            setUserBoad(filterone);
+            const filterNumb = data.findIndex((item) => item.id === id);
+            setUserRank(filterNumb + 1);
+            console.log("user details", filterone);
+            console.log("user Rank", filterNumb + 1);
+            
+            // console.log('filtered balance', filterone[0].balance)
+            //console.log(reffs,'it is')
+          }
+          if (error) {
+            //console.log("error", error);
+            throw error;
+          }
+        } else {
+          //console.log("Telegram WebApp is undefined, retrying…");
+          //console.log(user);
+          setTimeout(initTg, 500);
+        }
+      } catch (error) {
+        console.log(error)
+      }
+         
+          
+       
+    };
+  
+
+
     const taskClaimed = async () => {
       try {
         if (
@@ -154,6 +256,8 @@ export const ClaimModal = () => {
       taskClaimed()
       handleGetClaimedTasks()
       handleGetUnClaimedTasks()
+      handleUpdatedBalance()
+      handleUpdateBoard()
     };
 
 
