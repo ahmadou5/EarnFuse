@@ -1,15 +1,166 @@
 import { GlobalContext } from "@/context/AppContext"
 import { useState } from "react"
 import Confetti from "react-confetti"
+import { Supabase } from "@/utils/supabasedb"
 //import { useGetUserId } from "@/hooks/useGetUserId"
 
 export const ClaimModal = () => {
     const [claim,setClaim] = useState(false)
-    const { isClaimModal,setIsClaimModal,taskURL,setTaskURL,taskName, claimedTask, setClaimedTask, tasks, setTask, isConfe, setIsConfe, taskButton,setTaskButton, taskAmount } = GlobalContext()
+    const { isClaimModal,setIsClaimModal,taskURL,setTaskURL,taskName, userBalance, tgUser, taskId, claimedTask, setClaimedTask, tasks, setTask, isConfe, setIsConfe, taskButton,setTaskButton, taskAmount } = GlobalContext()
+    
+    const taskClaimed = async () => {
+      try {
+        if (
+          typeof window !== "undefined" &&
+          window.Telegram &&
+          window.Telegram.WebApp
+        ) {
+          console.log("Telegram WebApp is set");
+          const tgData = window.Telegram.WebApp;
+         // console.log("data the first id", tgData?.initDataUnsafe?.user?.id);
+         const id = tgData?.initDataUnsafe?.user?.id.toString();
+       
+         // console.log("task id", id);
+         const { data, error } = await Supabase.from("claimed_task")
+         .insert({ user_id: id, task_id: taskId })
+         .select()
+  
+  
+          if (data) {
+            console.log("wahala task claimed", data);
+            console.log(data);
+          }
+          if (error) {
+            //console.log("error", error);
+            throw error;
+          }
+        } else {
+          //console.log("Telegram WebApp is undefined, retrying…");
+          //console.log(user);
+          setTimeout(initTg, 500);
+        }
+      } catch (error) {
+        console.log(error);
+      }
+    }
+    const UpdateBalanceByTask = async () => {
+      try {
+        if (
+          typeof window !== "undefined" &&
+          window.Telegram &&
+          window.Telegram.WebApp
+        ) {
+          console.log("Telegram WebApp is set");
+          const tgData = window.Telegram.WebApp;
+         // console.log("data the first id", tgData?.initDataUnsafe?.user?.id);
+          //const id = tgData?.initDataUnsafe?.user?.id.toString();
+  
+         // console.log("task id", id);
+         const { data, error } = await Supabase.from("users")
+         .update({ balance: accumulative(userBalance, taskAmount) })
+         .eq("id", tgUser?.initDataUnsafe?.user?.id);
+  
+  
+          if (data) {
+            console.log("wahala task paid", data);
+            setTask(data);
+          }
+          if (error) {
+            //console.log("error", error);
+            throw error;
+          }
+        } else {
+          //console.log("Telegram WebApp is undefined, retrying…");
+          //console.log(user);
+          setTimeout(initTg, 500);
+        }
+      } catch (error) {
+        console.log(error);
+      }
+    }
+    const handleGetUnClaimedTasks = async () => {
+      try {
+        if (
+          typeof window !== "undefined" &&
+          window.Telegram &&
+          window.Telegram.WebApp
+        ) {
+          console.log("Telegram WebApp is set");
+          const tgData = window.Telegram.WebApp;
+         // console.log("data the first id", tgData?.initDataUnsafe?.user?.id);
+          const id = tgData?.initDataUnsafe?.user?.id.toString();
+  
+         // console.log("task id", id);
+  
+          const { data, error } = await Supabase.rpc("get_unclaimed_tasks", {
+            userid: id,
+          });
+  
+          if (data) {
+            console.log("wahala task", data);
+            setTask(data);
+          }
+          if (error) {
+            //console.log("error", error);
+            throw error;
+          }
+        } else {
+          //console.log("Telegram WebApp is undefined, retrying…");
+          //console.log(user);
+          setTimeout(initTg, 500);
+        }
+      } catch (error) {
+        console.log(error);
+      }
+    }
+  
+    const handleGetClaimedTasks = async () => {
+      try {
+        if (
+          typeof window !== "undefined" &&
+          window.Telegram &&
+          window.Telegram.WebApp
+        ) {
+          console.log("Telegram WebApp is set");
+          const tgData = window.Telegram.WebApp;
+         // console.log("data the first id", tgData?.initDataUnsafe?.user?.id);
+          const id = tgData?.initDataUnsafe?.user?.id.toString();
+  
+         // console.log("task id", id);
+  
+          const { data, error } = await Supabase.rpc("get_claimed_tasks", {
+            userid: id,
+          });
+  
+          if (data) {
+            console.log("wahala task", data);
+            setTask(data);
+          }
+          if (error) {
+            //console.log("error", error);
+            throw error;
+          }
+        } else {
+          //console.log("Telegram WebApp is undefined, retrying…");
+          //console.log(user);
+          setTimeout(initTg, 500);
+        }
+      } catch (error) {
+        console.log(error);
+      }
+    }
+    const handleClaimTask = async () => {
+      UpdateBalanceByTask()
+      taskClaimed()
+      handleGetClaimedTasks()
+      handleGetUnClaimedTasks()
+    };
+
+
     return(
     <div className="inset-0 fixed bg-white/0 bg-opacity-100 w-[100%] z-[99999999] min-h-screen h-auto backdrop-blur-sm flex ">
         <div className="w-[100%] flex items-center px-3 justify-center">
-            <div className="h-[220px] ml-auto mr-auto py-2 px-2 w-[89%] bg-white/75  border-[#448cff]/90 border rounded-xl">
+            <div className="h-[280px] ml-auto mr-auto py-2 px-2 w-[95%] bg-white/75  border-[#448cff]/90 border rounded-xl">
             {
                 claim ? <div className="mt-5 ml-auto mr-auto flex flex-col items-center justify-center text-center">
                 
@@ -18,13 +169,14 @@ export const ClaimModal = () => {
                   <p className="text-black/85 text-[18px] font-light ml-auto mr-auto ">{`Click on the Button to Claim ${taskAmount.toLocaleString()} Fuse Points`}</p>
                 </div>
                 <div onClick={() => {
+                    handleClaimTask()
                     setIsConfe(true)
                     setIsClaimModal(false)
                     setTimeout(() => {
                         setIsConfe(false)
                       }, 7000);
                    // window.open(taskURL)
-                    }} className="w-[175px] mt-6  ml-auto mr-auto py-1 px-3 text-white border  border-[#448cff]/60 flex  items-center justify-center bg-[#448cff]/90 rounded-full h-9">
+                    }} className="w-[175px] mt-9  ml-auto mr-auto py-1 px-3 text-white border  border-[#448cff]/60 flex  items-center justify-center bg-[#448cff]/90 rounded-full h-9">
                   <p>Claim</p>
                 </div>
             </div> : <div className="mt-5 ml-auto mr-auto flex flex-col items-center justify-center text-center">
@@ -37,7 +189,7 @@ export const ClaimModal = () => {
                     setTimeout(() => {
                         setClaim(true)
                       }, 2000);
-                    }} className="w-[175px] mt-6  ml-auto mr-auto py-1 px-3 text-white border  border-[#448cff]/60 flex  items-center justify-center bg-black/90 rounded-full h-9">
+                    }} className="w-[175px] mt-9  ml-auto mr-auto py-1 px-3 text-white border  border-[#448cff]/60 flex  items-center justify-center bg-black/90 rounded-full h-9">
                   <p>{taskButton}</p>
                 </div>
             </div>

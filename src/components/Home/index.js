@@ -59,8 +59,12 @@ export const Home2 = () => {
     isBoost,
     tgUser,
     setUserData,
+    tasks, 
+    setTask,
     setTgUser,
     isClaimModal,
+    claimedTask, 
+    setClaimedTask,
     setIsClaimModal,
     userBalance,
   } = GlobalContext();
@@ -70,8 +74,8 @@ export const Home2 = () => {
   const [points, setPoints] = useState(0);
   const [energy, setEnergy] = useState(20);
   const [clicks, setClicks] = useState([]);
-  const [tasks, setTask] = useState([]);
-  const [claimedTask, setClaimedTask] = useState([]);
+  //const [tasks, setTask] = useState([]);
+  //const [claimedTask, setClaimedTask] = useState([]);
   const date = new Date();
   const pointsAdd = 1;
   const EnergyRemove = 1;
