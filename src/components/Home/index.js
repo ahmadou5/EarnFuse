@@ -879,7 +879,7 @@ export const Home2 = () => {
                   <div className="ml-1 mr-3 w-[15%]">
                     <div className="bg-black/50 flex items-center justify-center rounded-full w-12 h-12">
                       {`${
-                        userBoard.username === null
+                        userBoard?.username === null
                           ? "U"
                           : userBoard?.username?.substring(0, 1)
                       }`}
