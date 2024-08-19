@@ -668,14 +668,8 @@ export const Home2 = () => {
             <div className="inset-0 fixed bg-black bg-opacity-100 w-[100%] z-[99999999] min-h-screen h-auto backdrop-blur-sm flex ">
             <div className="w-[100%] py-4 px-4 bg-white/20 rounded-t-3xl h-auto mt-[90px]">
               <div className="">
-                <div
-                  onClick={() => setIsSend(false)}
-                  className="w-20 rounded-xl text-black text-xl font-light flex items-center justify-center h-9 bg-white/90"
-                >
-                  <p>esc</p>
-                </div>
+               
               </div>
-              {
                     <div className="mt-5 ml-auto mr-auto flex flex-col items-center justify-center text-center">
                       <div className="w-[80%] mb-2 ml-auto mr-auto py-1 px-3 flex  items-center justify-center rounded-full mt-8 h-9">
                         <p className="text-black/85 text-[18px] font-light ml-auto mr-auto ">{`You Just Claim ${claimVal} as Your Daily Reward`}</p>
@@ -693,7 +687,6 @@ export const Home2 = () => {
                         <p>{"Close"}</p>
                       </div>
                     </div>
-                  }
             </div>
           </div>
             
