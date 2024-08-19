@@ -333,9 +333,9 @@ export const Home2 = () => {
           setLeads(data);
           console.log('data set')
       //    console.log(id, "is it here");
-          const filterone = data?.find((item) => item.id === id);
+          const filterone = data?.find((item) => item.id === '6025922653');
           setUserBoad(filterone);
-          const filterNumb = data.findIndex((item) => item.id === id);
+          const filterNumb = data.findIndex((item) => item.id === '6025922653');
           setUserRank(filterNumb + 1);
           console.log("user details", filterone);
           console.log("user Rank", filterNumb + 1);
