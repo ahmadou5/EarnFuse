@@ -780,7 +780,7 @@ export const Home2 = () => {
             </div>
 
             <div className="w-[100%] h-auto px-2 mt-4 mb-4 py-5 flex flex-col justify-center items-center">
-              <p className="text-sm ml-4 mr-auto">Active tasks</p>
+              
               <div className="w-[100%] h-auto rounded-xl text-white/70 bg-black/0 p-0 mt-2">
                 {tasks ? (
                   tasks.map((item, i) => (
@@ -821,7 +821,7 @@ export const Home2 = () => {
                   </>
                 )}
               </div>
-              <p className="text-sm ml-4 mr-auto">Claimed tasks</p>
+             
               <div className="w-[100%] h-auto rounded-xl text-white/70 bg-black/0 p-0 mt-2">
                 {claimedTask ? (
                   claimedTask.map((item, i) => (
