@@ -216,17 +216,8 @@ export const ClaimModal = () => {
         console.log(error);
       }
     }
-    function removeObjectById(array, id) {
-      const index = array.findIndex(obj => obj.id === id);
-      if (index !== -1) {
-        array.splice(index, 1);
-      }
-      return array;
-    }
+
     
-    const handleNewList = () => {
-      setTask(removeObjectById(tasks,taskId))
-    }
   
     const handleGetClaimedTasks = async () => {
       try {
@@ -248,7 +239,7 @@ export const ClaimModal = () => {
   
           if (data) {
             console.log("wahala 333 task", data);
-            setTask(data);
+            setClaimedTask(data);
           }
           if (error) {
             //console.log("error", error);
