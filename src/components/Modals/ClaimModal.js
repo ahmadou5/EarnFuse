@@ -25,7 +25,7 @@ export const ClaimModal = () => {
           // console.log("Telegram WebApp is set");
            const tgData = window.Telegram.WebApp;
            //console.log("data the first id", tgData?.initDataUnsafe?.user?.id);
-           const id = tgData?.initDataUnsafe?.user?.id;
+           const id = tgData?.initDataUnsafe?.user?.id.toString();
    
          //  console.log("task dlllll id", id);
    
