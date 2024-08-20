@@ -279,7 +279,9 @@ export const ClaimModal = () => {
                   setTask([])
                   setClaimedTask([])
                   handleGetClaimedTasks()
-                  handleGetUnClaimedTasks()
+                  setTimeout(() => {
+                    handleGetUnClaimedTasks()
+                  }, 7000);
                   setIsClaimModal(false)
                   setTimeout(() => {
                       setIsConfe(false)
