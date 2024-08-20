@@ -283,8 +283,8 @@ export const ClaimModal = () => {
             {
                 claim ? <div className="mt-5 ml-auto mr-auto flex flex-col items-center justify-center text-center">
               
-                <p className="text-center text-black font-light text-[20px] mt-4 mb-6">{`${'Claim'}`} </p>
-                <div className="w-[90%] mb-5 ml-auto mr-auto py-1 px-3 flex  items-center justify-center rounded-full h-9">
+                <p className="text-center text-black font-light text-[20px] mt-8 mb-12">{`${'Claim'}`} </p>
+                <div className="w-[90%] mb-8 mt-5 ml-auto mr-auto py-1 px-3 flex  items-center justify-center rounded-full h-9">
                   <p className="text-black/85 text-[18px] font-light ml-auto mr-auto ">{`Click on the Button to Claim ${taskAmount.toLocaleString()} Fuse Points`}</p>
                 </div>
                 <div onClick={() => {
@@ -301,7 +301,7 @@ export const ClaimModal = () => {
                       setIsConfe(false)
                     }, 9000);
                  // window.open(taskURL)
-                  }} className="w-[175px] mt-12  ml-auto mr-auto py-1 px-3 text-white border  border-[#448cff]/60 flex  items-center justify-center bg-[#448cff]/90 rounded-full h-9">
+                  }} className="w-[175px] mt-[60px]  ml-auto mr-auto py-1 px-3 text-white border  border-[#448cff]/60 flex  items-center justify-center bg-[#448cff]/90 rounded-full h-9">
                 <p>Claim</p>
               </div> 
                 
