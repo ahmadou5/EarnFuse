@@ -6,6 +6,7 @@ import { Supabase } from "@/utils/supabasedb"
 
 export const ClaimModal = () => {
     const [claim,setClaim] = useState(false)
+    const [isVerify,setIsVerify] = useState(false)
     const { isClaimModal,setIsClaimModal,taskURL,setTaskURL,taskName, userBalance, tgUser, taskId, claimedTask, setLeads, setUserData, setUserBalance, setUserBoad, setUserRank, setClaimedTask, tasks, setTask, isConfe, setIsConfe, taskButton,setTaskButton, taskAmount } = GlobalContext()
     
 
@@ -256,8 +257,6 @@ export const ClaimModal = () => {
       taskClaimed()
       handleUpdatedBalance()
       handleUpdateBoard()
-      handleGetClaimedTasks()
-      handleGetUnClaimedTasks()
     };
     
 
@@ -272,17 +271,32 @@ export const ClaimModal = () => {
                 <div className="w-[80%] mb-2 ml-auto mr-auto py-1 px-3 flex  items-center justify-center rounded-full h-9">
                   <p className="text-black/85 text-[18px] font-light ml-auto mr-auto ">{`Click on the Button to Claim ${taskAmount.toLocaleString()} Fuse Points`}</p>
                 </div>
-                <div onClick={() => {
-                    handleClaimTask()
-                    setIsConfe(true)
+                {
+                  isVerify ? 
+                   <div onClick={() => {
+                    handleGetClaimedTasks()
+                    handleGetUnClaimedTasks()
                     setIsClaimModal(false)
-                    setTimeout(() => {
-                        setIsConfe(false)
-                      }, 7000);
+                    setIsVerify(false)
                    // window.open(taskURL)
                     }} className="w-[175px] mt-9  ml-auto mr-auto py-1 px-3 text-white border  border-[#448cff]/60 flex  items-center justify-center bg-[#448cff]/90 rounded-full h-9">
-                  <p>Claim</p>
-                </div>
+                  <p>Close</p>
+                </div> 
+                :
+                <div onClick={() => {
+                  handleClaimTask()
+                  setIsConfe(true)
+                  setIsVerify(true)
+                  setIsClaimModal(false)
+                  setTimeout(() => {
+                      setIsConfe(false)
+                    }, 7000);
+                 // window.open(taskURL)
+                  }} className="w-[175px] mt-9  ml-auto mr-auto py-1 px-3 text-white border  border-[#448cff]/60 flex  items-center justify-center bg-[#448cff]/90 rounded-full h-9">
+                <p>Claim</p>
+              </div> 
+                }
+               
             </div> : <div className="mt-5 ml-auto mr-auto flex flex-col items-center justify-center text-center">
                 <p className="text-center text-black font-light text-[23px] mb-6">{`${taskName}`} </p>
                 <div className="w-[80%] mb-2 ml-auto mr-auto py-1 px-3 flex  items-center justify-center rounded-full h-9">
