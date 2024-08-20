@@ -434,7 +434,7 @@ export const Home2 = () => {
     if (typeImg === 'TG') {
       return './assets/tg.svg'
     } else if (typeImg === 'X') {
-      return './assets/game.svg';
+      return './assets/x.png';
     } else if (typeImg === 'YT') {
       return './assets/yt.svg';
     }
