@@ -279,14 +279,14 @@ export const ClaimModal = () => {
     return(
     <div className="inset-0 fixed bg-white/0 bg-opacity-100 w-[100%] z-[99999999] min-h-screen h-auto backdrop-blur-sm flex ">
         <div className="w-[100%] flex items-center px-3 justify-center">
-            <div className="h-[280px] ml-auto mr-auto py-2 px-2 w-[95%] bg-white/75  border-[#448cff]/90 border rounded-xl">
+            <div className="h-[320px] ml-auto mr-auto py-2 px-2 w-[95%] bg-white/75  border-[#448cff]/90 border rounded-xl">
             {
                 claim ? <div className="mt-5 ml-auto mr-auto flex flex-col items-center justify-center text-center">
-                <div className="w-[30px] h-[30px] mb-2 mt-2">
+                <div className="w-[30px] h-[30px] mb-2 mt-1">
                   <Image src={getTaskUrl(taskType)} className="w-[100%] h-[100%]"/>
                 </div>
-                <p className="text-center text-black font-light text-[20px] mb-8">{`${'Claim'}`} </p>
-                <div className="w-[80%] mb-2 ml-auto mr-auto py-1 px-3 flex  items-center justify-center rounded-full h-9">
+                <p className="text-center text-black font-light text-[20px] mb-6">{`${'Claim'}`} </p>
+                <div className="w-[90%] mb-2 ml-auto mr-auto py-1 px-3 flex  items-center justify-center rounded-full h-9">
                   <p className="text-black/85 text-[18px] font-light ml-auto mr-auto ">{`Click on the Button to Claim ${taskAmount.toLocaleString()} Fuse Points`}</p>
                 </div>
                 <div onClick={() => {
@@ -303,14 +303,12 @@ export const ClaimModal = () => {
                       setIsConfe(false)
                     }, 9000);
                  // window.open(taskURL)
-                  }} className="w-[175px] mt-12  ml-auto mr-auto py-1 px-3 text-white border  border-[#448cff]/60 flex  items-center justify-center bg-[#448cff]/90 rounded-full h-9">
+                  }} className="w-[175px] mt-10  ml-auto mr-auto py-1 px-3 text-white border  border-[#448cff]/60 flex  items-center justify-center bg-[#448cff]/90 rounded-full h-9">
                 <p>Claim</p>
               </div> 
                 
             </div> : <div className="mt-5 ml-auto mr-auto flex flex-col items-center justify-center text-center">
-                <div className="w-[30px] h-[30px] mt-2 mb-2">
-                  <Image src={getTaskUrl(taskType)} className="w-[100%] h-[100%]"/>
-                </div>
+               
                 <p className="text-center text-black font-light text-[23px] mb-8">{`${taskName}`} </p>
                 <div className="w-[80%] mb-2 ml-auto mr-auto py-1 px-3 flex  items-center justify-center rounded-full h-9">
                   <p className="text-black/85 text-[18px] font-light ml-auto mr-auto ">{`Complete task and earn ${taskAmount.toLocaleString()} Fuse Points`}</p>
