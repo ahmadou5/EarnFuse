@@ -282,7 +282,7 @@ export const ClaimModal = () => {
             <div className="h-[320px] ml-auto mr-auto py-2 px-2 w-[95%] bg-white/75  border-[#448cff]/90 border rounded-xl">
             {
                 claim ? <div className="mt-5 ml-auto mr-auto flex flex-col items-center justify-center text-center">
-                <div className="w-[30px] h-[30px] mb-2 mt-1">
+                <div className="w-[80px] h-[80px] mb-2 mt-1">
                   <Image src={getTaskUrl(taskType)} className="w-[100%] h-[100%]"/>
                 </div>
                 <p className="text-center text-black font-light text-[20px] mb-6">{`${'Claim'}`} </p>
