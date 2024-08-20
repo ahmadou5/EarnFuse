@@ -428,7 +428,21 @@ export const Home2 = () => {
     customHandle();
     customHandleDone();
   }, []);
+  
 
+  function getTaskUrl(typeImg) {
+    if (typeImg === 'TG') {
+      return './assets/sol.png'
+    } else if (referralCount >= 25) {
+      return 3;
+    } else if (referralCount >= 15) {
+      return 2;
+    } else if (referralCount >= 5) {
+      return 1;
+    } else {
+      return 0; // Or handle users with less than 5 referrals as needed
+    }
+  }
   const todo = [
     {
       taskName: "Follow InFuse Channel",
@@ -790,7 +804,7 @@ export const Home2 = () => {
                         className="w-[100%] mt-2 mb-2 h-auto flex rounded-xl py-3 px-3 bg-white/15"
                       >
                         <div className="ml-1 mr-3">
-                          <img src="./assets/sol.png" className="w-12 h-12" />
+                          <img src={getTaskUrl(item.type)} className="w-12 h-12" />
                         </div>
                         <div className="mt-1 text-sm">
                           <p>{item.title}</p>
@@ -831,7 +845,7 @@ export const Home2 = () => {
                         className="w-[100%] mt-2 mb-2 h-auto flex rounded-xl py-3 px-3 bg-white/15"
                       >
                         <div className="ml-1 mr-3">
-                          <img src="./assets/sol.png" className="w-12 h-12" />
+                          <img src={getTaskUrl(item.type)} className="w-12 h-12" />
                         </div>
                         <div className="mt-1 text-sm">
                           <p>{item.title}</p>
