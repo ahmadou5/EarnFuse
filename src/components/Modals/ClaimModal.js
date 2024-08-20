@@ -285,8 +285,8 @@ export const ClaimModal = () => {
                 <div onClick={() => {
                   handleClaimTask()
                   setIsConfe(true)
-                  //handleGetClaimedTasks()
-                  handleNewList()
+                  handleGetClaimedTasks()
+                  handleGetUnClaimedTasks()
                   setIsClaimModal(false)
                   setTimeout(() => {
                       setIsConfe(false)
