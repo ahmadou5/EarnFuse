@@ -432,7 +432,7 @@ export const Home2 = () => {
 
   function getTaskUrl(typeImg) {
     if (typeImg === 'TG') {
-      return './assets/sol.png'
+      return './assets/show.png'
     } else if (referralCount >= 25) {
       return 3;
     } else if (referralCount >= 15) {
