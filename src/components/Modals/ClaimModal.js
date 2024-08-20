@@ -301,7 +301,7 @@ export const ClaimModal = () => {
                       setIsConfe(false)
                     }, 9000);
                  // window.open(taskURL)
-                  }} className="w-[175px] mt-[60px]  ml-auto mr-auto py-1 px-3 text-white border  border-[#448cff]/60 flex  items-center justify-center bg-[#448cff]/90 rounded-full h-9">
+                  }} className="w-[175px] mt-[60px]  ml-auto mr-auto py-1 px-3 text-white border  border-[#448cff]/60 flex  items-center justify-center bg-[#448cff]/90 rounded-full h-[39px]">
                 <p>Claim</p>
               </div> 
                 
@@ -318,7 +318,7 @@ export const ClaimModal = () => {
                     setTimeout(() => {
                         setClaim(true)
                       }, 2000);
-                    }} className="w-[175px] mt-8  ml-auto mr-auto py-1 px-3 text-white border  border-[#448cff]/60 flex  items-center justify-center bg-black/90 rounded-full h-9">
+                    }} className="w-[175px] mt-8  ml-auto mr-auto py-1 px-3 text-white border  border-[#448cff]/60 flex  items-center justify-center bg-black/90 rounded-full h-[39px]">
                   <p>{taskButton}</p>
                 </div>
             </div>

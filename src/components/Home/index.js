@@ -641,7 +641,7 @@ export const Home2 = () => {
           </div>
           {claimed && (
             <div className="inset-0 fixed bg-black bg-opacity-100 w-[100%] z-[99999999] min-h-screen h-auto backdrop-blur-sm flex ">
-            <div className="w-[100%] py-4 px-4 bg-white/20 rounded-t-3xl h-auto mt-[190px]">
+            <div className="w-[100%] py-4 px-4 bg-white/95 rounded-t-3xl h-auto mt-[190px]">
               <div className="">
                
               </div>
@@ -656,7 +656,7 @@ export const Home2 = () => {
                           setCanClaim(false)
                           setClaimed(false);
                         }}
-                        className="w-[175px] mt-6  ml-auto mr-auto py-1 px-3 text-white border  border-[#448cff]/60 flex  items-center justify-center bg-black/90 rounded-full h-9"
+                        className="w-[230px] mt-[30px]  ml-auto mr-auto py-1 px-3 text-white border  border-[#448cff]/60 flex  items-center justify-center bg-black/90 rounded-full h-11"
                       >
                         <p>{"Close"}</p>
                       </div>
