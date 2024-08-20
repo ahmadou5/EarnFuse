@@ -659,7 +659,7 @@ export const Home2 = () => {
                           setCanClaim(false)
                           setClaimed(false);
                         }}
-                        className="w-[230px] mt-[30px]  ml-auto mr-auto py-1 px-3 text-white border  border-[#448cff]/60 flex  items-center justify-center bg-black/90 rounded-full h-11"
+                        className="w-[230px] mt-[80px]  ml-auto mr-auto py-1 px-3 text-white border  border-[#448cff]/60 flex  items-center justify-center bg-black/90 rounded-full h-11"
                       >
                         <p>{"Close"}</p>
                       </div>
