@@ -786,7 +786,7 @@ export const Home2 = () => {
                               setTaskAmount(item.points);
                               setTaskURL(item.url);
                               setTaskButton(item.btn_name);
-                              //setTaskType(item.type)
+                              setTaskType(item.type)
                               setIsClaimModal(true);
                             }}
                             className="bg-[#046ae2]/75 rounded-3xl text-sm flex items-center justify-center w-[78px] h-8"

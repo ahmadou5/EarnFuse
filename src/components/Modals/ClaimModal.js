@@ -282,7 +282,9 @@ export const ClaimModal = () => {
             <div className="h-[280px] ml-auto mr-auto py-2 px-2 w-[95%] bg-white/75  border-[#448cff]/90 border rounded-xl">
             {
                 claim ? <div className="mt-5 ml-auto mr-auto flex flex-col items-center justify-center text-center">
-               
+                <div>
+                  <Image src={getTaskUrl(taskType)} />
+                </div>
                 <p className="text-center text-black font-light text-[20px] mb-6">{`${'Claim'}`} </p>
                 <div className="w-[80%] mb-2 ml-auto mr-auto py-1 px-3 flex  items-center justify-center rounded-full h-9">
                   <p className="text-black/85 text-[18px] font-light ml-auto mr-auto ">{`Click on the Button to Claim ${taskAmount.toLocaleString()} Fuse Points`}</p>
