@@ -275,7 +275,7 @@ export const ClaimModal = () => {
                   isVerify ? 
                    <div onClick={() => {
                     handleGetClaimedTasks()
-                    handleGetUnClaimedTasks()
+                    //handleGetUnClaimedTasks()
                     setIsClaimModal(false)
                     setIsVerify(false)
                    // window.open(taskURL)
@@ -287,7 +287,7 @@ export const ClaimModal = () => {
                   handleClaimTask()
                   setIsConfe(true)
                   setIsVerify(true)
-                  setIsClaimModal(false)
+                  //setIsClaimModal(false)
                   setTimeout(() => {
                       setIsConfe(false)
                     }, 7000);
