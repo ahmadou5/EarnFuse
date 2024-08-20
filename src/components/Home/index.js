@@ -649,8 +649,8 @@ export const Home2 = () => {
                       <div className="mt-6 mb-4 flex items-center justify-center">
                         <p className="text-white font-bold text-3xl">Your daily rewards</p>
                       </div>
-                      <div className="w-[80%] mb-2 ml-auto mr-auto py-1 px-3 flex  items-center justify-center rounded-full mt-8 h-9">
-                        <p className="text-black/85 text-[18px] font-light ml-auto mr-auto ">{`You Just Claim ${claimVal} as Your Daily Reward`}</p>
+                      <div className="w-[80%] mb-12 ml-auto mr-auto py-1 px-3 flex  items-center justify-center rounded-full mt-8 h-9">
+                        <p className="text-black/85 text-[28px] font-light ml-auto mr-auto ">{`${claimVal} FUSE`}</p>
                       </div>
                       <div
                         onClick={() => {
