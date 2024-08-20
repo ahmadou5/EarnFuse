@@ -646,11 +646,11 @@ export const Home2 = () => {
                
               </div>
                     <div className="mt-5 ml-auto mr-auto flex flex-col items-center justify-center text-center">
-                      <div className="mt-6 mb-4 flex items-center justify-center">
+                      <div className="mt-[120px] mb-4 flex items-center justify-center">
                         <p className="text-white font-bold text-3xl">Your daily rewards</p>
                       </div>
                       <div className="w-[80%] mb-12 ml-auto mr-auto py-1 px-3 flex  items-center justify-center rounded-full mt-8 h-9">
-                        <p className="text-black/85 text-[28px] font-light ml-auto mr-auto ">{`${claimVal} FUSE`}</p>
+                        <p className="text-white/85 text-[28px] font-light ml-auto mr-auto ">{`${claimVal} FUSE`}</p>
                       </div>
                       <div
                         onClick={() => {
