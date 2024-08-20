@@ -433,15 +433,10 @@ export const Home2 = () => {
   function getTaskUrl(typeImg) {
     if (typeImg === 'TG') {
       return './assets/show.png'
-    } else if (referralCount >= 25) {
-      return 3;
-    } else if (referralCount >= 15) {
-      return 2;
-    } else if (referralCount >= 5) {
-      return 1;
-    } else {
-      return 0; // Or handle users with less than 5 referrals as needed
+    } else if (typeImg === 'X') {
+      return './assets/game.svg';
     }
+     return
   }
   const todo = [
     {
