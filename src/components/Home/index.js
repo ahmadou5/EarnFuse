@@ -440,38 +440,7 @@ export const Home2 = () => {
     }
      return
   }
-  const todo = [
-    {
-      taskName: "Follow InFuse Channel",
-      taskPoint: 20000,
-      taskUrl: "https://t.me/InFuseChannel",
-      botton: "Follow",
-    },
-    {
-      taskName: "Join InFuse Chat",
-      taskPoint: 20000,
-      taskUrl: "https://t.me/InFuseWallet",
-      botton: "Join",
-    },
-    {
-      taskName: "Follow InFuse on X",
-      taskPoint: 20000,
-      taskUrl: "https://x.com/infusewallet",
-      botton: "Follow",
-    },
-    {
-      taskName: "Follow Ahmad on X",
-      taskPoint: 20000,
-      taskUrl: "https://x.com/4hmadou_5",
-      botton: "Follow",
-    },
-    {
-      taskName: "Subscribe Youtube",
-      taskPoint: 20000,
-      taskUrl: "https://www.youtube.com/@InFuseWallet",
-      botton: "Follow",
-    },
-  ];
+
   const todo1 = [];
   return (
     <div>
@@ -849,8 +818,8 @@ export const Home2 = () => {
                           <div>{item.points.toLocaleString()}</div>
                         </div>
                         <div className="ml-auto mr-2 mt-2">
-                          <div className="bg-[#046ae2]/25 rounded-3xl text-sm flex items-center justify-center w-[78px] h-8">
-                            {"Claimed"}
+                          <div className="bg-black/75 rounded-3xl text-sm flex items-center justify-center w-[58px] h-8">
+                            {"Done"}
                           </div>
                         </div>
                         {isClaimModal && <ClaimModal />}
