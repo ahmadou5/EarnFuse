@@ -432,9 +432,11 @@ export const Home2 = () => {
 
   function getTaskUrl(typeImg) {
     if (typeImg === 'TG') {
-      return './assets/show.png'
+      return './assets/tg.svg'
     } else if (typeImg === 'X') {
       return './assets/game.svg';
+    } else if (typeImg === 'YT') {
+      return './assets/yt.svg';
     }
      return
   }
