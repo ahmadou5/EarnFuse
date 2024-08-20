@@ -567,7 +567,7 @@ export const Home2 = () => {
                     EarnFuse
                   </p>
                 </div>
-                <div className="ml-auto py-1 mr-2 flex">
+                <div className="ml-auto py-0 mr-2 flex">
                   
                   <Image src={'./assets/setting.svg'} className="ml-4 w-[30px] h-[30px] mb-1.5  text-white/75 mr-2 text-[20px]" />
                 </div>
