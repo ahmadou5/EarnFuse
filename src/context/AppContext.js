@@ -15,7 +15,7 @@ export const TapContextProvider = ({children}) => {
   const [lastClaim,setLastClaim] = useState('')
   const [userData,setUserData] = useState([])
   const [isConfe, setIsConfe] = useState(false)
-  const [isAuth,setIsAuth] = useState(false)
+  const [isAuth,setIsAuth] = useState(true)
   const [taskURL,setTaskURL] = useState('')
   const [taskButton,setTaskButton] = useState('')
   const [taskName,setTaskName] = useState('')

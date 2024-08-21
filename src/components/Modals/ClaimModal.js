@@ -324,13 +324,15 @@ export const ClaimModal = () => {
         <div className="w-[100%] flex items-center px-3 justify-center">
             <div className="h-[290px] ml-auto mr-auto py-2 px-2 w-[95%] bg-white/90  border-[#448cff]/70 border rounded-xl">
             {
-                claim ? <div className="mt-5 ml-auto mr-auto flex flex-col items-center justify-center text-center">
+                claim ? 
+            <div className=" ml-auto mr-auto flex flex-col items-center justify-center text-center">
               
-                <p className="text-center text-black font-light text-[20px] mt-8 mb-12">{`${'Claim'}`} </p>
-                <div className="w-[90%] mb-5 mt-5 ml-auto mr-auto py-1 px-3 flex  items-center justify-center rounded-full h-9">
-                  <p className="text-black/85 text-[18px] font-light ml-auto mr-auto ">{`Click on the Button to Claim ${taskAmount.toLocaleString()} Fuse Points`}</p>
-                </div>
-                <div onClick={() => {
+            <p className="text-center text-black font-light text-[25px] mt-5 mb-4">{`${'Claim'}`} </p>
+            <div className="w-[90%] mb-7 mt-5 ml-auto mr-auto py-1 px-3 flex flex-col items-center justify-center rounded-full h-9">
+              <p className="text-black/85 text-[18px] font-light ml-auto mr-auto ">{`Claim your task reward `}</p>
+              <p className="text-black/85 text-[18px] font-light ml-auto mr-auto ">{`${taskAmount.toLocaleString()} Fuse Points`}</p>
+            </div>
+            <div onClick={() => {
                   handleClaimTask()
                   setIsConfe(true)
                   setTask([])
@@ -344,27 +346,30 @@ export const ClaimModal = () => {
                       setIsConfe(false)
                     }, 9000);
                  // window.open(taskURL)
-                  }} className="w-[175px] mt-[60px]  ml-auto mr-auto py-1 px-3 text-white border  border-[#448cff]/60 flex  items-center justify-center bg-[#448cff]/90 rounded-full h-[39px]">
-                <p>Claim</p>
-              </div> 
-                
-            </div> : <div className="mt-5 ml-auto mr-auto flex flex-col items-center justify-center text-center">
-                <div className="w-[85px] h-[85px] mt-1 mb-1">
-                  <Image src={getTaskUrl(taskType)} className="w-[100%] h-[100%]"/>
-                </div>
-                <p className="text-center text-black font-light text-[29px] mb-7">{`${taskName}`} </p>
-                <div className="w-[90%] mb-3 ml-auto mr-auto py-1 px-3 flex  items-center justify-center rounded-full h-9">
-                  <p className="text-black/85 text-[18px] font-light ml-auto mr-auto ">{`Complete task and earn ${taskAmount.toLocaleString()} Fuse Points`}</p>
-                </div>
-                <div onClick={() => {
+                  }} className="w-[175px] mt-[30px]  ml-auto mr-auto py-1 px-3 text-white border  border-[#448cff]/60 flex  items-center justify-center bg-[#448cff]/90 rounded-2xl h-[39px]">
+            <p>Claim</p>
+          </div> 
+            
+        </div>
+            : 
+            <div className="mt-3 ml-auto mr-auto flex flex-col items-center justify-center text-center">
+            <div className="w-[65px] bg-blue-800 rounded-full h-[65px] py-0.5 px-0.5 mt-0 mb-">
+              <Image src={getTaskUrl(taskType)} className="w-[100%] h-[100%]"/>
+            </div>
+            <p className="text-center mt-2 text-black font-light text-[22px] mb-1">{`${taskName}`} </p>
+            <div className="w-[85%] mb-2 mt-1 ml-auto mr-auto py-1 px-3 flex flex-col items-center justify-center rounded-full h-9">
+              <p className="text-black/85 text-[16px] font-light ml-auto mr-auto ">{`Complete task and earn reward of `}</p>
+              <p className="text-black/85 text-[16px] font-light ml-auto mr-auto ">{`${taskAmount.toLocaleString()} Fuse Points`}</p>
+            </div>
+            <div onClick={() => {
                     window.open(taskURL)
                     setTimeout(() => {
                         setClaim(true)
                       }, 2000);
-                    }} className="w-[175px] mt-8  ml-auto mr-auto py-1 px-3 text-white border  border-[#448cff]/60 flex  items-center justify-center bg-black/90 rounded-full h-[39px]">
-                  <p>{taskButton}</p>
-                </div>
+                    }} className="w-[215px] mt-8  ml-auto mr-auto py-1 px-3 text-white border  border-[#448cff]/0 flex  items-center justify-center bg-black/90 rounded-2xl h-[39px]">
+              <p>{taskButton}</p>
             </div>
+        </div>
             }
             
             </div>
