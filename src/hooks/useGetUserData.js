@@ -31,9 +31,9 @@ export const UseGetTgData = () => {
                 .select()
     
                 if(data) {
-                    console.log(data)
-                    console.log('nan ne')
-                    alert(data, 'done')
+                    //console.log(data)
+                   // console.log('nan ne')
+                   // alert(data, 'done')
                     setIsFirst(true)
                 } 
                 if (error) {
@@ -43,7 +43,7 @@ export const UseGetTgData = () => {
                 
                } catch (error) {
                 console.log(error)
-                console.log('nan ne phaa')
+         //       console.log('nan ne phaa')
                }
             } else {
               console.log("Telegram WebApp is undefined, retrying…");
