@@ -33,7 +33,7 @@ export default function Home() {
     console.log(user,balance,refs,board)
     const interval = setInterval(() => {
        setIsAuth(true)
-    },6000)
+    },7000)
     return () => clearInterval(interval)
 },[])
   
