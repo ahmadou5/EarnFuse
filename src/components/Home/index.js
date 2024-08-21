@@ -642,7 +642,7 @@ export const Home2 = () => {
           </div>
           {claimed && (
           <div className="inset-0 fixed bg-black/5 bg-opacity-100 w-[100%] z-[99999999] min-h-screen h-auto backdrop-blur-sm flex ">
-          <div className="w-[100%] py-4 px-4 bg-black/95 rounded-t-2xl h-auto mt-[40%]">
+          <div className="w-[100%] py-4 px-4 bg-black/95 rounded-t-2xl h-auto mt-[55%]">
             <div className="">
              
             </div>
