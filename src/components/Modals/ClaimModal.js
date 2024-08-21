@@ -1,3 +1,4 @@
+'use client'
 import { GlobalContext } from "@/context/AppContext"
 import { useEffect, useState } from "react"
 import Confetti from "react-confetti"
