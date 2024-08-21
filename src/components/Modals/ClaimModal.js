@@ -170,7 +170,7 @@ export const ClaimModal = () => {
         const tgData = window.Telegram.WebApp;
         console.log('data id',tgData?.initDataUnsafe?.user?.id)
         
-        setTgUser(tgData)
+        //setTgUser(tgData)
         try {
         console.log(tgUser, 'tg user')
         const { data, error } = await Supabase
