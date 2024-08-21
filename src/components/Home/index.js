@@ -160,6 +160,23 @@ export const Home2 = () => {
     }
   };
 
+  const updateWelcomeBalance = async () => {
+    try {
+      const { data, error } = await Supabase.from("users")
+        .update({ balance: accumulative(userBalance, 800) })
+        .eq("id", tgUser?.initDataUnsafe?.user?.id);
+
+      if (data) {
+     //   console.log("updated", data);
+      }
+      if (error) {
+        throw error;
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
 
  
   function formatTimeRemaining(milliseconds) {
@@ -654,9 +671,12 @@ export const Home2 = () => {
                            </div>
                            <div
                               onClick={() => {
-                              setIsFirst(false)
-                              handleUpdateBoard()
+                              updateWelcomeBalance()
                               handleUpdatedBalance()
+                              handleUpdateBoard()
+                              setTimeout(() => {
+                                setIsFirst(false)
+                              }, 2000);
                              }}
                              className="w-[290px] mt-auto mb-[10%]  ml-auto mr-auto py-1 px-3 text-white  flex  items-center justify-center bg-[#046ae2]  rounded-2xl h-11"
                            >
