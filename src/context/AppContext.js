@@ -33,6 +33,7 @@ export const TapContextProvider = ({children}) => {
   const [tasks, setTask] = useState([])
   const [claimedTask, setClaimedTask] = useState([]);
   const [taskType,setTaskType] = useState('')
+  const [isFirst, setIsFirst] = useState(false)
   const value = {
     isHome,
     isFrens,
@@ -60,6 +61,8 @@ export const TapContextProvider = ({children}) => {
     tasks,
     claimedTask, 
     taskType,
+    isFirst, 
+    setIsFirst,
     setTaskType,
     setClaimedTask,
     setTask,

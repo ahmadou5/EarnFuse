@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { GlobalContext } from "@/context/AppContext";
 import { Supabase } from "@/utils/supabasedb";
 export const UseGetTgData = () => {
-    const { tgUser, setTgUser, lastClaim,setLastClaim } = GlobalContext()
+    const { tgUser, setTgUser, lastClaim,setLastClaim, isFirst, setIsFirst } = GlobalContext()
     const [user,setUser] = useState(null)
     useEffect(() => {
        async function initTg() {
@@ -32,7 +32,9 @@ export const UseGetTgData = () => {
     
                 if(data) {
                     console.log(data)
-                    //alert(data, 'done')
+                    console.log('nan ne')
+                    alert(data, 'done')
+                    setIsFirst(true)
                 } 
                 if (error) {
                     throw error
@@ -41,6 +43,7 @@ export const UseGetTgData = () => {
                 
                } catch (error) {
                 console.log(error)
+                console.log('nan ne phaa')
                }
             } else {
               console.log("Telegram WebApp is undefined, retrying…");
