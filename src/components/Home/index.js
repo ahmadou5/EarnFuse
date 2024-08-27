@@ -990,7 +990,7 @@ export const Home2 = () => {
                         className="w-[100%] mt-2 mb-2 h-auto flex rounded-xl py-3 px-3 bg-white/20"
                       >
                         <div className="ml-1 mr-3 w-[15%]">
-                          <div className="bg-white/75 flex items-center justify-center rounded-full w-12 h-12">
+                          <div className="bg-white/50 flex items-center justify-center rounded-full w-12 h-12">
                             {`${
                               item?.username === null
                                 ? "U"
