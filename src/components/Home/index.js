@@ -601,7 +601,7 @@ export const Home2 = () => {
                   <button></button>
                 </div>  */}
                 <div className="w-[100%] flex  text-white/75 items-center  flex-col justify-center mt-7">
-                  <div className="flex items-center text-2xl justify-center text-white/80 font-extrabold w-[130px] h-[130px] bg-white/70 rounded-full">
+                  <div className="flex items-center text-2xl justify-center text-white/80 font-extrabold w-[130px] h-[130px] bg-white/10 rounded-full">
                     <img src="./assets/123.png" className="w-[98%] h-[98%]" />
                   </div>
                   <div>
