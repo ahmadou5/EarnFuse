@@ -355,7 +355,7 @@ export const ClaimModal = () => {
             : 
             <div className="mt-3 ml-auto mr-auto flex flex-col items-center justify-center text-center">
             <div className="w-[65px] bg-blue-800 rounded-full h-[65px] py-0.5 px-0.5 mt-0 mb-">
-              <Image src={getTaskUrl(taskType)} className="w-[100%] h-[100%]"/>
+              <img src={getTaskUrl(taskType)} className="w-[100%] h-[100%]"/>
             </div>
             <p className="text-center mt-2 text-black font-light text-[22px] mb-1">{`${taskName}`} </p>
             <div className="w-[85%] mb-2 mt-1 ml-auto mr-auto py-1 px-3 flex flex-col items-center justify-center rounded-full h-9">
@@ -366,7 +366,7 @@ export const ClaimModal = () => {
                     window.open(taskURL)
                     setTimeout(() => {
                         setClaim(true)
-                      }, 2000);
+                      }, 7000);
                     }} className="w-[215px] mt-8  ml-auto mr-auto py-1 px-3 text-white border  border-[#448cff]/0 flex  items-center justify-center bg-black/90 rounded-2xl h-[39px]">
               <p>{taskButton}</p>
             </div>
