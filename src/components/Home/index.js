@@ -601,7 +601,7 @@ export const Home2 = () => {
                   <button></button>
                 </div>  */}
                 <div className="w-[100%] flex  text-white/75 items-center  flex-col justify-center mt-7">
-                  <div className="flex items-center text-2xl justify-center text-white/80 font-extrabold w-[130px] h-[130px] bg-black/70 rounded-full">
+                  <div className="flex items-center text-2xl justify-center text-white/80 font-extrabold w-[130px] h-[130px] bg-white/70 rounded-full">
                     {`${tgUser?.initDataUnsafe?.user?.first_name[0]}${
                       tgUser?.initDataUnsafe?.user?.first_name[
                         Math.floor(
@@ -643,7 +643,7 @@ export const Home2 = () => {
                   </>
                 ) : (
                   <>
-                    <div className="bg-black/30 w-[90%] rounded-2xl text-white py-2 flex items-center justify-center h-[52px]">
+                    <div className="bg-blue-400/30 w-[90%] rounded-2xl text-white py-2 flex items-center justify-center h-[52px]">
                       <div className="text-[17px] mt-1 ml-auto mr-3 font-light text-white/70">
                         {"Claim Available in"}
                       </div>
