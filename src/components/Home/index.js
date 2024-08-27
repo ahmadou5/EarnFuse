@@ -819,7 +819,7 @@ export const Home2 = () => {
               </div>
             </div>
             <div className="w-[100%] mt-4 ">
-              <div className="h-20 w-[98%] px-2 rounded-2xl flex items-center justify-center bg-black/25">
+              <div className="h-20 w-[98%] px-2 rounded-2xl flex items-center justify-center bg-white/10">
                 <p className="text-[16px] flex items-center justify-center ml-auto mr-auto text-center text-white font-light">
                   {refLink}
                 </p>
