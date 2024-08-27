@@ -959,7 +959,7 @@ export const Home2 = () => {
                       {`${
                         userBoard?.username === null
                           ? "U"
-                          : userBoard?.username?.substring(0, 1)
+                          : `${userBoard?.username?.substring(0, 2)}`
                       }`}
                     </div>
                   </div>
