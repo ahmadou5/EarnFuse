@@ -323,7 +323,7 @@ export const ClaimModal = () => {
     return(
     <div className="inset-0 fixed bg-white/0 bg-opacity-100 w-[100%] z-[99999999] min-h-screen h-auto backdrop-blur-sm flex ">
         <div className="w-[100%] flex items-center px-3 justify-center">
-            <div className="h-[290px] ml-auto mr-auto py-2 px-2 w-[95%] bg-white/90  border-[#448cff]/70 border rounded-xl">
+            <div className="h-[290px] ml-auto mr-auto py-2 px-2 w-[95%] bg-white  border-[#448cff]/70 border rounded-xl">
             {
                 claim ? 
             <div className=" ml-auto mr-auto flex flex-col items-center justify-center text-center">
