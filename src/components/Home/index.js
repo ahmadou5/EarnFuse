@@ -660,79 +660,30 @@ export const Home2 = () => {
                    <div className="">
                    
                    </div>
-                   {
-                    isWelcome && (
+                  
                       <div className="mt-5 ml-auto mr-auto flex flex-col items-center justify-center text-center">
-                      <div className="mt-[20%] mb-4 flex items-center justify-center">
+                      <div className="mt-8 mb-4 flex items-center justify-center">
                         <p className="text-white font-bold text-[21px]">Welcome</p>
                       </div>
-                      <div className="w-[80%] mb-[70px] mt-10 ml-auto mr-auto py-1 px-3 flex  items-center justify-center rounded-full h-9">
-                        <p className="text-white/85 text-[18px] font-light ml-auto mr-auto ">{`You've been on TG for a while now`}</p>
+                      <div className="w-[80%] mb-[70px] mt-10 ml-auto mr-auto py-2 px-3 flex  items-center justify-center rounded-full h-9">
+                        <p className="text-white/85 text-[16px] py-2 px-3 font-light ml-auto mr-auto ">{`Hi ${tgUser?.initDataUnsafe?.user?.first_name} you are awesome claim your 700 FUSE as welcome bonus.`}</p>
                       </div>
                       <div
-                         onClick={() => {
-                         setIsWelcome(false)
-                         setIsAnalysing(true)
-                         setIsAwesome(false)
-                        }}
+                          onClick={() => {
+                            updateWelcomeBalance()
+                            handleUpdatedBalance()
+                            handleUpdateBoard()
+                            setTimeout(() => {
+                              setIsFirst(false)
+                            }, 2000);
+                           }}
                         className="w-[290px]  ml-auto mr-auto py-1 px-3 text-white  flex  items-center justify-center bg-[#046ae2]  rounded-2xl h-11"
                       >
-                        <p>{"Analyse TG"}</p>
+                        <p>{"Claim"}</p>
                       </div>
                     </div>
-                    )
-                   }
-                   {
-                    isAnalysing && (
-                      <div className="mt-5 ml-auto mr-auto flex flex-col items-center justify-center text-center">
-                      <div className="mt-[20%] mb-4 flex items-center justify-center">
-                        <p className="text-white font-bold text-[21px]">Welcome to EarnFuse</p>
-                      </div>
-                      <div className="w-[80%] mb-[40%] ml-auto mr-auto py-1 px-3 flex  items-center justify-center rounded-full mt-[20%] h-9">
-                        <p className="text-white/85 text-[28px] font-light ml-auto mr-auto ">{`Welcome Bonus ${800} FUSE`}</p>
-                      </div>
-                      <div
-                         onClick={() => {
-                         updateWelcomeBalance()
-                         handleUpdatedBalance()
-                         handleUpdateBoard()
-                         setTimeout(() => {
-                           setIsFirst(false)
-                         }, 2000);
-                        }}
-                        className="w-[290px] mt-auto mb-[10%]  ml-auto mr-auto py-1 px-3 text-white  flex  items-center justify-center bg-[#046ae2]  rounded-2xl h-11"
-                      >
-                        <p>{"Close"}</p>
-                      </div>
-                    </div>
-                    )
-                   }
-                   {
-                    isAwesome && (
-                      <div className="mt-5 ml-auto mr-auto flex flex-col items-center justify-center text-center">
-                      <div className="mt-[20%] mb-4 flex items-center justify-center">
-                        <p className="text-white font-bold text-[21px]">Welcome to EarnFuse</p>
-                      </div>
-                      <div className="w-[80%] mb-[40%] ml-auto mr-auto py-1 px-3 flex  items-center justify-center rounded-full mt-[20%] h-9">
-                        <p className="text-white/85 text-[28px] font-light ml-auto mr-auto ">{`Welcome Bonus ${800} FUSE`}</p>
-                      </div>
-                      <div
-                         onClick={() => {
-                         updateWelcomeBalance()
-                         handleUpdatedBalance()
-                         handleUpdateBoard()
-                         setTimeout(() => {
-                           setIsFirst(false)
-                         }, 2000);
-                        }}
-                        className="w-[290px] mt-auto mb-[10%]  ml-auto mr-auto py-1 px-3 text-white  flex  items-center justify-center bg-[#046ae2]  rounded-2xl h-11"
-                      >
-                        <p>{"Close"}</p>
-                      </div>
-                    </div>
-                    )
-                   }
-                 </div>
+                 
+                  </div>
                </div>
                    
               )}

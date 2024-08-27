@@ -354,7 +354,7 @@ export const ClaimModal = () => {
         </div>
             : 
             <div className="mt-3 ml-auto mr-auto flex flex-col items-center justify-center text-center">
-            <div className="w-[65px] bg-blue-800 rounded-full h-[65px] py-0.5 px-0.5 mt-0 mb-">
+            <div className="w-[65px] rounded-full h-[65px] py-0.5 px-0.5 mt-0 mb-">
               <img src={getTaskUrl(taskType)} className="w-[100%] h-[100%]"/>
             </div>
             <p className="text-center mt-2 text-black font-light text-[22px] mb-1">{`${taskName}`} </p>
