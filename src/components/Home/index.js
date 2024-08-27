@@ -593,10 +593,10 @@ export const Home2 = () => {
                 </div>
                 <div className="ml-auto py-0 mr-2 flex">
                   
-                  <Image src={'./assets/setting.svg'} className="ml-4 w-[30px] h-[30px] mb-2.5  text-white/75 mr-2 text-[20px]" />
+                  {/**<Image src={'./assets/setting.svg'} className="ml-4 w-[30px] h-[30px] mb-2.5  text-white/75 mr-2 text-[20px]" /> **/}
                 </div>
               </div>
-              <div className="w-[100%] mt-3 flex  text-white/75 items-center justify-center flex-col h-auto">
+              <div className="w-[100%] mt-5 flex  text-white/75 items-center justify-center flex-col h-auto">
                 {/** <div className="mb-2 mt-0.5 rounded-lg p-2 bg-white/15 w-[95%] h-[80px]">
                   <button></button>
                 </div>  */}
