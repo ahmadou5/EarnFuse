@@ -587,7 +587,7 @@ export const Home2 = () => {
             <div className="w-[100%] bg-black/0">
               <div className="w-[100%] h-12 px-2 mt-2 py-3 flex">
                 <div className="ml-2 mr-auto">
-                  <p className="text-[18px] font-bold  text-white/75">
+                  <p className="text-[19px] font-bold  text-white/85">
                     EarnFuse
                   </p>
                 </div>
