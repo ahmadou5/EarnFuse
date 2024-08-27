@@ -1,4 +1,5 @@
 'use client'
+ //#046ae2
 import { IoSettings, IoWallet } from "react-icons/io5";
 import { BackMenu, Menu } from "../Menu";
 import { GlobalContext } from "@/context/AppContext";

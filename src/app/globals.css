@@ -24,10 +24,9 @@ body {
       transparent,
       black
     )
-    
-    #046ae2
+    black
+   
 }
-
 @layer utilities {
   .text-balance {
     text-wrap: balance;
