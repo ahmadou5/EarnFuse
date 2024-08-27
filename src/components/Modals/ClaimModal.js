@@ -358,7 +358,7 @@ export const ClaimModal = () => {
               <img src={getTaskUrl(taskType)} className="w-[100%] h-[100%]"/>
             </div>
             <p className="text-center mt-2 text-black font-light text-[22px] mb-1">{`${taskName}`} </p>
-            <div className="w-[85%] mb-2 mt-1 ml-auto mr-auto py-1 px-3 flex flex-col items-center justify-center rounded-full h-9">
+            <div className="w-[95%] mb-2 mt-1 ml-auto mr-auto py-1 px-3 flex flex-col items-center justify-center rounded-full h-9">
               <p className="text-black/85 text-[16px] font-light ml-auto mr-auto ">{`Complete task and earn reward of `}</p>
               <p className="text-black/85 text-[16px] font-light ml-auto mr-auto ">{`${taskAmount.toLocaleString()} Fuse Points`}</p>
             </div>
