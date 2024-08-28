@@ -654,19 +654,19 @@ export const Home2 = () => {
                 <div className="w-[100%] bg-black h-10 flex items-start justify-start">
                   <div
                     onClick={() => setIsFirst(false)}
-                    className="bg-white/5 ml-5 w-20 rounded-md"
+                    className="bg-white/5 ml-5 w-16 flex items-center justify-center rounded-md"
                   >
                     <p>close</p>
                   </div>
                 </div>
                 <div className="mt-5 ml-auto mr-auto flex flex-col items-center justify-center text-center">
                   <div className="mt-[20%] mb-4 flex items-center justify-center">
-                    <p className="text-white font-bold text-[21px]">
+                    <p className="text-white font-bold text-[24px]">
                       Welcome
                     </p>
                   </div>
                   <div className="w-[80%] mb-[40%] ml-auto mr-auto py-1 px-3 flex  items-center justify-center rounded-full mt-[20%] h-9">
-                    <p className="text-white/85 text-[28px] font-light ml-auto mr-auto ">{`Hi ${tgUser?.initDataUnsafe?.user?.first_name} you are awesome claim your 700 FUSE as welcome bonus.`}</p>
+                    <p className="text-white/85 text-[21px] font-light ml-auto mr-auto ">{`Hi ${tgUser?.initDataUnsafe?.user?.first_name} you are awesome claim your 700 FUSE as welcome bonus.`}</p>
                   </div>
                   <div
                     onClick={() => {
@@ -693,7 +693,7 @@ export const Home2 = () => {
                 <div className="w-[100%] bg-black/0 h-10 flex items-start justify-start">
                   <div
                     onClick={() => setClaimed(false)}
-                    className="bg-white/5 ml-5 w-20 rounded-md"
+                    className="bg-white/5 ml-5 w-16 flex items-center justify-center rounded-md"
                   >
                     <p>close</p>
                   </div>
