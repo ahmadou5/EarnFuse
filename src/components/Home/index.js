@@ -235,7 +235,7 @@ export const Home2 = () => {
         window.Telegram &&
         window.Telegram.WebApp
       ) {
-        // console.log("Telegram WebApp is set");
+        console.log("Telegram WebApp is set bakanceeeeeeeeeeee");
         const tgData = window.Telegram.WebApp;
         //console.log("data the first id", tgData?.initDataUnsafe?.user?.id);
         const id = tgData?.initDataUnsafe?.user?.id;
@@ -248,7 +248,7 @@ export const Home2 = () => {
 
         if (data) {
           // const sele = JSON.stringify(data);
-          //console.log(sele, "cele ne");
+          console.log(data[0].balance,'hgghgh');
           console.log("hey balance data", data[0]);
           console.log(data[0].id, "aeki");
           setUserData(data);
