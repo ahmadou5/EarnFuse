@@ -656,12 +656,12 @@ export const Home2 = () => {
                   <div
                     onClick={() => {
                       updateWelcomeBalance();
+                      handleUpdatedBalance();
+                      handleUpdateBoard();
                       setTimeout(() => {
                         setIsFirst(false);
                       }, 2000);
-                      handleUpdatedBalance();
-                      handleUpdateBoard();
-                      //setIsFirst(false)
+                      
                     }
                   }
                     className="bg-white/5 ml-2 w-16 flex items-center justify-center rounded-md"
@@ -681,11 +681,12 @@ export const Home2 = () => {
                   <div
                     onClick={() => {
                       updateWelcomeBalance();
+                      handleUpdatedBalance();
+                      handleUpdateBoard();
                       setTimeout(() => {
                         setIsFirst(false);
                       }, 2000);
-                      handleUpdatedBalance();
-                      handleUpdateBoard();
+                      
                     }}
                     className="w-[290px] mt-auto mb-[10%]  ml-auto mr-auto py-1 px-3 text-white  flex  items-center justify-center bg-[#046ae2]  rounded-2xl h-11"
                   >
