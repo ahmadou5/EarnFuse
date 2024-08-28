@@ -656,7 +656,7 @@ export const Home2 = () => {
                   <div
                     onClick={() => {
                       updateWelcomeBalance();
-                      handleUpdatedBalance();
+                      handleUpdatedBalance()
                       handleUpdateBoard();
                       setTimeout(() => {
                         setIsFirst(false);
@@ -681,7 +681,7 @@ export const Home2 = () => {
                   <div
                     onClick={() => {
                       updateWelcomeBalance();
-                      handleUpdatedBalance();
+                      handleUpdatedBalance()
                       handleUpdateBoard();
                       setTimeout(() => {
                         setIsFirst(false);
