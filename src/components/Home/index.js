@@ -648,52 +648,52 @@ export const Home2 = () => {
               </div>
             </div>
             {isFirst && (
+              
               <div className="inset-0 fixed bg-black/5 bg-opacity-100 w-[100%] z-[99999999] min-h-screen h-auto backdrop-blur-sm flex ">
-                <div className="w-[100%] py-4 px-4 bg-black/95 rounded-t-2xl h-auto mt-[180px]">
-                  <div className="w-[100%] bg-black h-10 flex items-start justify-start">
-                    <div
-                      onClick={() => setIsFirst(false)}
-                      className="bg-white ml-5 rounded-md"
-                    >
-                      <p>close</p>
-                    </div>
+              <div className="w-[100%] py-4 px-4 bg-black/95 rounded-t-2xl h-auto mt-[55%]">
+                <div className="w-[100%] bg-black h-10 flex items-start justify-start">
+                  <div
+                    onClick={() => setIsFirst(false)}
+                    className="bg-white/5 ml-5 w-20 rounded-md"
+                  >
+                    <p>close</p>
                   </div>
-
-                  <div className="mt-5 ml-auto mr-auto flex flex-col items-center justify-center text-center">
-                    <div className="mt-5 mb-4 flex items-center justify-center">
-                      <p className="text-white font-bold text-[26px]">
-                        Welcome
-                      </p>
-                    </div>
-                    <div className="w-[80%] mb-[20%] mt-10 ml-auto mr-auto py-2 px-3 flex  items-center justify-center rounded-full h-9">
-                      <p className="text-white/85 text-[19px] py-2 px-3 font-light ml-auto mr-auto ">{`Hi ${tgUser?.initDataUnsafe?.user?.first_name} you are awesome claim your 700 FUSE as welcome bonus.`}</p>
-                    </div>
-                    <div
-                      onClick={() => {
-                        updateWelcomeBalance();
-                        handleUpdatedBalance();
-                        handleUpdateBoard();
-                        setTimeout(() => {
-                          setIsFirst(false);
-                        }, 2000);
-                      }}
-                      className="w-[290px]  ml-auto mt-auto mb-[10%]  mr-auto py-1 px-3 text-white  flex  items-center justify-center bg-[#046ae2]  rounded-2xl h-11"
-                    >
-                      <p>{"Claim"}</p>
-                    </div>
+                </div>
+                <div className="mt-5 ml-auto mr-auto flex flex-col items-center justify-center text-center">
+                  <div className="mt-[20%] mb-4 flex items-center justify-center">
+                    <p className="text-white font-bold text-[21px]">
+                      Welcome
+                    </p>
+                  </div>
+                  <div className="w-[80%] mb-[40%] ml-auto mr-auto py-1 px-3 flex  items-center justify-center rounded-full mt-[20%] h-9">
+                    <p className="text-white/85 text-[28px] font-light ml-auto mr-auto ">{`Hi ${tgUser?.initDataUnsafe?.user?.first_name} you are awesome claim your 700 FUSE as welcome bonus.`}</p>
+                  </div>
+                  <div
+                    onClick={() => {
+                      updateWelcomeBalance();
+                      handleUpdatedBalance();
+                      handleUpdateBoard();
+                      setTimeout(() => {
+                        setIsFirst(false);
+                      }, 2000);
+                    }}
+                    className="w-[290px] mt-auto mb-[10%]  ml-auto mr-auto py-1 px-3 text-white  flex  items-center justify-center bg-[#046ae2]  rounded-2xl h-11"
+                  >
+                    <p>{"Claim"}</p>
                   </div>
                 </div>
               </div>
+            </div>
             )}
             <Menu />
           </div>
           {claimed && (
             <div className="inset-0 fixed bg-black/5 bg-opacity-100 w-[100%] z-[99999999] min-h-screen h-auto backdrop-blur-sm flex ">
               <div className="w-[100%] py-4 px-4 bg-black/95 rounded-t-2xl h-auto mt-[55%]">
-                <div className="w-[100%] bg-black h-10 flex items-start justify-start">
+                <div className="w-[100%] bg-black/0 h-10 flex items-start justify-start">
                   <div
                     onClick={() => setClaimed(false)}
-                    className="bg-white ml-5 rounded-md"
+                    className="bg-white/5 ml-5 w-20 rounded-md"
                   >
                     <p>close</p>
                   </div>
