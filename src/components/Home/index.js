@@ -655,7 +655,9 @@ export const Home2 = () => {
                 <div className="w-[100%] bg-black h-10 flex items-start justify-start">
                   <div
                     onClick={() => {
-                    
+                      //updateWelcomeBalance();
+                      handleUpdatedBalance()
+                      handleUpdateBoard();
                       setTimeout(() => {
                         setIsFirst(false);
                       }, 2000);
@@ -678,7 +680,9 @@ export const Home2 = () => {
                   </div>
                   <div
                     onClick={() => {
-                     
+                      //updateWelcomeBalance();
+                      handleUpdatedBalance()
+                      handleUpdateBoard();
                       setTimeout(() => {
                         setIsFirst(false);
                       }, 2000);
