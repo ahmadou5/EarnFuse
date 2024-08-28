@@ -657,8 +657,10 @@ export const Home2 = () => {
             {isFirst && (
                  <div className="inset-0 fixed bg-black/5 bg-opacity-100 w-[100%] z-[99999999] min-h-screen h-auto backdrop-blur-sm flex ">
                  <div className="w-[100%] py-4 px-4 bg-black/95 rounded-t-2xl h-auto mt-[180px]">
-                   <div className="">
-                   
+                   <div className="w-[100%] bg-black h-10 flex items-start justify-start">
+                      <div onClick={() => setIsFirst(false)} className="bg-white ml-5 rounded-md">
+                        <p>close</p>
+                      </div>
                    </div>
                   
                       <div className="mt-5 ml-auto mr-auto flex flex-col items-center justify-center text-center">
