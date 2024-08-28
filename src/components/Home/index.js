@@ -83,6 +83,7 @@ export const Home2 = () => {
   const [points, setPoints] = useState(0);
   const [energy, setEnergy] = useState(20);
   const [clicks, setClicks] = useState([]);
+  const [bonus,setBonus] = useState(800)
   //const [tasks, setTask] = useState([]);
   //const [claimedTask, setClaimedTask] = useState([]);
   const date = new Date();
@@ -167,7 +168,7 @@ export const Home2 = () => {
   const updateWelcomeBalance = async () => {
     try {
       const { data, error } = await Supabase.from("users")
-        .update({ balance: accumulative(userBalance, 800) })
+        .update({ balance: accumulative(userBalance, bonus) })
         .eq("id", tgUser?.initDataUnsafe?.user?.id);
 
       if (data) {
@@ -655,11 +656,11 @@ export const Home2 = () => {
                   <div
                     onClick={() => {
                       updateWelcomeBalance();
-                      handleUpdatedBalance();
-                      handleUpdateBoard();
                       setTimeout(() => {
                         setIsFirst(false);
                       }, 2000);
+                      handleUpdatedBalance();
+                      handleUpdateBoard();
                       //setIsFirst(false)
                     }
                   }
@@ -675,16 +676,16 @@ export const Home2 = () => {
                     </p>
                   </div>
                   <div className="w-[80%] mb-[40%] ml-auto mr-auto py-1 px-3 flex  items-center justify-center rounded-full mt-[20%] h-9">
-                    <p className="text-white/85 text-[21px] font-light ml-auto mr-auto ">{`Hi ${tgUser?.initDataUnsafe?.user?.first_name} you are awesome claim your 700 FUSE as welcome bonus.`}</p>
+                    <p className="text-white/85 text-[21px] font-light ml-auto mr-auto ">{`Hi ${tgUser?.initDataUnsafe?.user?.first_name} you are awesome claim your 800 FUSE as welcome bonus.`}</p>
                   </div>
                   <div
                     onClick={() => {
                       updateWelcomeBalance();
-                      handleUpdatedBalance();
-                      handleUpdateBoard();
                       setTimeout(() => {
                         setIsFirst(false);
                       }, 2000);
+                      handleUpdatedBalance();
+                      handleUpdateBoard();
                     }}
                     className="w-[290px] mt-auto mb-[10%]  ml-auto mr-auto py-1 px-3 text-white  flex  items-center justify-center bg-[#046ae2]  rounded-2xl h-11"
                   >
