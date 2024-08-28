@@ -182,7 +182,7 @@ export const Menu = () => {
               className="flex ml-auto mr-auto flex-col items-center justify-center"
             >
               <img src="./assets/community.svg" className="w-7 h-7" />
-              <p className={`font-light mt-1 text-white text-[10px]`}>Plugs</p>
+              <p className={`font-light mt-1 text-white text-[10px]`}>Frens</p>
             </div>
           </div>
         </div>

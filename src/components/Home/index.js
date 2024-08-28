@@ -669,7 +669,7 @@ export const Home2 = () => {
                   </div>
                 </div>
                 <div className="mt-5 ml-auto mr-auto flex flex-col items-center justify-center text-center">
-                  <div className="mt-20 mb-4 flex items-center justify-center">
+                  <div className="mt-14 mb-4 flex items-center justify-center">
                     <p className="text-white font-bold text-[24px]">
                       Welcome
                     </p>
@@ -711,7 +711,7 @@ export const Home2 = () => {
                   </div>
                 </div>
                 <div className="mt-5 ml-auto mr-auto flex flex-col items-center justify-center text-center">
-                  <div className="mt-20 mb-4 flex items-center justify-center">
+                  <div className="mt-14 mb-4 flex items-center justify-center">
                     <p className="text-white font-bold text-[21px]">
                       You claim your daily reward
                     </p>
