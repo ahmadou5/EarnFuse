@@ -664,11 +664,11 @@ export const Home2 = () => {
                    </div>
                   
                       <div className="mt-5 ml-auto mr-auto flex flex-col items-center justify-center text-center">
-                      <div className="mt-8 mb-4 flex items-center justify-center">
-                        <p className="text-white font-bold text-[21px]">Welcome</p>
+                      <div className="mt-5 mb-4 flex items-center justify-center">
+                        <p className="text-white font-bold text-[26px]">Welcome</p>
                       </div>
-                      <div className="w-[80%] mb-[70px] mt-10 ml-auto mr-auto py-2 px-3 flex  items-center justify-center rounded-full h-9">
-                        <p className="text-white/85 text-[16px] py-2 px-3 font-light ml-auto mr-auto ">{`Hi ${tgUser?.initDataUnsafe?.user?.first_name} you are awesome claim your 700 FUSE as welcome bonus.`}</p>
+                      <div className="w-[80%] mb-[20%] mt-10 ml-auto mr-auto py-2 px-3 flex  items-center justify-center rounded-full h-9">
+                        <p className="text-white/85 text-[19px] py-2 px-3 font-light ml-auto mr-auto ">{`Hi ${tgUser?.initDataUnsafe?.user?.first_name} you are awesome claim your 700 FUSE as welcome bonus.`}</p>
                       </div>
                       <div
                           onClick={() => {
@@ -679,7 +679,7 @@ export const Home2 = () => {
                               setIsFirst(false)
                             }, 2000);
                            }}
-                        className="w-[290px]  ml-auto mr-auto py-1 px-3 text-white  flex  items-center justify-center bg-[#046ae2]  rounded-2xl h-11"
+                        className="w-[290px]  ml-auto mt-auto mb-[10%]  mr-auto py-1 px-3 text-white  flex  items-center justify-center bg-[#046ae2]  rounded-2xl h-11"
                       >
                         <p>{"Claim"}</p>
                       </div>
