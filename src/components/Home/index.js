@@ -1,5 +1,5 @@
-'use client'
- //#046ae2
+"use client";
+//#046ae2
 import { IoSettings, IoWallet } from "react-icons/io5";
 import { BackMenu, Menu } from "../Menu";
 import { GlobalContext } from "@/context/AppContext";
@@ -22,12 +22,12 @@ export const Home2 = () => {
   const [timeRemaining, setTimeRemaining] = useState(0);
   const [time2, setTime2] = useState("");
   const [claimVal, setClaimVal] = useState(500);
-  const [isWelcome,setIsWelcome] = useState(true)
-  const [isAnalysing,setIsAnalysing] = useState(false)
-  const [isAwesome, setIsAwesome] = useState(false)
-  
+  const [isWelcome, setIsWelcome] = useState(true);
+  const [isAnalysing, setIsAnalysing] = useState(false);
+  const [isAwesome, setIsAwesome] = useState(false);
+
   const utils = useUtils();
- 
+
   const { width, height } = useWindowSize();
   const {
     isHome,
@@ -50,7 +50,7 @@ export const Home2 = () => {
     leads,
     userRank,
     userBoard,
-    isFirst, 
+    isFirst,
     setIsFirst,
     setLastClaim,
     setIsBoostModal,
@@ -68,11 +68,11 @@ export const Home2 = () => {
     isBoost,
     tgUser,
     setUserData,
-    tasks, 
+    tasks,
     setTask,
     setTgUser,
     isClaimModal,
-    claimedTask, 
+    claimedTask,
     setClaimedTask,
     setIsClaimModal,
     userBalance,
@@ -103,8 +103,8 @@ export const Home2 = () => {
     setEnergy(energy - EnergyRemove < 0 ? 0 : energy - EnergyRemove);
     setClicks([...clicks, { id: Date.now(), x, y }]);
   };
-  console.log('userData',userData);
-  console.log('tgUser',tgUser)
+  console.log("userData", userData);
+  console.log("tgUser", tgUser);
   //console.log(lastClaim,'last')
   const handleAnimationEnd = (id) => {
     setClicks((prevClick) => prevClick.filter((click) => click.id !== id));
@@ -154,7 +154,7 @@ export const Home2 = () => {
         .eq("id", tgUser?.initDataUnsafe?.user?.id);
 
       if (data) {
-     //   console.log("updated", data);
+        //   console.log("updated", data);
       }
       if (error) {
         throw error;
@@ -171,7 +171,7 @@ export const Home2 = () => {
         .eq("id", tgUser?.initDataUnsafe?.user?.id);
 
       if (data) {
-     //   console.log("updated", data);
+        //   console.log("updated", data);
       }
       if (error) {
         throw error;
@@ -181,8 +181,6 @@ export const Home2 = () => {
     }
   };
 
-
- 
   function formatTimeRemaining(milliseconds) {
     if (milliseconds <= 0) {
       return "";
@@ -229,32 +227,32 @@ export const Home2 = () => {
   };
 
   const handleUpdatedBalance = async () => {
-   // console.log('balance updateee')
+    // console.log('balance updateee')
     try {
       if (
         typeof window !== "undefined" &&
         window.Telegram &&
         window.Telegram.WebApp
       ) {
-       // console.log("Telegram WebApp is set");
+        // console.log("Telegram WebApp is set");
         const tgData = window.Telegram.WebApp;
         //console.log("data the first id", tgData?.initDataUnsafe?.user?.id);
         const id = tgData?.initDataUnsafe?.user?.id;
 
-      //  console.log("task dlllll id", id);
+        //  console.log("task dlllll id", id);
 
         const { data, error } = await Supabase.from("users")
-        .select("*")
-        .eq("id", id);
+          .select("*")
+          .eq("id", id);
 
         if (data) {
-       // const sele = JSON.stringify(data);
-        //console.log(sele, "cele ne");
-        console.log("hey balance data", data[0]);
-        console.log(data[0].id, "aeki");
-        setUserData(data);
-        //setLastClaim(data[0].lastRewardClaim)
-        setUserBalance(data[0].balance)
+          // const sele = JSON.stringify(data);
+          //console.log(sele, "cele ne");
+          console.log("hey balance data", data[0]);
+          console.log(data[0].id, "aeki");
+          setUserData(data);
+          //setLastClaim(data[0].lastRewardClaim)
+          setUserBalance(data[0].balance);
         }
         if (error) {
           //console.log("error", error);
@@ -268,7 +266,6 @@ export const Home2 = () => {
     } catch (error) {
       console.log(error);
     }
-   
   };
   const customHandleDone = async () => {
     try {
@@ -277,12 +274,12 @@ export const Home2 = () => {
         window.Telegram &&
         window.Telegram.WebApp
       ) {
-      //  console.log("Telegram WebApp is set");
+        //  console.log("Telegram WebApp is set");
         const tgData = window.Telegram.WebApp;
-     //   console.log("data the first id", tgData?.initDataUnsafe?.user?.id);
+        //   console.log("data the first id", tgData?.initDataUnsafe?.user?.id);
         const id = tgData?.initDataUnsafe?.user?.id.toString();
 
-       // console.log("task id", id);
+        // console.log("task id", id);
 
         const { data, error } = await Supabase.rpc("get_claimed_tasks", {
           userid: id,
@@ -314,10 +311,10 @@ export const Home2 = () => {
       ) {
         console.log("Telegram WebApp is set");
         const tgData = window.Telegram.WebApp;
-       // console.log("data the first id", tgData?.initDataUnsafe?.user?.id);
+        // console.log("data the first id", tgData?.initDataUnsafe?.user?.id);
         const id = tgData?.initDataUnsafe?.user?.id.toString();
 
-       // console.log("task id", id);
+        // console.log("task id", id);
 
         const { data, error } = await Supabase.rpc("get_unclaimed_tasks", {
           userid: id,
@@ -340,7 +337,6 @@ export const Home2 = () => {
       console.log(error);
     }
   };
-  
 
   const handleUpdateBoard = async () => {
     try {
@@ -351,12 +347,12 @@ export const Home2 = () => {
         window.Telegram &&
         window.Telegram.WebApp
       ) {
-       // console.log("Telegram WebApp is set");
+        // console.log("Telegram WebApp is set");
         const tgData = window.Telegram.WebApp;
-      //  console.log("data the first id", tgData?.initDataUnsafe?.user?.id);
+        //  console.log("data the first id", tgData?.initDataUnsafe?.user?.id);
         const id = tgData?.initDataUnsafe?.user?.id.toString();
 
-       // console.log("tg user refferalss   ", id);
+        // console.log("tg user refferalss   ", id);
 
         const { data, error } = await Supabase.from("users")
           .select("*")
@@ -365,15 +361,15 @@ export const Home2 = () => {
         if (data) {
           console.log("leaders here", data);
           setLeads(data);
-          console.log('data set')
-      //    console.log(id, "is it here");
+          console.log("data set");
+          //    console.log(id, "is it here");
           const filterone = data?.find((item) => item.id === id);
           setUserBoad(filterone);
           const filterNumb = data.findIndex((item) => item.id === id);
           setUserRank(filterNumb + 1);
           console.log("user details", filterone);
           console.log("user Rank", filterNumb + 1);
-          
+
           // console.log('filtered balance', filterone[0].balance)
           //console.log(reffs,'it is')
         }
@@ -387,11 +383,8 @@ export const Home2 = () => {
         setTimeout(initTg, 500);
       }
     } catch (error) {
-      console.log(error)
+      console.log(error);
     }
-       
-        
-     
   };
 
   const getLevel = (referralCount) => {
@@ -408,7 +401,7 @@ export const Home2 = () => {
     } else {
       return 0; // Or handle users with less than 5 referrals as needed
     }
-  }
+  };
 
   const getPoints = (length) => {
     if (length < 5) {
@@ -454,17 +447,16 @@ export const Home2 = () => {
     customHandle();
     customHandleDone();
   }, []);
-  
 
   function getTaskUrl(typeImg) {
-    if (typeImg === 'TG') {
-      return './assets/tg.svg'
-    } else if (typeImg === 'X') {
-      return './assets/x.png';
-    } else if (typeImg === 'YT') {
-      return './assets/yt.svg';
+    if (typeImg === "TG") {
+      return "./assets/tg.svg";
+    } else if (typeImg === "X") {
+      return "./assets/x.png";
+    } else if (typeImg === "YT") {
+      return "./assets/yt.svg";
     }
-     return
+    return;
   }
 
   const todo1 = [];
@@ -582,7 +574,6 @@ export const Home2 = () => {
       )}
       {isHome && (
         <>
-          
           <div className="bg-gothic-950/0 mt-0 flex bg-slate-600/0 flex-col w-[100%] h-auto">
             <div className="w-[100%] bg-black/0">
               <div className="w-[100%] h-12 px-2 mt-2 py-3 flex">
@@ -592,7 +583,6 @@ export const Home2 = () => {
                   </p>
                 </div>
                 <div className="ml-auto py-0 mr-2 flex">
-                  
                   {/**<Image src={'./assets/setting.svg'} className="ml-4 w-[30px] h-[30px] mb-2.5  text-white/75 mr-2 text-[20px]" /> **/}
                 </div>
               </div>
@@ -611,12 +601,15 @@ export const Home2 = () => {
               </div>
               <div className="mt-3 py-2 flex flex-col items-center justify-center">
                 <div className="flex items-center justify-center">
-                 {/** <img
+                  {/** <img
                     className="h-16 w-16 ml-auto mr-1 "
                     src="./assets/show.png"
                   />  */}
                   <p className="text-4xl ml-1 text-white mr-auto font-bold ">
-                    {`${accumulative(userBalance, points)?.toLocaleString()} FUSE`}
+                    {`${accumulative(
+                      userBalance,
+                      points
+                    )?.toLocaleString()} FUSE`}
                   </p>
                 </div>
               </div>
@@ -628,7 +621,7 @@ export const Home2 = () => {
                         handleClaim();
                         setCanClaim(false);
                         setClaimed(true);
-                        getTime()
+                        getTime();
                       }}
                       className="bg-[#046ae2]  w-[90%] rounded-2xl text-white flex items-center justify-center h-[52px]"
                     >
@@ -655,70 +648,79 @@ export const Home2 = () => {
               </div>
             </div>
             {isFirst && (
-                 <div className="inset-0 fixed bg-black/5 bg-opacity-100 w-[100%] z-[99999999] min-h-screen h-auto backdrop-blur-sm flex ">
-                 <div className="w-[100%] py-4 px-4 bg-black/95 rounded-t-2xl h-auto mt-[180px]">
-                   <div className="w-[100%] bg-black h-10 flex items-start justify-start">
-                      <div onClick={() => setIsFirst(false)} className="bg-white ml-5 rounded-md">
-                        <p>close</p>
-                      </div>
-                   </div>
-                  
-                      <div className="mt-5 ml-auto mr-auto flex flex-col items-center justify-center text-center">
-                      <div className="mt-5 mb-4 flex items-center justify-center">
-                        <p className="text-white font-bold text-[26px]">Welcome</p>
-                      </div>
-                      <div className="w-[80%] mb-[20%] mt-10 ml-auto mr-auto py-2 px-3 flex  items-center justify-center rounded-full h-9">
-                        <p className="text-white/85 text-[19px] py-2 px-3 font-light ml-auto mr-auto ">{`Hi ${tgUser?.initDataUnsafe?.user?.first_name} you are awesome claim your 700 FUSE as welcome bonus.`}</p>
-                      </div>
-                      <div
-                          onClick={() => {
-                            updateWelcomeBalance()
-                            handleUpdatedBalance()
-                            handleUpdateBoard()
-                            setTimeout(() => {
-                              setIsFirst(false)
-                            }, 2000);
-                           }}
-                        className="w-[290px]  ml-auto mt-auto mb-[10%]  mr-auto py-1 px-3 text-white  flex  items-center justify-center bg-[#046ae2]  rounded-2xl h-11"
-                      >
-                        <p>{"Claim"}</p>
-                      </div>
+              <div className="inset-0 fixed bg-black/5 bg-opacity-100 w-[100%] z-[99999999] min-h-screen h-auto backdrop-blur-sm flex ">
+                <div className="w-[100%] py-4 px-4 bg-black/95 rounded-t-2xl h-auto mt-[180px]">
+                  <div className="w-[100%] bg-black h-10 flex items-start justify-start">
+                    <div
+                      onClick={() => setIsFirst(false)}
+                      className="bg-white ml-5 rounded-md"
+                    >
+                      <p>close</p>
                     </div>
-                 
                   </div>
-               </div>
-                   
-              )}
+
+                  <div className="mt-5 ml-auto mr-auto flex flex-col items-center justify-center text-center">
+                    <div className="mt-5 mb-4 flex items-center justify-center">
+                      <p className="text-white font-bold text-[26px]">
+                        Welcome
+                      </p>
+                    </div>
+                    <div className="w-[80%] mb-[20%] mt-10 ml-auto mr-auto py-2 px-3 flex  items-center justify-center rounded-full h-9">
+                      <p className="text-white/85 text-[19px] py-2 px-3 font-light ml-auto mr-auto ">{`Hi ${tgUser?.initDataUnsafe?.user?.first_name} you are awesome claim your 700 FUSE as welcome bonus.`}</p>
+                    </div>
+                    <div
+                      onClick={() => {
+                        updateWelcomeBalance();
+                        handleUpdatedBalance();
+                        handleUpdateBoard();
+                        setTimeout(() => {
+                          setIsFirst(false);
+                        }, 2000);
+                      }}
+                      className="w-[290px]  ml-auto mt-auto mb-[10%]  mr-auto py-1 px-3 text-white  flex  items-center justify-center bg-[#046ae2]  rounded-2xl h-11"
+                    >
+                      <p>{"Claim"}</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            )}
             <Menu />
           </div>
           {claimed && (
-          <div className="inset-0 fixed bg-black/5 bg-opacity-100 w-[100%] z-[99999999] min-h-screen h-auto backdrop-blur-sm flex ">
-          <div className="w-[100%] py-4 px-4 bg-black/95 rounded-t-2xl h-auto mt-[55%]">
-            <div className="">
-             
-            </div>
-                  <div className="mt-5 ml-auto mr-auto flex flex-col items-center justify-center text-center">
-                    <div className="mt-[20%] mb-4 flex items-center justify-center">
-                      <p className="text-white font-bold text-[21px]">You claim your daily reward</p>
-                    </div>
-                    <div className="w-[80%] mb-[40%] ml-auto mr-auto py-1 px-3 flex  items-center justify-center rounded-full mt-[20%] h-9">
-                      <p className="text-white/85 text-[28px] font-light ml-auto mr-auto ">{`${claimVal} FUSE`}</p>
-                    </div>
-                    <div
-                       onClick={() => {
-                        handleUpdateBoard();
-                        handleUpdatedBalance();
-                        setCanClaim(false)
-                        setClaimed(false);
-                      }}
-                      className="w-[290px] mt-auto mb-[10%]  ml-auto mr-auto py-1 px-3 text-white  flex  items-center justify-center bg-[#046ae2]  rounded-2xl h-11"
-                    >
-                      <p>{"Close"}</p>
-                    </div>
+            <div className="inset-0 fixed bg-black/5 bg-opacity-100 w-[100%] z-[99999999] min-h-screen h-auto backdrop-blur-sm flex ">
+              <div className="w-[100%] py-4 px-4 bg-black/95 rounded-t-2xl h-auto mt-[55%]">
+                <div className="w-[100%] bg-black h-10 flex items-start justify-start">
+                  <div
+                    onClick={() => setClaimed(false)}
+                    className="bg-white ml-5 rounded-md"
+                  >
+                    <p>close</p>
                   </div>
-          </div>
-        </div>
-            
+                </div>
+                <div className="mt-5 ml-auto mr-auto flex flex-col items-center justify-center text-center">
+                  <div className="mt-[20%] mb-4 flex items-center justify-center">
+                    <p className="text-white font-bold text-[21px]">
+                      You claim your daily reward
+                    </p>
+                  </div>
+                  <div className="w-[80%] mb-[40%] ml-auto mr-auto py-1 px-3 flex  items-center justify-center rounded-full mt-[20%] h-9">
+                    <p className="text-white/85 text-[28px] font-light ml-auto mr-auto ">{`${claimVal} FUSE`}</p>
+                  </div>
+                  <div
+                    onClick={() => {
+                      handleUpdateBoard();
+                      handleUpdatedBalance();
+                      setCanClaim(false);
+                      setClaimed(false);
+                    }}
+                    className="w-[290px] mt-auto mb-[10%]  ml-auto mr-auto py-1 px-3 text-white  flex  items-center justify-center bg-[#046ae2]  rounded-2xl h-11"
+                  >
+                    <p>{"Close"}</p>
+                  </div>
+                </div>
+              </div>
+            </div>
           )}
         </>
       )}
@@ -817,7 +819,6 @@ export const Home2 = () => {
             </div>
 
             <div className="w-[100%] h-auto px-2 mt-4 mb-4 py-5 flex flex-col justify-center items-center">
-              
               <div className="w-[100%] h-auto mb-3 rounded-xl text-white/70 bg-black/0 p-0 mt-2">
                 {tasks ? (
                   tasks.map((item, i) => (
@@ -827,7 +828,10 @@ export const Home2 = () => {
                         className="w-[100%] mt-2 mb-2 h-auto flex rounded-xl py-3 px-3 bg-white/15"
                       >
                         <div className="ml-1 mr-3">
-                          <img src={getTaskUrl(item.type)} className="w-12 h-12" />
+                          <img
+                            src={getTaskUrl(item.type)}
+                            className="w-12 h-12"
+                          />
                         </div>
                         <div className="mt-1 text-sm">
                           <p>{item.title}</p>
@@ -837,11 +841,11 @@ export const Home2 = () => {
                           <div
                             onClick={() => {
                               setTaskName(item.title);
-                              setTaskId(item.id)
+                              setTaskId(item.id);
                               setTaskAmount(item.points);
                               setTaskURL(item.url);
                               setTaskButton(item.btn_name);
-                              setTaskType(item.type)
+                              setTaskType(item.type);
                               setIsClaimModal(true);
                             }}
                             className="bg-[#046ae2]/75 rounded-3xl text-sm flex items-center justify-center w-[78px] h-8"
@@ -859,7 +863,7 @@ export const Home2 = () => {
                   </>
                 )}
               </div>
-             
+
               <div className="w-[100%] h-auto mt-3 rounded-xl text-white/70 bg-black/0 p-0 ">
                 {claimedTask ? (
                   claimedTask.map((item, i) => (
@@ -869,7 +873,10 @@ export const Home2 = () => {
                         className="w-[100%] mt-2 mb-2 h-auto flex rounded-xl py-3 px-3 bg-white/15"
                       >
                         <div className="ml-1 mr-3">
-                          <img src={getTaskUrl(item.type)} className="w-12 h-12" />
+                          <img
+                            src={getTaskUrl(item.type)}
+                            className="w-12 h-12"
+                          />
                         </div>
                         <div className="mt-1 text-sm">
                           <p>{item.title}</p>
@@ -973,7 +980,6 @@ export const Home2 = () => {
                   ))}
               </div>
               {isBoostModal && <BoostModal />}
-             
             </div>
             <BackMenu />
           </div>
