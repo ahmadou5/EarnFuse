@@ -654,7 +654,7 @@ export const Home2 = () => {
                 <div className="w-[100%] bg-black h-10 flex items-start justify-start">
                   <div
                     onClick={() => setIsFirst(false)}
-                    className="bg-white/5 ml-5 w-16 flex items-center justify-center rounded-md"
+                    className="bg-white/5 ml-2 w-16 flex items-center justify-center rounded-md"
                   >
                     <p>close</p>
                   </div>
@@ -693,7 +693,7 @@ export const Home2 = () => {
                 <div className="w-[100%] bg-black/0 h-10 flex items-start justify-start">
                   <div
                     onClick={() => setClaimed(false)}
-                    className="bg-white/5 ml-5 w-16 flex items-center justify-center rounded-md"
+                    className="bg-white/5 ml-2 w-16 flex items-center justify-center rounded-md"
                   >
                     <p>close</p>
                   </div>
