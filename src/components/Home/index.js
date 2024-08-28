@@ -653,7 +653,16 @@ export const Home2 = () => {
               <div className="w-[100%] py-4 px-4 bg-black/95 rounded-t-2xl h-auto mt-[55%]">
                 <div className="w-[100%] bg-black h-10 flex items-start justify-start">
                   <div
-                    onClick={() => setIsFirst(false)}
+                    onClick={() => {
+                      updateWelcomeBalance();
+                      handleUpdatedBalance();
+                      handleUpdateBoard();
+                      setTimeout(() => {
+                        setIsFirst(false);
+                      }, 2000);
+                      //setIsFirst(false)
+                    }
+                  }
                     className="bg-white/5 ml-2 w-16 flex items-center justify-center rounded-md"
                   >
                     <p>close</p>
@@ -692,7 +701,10 @@ export const Home2 = () => {
               <div className="w-[100%] py-4 px-4 bg-black/95 rounded-t-2xl h-auto mt-[55%]">
                 <div className="w-[100%] bg-black/0 h-10 flex items-start justify-start">
                   <div
-                    onClick={() => setClaimed(false)}
+                    onClick={() => {
+                      setCanClaim(false);
+                      setClaimed(false)
+                    }}
                     className="bg-white/5 ml-2 w-16 flex items-center justify-center rounded-md"
                   >
                     <p>close</p>
