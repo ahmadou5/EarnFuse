@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { GlobalContext } from "@/context/AppContext";
 import { Supabase } from "@/utils/supabasedb";
 export const UseGetTgData = () => {
-    const { tgUser, setTgUser, lastClaim,setLastClaim, isFirst, setIsFirst } = GlobalContext()
+    const { tgUser, setTgUser, lastClaim,setLastClaim, setUserBalance, isFirst, setIsFirst } = GlobalContext()
     const [user,setUser] = useState(null)
     useEffect(() => {
        async function initTg() {
@@ -62,6 +62,7 @@ export const UseGetTgData = () => {
 
               if(data) {
                 console.log('hey',data)
+                setUserBalance(data[0].balance)
               }
               if(error) {
                 console.log('error',error)
