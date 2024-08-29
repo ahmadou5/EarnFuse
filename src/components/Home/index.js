@@ -21,7 +21,7 @@ export const Home2 = () => {
   const [canClaim, setCanClaim] = useState(false);
   const [timeRemaining, setTimeRemaining] = useState(0);
   const [time2, setTime2] = useState("");
-  const [claimVal, setClaimVal] = useState(500);
+  const [claimVal, setClaimVal] = useState(80);
   const [isWelcome, setIsWelcome] = useState(true);
   const [isAnalysing, setIsAnalysing] = useState(false);
   const [isAwesome, setIsAwesome] = useState(false);
@@ -213,7 +213,7 @@ export const Home2 = () => {
 
   const getTime = async () => {
     const currentTime = date.getTime();
-    const cooldownTime = 24 * 60 * 60 * 1000; //
+    const cooldownTime = 4 * 60 * 60 * 1000; //
     console.log("korrent", currentTime);
     const timeDiff = currentTime - lastClaim;
     if (timeDiff >= cooldownTime) {
@@ -639,7 +639,7 @@ export const Home2 = () => {
                         {" "}
                         {`${
                           timeRemaining === 0
-                            ? "23h 59m"
+                            ? "3h 59m"
                             : formatTimeRemaining(timeRemaining)
                         }`}
                       </div>
@@ -713,9 +713,12 @@ export const Home2 = () => {
                   </div>
                 </div>
                 <div className="mt-5 ml-auto mr-auto flex flex-col items-center justify-center text-center">
-                  <div className="mt-14 mb-4 flex items-center justify-center">
-                    <p className="text-white font-bold text-[21px]">
-                      You claim your daily reward
+                  <div className="mt-14 mb-4 flex flex-col items-center justify-center">
+                    <p className="text-white mb-2 font-bold text-[21px]">
+                      Claimed
+                    </p>
+                    <p className="text-white font-bold  text-[18px]">
+                      Come back after 4 hours
                     </p>
                   </div>
                   <div className="w-[80%] mb-[40%] ml-auto mr-auto py-1 px-3 flex  items-center justify-center rounded-full mt-[20%] h-9">
