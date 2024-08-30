@@ -456,7 +456,9 @@ export const Home2 = () => {
       return "./assets/x.png";
     } else if (typeImg === "YT") {
       return "./assets/yt.svg";
-    }
+    } else if (typeImg === 'CAT') {
+      return './assets/cat.png';
+    } 
     return;
   }
 
