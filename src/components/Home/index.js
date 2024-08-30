@@ -21,7 +21,7 @@ export const Home2 = () => {
   const [canClaim, setCanClaim] = useState(false);
   const [timeRemaining, setTimeRemaining] = useState(0);
   const [time2, setTime2] = useState("");
-  const [claimVal, setClaimVal] = useState(80);
+  const [claimVal, setClaimVal] = useState(90);
   const [isWelcome, setIsWelcome] = useState(true);
   const [isAnalysing, setIsAnalysing] = useState(false);
   const [isAwesome, setIsAwesome] = useState(false);
@@ -712,8 +712,8 @@ export const Home2 = () => {
                     <p>close</p>
                   </div>
                 </div>
-                <div className="mt-5 ml-auto mr-auto flex flex-col items-center justify-center text-center">
-                  <div className="mt-14 mb-4 flex flex-col items-center justify-center">
+                <div className="mt-4 ml-auto mr-auto flex flex-col items-center justify-center text-center">
+                  <div className="mt-4 mb-4 flex flex-col items-center justify-center">
                     <p className="text-white mb-2 font-bold text-[21px]">
                       Claimed
                     </p>
